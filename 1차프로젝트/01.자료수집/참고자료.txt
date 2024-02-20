@@ -16,7 +16,7 @@ https://www.oktomato.net/oktomato/main/main.do
 
 -----------------------------------------------------------------
 	여행/호텔
-https://www.josunhotel.com/intro.do
+https://www.josunhotel.com/intro.do   <개인적으로 정신없음
 
 https://phoenixhnr.co.kr/page/main
 
