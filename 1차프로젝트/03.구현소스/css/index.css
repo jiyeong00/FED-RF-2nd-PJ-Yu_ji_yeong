@@ -1,6 +1,16 @@
 @charset "utf-8";
 /* index.html */
 
+        /* 웹폰트 구글 CDN */
+        @import url('https://fonts.googleapis.com/css2?family=Black+And+White+Picture&family=Gugi&family=Black+And+White+Picture&family=Black+Han+Sans&family=Noto+Sans+KR:wght@100..900&display=swap');
+
+        /* 폰트
+          font-family: "Black And White Picture", system-ui;
+          font-family: "Black Han Sans", sans-serif;
+          font-family: "Noto Sans KR", sans-serif;
+          font-family: "Gugi", sans-serif;
+        */
+
 /* 초기화 */
 html,body{
     margin: 0;
@@ -22,17 +32,47 @@ html{
 /* 페이지 넘기기 */
 #main-pg{
     /* background:hotpink no-repeat fixed center/cover; */
-    background-color: hotpink;
+    background-color: rgb(244, 226, 235);
 }
 #msc-pg{
     /* background:lightblue no-repeat fixed center/cover; */
-    background-color: aqua;
+    background-color: rgb(221, 249, 249);
 }
 
-/* 상단메뉴 */
+/************************************* 상단메뉴 *************************************/
 .top-area{
     position: fixed;
     top: 0;
-    width: 100%;
+}
+.menu li{
+    display: inline-block;
+    width: 200px;
+    height: 100px;
+    font-size: 30px;
+    text-align: center;
+    line-height: 100px;
+    font-family: "Black Han Sans", sans-serif;
+}
 
+.menu a{
+    text-decoration: none;
+    color: #222;
+
+}
+.menu a:hover{
+    text-decoration: none;
+    color: white;
+
+}
+
+
+/************************************* 메인영역 *************************************/
+.main-tit{
+    width: 40%;
+    height: 100%;
+}
+.main-img{
+    width: 60%;
+    height: 100%;
+    
 }
