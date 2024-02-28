@@ -45,6 +45,7 @@ html{
 .top-area{
     position: fixed;
     top: 0;
+    z-index: 1;
 }
 .menu li{
     display: inline-block;
@@ -70,15 +71,31 @@ html{
 
 /************************************* 메인영역 *************************************/
 .main-tit-area{
+    position: relative;
     float: left;
-    width: 40%;
+    width: 50%;
     height: 100%;
 }
+.main-tit{
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    font-size: 40px;
+}
+.main-tit #exc-tit{
+    position: relative;
+    left: 180px;
+}
+.main-tit #sub-tit{
+    font-size: 35px;
+}
+
+
 .main-img-area{
     float: left;
-    width: 60%;
     height: 100%;
     
 }
+
 /************************************* 뮤지컬영역 *************************************/
 /************************************* 전시회영역 *************************************/
