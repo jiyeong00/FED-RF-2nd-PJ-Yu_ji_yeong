@@ -1,78 +1,123 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1차프로젝트</title>
-    <link rel="stylesheet" href="./css/index.css">
-</head>
-<body>
+    <link rel="stylesheet" href="./css/index.css" />
+  </head>
+  <body>
     <!-- 1. 상단영역 -->
     <header class="top-area">
-        <!-- <h2>상단 영역- 메뉴넣을</h2> -->
-        <nav class="menu">
-            <ul>
-                <li>
-                    <a href="#main-pg">HOME</a>
-                </li>
-                <li>
-                    <a href="#msc-pg">MUSICAL</a>
-                </li>
-                <li>
-                    <a href="#exc-pg">EXHIBIT</a>
-                </li>
-            </ul>
-        </nav>
+      <!-- <h2>상단 영역- 메뉴넣을</h2> -->
+      <nav class="menu">
+        <ul>
+          <li>
+            <a href="#main-pg">HOME</a>
+          </li>
+          <li>
+            <a href="#msc-pg">MUSICAL</a>
+          </li>
+          <li>
+            <a href="#exc-pg">EXHIBIT</a>
+          </li>
+        </ul>
+      </nav>
     </header>
 
     <!-- 2. 메인영역 -->
     <main class="main-area part" id="main-pg">
-        <div class="main main-tit-area">
-
-            <div class="main-tit">
-                <h1>MUSICAL</h1>
-                <h1 id="exc-tit"> & EXHIBIT</h1>
-                <h1 id="sub-tit">꿈같은 공간에서 펼쳐지는 아름다운 이야기</h1>
-            </div>
+      <div class="main main-tit-area">
+        <div class="main-tit">
+          <h1>MUSICAL</h1>
+          <h1 id="exc-tit">& EXHIBIT</h1>
+          <h1 id="sub-tit">꿈같은 공간에서 펼쳐지는 아름다운 이야기</h1>
         </div>
+      </div>
 
-        <div class="main main-img-area"> 이미지 넣을 곳
-            <img src="./img/poster_msc_img_1.jpg" alt="레미제라블 포스터">
-        </div>
-
+      <div class="main main-img-area">
+        이미지 넣을 곳
+        <!-- <img src="./img/poster_msc_img_1.jpg" alt="레미제라블 포스터" /> -->
+      </div>
     </main>
 
     <!-- 3. 뮤지컬영역 -->
     <section class="msc-area part" id="msc-pg">
-            <!-- 제목 -->
-            <h1>MUSICAL</h1>
-            <!-- 이미지박스 -->
-            <div class="main-msc-img-box">
-                <a href="#">
-                    <img src="./img/poster_msc_img_1.jpg" alt="레미제라블 포스터">
-                </a>
-                <a href="#">
-                    <img src="./img/poster_msc_img_2.jpg" alt="빨래 포스터">
-                </a>
-                <a href="#">
-                    <img src="./img/poster_msc_img_3.jpg" alt="스쿨오브락 포스터">
-                </a>
-                <a href="#">
-                    <img src="./img/poster_msc_img_4.jpg" alt="라스트 파이브 이어쓰 포스터">
-                </a>
-                <a href="#">
-                    <img src="./img/poster_msc_img_5.jpg" alt="너를 위한 글자 포스터">
-                </a>
-                <a href="#">
-                    <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터">
-                </a>
-        </div>
+      <!-- 제목 -->
+      <h1>MUSICAL</h1>
+      <!-- 이미지박스 -->
+      <div class="main-msc-img-box">
+        <ul>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_1.jpg" alt="레미제라블 포스터" />
+              <dl>
+                <dt>레미제라블</dt>
+                <dd>계명아트센터</dd>
+                <dd>2024.03.21 ~2024.04.07</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_2.jpg" alt="빨래 포스터" />
+              <dl>
+                <dt>빨래</dt>
+                <dd>대학로 유니플렉스 2관</dd>
+                <dd>2023.10.12 ~2024.05.26</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_3.jpg" alt="스쿨오브락 포스터" />
+              <dl>
+                <dt>스쿨 오브 락</dt>
+                <dd>드림씨어터</dd>
+                <dd>2024.04.02 ~2024.04.14</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./img/poster_msc_img_7.jpg"alt="디아길레프 포스터"/>
+                <dl>
+                    <dt>디아길레프</dt>
+                    <dd>예스24아트원 1관</dd>
+                    <dd>2024.03.19 ~2024.06.09</dd>
+                  </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img
+                src="./img/poster_msc_img_5.jpg" alt="너를 위한 글자 포스터"/>
+                <dl>
+                    <dt>너를 위한 글자</dt>
+                    <dd>링크아트센터드림 드림4관</dd>
+                    <dd>2024.01.16 ~2024.03.31</dd>
+                  </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터 중극장 블랙</dd>
+                <dd>2024.02.16 ~2024.04.14</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
+      </div>
     </section>
 
     <!-- 4. 전시회영역 -->
     <section class="exc-area part" id="exc-pg">
-        <h2>3페이지</h2>
-        <div id="exc-area">        </div>
+      <h2>3페이지</h2>
+      <div id="exc-area"></div>
     </section>
-</body>
+  </body>
 </html>

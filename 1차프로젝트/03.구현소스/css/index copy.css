@@ -105,16 +105,13 @@ html{
 }
 
 /************************************* 뮤지컬영역 *************************************/
-.msc-main-area{
-    position: absolute;
-    bottom: 0;
-}
+
 .msc-area h1{
-    font-size: 100px;
+    font-size: 200px;
     text-align: center;
 }
 
 .main-msc-img-box{
-    height: 500px;
+    height: 600px;
 }
 /************************************* 전시회영역 *************************************/
