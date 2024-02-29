@@ -16,6 +16,9 @@ html,body,h1,h2{
     margin: 0;
     padding: 0;
 }
+html{
+    font-size: 10px;
+}
 ul,li,ol,dl,dt,dd{
     margin: 0 auto;
     padding: 0;
@@ -113,28 +116,32 @@ html{
 }
 
 /************************************* 뮤지컬영역 *************************************/
-.msc-main-area{
-    position: absolute;
-    bottom: 0;
-}
-.msc-area h1{
-    font-size: 50px;
-    text-align: center;
+.msc-area{
+    max-width: 100%;
+
 }
 
-.main-msc-img-box{
-    height: 600px;
-    overflow: scroll;
-    white-space: nowrap;
+.msc-area h1{
+    font-size: 50px;
+    width: 100%;
+    text-align: center;
 }
 
 .main-msc-img-box li{
     display: inline-block;
-    margin: 0 50px;
+    width: 300px;
+
 }
 .main-msc-img-box a{
     text-decoration: none;
     color: #222;
     text-align: center;
+}
+.main-msc-img-box dl{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-size: 30px;
+
 }
 /************************************* 전시회영역 *************************************/
