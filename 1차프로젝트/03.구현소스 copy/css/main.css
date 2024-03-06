@@ -8,90 +8,133 @@
 /* 그리드 12 불러오기 */
 @import url(./grid_12_float.css);
 
-
-        /* 웹폰트 구글 CDN */
-       
-
+/* 웹폰트 구글 CDN */
 
 /* 공사중 표시 */
 body * {
-    outline: 2px dashed #424242;
+  outline: 2px dashed #424242;
 }
 
 /************************************* 상단메뉴 *************************************/
-#top-area{
-    position: fixed;
-    top: 0;
-    z-index: 1;
+#top-area {
+  position: fixed;
+  top: 0;
+  z-index: 1;
 }
-.menu li{
-    display: inline-block;
-    width: 160px;
-    height: 70px;
-    font-size: 25px;
-    text-align: center;
-    line-height: 70px;
-    font-family: "Black Han Sans", sans-serif;
-}
-
-.menu a{
-    text-decoration: none;
-    color: #222;
+.menu li {
+  display: inline-block;
+  width: 160px;
+  height: 70px;
+  font-size: 25px;
+  text-align: center;
+  line-height: 70px;
+  font-family: "Black Han Sans", sans-serif;
 }
 
-.menu a:hover{
-    text-decoration: none;
-    color: white;
+.menu a {
+  text-decoration: none;
+  color: #222;
 }
 
+.menu a:hover {
+  text-decoration: none;
+  color: white;
+}
 
 /************************************* 메인영역 *************************************/
-#main-area{
-    
-    height: 100%;
-    background-color: #e2bebe;
+#main-area {
+  height: 100%;
+  background-color: #e2bebe;
 }
 
-.main-tit-gp{
-    /* 부모는 전체화면 */
-    position: absolute;
-    top: 31%;
-    left: 15%;
-    font-size: 10rem;
+.main-tit-gp {
+  /* 부모는 전체화면 */
+  position: absolute;
+  top: 31%;
+  left: 15%;
+  font-size: 10rem;
 }
 /* .main-tit #exc-tit{
 
 } */
-.main-tit #sub-tit{
-    font-size: 22px;
+.main-tit #sub-tit {
+  font-size: 22px;
 }
 
 /************************************* 뮤지컬영역 *************************************/
-#msc-area{
-    /* 부모자격 - 뮤지컬 리스트 */
-    position: relative;
-    height: 100%;
-    background-color: #bed8e2;
+#msc-area {
+  /* 부모자격 - 뮤지컬 리스트 */
+  position: relative;
+  height: 100%;
+  background-color: #bed8e2;
 }
-.msc-list li{
-    display: inline-block;
-    max-width: 300px;
-    text-align: center;
-    font-size: 17px;
+.msc-area {
+  position: absolute;
+  max-width: 1400px;
+  height: auto;
+
+  top: 76px;
+  left: 50%;
+  /* 중앙정렬 */
+  transform: translateX(-50%);
 }
-.msc-list{
-    /* 부모 : 뮤지컬영역 */
-    position: absolute;
-    
+.msc-area > h1 {
+  text-align: center;
+  font-size: 6vw;
 }
+
+/* 포스터 리스트 영역 - msc-list */
+.msc-list {
+  /* 드레그이벤트를 위해 적어둠 */
+  display: flex;
+  overflow: hidden;
+  justify-content: space-evenly;
+  align-items: flex-end;
+
+  margin-top: 50px;
+}
+.msc-list li {
+  display: inline-block;
+  /* 제목및 장소 말줄임표를 위한 가로 크기 정렬 후에 맞추던지 다른걸로 바꾸던지 */
+  max-width: 300px;
+  text-align: center;
+  font-size: 17px;
+}
+
 /* 메인 포스터 제목 및 장소 말줄임표 */
-.msc-area dt,dd{
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
+.msc-area dt,dd {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding: 5px;
+}
+
+/* 왼쪽넘기기 버튼 */
+.msc-area .msc-btn #msc-left-pass-btn {
+  /* 부모 : .msc-area */
+  position: absolute;
+  top: calc(50% + 50px);
+}
+/* 오른쪽넘기기 버튼 */
+.msc-area .msc-btn #msc-right-pass-btn {
+  /* 부모 : .msc-area */
+  position: absolute;
+  right: 0;
+  top: calc(50% + 50px);
+}
+/* 더보기버튼 */
+.msc-area .msc-btn .msc-more-btn{
+    text-align: center;
+    margin-top: 50px;
+}
+.msc-area .msc-btn #msc-more-btn{
+    font-size: 25px;
+    background-color: #a2676700;
+    border: none;
 }
 /************************************* 전시회영역 *************************************/
-#exh-area{
-    height: 100%;
-    background-color: #bee2c6;
+
+#exh-area {
+  height: 100%;
+  background-color: #bee2c6;
 }

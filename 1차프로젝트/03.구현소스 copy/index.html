@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1차프로젝트</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <script>
+      // 버튼이나 a에 포커스 되도록 하기 (JS실험실 참고)
+    </script>
   </head>
   <body>
     <!-- 1. 상단영역 -->
@@ -56,6 +59,8 @@
 
         <div class="msc-area part">
 
+          <h1>MUSICAL</h1>
+
           <ul class="msc-list">
             <li>
               <a href="#">
@@ -66,16 +71,38 @@
                 <dd>계명아트센터</dd>
               </dl>
             </li>
+
+            <li>
+              <a href="#">
+                <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터">
+                <dl>
+                  <dt>이솝이야기</dt>
+                  <dd>충무아트센터</dd>
+                </dl>
+              </a>
+            </li>
+            
+            <li> 
+              <a href="#">
+                <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터">
+                <dl>
+                  <dt>이솝이야기</dt>
+                  <dd>충무아트센터</dd>
+                </dl>
+              </a>
+            </li>
           </ul>
 
           <section class="msc-btn main-pg-btn">
-
             <div class="pass-btn">
               <button type="button" id="msc-left-pass-btn">왼쪽 넘기기</button>
               <button type="button" id="msc-right-pass-btn">오른쪽 넘기기</button>
             </div>
-            <button type="button" id="msc-more-btn" 
-            onclick="location.href='more.html'">더보기</button>   
+            
+            <div class="msc-more-btn">
+              <button type="button" id="msc-more-btn"
+              onclick="location.href='more.html'">더보기</button>
+            </div>   
 
           </section>
 
