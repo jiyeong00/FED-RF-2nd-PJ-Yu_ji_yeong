@@ -68,8 +68,27 @@ body * {
 
 /************************************* 뮤지컬영역 *************************************/
 #msc-area{
+    /* 부모자격 - 뮤지컬 리스트 */
+    position: relative;
     height: 100%;
     background-color: #bed8e2;
+}
+.msc-list li{
+    display: inline-block;
+    max-width: 300px;
+    text-align: center;
+    font-size: 17px;
+}
+.msc-list{
+    /* 부모 : 뮤지컬영역 */
+    position: absolute;
+    
+}
+/* 메인 포스터 제목 및 장소 말줄임표 */
+.msc-area dt,dd{
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
 }
 /************************************* 전시회영역 *************************************/
 #exh-area{
