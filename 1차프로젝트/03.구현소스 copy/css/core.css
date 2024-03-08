@@ -31,9 +31,6 @@
 html{
     scroll-behavior: smooth;
     /* html 즉, 루트에 부드러운 스크롤 설정을 하면 클릭하여 이동시 스크롤 애니메이션이 연출됨 */
-
-    /* rem쓸려고 함 */
-    font-size: 10px;
 }
 
 /* 전체화면 크기 */

@@ -44,28 +44,35 @@ body * {
 
 /************************************* 메인영역 *************************************/
 #main-area {
-  height: 100%;
+  width: 100vw;
+  height: 100vh;
   background-color: #e2bebe;
 }
+.main-tit{
+  /* 제목 부모자격 줄려고 */
+  overflow: visible;
 
-.main-tit-gp {
-  /* 부모는 전체화면 */
-  position: absolute;
-  top: 31%;
-  left: 15%;
-  font-size: 10rem;
 }
-/* .main-tit #exc-tit{
+.main-tit-gp {
+  /* 부모 - main-tit */
+  position: absolute;
+  top: calc(50% - 160px);
+  left: 11.6%;
+  font-size: 4vmax;
+}
 
-} */
 .main-tit #sub-tit {
-  font-size: 22px;
+  position: absolute;
+  top: calc(50% - -109px);
+  left: 20%;
+  font-size: 2vmax;
 }
 
 /************************************* 뮤지컬영역 *************************************/
 #msc-area {
   /* 부모자격 - 뮤지컬 리스트 */
   position: relative;
+  width: 100vw;
   height: 100%;
   background-color: #bed8e2;
 }
@@ -136,6 +143,7 @@ body * {
 /************************************* 전시회영역 *************************************/
 
 #exh-area {
+  width: 100vw;
   height: 100%;
   background-color: #bee2c6;
 }
