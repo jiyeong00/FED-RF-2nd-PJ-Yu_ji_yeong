@@ -6,7 +6,7 @@
 @import url(./core.css);
 @import url(./common.css);
 /* 그리드 12 불러오기 */
-@import url(./grid_12_float.css);
+@import url(./grid_12_flex.css);
 
 
 /************************************* 상단메뉴 *************************************/
@@ -43,25 +43,22 @@
   height: 100vh;
   background-color: #e2bebe;
 }
-.main-tit{
-  /* 제목 부모자격 줄려고 */
-  overflow: visible;
+.main-area{
+  display: flex;
+  align-items: center;
+  padding: 0 80px;
+  white-space: nowrap;
+}
+.main-tit dt {
+  /* font-size: 74px; */
+  font-size: max(min(10vw,50px),74px);
+}
+.main-tit dd {
+  font-size: 21px;
+  font-weight: bold;
+  letter-spacing: 1.2rem;
+}
 
-}
-.main-tit-gp {
-  /* 부모 - main-tit */
-  position: absolute;
-  top: calc(50% - 160px);
-  left: 11.6%;
-  font-size: 4vmax;
-}
-
-.main-tit #sub-tit {
-  position: absolute;
-  top: calc(50% - -109px);
-  left: 20%;
-  font-size: 2vmax;
-}
 
 /************************************* 뮤지컬영역 *************************************/
 #msc-area {
