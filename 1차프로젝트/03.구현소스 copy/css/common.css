@@ -3,6 +3,12 @@
 /* 도깨비 PJ : 공통 모듈 CSS - common.css */
 /* 공유기능 요소 셋팅 */
 
+/* 공사중 표시 */
+body * {
+  outline: 2px dashed #424242;
+}
+
+
 /************* 1. 상단영역 *************/
   .menu{
     position: fixed;
