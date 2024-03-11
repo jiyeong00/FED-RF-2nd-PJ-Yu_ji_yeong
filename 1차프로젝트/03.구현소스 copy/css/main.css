@@ -42,13 +42,21 @@
   width: 100vw;
   height: 100vh;
   background-color: #e2bebe;
+  
 }
-.main-area{
+/* .main-area{
+  float: left;
+} */
+.main-tit-area{
+  height: 100%;
+
   display: flex;
   align-items: center;
-  padding: 0 80px;
   white-space: nowrap;
+
+  padding: 0 80px;
 }
+/* 메인 타이틀 */
 .main-tit dt {
   /* font-size: 74px; */
   font-size: max(min(10vw,50px),74px);
@@ -58,6 +66,44 @@
   font-weight: bold;
   letter-spacing: 1.2rem;
 }
+
+/* 메인 움직이는 그림 */
+.main-img-part{
+  position: absolute;
+  top: 50px;
+  left: 50%;
+
+  display: flex;
+}
+
+.main-img-part li:nth-child(2){
+  margin-top: 50px;
+}
+.main-img-part ul:nth-child(2){
+  margin-top: 150px;
+  margin-left: 20%;
+}
+.main-img-part img{
+  width: 350px;
+}
+
+.main-img-1 {
+  opacity: 1;
+  animation: opty 3s ease-in-out 3s 4 alternate;
+  /* transform: ; */
+}
+.main-img-2 {
+  opacity: 0;
+}
+
+@keyframes opty {
+  to{
+    top: 30%;
+    opacity: 0;
+  }
+  
+}
+
 
 
 /************************************* 뮤지컬영역 *************************************/
