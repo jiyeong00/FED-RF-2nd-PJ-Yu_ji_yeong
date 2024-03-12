@@ -15,43 +15,7 @@
     height: 100px;
 } */
 
-/* 탑버튼 */
-.top-btn{
-    position: fixed;
-    bottom: 3vw;
-    right: 3vw;
-    
-    width: 5vw;
-    height: 5vw;
-    
-    border-radius: 50%;
-    border: 5px outset #fff;
-    font-family: 'Black Ops One', cursive;
-    background-color: #ccc;
 
-    z-index: 1;
-  }
-
-  /* a요소 확장 */
-.top-btn a{
-    display: block;
-    width: 100%;
-    height: 100%;
-    
-    color: blue;
-    line-height: 5vw;
-
-  }
-  /* 오버시 */
-  .top-btn:hover{
-    background-color: yellow;
-    /* outset 나온 버튼, inset 들어간 버튼 */
-    border-style: inset;
-  }
-  .top-btn:hover a{
-    color: red;
-  }
-  
 
 
   /* 뮤지컬이랑 전시회 더보기 메뉴 체인지 버튼 */

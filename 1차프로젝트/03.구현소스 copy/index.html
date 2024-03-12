@@ -6,9 +6,8 @@
     <title>1차프로젝트</title>
     <link rel="stylesheet" href="./css/main.css" />
 
-    <script>
-      // 버튼이나 a에 포커스 되도록 하기 (JS실험실 참고)
-    </script>
+    <script src="./JS/index.js" defer></script>
+
   </head>
   <body>
     <!-- 1. 상단영역 -->
@@ -29,6 +28,10 @@
           </ul>
         </nav>
       </header>
+
+      <a href="#" class="main-top-btn top-btn">
+        <img src="./img/btn_page_top.png" alt="탑버튼" />
+      </a>
     </div>
 
     <!-- 2. 메인영역 -->
@@ -40,27 +43,29 @@
             <dt>MUSICAL</dt>
             <br />
             <dt>&ensp; & EXHIBIT</dt>
-            <dd id="sub-tit">&ensp; 꿈같은 공간에서 펼쳐지는 아름다운 이야기</dd>
+            <dd id="sub-tit">
+              &ensp; 꿈같은 공간에서 펼쳐지는 아름다운 이야기
+            </dd>
           </dl>
         </div>
 
         <!-- 메인 이미지 -->
-        <div class=" main-img col-7">
+        <div class="main-img col-7">
           <section class="main-img-1 main-img-part">
             <ul>
               <li>
-                <img src="./img/poster_msc_img_11.jpg" alt>
+                <img src="./img/poster_msc_img_11.jpg" alt />
               </li>
               <li>
-                <img src="./img/poster_msc_img_15.jpg" alt>
+                <img src="./img/poster_msc_img_15.jpg" alt />
               </li>
             </ul>
             <ul>
               <li>
-                <img src="./img/poster_msc_img_7.jpg" alt>
+                <img src="./img/poster_msc_img_7.jpg" alt />
               </li>
               <li>
-                <img src="./img/poster_msc_img_5.jpg" alt>
+                <img src="./img/poster_msc_img_5.jpg" alt />
               </li>
             </ul>
           </section>
@@ -68,84 +73,106 @@
           <section class="main-img-2 main-img-part">
             <ul>
               <li>
-                <img src="./img/exh/poster_exh_img_5.jpg" alt>
+                <img src="./img/exh/poster_exh_img_5.jpg" alt />
               </li>
               <li>
-                <img src="./img/exh/poster_exh_img_9.jpg" alt>
+                <img src="./img/exh/poster_exh_img_9.jpg" alt />
               </li>
             </ul>
             <ul>
               <li>
-                <img src="./img/exh/poster_exh_img_2.jpg" alt>
+                <img src="./img/exh/poster_exh_img_2.jpg" alt />
               </li>
               <li>
-                <img src="./img/exh/poster_exh_img_4.jpg" alt>
+                <img src="./img/exh/poster_exh_img_4.jpg" alt />
               </li>
             </ul>
           </section>
-
         </div>
-
       </section>
     </div>
 
     <!-- 3. 뮤지컬영역 -->
     <div id="msc-area">
-      <section>
-        <div class="msc-area part">
-          <h1>MUSICAL</h1>
+      <section class="msc-area part">
+        <div class="cir"></div>
+        <h1>MUSICAL</h1>
 
-          <ul class="msc-list">
-            <li>
-              <a href="#">
-                <img src="./img/poster_msc_img_1.jpg" alt="레미제라블포스터" />
-              </a>
+        <ul class="msc-list">
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_1.jpg" alt="레미제라블포스터" />
+            </a>
+            <dl>
+              <dt>레미제라블</dt>
+              <dd>계명아트센터</dd>
+            </dl>
+          </li>
+          <li>
+            <a href="#">
+              <img class = "main-img" src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
               <dl>
-                <dt>레미제라블</dt>
-                <dd>계명아트센터</dd>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
               </dl>
-            </li>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
 
-            <li>
-              <a href="#">
-                <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
-                <dl>
-                  <dt>이솝이야기</dt>
-                  <dd>충무아트센터</dd>
-                </dl>
-              </a>
-            </li>
+        <section class="msc-btn main-pg-btn">
 
-            <li>
-              <a href="#">
-                <img src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
-                <dl>
-                  <dt>이솝이야기</dt>
-                  <dd>충무아트센터</dd>
-                </dl>
-              </a>
-            </li>
-          </ul>
-
-          <section class="msc-btn main-pg-btn">
-            <div class="pass-btn">
-              <button type="button" id="msc-left-pass-btn">왼쪽 넘기기</button>
-              <button type="button" id="msc-right-pass-btn">
-                오른쪽 넘기기
-              </button>
-            </div>
-
-            <div class="msc-more-btn">
-              <button
-                type="button"
-                id="msc-more-btn"
-                onclick="location.href='more.html'"
-              >
-                더보기
-              </button>
-            </div>
-          </section>
+          <div class="pass-btn">
+            <button type="button" value="왼쪽" id="msc-left-pass-btn" class="main-btn">왼쪽 넘기기</button>
+            <button
+            type="button"
+            id="msc-more-btn"
+            onclick="location.href='more_msc.html'">
+            더보기
+          </button>
+          <button type="button" value="오른쪽" id="msc-right-pass-btn" class="main-btn">오른쪽 넘기기</button>
         </div>
+
+          <!-- <div class="msc-more-btn">
+
+          </div> -->
+
+        </section>
       </section>
     </div>
 

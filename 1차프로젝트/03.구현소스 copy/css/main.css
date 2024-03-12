@@ -15,7 +15,7 @@
 /* #top-area {
   position: fixed;
   top: 0;
-  z-index: 1;
+  z-index: 2;
 }
 .menu li {
   display: inline-block;
@@ -40,40 +40,67 @@
 /************************************* 메인영역 *************************************/
 #main-area {
   width: 100vw;
-  height: 100vh;
+  height: 100%;
   background-color: #e2bebe;
   
 }
-/* .main-area{
-  float: left;
-} */
+
 .main-tit-area{
+  position: absolute;
   height: 100%;
+  z-index: 1;
 
   display: flex;
   align-items: center;
   white-space: nowrap;
 
-  padding: 0 80px;
+  padding: 0 100px;
 }
+
 /* 메인 타이틀 */
 .main-tit dt {
+  position: relative;
+
   /* font-size: 74px; */
   font-size: max(min(10vw,50px),74px);
+  font-family: "Black Han Sans", sans-serif;
+
+  opacity: 0;
+  left: -20%;
+  animation: main-tit-ani 2s ease-in-out forwards;
+
 }
+/* 서브타이틀 */
 .main-tit dd {
+  position: relative;
   font-size: 21px;
   font-weight: bold;
   letter-spacing: 1.2rem;
+  font-family: "Noto Sans KR", sans-serif;
+
+  left: -25%;
+  opacity: 0;
+  animation: main-tit-ani 2s ease-in-out .5s forwards;
 }
+
+@keyframes main-tit-ani {
+  to{
+    left: 10%;
+    opacity: 1;
+  }
+  
+}
+
 
 /* 메인 움직이는 그림 */
 .main-img-part{
   position: absolute;
   top: 50px;
-  left: 50%;
+  right: 0%;
 
   display: flex;
+
+  animation: main-img-opty 3s ease-in-out 2s forwards;
 }
 
 .main-img-part li:nth-child(2){
@@ -88,18 +115,17 @@
 }
 
 .main-img-1 {
-  opacity: 1;
-  animation: opty 3s ease-in-out 3s 4 alternate;
-  /* transform: ; */
+  opacity: 0;
+  /* right: -30px; */
 }
 .main-img-2 {
   opacity: 0;
 }
 
-@keyframes opty {
+@keyframes main-img-opty {
   to{
-    top: 30%;
-    opacity: 0;
+    right: 10%;
+    opacity: 1;
   }
   
 }
@@ -115,29 +141,41 @@
   background-color: #bed8e2;
 }
 .msc-area {
-  position: absolute;
+  display: flex;
   max-width: 1400px;
-  height: auto;
-
-  top: 76px;
-  left: 50%;
-  /* 중앙정렬 */
-  transform: translateX(-50%);
+  margin: 0 auto;
+  flex-direction: column;
 }
+.cir{
+  position: relative;
+  top: 50%;
+  left: 50%;
+
+  width: 300px;
+  height: 300px;
+  border: 3px dashed #000;
+  border-radius: 50%;
+}
+
 .msc-area > h1 {
   text-align: center;
   font-size: 6vw;
+  margin-top: 10%;
+  margin-bottom: 20px;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: normal;
+
 }
 
 /* 포스터 리스트 영역 - msc-list */
 .msc-list {
   /* 드레그이벤트를 위해 적어둠 */
   display: flex;
-  overflow: hidden;
+  overflow: visible;
   justify-content: space-evenly;
-  align-items: flex-end;
+  align-items: center;
+  font-family: "Noto Sans KR", sans-serif;
 
-  margin-top: 50px;
 }
 .msc-list li {
   display: inline-block;
@@ -145,8 +183,12 @@
   max-width: 300px;
   text-align: center;
   font-size: 17px;
+  margin: 0 30px;
 }
 
+.msc-area dt {
+  font-weight: bold;
+}
 /* 메인 포스터 제목 및 장소 말줄임표 */
 .msc-area dt,dd {
   white-space: nowrap;
@@ -155,29 +197,21 @@
   padding: 5px;
 }
 
-/* 왼쪽넘기기 버튼 */
-.msc-area .msc-btn #msc-left-pass-btn {
-  /* 부모 : .msc-area */
-  position: absolute;
-  top: calc(50% + 50px);
-}
-/* 오른쪽넘기기 버튼 */
-.msc-area .msc-btn #msc-right-pass-btn {
-  /* 부모 : .msc-area */
-  position: absolute;
-  right: 0;
-  top: calc(50% + 50px);
-}
-/* 더보기버튼 */
-.msc-area .msc-btn .msc-more-btn{
-    text-align: center;
-    margin-top: 50px;
-}
+
 .msc-area .msc-btn #msc-more-btn{
     font-size: 25px;
     background-color: #a2676700;
     border: none;
 }
+
+/* 넘기기 버튼 */
+.pass-btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 28px;
+}
+
+
 /************************************* 전시회영역 *************************************/
 
 #exh-area {
