@@ -1,22 +1,41 @@
 // 버튼이나 a에 포커스 되도록 하기 (JS실험실 참고)
 
-function changeImgList(){
-    var btnTxt = this.innerText;
+// const topBtn=document.querySelector(".top-btn");
+
+// window.addEventListener("scroll", scrollBtn);
+
+// function scrollBtn(){
+//     if(window.scrollY==800){
+//         topBtn.remove('opacity');
+//         console.log(window.scrollY);
+//     topBtn.innerHTML=`
+//     style="opacity: 1;"
+//     `;
+//    }
+// }
+
+
+
+
+function changeLeftList(){
+    // var btnTxt = this.innerText;
+    // 1.함수호출확인
     console.log("JS되는건가");
 
-    var isrc;
-    if(btnTxt=="왼쪽"){
-        isrc="./img/poster_msc_img_8.jpg";
-    }else if(btnTxt=="오른쪽"){
-        isrc="./img/poster_msc_img_10.jpg";
-    }
-    mainImg.src = isrc;
+    if(mainBtn.item(0).onclick){
+        if(btnClick<6){
+            btnClick+=1;
+            console.log('지금',btnClick);
+        }else{
+            btnClick=0;
+        }
+    }//if문
 
 }////////changeIngList()함수
 
+var btnClick=0;
+
 var mainBtn = document.querySelectorAll('.main-btn');
-var mainImg = document.querySelector('.main-img');
+var mainImg = document.querySelectorAll('.main-img');
 
-console.log("뭐가 나오나",mainBtn,mainImg);
-
-mainBtn.item(0).onclick=changeImgList;
+mainBtn.item(0).onclick=changeLeftList;
