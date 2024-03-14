@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>1차프로젝트</title>
     <link rel="stylesheet" href="./css/main.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
 
     <script src="./JS/index.js" defer></script>
 
@@ -50,10 +51,11 @@
                 &ensp; 꿈같은 공간에서 펼쳐지는 아름다운 이야기
               </dd>
             </dl>
-                    </div>
-            
+
+          </div>
+          <div class="cir main-cir"></div>
                     <!-- 메인 이미지 -->
-          <!-- <div class="main-img col-7">
+          <div class="main-img col-7">
             <section class="main-img-1 main-img-part">
               <ul>
                 <li>
@@ -72,7 +74,7 @@
                 </li>
               </ul>
             </section>
-            <section class="main-img-2 main-img-part">
+            <!-- <section class="main-img-2 main-img-part">
               <ul>
                 <li>
                   <img src="./img/exh/poster_exh_img_5.jpg" alt />
@@ -89,8 +91,8 @@
                   <img src="./img/exh/poster_exh_img_4.jpg" alt />
                 </li>
               </ul>
-            </section>     
-          </div> -->
+            </section>      -->
+          </div>
 
           </div>
 
@@ -161,22 +163,24 @@
           </li>
         </ul>
 
+        <!-- 버튼 -->
         <section class="msc-btn main-pg-btn">
 
           <div class="pass-btn">
-            <button type="button" value="왼쪽" id="msc-left-pass-btn" class="main-btn">왼쪽 넘기기</button>
+            <button type="button" value="왼쪽" id="msc-left-pass-btn" class="main-btn">
+              <i class="fa-solid fa-circle-left"></i>
+            </button>
             <button
             type="button"
             id="msc-more-btn"
+            class="main-btn"
             onclick="location.href='more_msc.html'">
             더보기
           </button>
-          <button type="button" value="오른쪽" id="msc-right-pass-btn" class="main-btn">오른쪽 넘기기</button>
+          <button type="button" value="오른쪽" id="msc-right-pass-btn" class="main-btn">
+            <i class="fa-solid fa-circle-right"></i>
+          </button>
         </div>
-
-          <!-- <div class="msc-more-btn">
-
-          </div> -->
 
         </section>
       </section>
@@ -184,7 +188,87 @@
 
     <!-- 4. 전시회영역 -->
     <div id="exh-area">
-      <section class="exh-area part"></section>
+      <section class="exh-area part">
+        <div class="cir"></div>
+
+        <h1>EXHIBIT</h1>
+
+        <ul class="exh-list">
+          <li>
+            <a href="#">
+              <img class = "main-img" src="./img/poster_msc_img_1.jpg" alt="레미제라블포스터" />
+            </a>
+            <dl>
+              <dt>레미제라블</dt>
+              <dd>계명아트센터</dd>
+            </dl>
+          </li>
+          <li>
+            <a href="#">
+              <img class = "main-img" src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class = "main-img" src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class = "main-img" src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class = "main-img" src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li>
+            <a href="#">
+              <img class = "main-img" src="./img/poster_msc_img_6.jpg" alt="이솝이야기 포스터" />
+              <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+        </ul>
+
+        <!-- 버튼 -->
+        <section class="exh-btn main-pg-btn">
+
+          <div class="pass-btn">
+            <button type="button" value="왼쪽" id="exh-left-pass-btn" class="main-btn">
+              <i class="fa-solid fa-circle-left"></i>
+            </button>
+            <button
+            type="button" value="더보기" class="main-btn" id="exh-more-btn"
+            onclick="location.href='more_exh.html'">
+            더보기
+          </button>
+          <button type="button" value="오른쪽" id="exh-right-pass-btn" class="main-btn">
+            <i class="fa-solid fa-circle-right"></i>
+          </button>
+        </div>
+
+        </section>
+      </section>
     </div>
   </body>
 </html>
