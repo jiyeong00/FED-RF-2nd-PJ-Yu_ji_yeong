@@ -57,28 +57,35 @@
 }
 .more-menu-area ol{
     position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+
     bottom: 10px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px 20px;
 
-    display: inline-block;
+    white-space: nowrap;
 
-    
-    font-size: 30px;
+    /* outline: 2px dashed #222; */
+    font-size: min(30px,max(20px,1.6vw));
 }
 .more-menu-area li{
-    margin: 0 30px;
-    float: left;
+    /* margin: 0 30px; */
+    /* float: left; */
 }
 
 /* 얜 없앨것 이미지랑 맞출려고 어거지로 넣음 */
-.more-menu-area li:first-child{
+/* .more-menu-area li:first-child{
     margin: 0 0 0 70px;
-}
+} */
 
 /********************************* 3. 리스트영역 *********************************/
 .more-list-area{
     position: relative;
     height: auto;
-
+    display: flex;
     left: 50%;
     /* 중앙정렬 */
     transform: translateX(-50%);
@@ -86,7 +93,7 @@
 }
 
 .more-list-area li{
-    display: inline-block;
+    /* display: inline-block; */
     margin: 10px;
 }
 
