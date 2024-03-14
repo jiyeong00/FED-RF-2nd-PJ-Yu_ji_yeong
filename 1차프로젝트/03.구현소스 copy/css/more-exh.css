@@ -6,7 +6,7 @@
 @import url(./core.css);
 @import url(./common.css);
 /* 그리드 12 불러오기 */
-@import url(./grid_12_float.css);
+@import url(./grid_12_flex.css);
 
 
 /********************************* 1. 상단영역 *********************************/
@@ -69,9 +69,11 @@
 }
 
 /********************************* 3. 리스트영역 *********************************/
+
 .more-list-area{
     position: relative;
     height: auto;
+    display: flex;
 
     left: 50%;
     /* 중앙정렬 */
@@ -80,8 +82,7 @@
 }
 
 .more-list-area li{
-    display: inline-block;
-    margin: 10px;
+    /* display: inline-block; */
 }
 
 
