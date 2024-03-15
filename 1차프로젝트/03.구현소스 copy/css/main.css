@@ -9,11 +9,6 @@
 @import url(./grid_12_flex.css);
 
 /* 공통 */
-.cont{
-  width: 100%;
-  height: 100%;
-
-}
 /* 메인 공용 원 */
 .cir{
   position: absolute;
@@ -28,6 +23,7 @@
 
   border-radius: 50%;
 }
+
 
 /* 메인 좌우 넘기기 버튼 */
 .pass-btn {
@@ -64,6 +60,8 @@ body{
 }
 
 #main-area {
+  width: 100%;
+  height: 100%;
   background-color: #e2bebe;
 }
 
@@ -123,7 +121,7 @@ body{
 
 /* 메인 움직이는 그림 */
 .main-img-part{
-  /* position: relative; */
+  position: relative;
   top: 50px;
   right: 0%;
 
@@ -164,9 +162,9 @@ body{
 /************************************* 뮤지컬영역 *************************************/
 #msc-area {
   /* 부모자격 - 뮤지컬 리스트 */
-  /* position: relative; */
-  /* width: 100%;
-  height: 100%; */
+  position: relative;
+  width: 100%;
+  height: 100%;
   background-color: #bed8e2;
 }
 .msc-area {
@@ -189,8 +187,6 @@ body{
   font-family: "Black Han Sans", sans-serif;
   font-weight: normal;
   z-index: 1;
-
-
 }
 
 /* 포스터 리스트 영역 - msc-list */
@@ -235,9 +231,9 @@ body{
 /************************************* 전시회영역 *************************************/
 
 #exh-area {
-  /* position: relative; */
-  /* width: 100%;
-  height: 100%; */
+  position: relative;
+  width: 100%;
+  height: 100%;
   background-color: #bee2c6;
 }
 
@@ -275,10 +271,7 @@ body{
 
   /* overflow: auto; */
 }
-/* .exh-list::-webkit-scrollbar {
-  display: none;
 
-} */
 .exh-list li {
   display: inline-block;
   /* 제목및 장소 말줄임표를 위한 가로 크기 정렬 후에 맞추던지 다른걸로 바꾸던지 */

@@ -98,6 +98,7 @@ body{
 
 /************************************* 메인영역 *************************************/
 #main-area {
+  position: relative;
   background-color: #e2bebe;
 }
 
@@ -155,15 +156,75 @@ body{
   
 }
 
+/* 메인 움직이는 그림 */
+.main-img-part{
+  position: relative;
+  top: 50px;
+  right: -18%;
+
+  display: flex;
+
+  /* animation: main-img-opty 3s ease-in-out 5s infinite alternate; */
+}
+
+.main-img-part li:nth-child(2){
+  margin-top: 50px;
+}
+.main-img-part ul:nth-child(2){
+  margin-top: 150px;
+  margin-left: 20%;
+}
+.main-img-part img{
+  width: 300px;
+}
+
+/* .main-img-1 {
+  opacity: 0;
+  right: -50px;
+}
+.main-img-2 {
+  opacity: 0;
+} */
+
+/* @keyframes main-img-opty {
+  to{
+    right: 10%;
+    opacity: 1;
+  }
+  
+} */
 /************************************* 뮤지컬영역 *************************************/
 #msc-area {
   /* 부모자격 - 뮤지컬 리스트 */
-  /* position: relative; */
+  position: relative;
   /* width: 100%;
   height: 100%; */
   background-color: #bed8e2;
+
 }
 
+.msc-area {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  max-width: 1400px;
+  margin: 0 auto;
+}
+
+.msc-area  h1 {
+  text-align: center;
+  font-size: 6vw;
+  background-image: linear-gradient(to bottom, #c373ff, #650ba7);
+  color: transparent;
+  background-clip: text;
+
+  margin-bottom: 20px;
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: normal;
+  z-index: 1;
+}
 
 
 /************************************* 전시회영역 *************************************/
