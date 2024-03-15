@@ -54,6 +54,9 @@
     transform: translateX(-50%);
 
     margin-bottom: 25px;
+    
+    font-family: "Black Han Sans", sans-serif;
+    color: white;
 }
 .more-menu-area ol{
     position: absolute;
