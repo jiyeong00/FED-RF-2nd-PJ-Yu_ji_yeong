@@ -2,7 +2,7 @@
 
 const wrap = document.getElementsByClassName('wrap')[0]; // 보일 영역
 const container = document.querySelectorAll('.cont');
-let page = 0; // 영역 포지션 초기값
+let page = 1; // 영역 포지션 초기값
 const lastPage = container.length; // 마지막 페이지
 const winW=window.innerHeight;
 
@@ -18,15 +18,22 @@ window.addEventListener('wheel',(e)=>{
     prot = 1;
     setTimeout(()=>prot=0,500);
 
+    if(page <= lastPage ){
+
+    }else if(page > lastPage){
+        
+    }
     if(e.deltaY > 0){
-       window.scrollTo(0,winW*page);
        page++;
-       if(page>=3) page=2;
-    
+       window.scrollTo(0,winW*page);
+       console.log("+페이지",winW,page);
+       //    if(page>=3) page=2;
+       
     }else if(e.deltaY < 0){
         window.scrollTo(0,-(winW*page));
-        page=0;
-        if(page==-1) page=0;
+        page-=2;
+        console.log("-페이지",winW,page);
+        // if(page==-1) page=0;
     }
 
 
