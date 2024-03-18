@@ -28,6 +28,12 @@
 */
 
 /********* 공통 클래스 *********/
+/* 배경색 */
+body{
+    background-color: #0f0f10;
+  }
+
+  
 /* 스크롤 애니메이션 */
 html{
     scroll-behavior: smooth;

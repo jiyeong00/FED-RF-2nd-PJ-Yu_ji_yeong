@@ -22,10 +22,13 @@
   .more-change-menu{
     position: fixed;
     top: 40%;
-    right: 50px;
+    /* right: 10%; */
+    right: max(0%, 10%);
+    z-index: 2;
   }
   .more-change-menu li{
-    padding: 10px;
+    padding-bottom: 15px;
+    box-sizing: border-box;
   }
   .more-change-menu button{
     padding: 10px;
@@ -34,7 +37,7 @@
 
 /********************************* .5 공통영역 *********************************/
 .more-area{
-    padding: 0 110px;
+    padding: 0 10%;
 }
 
 .more-list-area a{
@@ -72,7 +75,7 @@
     white-space: nowrap;
 
     /* outline: 2px dashed #222; */
-    font-size: min(30px,max(20px,1.6vw));
+    font-size: min(30px,max(20px,2vw));
 }
 /* .more-menu-area li{
     margin: 0 30px;
@@ -81,16 +84,32 @@
 
 /********************************* 3. 리스트영역 *********************************/
 .more-list-area{
-    position: relative;
+    /* position: relative;
     height: auto;
-    display: flex;
-    left: 50%;
+    left: 50%; */
     /* 중앙정렬 */
-    transform: translateX(-50%);
+    /* transform: translateX(-50%); */
+
+    /* min-width: 1000px; */
+
 }
 
-.more-list-area li{
-    margin: 10px;
+.more-list-area ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px 20px;
+  /* justify-content: center; */
+
+}
+
+
+/* .more-list-area li{
+  margin: 10px;
+} */
+.more-list-area img{
+  /* width: 100%; */
+  height: auto;
+  width:min(200px,max(300px,5vw));
 }
 
 
