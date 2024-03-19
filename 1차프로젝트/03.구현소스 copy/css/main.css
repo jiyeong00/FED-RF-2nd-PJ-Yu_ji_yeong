@@ -55,12 +55,11 @@
 /* 공통 CSS : common.css에 넣음 */
 
 /************************************* 메인영역 *************************************/
-
-#main-area {
-  width: 100%;
-  height: 100%;
-  /* background-color: #e2bebe; */
+.cont{
+  width: auto;
+  height: 100vh;
 }
+
 
 .main-tit-area{
   height: 100%;
@@ -160,9 +159,6 @@
 #msc-area {
   /* 부모자격 - 뮤지컬 리스트 */
   position: relative;
-  width: 100%;
-  height: 100%;
-  /* background-color: #bed8e2; */
 }
 .msc-area {
   display: flex;
@@ -229,9 +225,6 @@
 
 #exh-area {
   position: relative;
-  width: 100%;
-  height: 100%;
-  /* background-color: #bee2c6; */
 }
 
 .exh-area {
