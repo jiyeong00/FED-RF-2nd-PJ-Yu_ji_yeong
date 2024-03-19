@@ -1,4 +1,4 @@
-@charset "utf-8";
+  @charset "utf-8";
 /* 더보기 뮤지컬 css - more_exh.css */
 
 /* 리셋, 코아, 커먼 공통 외부CSS 합치기 */
@@ -22,13 +22,37 @@
   .more-change-menu{
     position: fixed;
     top: 40%;
-    right: 50px;
+    /* right: 10%; */
+    right: max(0%, 10%);
+    z-index: 2;
   }
   .more-change-menu li{
-    padding: 10px;
+    padding-bottom: 15px;
   }
-  .more-change-menu button{
+
+  
+  .more-change-menu li button{
     padding: 10px;
+
+    color: #ffffff9e;
+    font-size: 27px;
+    
+    background-color:#c8c8ce9e;
+    
+    border-radius: 50%;
+    border: none;
+
+    cursor: pointer;
+  }
+  
+  .more-change-menu li:nth-child(2) button{
+    color: white;
+    background-color:#b559fb;
+  }
+
+  .more-change-menu button:hover{
+    color: white;
+    background-color: #b559fb;
   }
 
 
