@@ -1,128 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>더보기 뮤지컬 페이지</title>
-    <link rel="stylesheet" href="./css/more copy.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link rel="stylesheet" href="./css/more copy.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css"
+    />
 
-    </style>
-</head>
-<body>
+    <script src="./JS/more.js" defer></script>
+  </head>
+  <body>
     <!-- 1. 상단영역 -->
     <div id="top-area">
-        <header class="top-area">
-          <!-- <h2>상단 영역- 메뉴넣을</h2> -->
-          <nav class="menu">
-            <ul>
-                <li>
-                  <a href="#main-area" onclick="location.href='index.html'">HOME</a>
-                </li>
-            </ul>
-          </nav>
-        </header>
-
-        <a href="#"  class="moreMsc-top-btn top-btn">
-            <img src="./img/btn_page_top.png" alt="탑버튼">
-        </a>
-
-
-        <nav class="more-change-menu">
-            <ul>
-                <li>
-                    <button class="change-menu-msc" onclick="location.href='more_msc.html'"> 
-                        <i class="fa-solid fa-masks-theater"></i> 
-                    </button>
-                </li>
-                <li>
-                    <button class="change-menu-exh" onclick="location.href='more_exh.html'">
-                        <i class="fa-solid fa-panorama"></i>
-                    </button>
-                </li>
-            </ul>
+      <header class="top-area">
+        <!-- <h2>상단 영역- 메뉴넣을</h2> -->
+        <nav class="menu">
+          <ul>
+            <li>
+              <a href="#main-area" onclick="location.href='index.html'">HOME</a>
+            </li>
+          </ul>
         </nav>
-      </div>
+      </header>
 
+      <a href="#" class="moreMsc-top-btn top-btn">
+        <img src="./img/btn_page_top.png" alt="탑버튼" />
+      </a>
+
+      <nav class="more-change-menu">
+        <ul>
+          <li>
+            <button
+              class="change-menu-msc"
+              onclick="location.href='more_msc.html'"
+            >
+              <i class="fa-solid fa-masks-theater"></i>
+            </button>
+          </li>
+          <li>
+            <button
+              class="change-menu-exh"
+              onclick="location.href='more_exh.html'"
+            >
+              <i class="fa-solid fa-panorama"></i>
+            </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
 
     <div class="more-area">
+      <!-- 2. 메뉴영역 -->
+      <div id="more-menu-area">
+        <section class="more-menu-area part">
+          <ol>
+            <li>전체</li>
+            <li>요즘HOT</li>
+            <li>라이선스</li>
+            <li>창작뮤지컬</li>
+            <li>넌버벌퍼포먼스</li>
+          </ol>
+        </section>
+      </div>
 
-        <!-- 2. 메뉴영역 -->
-        <div id="more-menu-area">
-            <section class="more-menu-area part">
-                <ol>
-                    <li>
-                        전체
-                    </li>
-                    <li>
-                        요즘HOT
-                    </li>
-                    <li>
-                        라이선스
-                    </li>
-                    <li>
-                        창작뮤지컬
-                    </li>
-                    <li>
-                        넌버벌퍼포먼스
-                    </li>
-                </ol>
-            </section>
-        </div>
-        <!-- 3. 리스트영역 -->
-        <div id="more-list-area">
-            <section class="more-list-area part">
-                    <ul>
-                        <li>
+      <input type="search" class="line" name="q" />
 
-                            <div class="card-wrap">
-                                <div class="msc-list-img card">
-                                    <img src="./img/poster_msc_img_1.jpg" alt="레미제라블포스터">
-                                </div>
-                                <div class="msc-list-info card">
-                                    <strong>사랑, 용기, 희망에 대한 대서사시</strong>
-                                    <p>
-                                        기구한 운명의 청년 장발장이 빵을 훔친 죄로 19년을 감옥에서 지낸 후, 가석방되지만 전과자에 대한 배척과 멸시에서 벗어나지 못한다.
-                                        <br>
-                                        우연한 기회에 딘뉴 주교의 고귀한 사랑을 경험하게 된 그는 새롭게 인생을 시작하게 되고, 시장으로 출세하게 된다.
-                                    </p>
-                                </div>
+      <!-- 3. 리스트영역 -->
+      <div id="more-list-area">
+        <section class="more-list-area part">
+          <ul>
+            <li>
+              <div class="card-wrap">
+                <img
+                  class="card"
+                  src="./img/poster_msc_img_1.jpg"
+                  alt="레미제라블포스터"
+                />
+                <div class="msc-list-info card">
+                  <strong>사랑, 용기, 희망에 대한 대서사시</strong>
+                  <p>
+                    기구한 운명의 청년 장발장이 빵을 훔친 죄로 19년을 감옥에서
+                    지낸 후, 가석방되지만 전과자에 대한 배척과 멸시에서 벗어나지
+                    못한다.
+                    <br />
+                    우연한 기회에 딘뉴 주교의 고귀한 사랑을 경험하게 된 그는
+                    새롭게 인생을 시작하게 되고, 시장으로 출세하게 된다.
+                  </p>
+                </div>
+              </div>
+            </li>
 
-                            </div>
+            <li>
+              <div class="card-wrap ">
+                <img class ="card" src="./img/poster_msc_img_2.jpg" alt="빨래포스터" />
 
-                        </li>
-                        <li>
-                            <div class="card-wrap">
-                                <img src="./img/poster_msc_img_2.jpg" alt="빨래포스터">
-                                <div class="msc-list-info card">
-                                    <strong>당신의 따듯한 '이웃'이 되어 줄 이야기</strong>
-                                    <p>
-                                        빨래처럼 흔들리다 떨어질 우리의 일상이지만 당신의 젖은 마음 빨랫줄에 널어요.
-                                        <br>
-                                        바람이 우릴 말려 줄 거예요.
-                                        <br>
-                                        당신의 아픈 마음 꾹 짜서 널어요.
-                                        <br><br>
-                                        - 뮤지컬 "빨래" : 서울살이 몇 핸가요? Reprise
-                                    </p>
-                                </div>
-                            </div>
-                        </li>
-                        <li>
-                            <img src="./img/poster_msc_img_4.jpg" alt="라스트파이브이어스포스터">
-                        </li>
-                        <li>
-                            <img src="./img/poster_msc_img_5.jpg" alt="너를위한글자포스터">
-                        </li>
-        
-                        <li>
-                            <img src="./img/poster_msc_img_8.jpg" alt="오즈포스터">
-                        </li>
-                    </ul>
-            </section>
-        </div>
+                <div class="msc-list-info card">
+                  <strong>당신의 따듯한 '이웃'이 되어 줄 이야기</strong>
+                  <p>
+                    빨래처럼 흔들리다 떨어질 우리의 일상이지만 당신의 젖은 마음
+                    빨랫줄에 널어요.
+                    <br />
+                    바람이 우릴 말려 줄 거예요.
+                    <br />
+                    당신의 아픈 마음 꾹 짜서 널어요.
+                    <br /><br />
+                    - 뮤지컬 "빨래" : 서울살이 몇 핸가요? Reprise
+                  </p>
+                </div>
+              </div>
 
+            </li>
+
+            <li>
+                <div class="card-wrap">
+                    <img
+                    class="card"
+                    src="./img/poster_msc_img_4.jpg"
+                    alt="라스트파이브이어스포스터"
+                  />
+                    <div class="msc-list-info card">
+                      <strong>사랑과 이별에 대한 5년간의 이야기</strong>
+                      <p>
+                        남녀의 시간이 서로 정반대로 흐르며 교차하는 독특한 구성
+                        <br />
+                        그래서 그들의 사랑과 이별은 더 마음 아프다
+                        <br />
+                        영원할 것 같은 사랑은 시작되지만, 종국엔 이별에 이르게 되는 과정을 섬세하게 그린
+                        <br /><br />
+                        <span>"사랑에 대한 담담하고 솔직한 고백"</span>
+                      </p>
+                    </div>
+                  </div>
+
+            </li>
+            <li>
+              <img src="./img/poster_msc_img_5.jpg" alt="너를위한글자포스터" />
+            </li>
+
+            <li>
+              <img src="./img/poster_msc_img_8.jpg" alt="오즈포스터" />
+            </li>
+          </ul>
+        </section>
+      </div>
     </div>
-    
-</body>
+  </body>
 </html>
