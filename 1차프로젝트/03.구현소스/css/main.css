@@ -175,7 +175,8 @@
 
 /* 포스터 리스트 영역 - msc-list */
 .msc-list {
-  /* position: relative; */
+  position: relative;
+  left: 0;
   transform: translateX(899px);
 
   display: flex;

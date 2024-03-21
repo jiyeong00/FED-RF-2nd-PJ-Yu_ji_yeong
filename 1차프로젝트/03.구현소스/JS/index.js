@@ -86,10 +86,28 @@ let nbtn = document.querySelector('#msc-right-pass-btn');
 
 console.log(slideImg,cntSimg);
 
+let sldSeq = 0;
+
 pbtn.onclick=()=>{
-  console.log("페이지 전 넘기기")
-  slides.innerHTML+='transition:360px';
-  console.log("페이지 전 넘기기",slides.innerHTML);
+  let list = slides.querySelectorAll('li');
+  // console.log("페이지 전 넘기기")
+  // slides.innerHTML+='transition:360px';
+  // console.log("페이지 전 넘기기",slides.innerHTML);
+  sldSeq++;
+console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
+  if(sldSeq > 3){
+    slides.appendChild(list[0]);
+    slides.style.left = -360*2+'px';
+    slides.style.transition = 'none';
+    setTimeout(() => {
+      slides.style.left = -360*3+'px';
+      slides.style.transition = '1s ease-out';
+    }, 0);
+  }
+  else{
+
+    slides.style.left = -360*sldSeq+'px';
+  }
   
 };
 
