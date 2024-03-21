@@ -10,7 +10,9 @@ console.log(lastPage);
 
 let prot = 0;
 
-window.addEventListener("wheel",(e) => {
+window.addEventListener(
+  "wheel",
+  (e) => {
     e.preventDefault();
 
     // 광휠 막기
@@ -25,13 +27,13 @@ window.addEventListener("wheel",(e) => {
     // }
     console.log("기존 페이지", winW, page);
     if (e.deltaY > 0) {
-      if (page == 1 ) {
-          page++;
-          window.scrollTo(0, winW * 1);
+      if (page == 1) {
+        page++;
+        window.scrollTo(0, winW * 1);
         console.log("+페이지", winW, page);
       } else if (page == 2) {
-          page++;
-          window.scrollTo(0, winW * 2);
+        page++;
+        window.scrollTo(0, winW * 2);
         console.log("+페이지", winW, page);
       } else if (page == 3) {
         window.scrollTo(0, winW * 3);
@@ -42,12 +44,12 @@ window.addEventListener("wheel",(e) => {
         window.scrollTo(0, winW * 0);
         console.log("+페이지", winW, page);
       } else if (page == 2) {
-          page--;
-          window.scrollTo(0, winW * 0);
+        page--;
+        window.scrollTo(0, winW * 0);
         console.log("+페이지", winW, page);
       } else if (page == 3) {
-          window.scrollTo(0, winW * 1);
-          page--;
+        window.scrollTo(0, winW * 1);
+        page--;
         console.log("+페이지", winW, page);
       }
     }
@@ -67,4 +69,36 @@ window.addEventListener("wheel",(e) => {
 
     console.log(e.deltaY);
     // wrap.style.top = page * -100 + 'vh';
-  },{ passive: false }); // 디폴트 기능 제거 - 스크롤
+  },
+  { passive: false }
+); // 디폴트 기능 제거 - 스크롤
+
+/////////////////////////////////////////////////////////////////////////////////
+
+// 뮤지컬 버튼 눌럿을 때 슬라이드
+
+let slides = document.querySelector(".msc-list");
+let slideImg = document.querySelectorAll(".msc-list li");
+const cntSimg = slideImg.length;
+
+let pbtn = document.querySelector('#msc-left-pass-btn');
+let nbtn = document.querySelector('#msc-right-pass-btn');
+
+console.log(slideImg,cntSimg);
+
+pbtn.onclick=()=>{
+  console.log("페이지 전 넘기기")
+  slides.innerHTML+='transition:360px';
+  console.log("페이지 전 넘기기",slides.innerHTML);
+  
+};
+
+nbtn.onclick=()=>{
+  console.log("페이지 후 넘기기")
+
+};
+
+// for (let i = 0; i < cntSimg; i++) {
+
+//   // const element = array[i]; 
+// }

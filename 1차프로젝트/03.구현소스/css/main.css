@@ -10,7 +10,7 @@
 
 /* 공통 */
 /* 메인 공용 원 */
-.cir{
+.cir {
   position: absolute;
   /* 중앙정렬 */
   top: 50%;
@@ -24,44 +24,39 @@
   border-radius: 50%;
 }
 
-
 /* 메인 좌우 넘기기 버튼 */
 .pass-btn {
   display: flex;
   justify-content: center;
   margin-top: 28px;
-  gap : 0 20px;
-
+  gap: 0 20px;
 }
-#msc-more-btn,#exh-more-btn{
+#msc-more-btn,
+#exh-more-btn {
   font-size: 2rem;
   font-family: "Noto Sans KR", sans-serif;
   margin-bottom: 4px;
 }
-.main-btn{
+.main-btn {
   font-size: 4rem;
   color: #c8c8ce;
   background-color: #ffffff00;
   border: none;
 }
-.main-btn:hover{
+.main-btn:hover {
   color: #b559fb;
-}
-.main-btn:nth-child(2):hover{
-  text-decoration: underline;
 }
 
 /************************************* 상단메뉴 *************************************/
 /* 공통 CSS : common.css에 넣음 */
 
 /************************************* 메인영역 *************************************/
-.cont{
+.cont {
   width: auto;
   height: 100vh;
 }
 
-
-.main-tit-area{
+.main-tit-area {
   height: 100%;
   z-index: 1;
 
@@ -71,7 +66,6 @@
 
   padding: 0 100px;
   float: left;
-  
 }
 
 /* 메인 타이틀 */
@@ -82,13 +76,12 @@
 
   color: #b559fb;
   /* font-size: 74px; */
-  font-size: max(min(10vw,50px),6vw);
+  font-size: max(min(10vw, 50px), 6vw);
   font-family: "Black Han Sans", sans-serif;
 
   text-shadow: 0 0 10px #b559fb;
 
   animation: main-tit-ani 2s ease-in-out forwards;
-
 }
 /* 서브타이틀 */
 .main-tit dd {
@@ -97,26 +90,23 @@
   opacity: 0;
 
   color: #a93bfa;
-  font-size: max(min(20px),1.5vw);
+  font-size: max(min(20px), 1.5vw);
   font-weight: bold;
   letter-spacing: 1.2rem;
   font-family: "Noto Sans KR", sans-serif;
 
-  animation: main-tit-ani 2s ease-in-out .5s forwards;
-
+  animation: main-tit-ani 2s ease-in-out 0.5s forwards;
 }
 
 @keyframes main-tit-ani {
-  to{
+  to {
     left: 10%;
     opacity: 1;
   }
-  
 }
 
-
 /* 메인 움직이는 그림 */
-.main-img-part{
+.main-img-part {
   position: relative;
   top: 50px;
   right: 0%;
@@ -126,14 +116,14 @@
   animation: main-img-opty 2.5s ease-in-out 1s forwards;
 }
 
-.main-img-part li:nth-child(2){
+.main-img-part li:nth-child(2) {
   margin-top: 50px;
 }
-.main-img-part ul:nth-child(2){
+.main-img-part ul:nth-child(2) {
   margin-top: 150px;
   margin-left: 20%;
 }
-.main-img-part img{
+.main-img-part img {
   width: 300px;
 }
 
@@ -146,14 +136,11 @@
 }
 
 @keyframes main-img-opty {
-  to{
+  to {
     right: -18%;
     opacity: 1;
   }
-  
 }
-
-
 
 /************************************* 뮤지컬영역 *************************************/
 #msc-area {
@@ -164,12 +151,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.msc-area  h1 {
+.msc-area h1 {
   text-align: center;
   font-size: 6vw;
   background-image: linear-gradient(to bottom, #c373ff, #650ba7);
@@ -182,27 +169,47 @@
   z-index: 1;
 }
 
+.msc-area .slideShow{
+  overflow: hidden;
+}
+
 /* 포스터 리스트 영역 - msc-list */
 .msc-list {
+  /* position: relative; */
+  transform: translateX(899px);
+
   display: flex;
   justify-content: space-evenly;
+
   align-items: center;
   font-family: "Noto Sans KR", sans-serif;
   z-index: 1;
 
-  /* overflow: auto; */
-}
-/* .msc-list::-webkit-scrollbar {
-  display: none;
+  transition: 1s ease-out;
 
-} */
+  /* transform: translateX(539px); */
+  /* transform: translateX(64.2%); */
+  /* transform: translateX(38.2%); */
+
+/* animation:msc-list-ani 5s linear infinite; */
+
+}
+
 .msc-list li {
-  display: inline-block;
-  /* 제목및 장소 말줄임표를 위한 가로 크기 정렬 후에 맞추던지 다른걸로 바꾸던지 */
-  max-width: 300px;
+  position: relative;
+
+
+  /* max-width: 300px; */
   text-align: center;
   font-size: 17px;
   margin: 0 30px;
+
+}
+
+@keyframes msc-list-ani {
+  to {
+    transform: translateX(-200%);
+  }
 }
 
 #msc-area dt {
@@ -210,7 +217,8 @@
   color: #c373ff;
 }
 /* 메인 포스터 제목 및 장소 말줄임표 */
-.msc-area dt,dd {
+.msc-area dt,
+dd {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -218,8 +226,6 @@
 
   color: white;
 }
-
-
 
 /************************************* 전시회영역 *************************************/
 
@@ -231,12 +237,12 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  
+
   max-width: 1400px;
   margin: 0 auto;
 }
 
-.exh-area  h1 {
+.exh-area h1 {
   text-align: center;
   font-size: 6vw;
   background-image: linear-gradient(to bottom, #c373ff, #650ba7);
@@ -247,8 +253,6 @@
   font-family: "Black Han Sans", sans-serif;
   font-weight: normal;
   z-index: 1;
-
-
 }
 
 /* 포스터 리스트 영역 - exh-list */
@@ -276,7 +280,8 @@
   color: #c373ff;
 }
 /* 메인 포스터 제목 및 장소 말줄임표 */
-.exh-area dt,dd {
+.exh-area dt,
+dd {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
