@@ -114,18 +114,23 @@ nbtn.onclick=()=>{
 // console.log('리스트 : ',list[sldSeq+2],list[sldSeq+1]);
 // list[sldSeq+2].style.opacity='0.5';
 
-if(sldSeq > 2){
-    slides.appendChild(list[0]);
-    // console.log(slides.appendChild(list[0]));
-    slides.style.left = -360*1+'px';
-    slides.style.transition = 'none';
-    setTimeout(() => {
-      slides.style.left = -360*2+'px';
-      slides.style.transition = '1s ease-out';
-    }, 0);
-  }else{
-    slides.style.left = -360*sldSeq+'px';
-  }
+let newList =  slides.querySelectorAll('li');
+
+// if(sldSeq > 2){
+  slides.style.left = '-360px';
+  slides.style.transition = '1s ease-out';
+
+  for(let x of newList) x.classList.remove('on');
+  newList[3].classList.add('on');
+  setTimeout(() => {
+      slides.appendChild(list[0]);
+      // console.log(slides.appendChild(list[0]));
+      slides.style.left = '0px';
+      slides.style.transition = 'none';
+    }, 1000);
+  // }else{
+  //   slides.style.left = -360*sldSeq+'px';
+  // }
   // list[sldSeq+1].style.opacity='1';
   
   
