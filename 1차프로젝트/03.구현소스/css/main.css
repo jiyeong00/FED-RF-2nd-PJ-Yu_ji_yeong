@@ -177,7 +177,8 @@
 .msc-list {
   position: relative;
   left: 0;
-  transform: translateX(899px);
+  transform: translateX(179px);
+  /* transform: translateX(899px); */
 
   display: flex;
   justify-content: space-evenly;

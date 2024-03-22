@@ -89,13 +89,18 @@ console.log(slideImg,cntSimg);
 let sldSeq = 0;
 
 pbtn.onclick=()=>{
+  console.log("페이지 전 넘기기")
+
+};
+
+nbtn.onclick=()=>{
   let list = slides.querySelectorAll('li');
-  // console.log("페이지 전 넘기기")
+  // console.log("페이지 후 넘기기")
   // slides.innerHTML+='transition:360px';
-  // console.log("페이지 전 넘기기",slides.innerHTML);
+  // console.log("페이지 후 넘기기",slides.innerHTML);
   sldSeq++;
 console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
-  if(sldSeq > 3){
+  if(sldSeq > 2){
     slides.appendChild(list[0]);
     slides.style.left = -360*2+'px';
     slides.style.transition = 'none';
@@ -103,18 +108,13 @@ console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
       slides.style.left = -360*3+'px';
       slides.style.transition = '1s ease-out';
     }, 0);
-  }
-  else{
-
+  }else{
     slides.style.left = -360*sldSeq+'px';
   }
   
-};
+};//click이벤트
 
-nbtn.onclick=()=>{
-  console.log("페이지 후 넘기기")
 
-};
 
 // for (let i = 0; i < cntSimg; i++) {
 
