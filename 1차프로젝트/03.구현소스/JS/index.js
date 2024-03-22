@@ -92,11 +92,46 @@ let sldSeq = 0;
 let listSeq=0;
 
 pbtn.onclick=()=>{
+  
+  if(prot) return;
+  prot=true;
+  setTimeout(() => {
+    prot=false;
+  }, 600);
+  
   console.log("페이지 전 넘기기")
 
+  let list = slides.querySelectorAll('li');
+
+  sldSeq--;
+  listSeq+=2;
+  
+  console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
+
+
+let newList =  slides.querySelectorAll('li');
+
+
+  slides.style.left = '310px';
+  slides.style.transition = 'none';
+  slides.style.transition = '1s ease-out';
+
+  // on클래스 삽입
+  for(let x of newList) x.classList.remove('on');
+  newList[1].classList.add('on');
+
+  setTimeout(() => {
+      slides.appendChild(list[list.length-2]);
+      // console.log(slides.appendChild(list[0]));
+      slides.style.left = '0px';
+      slides.style.transition = 'none';
+    }, 1000);
+
+  
 };
 
 nbtn.onclick=()=>{
+  // 광클금지
   if(prot) return;
   prot=true;
   setTimeout(() => {
@@ -104,60 +139,36 @@ nbtn.onclick=()=>{
   }, 600);
 
   let list = slides.querySelectorAll('li');
-  // console.log("페이지 후 넘기기")
-  // slides.innerHTML+='transition:360px';
-  // console.log("페이지 후 넘기기",slides.innerHTML);
+
   sldSeq++;
   listSeq+=2;
   
   console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
-// console.log('리스트 : ',list[sldSeq+2],list[sldSeq+1]);
-// list[sldSeq+2].style.opacity='0.5';
+
 
 let newList =  slides.querySelectorAll('li');
 
-// if(sldSeq > 2){
-  slides.style.left = '-360px';
+
+  slides.style.left = '-310px';
+  slides.style.transition = 'none';
   slides.style.transition = '1s ease-out';
 
+  // on클래스 삽입
   for(let x of newList) x.classList.remove('on');
   newList[3].classList.add('on');
+
   setTimeout(() => {
       slides.appendChild(list[0]);
       // console.log(slides.appendChild(list[0]));
       slides.style.left = '0px';
       slides.style.transition = 'none';
     }, 1000);
-  // }else{
-  //   slides.style.left = -360*sldSeq+'px';
-  // }
-  // list[sldSeq+1].style.opacity='1';
+
   
   
   
 };//click이벤트
 
-// nbtn.onclick=()=>{
-//   let list = slides.querySelectorAll('li');
-//   // console.log("페이지 후 넘기기")
-//   // slides.innerHTML+='transition:360px';
-//   // console.log("페이지 후 넘기기",slides.innerHTML);
-//   sldSeq++;
-// console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
-//   if(sldSeq > 3){
-//     slides.appendChild(list[0]);
-//     // console.log(slides.appendChild(list[0]));
-//     slides.style.left = -360*2+'px';
-//     slides.style.transition = 'none';
-//     setTimeout(() => {
-//       slides.style.left = -360*3+'px';
-//       slides.style.transition = '1s ease-out';
-//     }, 0);
-//   }else{
-//     slides.style.left = -360*sldSeq+'px';
-//   }
-  
-// };//click이벤트
 
 
 

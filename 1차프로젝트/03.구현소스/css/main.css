@@ -13,7 +13,7 @@
 .cir {
   position: absolute;
   /* 중앙정렬 */
-  top: 50%;
+  top: 55%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -28,7 +28,7 @@
 .pass-btn {
   display: flex;
   justify-content: center;
-  margin-top: 28px;
+  margin-top: 47px;
   gap: 0 20px;
 }
 #msc-more-btn,
@@ -108,7 +108,7 @@
 /* 메인 움직이는 그림 */
 .main-img-part {
   position: relative;
-  top: 50px;
+  margin-top: 47px;
   right: 0%;
 
   display: flex;
@@ -117,10 +117,10 @@
 }
 
 .main-img-part li:nth-child(2) {
-  margin-top: 50px;
+  margin-top: 47px;
 }
 .main-img-part ul:nth-child(2) {
-  margin-top: 150px;
+  margin-top: 47px;
   margin-left: 20%;
 }
 .main-img-part img {
@@ -153,24 +153,25 @@
   justify-content: center;
 
   max-width: 1400px;
+  height: 1000px;
   margin: 0 auto;
 }
 
 .msc-area h1 {
   text-align: center;
-  font-size: 6vw;
+  font-size: max(50px, 6vw);
   background-image: linear-gradient(to bottom, #c373ff, #650ba7);
   color: transparent;
   background-clip: text;
 
-  margin-bottom: 20px;
   font-family: "Black Han Sans", sans-serif;
   font-weight: normal;
   z-index: 1;
 }
 
-.msc-area .slideShow{
+.msc-area .slideShow {
   padding: 50px 0;
+  height: 47%;
   overflow: hidden;
 }
 
@@ -178,47 +179,37 @@
 .msc-list {
   position: relative;
   left: 0px;
-  transform: translateX(179px);
-  /* transform: translateX(899px); */
+  transform: translateX(152px);
 
   display: flex;
   justify-content: space-evenly;
 
-  align-items: center;
   font-family: "Noto Sans KR", sans-serif;
   z-index: 1;
 
   transition: 1s ease-out;
-
-  /* transform: translateX(539px); */
-  /* transform: translateX(64.2%); */
-  /* transform: translateX(38.2%); */
-
-/* animation:msc-list-ani 5s linear infinite; */
-
 }
 
 .msc-list li {
   position: relative;
 
-
-  /* max-width: 300px; */
+  width: 100%;
   text-align: center;
   font-size: 17px;
   margin: 0 30px;
   transition: transform 1s;
-
 }
-.msc-list li.on{
+.msc-list li.on {
   transform: scale(1.2);
 }
 
-@keyframes msc-list-ani {
-  to {
-    transform: translateX(-200%);
-  }
+.msc-list img {
+  width: 250px;
 }
 
+
+
+/* 이미지 리스트 제목 및 장소 */
 #msc-area dt {
   font-weight: bold;
   color: #c373ff;
