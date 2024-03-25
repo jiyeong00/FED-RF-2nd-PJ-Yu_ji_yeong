@@ -25,7 +25,22 @@ window.addEventListener(
     // }else if(page > lastPage){
 
     // }
-    console.log("기존 페이지", winW, page);
+
+    var st = document.querySelector("html").scrollTop;
+
+
+
+    console.log("기존 페이지", winW, page, "스크롤",st);
+    // 네비게이션이동 시 page 꼬이는거 푸는 것
+    if (st==0){
+      page=1;
+    }else if(st==919){
+      page=2;
+    }
+    else if(st==1838){
+      page=3;
+    }
+
     if (e.deltaY > 0) {
       if (page == 1) {
         page++;
@@ -81,98 +96,81 @@ let slides = document.querySelector(".msc-list");
 let slideImg = document.querySelectorAll(".msc-list li");
 const cntSimg = slideImg.length;
 
-let pbtn = document.querySelector('#msc-left-pass-btn');
-let nbtn = document.querySelector('#msc-right-pass-btn');
+let pbtn = document.querySelector("#msc-left-pass-btn");
+let nbtn = document.querySelector("#msc-right-pass-btn");
 
-
-
-console.log(slideImg,cntSimg);
+console.log(slideImg, cntSimg);
 
 let sldSeq = 0;
-let listSeq=0;
+let listSeq = 0;
 
-pbtn.onclick=()=>{
-  
-  if(prot) return;
-  prot=true;
+pbtn.onclick = () => {
+  if (prot) return;
+  prot = true;
   setTimeout(() => {
-    prot=false;
+    prot = false;
   }, 600);
-  
-  console.log("페이지 전 넘기기")
 
-  let list = slides.querySelectorAll('li');
+  console.log("페이지 전 넘기기");
+
+  let list = slides.querySelectorAll("li");
 
   sldSeq--;
-  listSeq+=2;
-  
-  console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
 
+  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth);
 
-let newList =  slides.querySelectorAll('li');
+  let newList = slides.querySelectorAll("li");
 
-
-  slides.style.left = '310px';
-  slides.style.transition = 'none';
-  slides.style.transition = '1s ease-out';
+  slides.style.left = "310px";
+  slides.style.transition = "none";
+  slides.style.transition = "1s ease-out";
 
   // on클래스 삽입
-  for(let x of newList) x.classList.remove('on');
-  newList[1].classList.add('on');
+  for (let x of newList) x.classList.remove("on");
+  newList[1].classList.add("on");
 
   setTimeout(() => {
-      slides.appendChild(list[list.length-2]);
-      // console.log(slides.appendChild(list[0]));
-      slides.style.left = '0px';
-      slides.style.transition = 'none';
-    }, 1000);
+    slides.prepend(list[list.length - 1]);
+    // console.log(slides.appendChild(list[0]));
+    slides.style.left = "0px";
+    slides.style.transition = "none";
+  }, 1000);
+}; //이전 클릭이벤트
 
-  
-};
-
-nbtn.onclick=()=>{
+nbtn.onclick = () => {
   // 광클금지
-  if(prot) return;
-  prot=true;
+  if (prot) return;
+  prot = true;
   setTimeout(() => {
-      prot=false;
+    prot = false;
   }, 600);
 
-  let list = slides.querySelectorAll('li');
+  let list = slides.querySelectorAll("li");
 
   sldSeq++;
-  listSeq+=2;
-  
-  console.log('sldSeq:',sldSeq,list,list[0].offsetWidth);
+  listSeq += 2;
 
+  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth);
 
-let newList =  slides.querySelectorAll('li');
+  let newList = slides.querySelectorAll("li");
 
-
-  slides.style.left = '-310px';
-  slides.style.transition = 'none';
-  slides.style.transition = '1s ease-out';
+  slides.style.left = "-310px";
+  slides.style.transition = "none";
+  slides.style.transition = "1s ease-out";
 
   // on클래스 삽입
-  for(let x of newList) x.classList.remove('on');
-  newList[3].classList.add('on');
+  for (let x of newList) x.classList.remove("on");
+  newList[3].classList.add("on");
 
   setTimeout(() => {
-      slides.appendChild(list[0]);
-      // console.log(slides.appendChild(list[0]));
-      slides.style.left = '0px';
-      slides.style.transition = 'none';
-    }, 1000);
-
-  
-  
-  
-};//click이벤트
-
-
-
+    slides.appendChild(list[0]);
+    // console.log(slides.appendChild(list[0]));
+    slides.style.left = "0px";
+    slides.style.transition = "none";
+  }, 1000);
+}; //click이벤트
 
 // for (let i = 0; i < cntSimg; i++) {
 
-//   // const element = array[i]; 
+//   // const element = array[i];
 // }
