@@ -8,7 +8,7 @@
 /* 그리드 12 불러오기 */
 @import url(./grid_12_flex.css);
 
-/* 공통 */
+/********************************** 공통 **********************************/
 /* 메인 공용 원 */
 .cir {
   position: absolute;
@@ -54,6 +54,22 @@
 .cont {
   width: auto;
   height: 100vh;
+}
+.back-title dt:nth-child(1){
+  position: absolute;
+  top: 0;
+  font-size: 25vh;
+  color: rgba(255, 255, 255, 0.135);
+  font-family: "Black Han Sans", sans-serif;
+}
+.back-title dt:nth-child(2){
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 25vh;
+  color: rgba(255, 255, 255, 0.135);
+  font-family: "Black Han Sans", sans-serif;
+  transform: scale(-1);
 }
 
 .main-tit-area {
@@ -210,6 +226,10 @@
 }
 
 
+/* ---------백이미지 박스-------------- */
+
+
+
 
 /* 이미지 리스트 제목 및 장소 */
 #msc-area dt {
@@ -222,9 +242,13 @@ dd {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
-  padding: 5px;
-
+  
   color: white;
+}
+
+.msc-area dd {
+  font-weight: normal;
+  font-size: 15px;
 }
 
 /************************************* 전시회영역 *************************************/

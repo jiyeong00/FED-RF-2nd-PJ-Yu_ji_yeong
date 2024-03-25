@@ -20,14 +20,8 @@ window.addEventListener(
     prot = 1;
     setTimeout(() => (prot = 0), 500);
 
-    // if(page <= lastPage ){
-
-    // }else if(page > lastPage){
-
-    // }
 
     var st = document.querySelector("html").scrollTop;
-
 
 
     console.log("기존 페이지", winW, page, "스크롤",st);
@@ -93,16 +87,14 @@ window.addEventListener(
 // 뮤지컬 버튼 눌럿을 때 슬라이드
 
 let slides = document.querySelector(".msc-list");
-let slideImg = document.querySelectorAll(".msc-list li");
-const cntSimg = slideImg.length;
 
 let pbtn = document.querySelector("#msc-left-pass-btn");
 let nbtn = document.querySelector("#msc-right-pass-btn");
 
-console.log(slideImg, cntSimg);
-
 let sldSeq = 0;
-let listSeq = 0;
+
+// 이미지 넣을려고 만든 변수
+let imgNum = 0;
 
 pbtn.onclick = () => {
   if (prot) return;
@@ -116,8 +108,15 @@ pbtn.onclick = () => {
   let list = slides.querySelectorAll("li");
 
   sldSeq--;
+  imgNum--;
 
-  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth);
+    // 이미지 넣을려고 숫자 조절하는 if문
+    if (imgNum < 0){
+      imgNum =6;
+    }
+
+
+  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, 'imgNum',imgNum);
 
   let newList = slides.querySelectorAll("li");
 
@@ -135,6 +134,7 @@ pbtn.onclick = () => {
     slides.style.left = "0px";
     slides.style.transition = "none";
   }, 1000);
+
 }; //이전 클릭이벤트
 
 nbtn.onclick = () => {
@@ -148,9 +148,14 @@ nbtn.onclick = () => {
   let list = slides.querySelectorAll("li");
 
   sldSeq++;
-  listSeq += 2;
+  imgNum++;
 
-  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth);
+  // 이미지 넣을려고 숫자 조절하는 if문
+  if (imgNum > 6){
+    imgNum = 0;
+  }
+
+  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth,'imgNum',imgNum);
 
   let newList = slides.querySelectorAll("li");
 
@@ -168,9 +173,39 @@ nbtn.onclick = () => {
     slides.style.left = "0px";
     slides.style.transition = "none";
   }, 1000);
+
 }; //click이벤트
 
-// for (let i = 0; i < cntSimg; i++) {
 
-//   // const element = array[i];
-// }
+
+////////////////////////////////////////////////////////////////////////////////////
+// 마우스 오버시 뒷배경 사진 띄우기
+
+// 이벤트대상
+const slideImg = document.querySelectorAll('.msc-list img');
+const cntSLide = slideImg.length;
+// 변경대상
+const backImg = document.querySelector('.backImg');
+
+slideImg.forEach((val,idx)=>{
+  slideImg[idx].onmouseover=()=>{
+    if (idx - (imgNum)==3){
+      console.log('마우스오버 오케이, 숫자도 맞음' );
+      // 여기다쓰면됨!! 이미지 관련!!!
+
+      
+    }else{
+      console.log('마우스오버가 됐지만 먼가 안맞음' );
+      console.log('안맞으면 찍어보기', idx,imgNum );
+    }
+  };///마우스 엔터이벤트
+});///forEach문///
+
+
+
+// for (let i=0; i<cntSLide;i++){
+
+  
+// }///for문///
+
+
