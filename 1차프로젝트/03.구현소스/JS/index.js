@@ -127,7 +127,7 @@ pbtn.onclick = () => {
 
   // on클래스 삽입
   for (let x of newList) x.classList.remove("on");
-  newList[1].classList.add("on");
+  newList[2].classList.add("on");
 
   setTimeout(() => {
     slides.prepend(list[list.length - 1]);
@@ -160,7 +160,7 @@ nbtn.onclick = () => {
 
   // on클래스 삽입
   for (let x of newList) x.classList.remove("on");
-  newList[3].classList.add("on");
+  newList[4].classList.add("on");
 
   setTimeout(() => {
     slides.appendChild(list[0]);
