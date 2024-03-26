@@ -120,7 +120,7 @@ pbtn.onclick = () => {
   prot = true;
   setTimeout(() => {
     prot = false;
-  }, 600);
+  }, 1000);
 
   console.log("페이지 전 넘기기");
 
@@ -144,7 +144,7 @@ pbtn.onclick = () => {
 
   // on클래스 삽입
   for (let x of newList) x.classList.remove("on");
-  newList[2].classList.add("on");
+  newList[3].classList.add("on");
 
   setTimeout(() => {
     slides.prepend(list[list.length - 1]);
@@ -160,7 +160,7 @@ nbtn.onclick = () => {
   prot = true;
   setTimeout(() => {
     prot = false;
-  }, 600);
+  }, 1000);
 
   let list = slides.querySelectorAll("li");
 
@@ -182,7 +182,7 @@ nbtn.onclick = () => {
 
   // on클래스 삽입
   for (let x of newList) x.classList.remove("on");
-  newList[4].classList.add("on");
+  newList[5].classList.add("on");
 
   setTimeout(() => {
     slides.appendChild(list[0]);
@@ -209,12 +209,29 @@ for(let i=0; i<3;i++){
 
 const slideImg = document.querySelectorAll(".msc-list img");
 const cntSLide = slideImg.length;
+const tg = document.querySelectorAll("#msc-back-img img");
+
+const rdm = () => Math.ceil(Math.random() * 100);
+console.log("Math.random()",Math.random())
+console.log("Math.random() * 200",Math.random() * 200)
+console.log("Math.ceil(Math.random() * 200)",Math.ceil(Math.random() * 200))
+console.log("Math.ceil(Math.random() * 200)+200",Math.ceil(Math.random() * 200)+200)
 
 slideImg.forEach((val, idx) => {
   slideImg[idx].onmouseover = () => {
     if (idx - imgNum == 3) {
       console.log("마우스오버 오케이, 숫자도 맞음");
       // 여기다쓰면됨!! 이미지 관련!!!
+      tg[0].style.top = rdm()+'%';
+      tg[0].style.left = rdm()+'%';
+
+      tg[0].style.display = 'block';
+
+      tg[1].style.top = rdm()+'%';
+      tg[1].style.left = rdm()+'%';
+
+      tg[1].style.display = 'block';
+
 
     } else {
       console.log("마우스오버가 됐지만 먼가 안맞음");

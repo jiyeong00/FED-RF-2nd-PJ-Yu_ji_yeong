@@ -243,8 +243,11 @@
 
 
 /* ---------백이미지 박스-------------- */
-
-
+#msc-back-img img{
+  position: fixed;
+  top: 0;
+  display: none;
+}
 
 
 /* 이미지 리스트 제목 및 장소 */

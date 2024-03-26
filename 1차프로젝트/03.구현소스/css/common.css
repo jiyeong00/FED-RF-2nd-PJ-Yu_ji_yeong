@@ -26,6 +26,7 @@
   }
   
   .menu a {
+    position: relative;
     text-decoration: none;
     /* color: #b559fb; */
     color: #c8c8ce;
@@ -33,11 +34,11 @@
   .menu li a::after {
     content: "";
     display: inline-block;
-    /* position: absolute; */
+    position: absolute;
+    top: 25px;
+    left: 0;
     /* 마우스 나갈때 margin-left값 밀기 */
     margin-left: 100%;
-    top: 0px;
-  
     width: 0%;
     height: 2px;
   
