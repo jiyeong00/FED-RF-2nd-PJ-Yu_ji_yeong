@@ -58,8 +58,10 @@
 .back-title dt:nth-child(1){
   position: absolute;
   top: 0;
+  left: 0;
   font-size: 25vh;
-  color: rgba(255, 255, 255, 0.135);
+  color: rgba(255, 255, 255, 0.031);
+  letter-spacing: 5vw;
   font-family: "Black Han Sans", sans-serif;
 }
 .back-title dt:nth-child(2){
@@ -67,7 +69,8 @@
   bottom: 0;
   right: 0;
   font-size: 25vh;
-  color: rgba(255, 255, 255, 0.135);
+  color: rgba(255, 255, 255, 0.031);
+  letter-spacing: 5vw;
   font-family: "Black Han Sans", sans-serif;
   transform: scale(-1);
 }
