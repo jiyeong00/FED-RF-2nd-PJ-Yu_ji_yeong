@@ -198,18 +198,24 @@ window.scrollTo(0,0);
 ////////////////////////////////////////////////////////////////////////////////////
 // 마우스 오버시 뒷배경 사진 띄우기
 
-// 이벤트대상
+const backImg = document.querySelector('#msc-back-img');
+
+// 초기화 세팅
+for(let i=0; i<3;i++){
+  backImg.innerHTML+=`
+  <li><img src="./img/back/main_msc3_${i+1}.JPG" alt="사진.." /></li>
+  `;
+}
+
 const slideImg = document.querySelectorAll(".msc-list img");
 const cntSLide = slideImg.length;
-// 변경대상
-const backImg = document.querySelector(".backImg");
 
 slideImg.forEach((val, idx) => {
   slideImg[idx].onmouseover = () => {
     if (idx - imgNum == 3) {
       console.log("마우스오버 오케이, 숫자도 맞음");
       // 여기다쓰면됨!! 이미지 관련!!!
-      
+
     } else {
       console.log("마우스오버가 됐지만 먼가 안맞음");
       console.log("안맞으면 찍어보기", idx, imgNum);
@@ -217,6 +223,28 @@ slideImg.forEach((val, idx) => {
   }; ///마우스 엔터이벤트
 }); ///forEach문///
 
-// for (let i=0; i<cntSLide;i++){
 
-// }///for문///
+
+// // 이벤트대상
+// const slideImg = document.querySelectorAll(".msc-list img");
+// const cntSLide = slideImg.length;
+
+// // 변경대상
+// const backImg = document.querySelector(".backImg");
+
+// slideImg.forEach((val, idx) => {
+//   slideImg[idx].onmouseover = () => {
+//     if (idx - imgNum == 3) {
+//       console.log("마우스오버 오케이, 숫자도 맞음");
+//       // 여기다쓰면됨!! 이미지 관련!!!
+
+//     } else {
+//       console.log("마우스오버가 됐지만 먼가 안맞음");
+//       console.log("안맞으면 찍어보기", idx, imgNum);
+//     }
+//   }; ///마우스 엔터이벤트
+// }); ///forEach문///
+
+// // for (let i=0; i<cntSLide;i++){
+
+// // }///for문///
