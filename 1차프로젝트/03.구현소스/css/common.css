@@ -13,6 +13,7 @@
 /* 상단메뉴 */
   .menu{
     position: fixed;
+    top: 20px;
     z-index: 2;
   }
   .menu li {
@@ -21,18 +22,39 @@
     height: 70px;
     font-size: 25px;
     text-align: center;
-    line-height: 70px;
     font-family: "Black Han Sans", sans-serif;
   }
   
   .menu a {
     text-decoration: none;
-    color: #b559fb;
+    /* color: #b559fb; */
+    color: #c8c8ce;
+  }
+  .menu li a::after {
+    content: "";
+    display: inline-block;
+    /* position: absolute; */
+    /* 마우스 나갈때 margin-left값 밀기 */
+    margin-left: 100%;
+    top: 0px;
+  
+    width: 0%;
+    height: 2px;
+  
+    background-color: white;
+    /* 아웃시 트랜지션 */
+    transition: 0.3s;
+  }
+  .menu li:hover a::after{
+    margin-left: 0;
+    width: 100%;
+    /* 오버시 트랜지션 ->> margin-left는 트랜지션 적용XXX */
+    transition: width 0.3s;
   }
   
-  .menu a:hover {
+  .menu a:hover, .menu a.on {
     text-decoration: none;
-    color: white;
+    color: #b559fb;
   }
 
 

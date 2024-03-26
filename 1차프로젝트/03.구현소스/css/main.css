@@ -95,10 +95,10 @@
 
   color: #b559fb;
   /* font-size: 74px; */
-  font-size: max(min(10vw, 50px), 6vw);
+  font-size: max(min(10vw, 70px), 6vw);
   font-family: "Black Han Sans", sans-serif;
 
-  text-shadow: 0 0 10px #b559fb;
+  /* text-shadow: 0 0 10px #b559fb; */
 
   animation: main-tit-ani 2s ease-in-out forwards;
 }
@@ -108,7 +108,7 @@
   left: -25%;
   opacity: 0;
 
-  color: #a93bfa;
+  color:#c8c8ce;
   font-size: max(min(20px), 1.5vw);
   font-weight: bold;
   letter-spacing: 1.2rem;

@@ -6,6 +6,33 @@ let page = 1; // 영역 포지션 초기값
 const lastPage = container.length; // 마지막 페이지
 const winW = window.innerHeight;
 
+const gnb = document.querySelectorAll(".menu a");
+
+const cntgnb=gnb.length;
+
+////////////////상단 메뉴 이벤트 ////////////////////////////////////
+gnb.forEach((ele,idx)=>{
+  gnb[idx].onclick = () => {
+    for (let x of gnb) {
+      x.classList.remove("on");
+    } /// for of ///
+
+    // 2.전체 메뉴에 on빼기
+    gnb[idx].classList.add("on");
+  };//클릭이벤트
+});//for each문
+
+//////////////////이건 위랑 같은 이벤트지만 휠로 움직일 수 있게할려고///////////////
+function wheelMov(page){
+  for (let x of gnb) {
+    x.classList.remove("on");
+  } /// for of ///
+
+  // 2.전체 메뉴에 on빼기
+  gnb[page-1].classList.add("on");
+};
+
+///////////////////////////스크롤 이벤트////////////////////////////////////
 console.log(lastPage);
 
 let prot = 0;
@@ -20,61 +47,53 @@ window.addEventListener(
     prot = 1;
     setTimeout(() => (prot = 0), 500);
 
-
     var st = document.querySelector("html").scrollTop;
 
-
-    console.log("기존 페이지", winW, page, "스크롤",st);
+    console.log("기존 페이지", winW, page, "스크롤", st);
     // 네비게이션이동 시 page 꼬이는거 푸는 것
-    if (st==0){
-      page=1;
-    }else if(st==919){
-      page=2;
-    }
-    else if(st==1838){
-      page=3;
+    if (st == 0) {
+      page = 1;
+    } else if (st == 919) {
+      page = 2;
+    } else if (st == 1838) {
+      page = 3;
     }
 
     if (e.deltaY > 0) {
-      if (page == 1) {
-        page++;
-        window.scrollTo(0, winW * 1);
-        console.log("+페이지", winW, page);
-      } else if (page == 2) {
-        page++;
-        window.scrollTo(0, winW * 2);
-        console.log("+페이지", winW, page);
-      } else if (page == 3) {
-        window.scrollTo(0, winW * 3);
-        console.log("+페이지", winW, page);
-      }
-    } else if (e.deltaY < 0) {
+        if (page == 1) {
+          page++;
+          window.scrollTo(0, winW * 1);
+          console.log("+페이지", winW, page);
+          wheelMov(page);
+
+        } else if (page == 2) {
+          page++;
+          window.scrollTo(0, winW * 2);
+          console.log("+페이지", winW, page);
+          wheelMov(page);
+
+          }else if (page == 3) {
+            window.scrollTo(0, winW * 3);
+            console.log("+페이지", winW, page);
+            wheelMov(page);
+        }
+      }else if (e.deltaY < 0) {
       if (page == 1) {
         window.scrollTo(0, winW * 0);
         console.log("+페이지", winW, page);
+        wheelMov(page);
       } else if (page == 2) {
         page--;
         window.scrollTo(0, winW * 0);
         console.log("+페이지", winW, page);
+        wheelMov(page);
       } else if (page == 3) {
         window.scrollTo(0, winW * 1);
         page--;
         console.log("+페이지", winW, page);
+        wheelMov(page);
       }
     }
-
-    // if(e.deltaY > 0){
-    //     page++;
-    //     window.scrollTo(0,winW*page);
-    //     console.log("+페이지",winW,page);
-    //     //   if(page>=3) page=2;
-
-    // }else if(e.deltaY < 0){
-    //     window.scrollTo(0,-(winW*page));
-    //     page--;
-    //     console.log("-페이지",winW,page);
-    //     // if(page==-1) page=0;
-    // }
 
     console.log(e.deltaY);
     // wrap.style.top = page * -100 + 'vh';
@@ -110,13 +129,12 @@ pbtn.onclick = () => {
   sldSeq--;
   imgNum--;
 
-    // 이미지 넣을려고 숫자 조절하는 if문
-    if (imgNum < 0){
-      imgNum =6;
-    }
+  // 이미지 넣을려고 숫자 조절하는 if문
+  if (imgNum < 0) {
+    imgNum = 6;
+  }
 
-
-  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, 'imgNum',imgNum);
+  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
 
   let newList = slides.querySelectorAll("li");
 
@@ -134,7 +152,6 @@ pbtn.onclick = () => {
     slides.style.left = "0px";
     slides.style.transition = "none";
   }, 1000);
-
 }; //이전 클릭이벤트
 
 nbtn.onclick = () => {
@@ -151,11 +168,11 @@ nbtn.onclick = () => {
   imgNum++;
 
   // 이미지 넣을려고 숫자 조절하는 if문
-  if (imgNum > 6){
+  if (imgNum > 6) {
     imgNum = 0;
   }
 
-  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth,'imgNum',imgNum);
+  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
 
   let newList = slides.querySelectorAll("li");
 
@@ -173,39 +190,29 @@ nbtn.onclick = () => {
     slides.style.left = "0px";
     slides.style.transition = "none";
   }, 1000);
-
 }; //click이벤트
-
-
 
 ////////////////////////////////////////////////////////////////////////////////////
 // 마우스 오버시 뒷배경 사진 띄우기
 
 // 이벤트대상
-const slideImg = document.querySelectorAll('.msc-list img');
+const slideImg = document.querySelectorAll(".msc-list img");
 const cntSLide = slideImg.length;
 // 변경대상
-const backImg = document.querySelector('.backImg');
+const backImg = document.querySelector(".backImg");
 
-slideImg.forEach((val,idx)=>{
-  slideImg[idx].onmouseover=()=>{
-    if (idx - (imgNum)==3){
-      console.log('마우스오버 오케이, 숫자도 맞음' );
+slideImg.forEach((val, idx) => {
+  slideImg[idx].onmouseover = () => {
+    if (idx - imgNum == 3) {
+      console.log("마우스오버 오케이, 숫자도 맞음");
       // 여기다쓰면됨!! 이미지 관련!!!
-
-      
-    }else{
-      console.log('마우스오버가 됐지만 먼가 안맞음' );
-      console.log('안맞으면 찍어보기', idx,imgNum );
+    } else {
+      console.log("마우스오버가 됐지만 먼가 안맞음");
+      console.log("안맞으면 찍어보기", idx, imgNum);
     }
-  };///마우스 엔터이벤트
-});///forEach문///
-
-
+  }; ///마우스 엔터이벤트
+}); ///forEach문///
 
 // for (let i=0; i<cntSLide;i++){
 
-  
 // }///for문///
-
-
