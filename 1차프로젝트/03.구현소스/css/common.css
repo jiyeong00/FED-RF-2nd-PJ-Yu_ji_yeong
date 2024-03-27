@@ -29,7 +29,7 @@
     position: relative;
     text-decoration: none;
     /* color: #b559fb; */
-    color: #c8c8ce;
+    color: #c8c8ce71;
   }
   .menu li a::after {
     content: "";
@@ -42,7 +42,7 @@
     width: 0%;
     height: 2px;
   
-    background-color: white;
+    background-color: #b559fb;
     /* 아웃시 트랜지션 */
     transition: 0.3s;
   }
@@ -53,7 +53,7 @@
     transition: width 0.3s;
   }
   
-  .menu a:hover, .menu a.on {
+  .menu li:hover a, .menu a.on {
     text-decoration: none;
     color: #b559fb;
   }

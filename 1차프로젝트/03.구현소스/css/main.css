@@ -211,11 +211,11 @@
 .msc-list {
   position: relative;
   left: 0px;
-  transform: translateX(-384px);
+  /* transform: translateX(-384px); */
   /* transform: translateX(-75px); */
 
   display: flex;
-  justify-content: space-evenly;
+  justify-content: center;
 
   font-family: "Noto Sans KR", sans-serif;
   z-index: 1;
@@ -244,7 +244,7 @@
 
 /* ---------백이미지 박스-------------- */
 #msc-back-img img{
-  position: fixed;
+  position: absolute;
   top: 0;
   display: none;
 }

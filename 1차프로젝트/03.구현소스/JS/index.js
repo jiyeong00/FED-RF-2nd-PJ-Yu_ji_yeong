@@ -144,7 +144,7 @@ pbtn.onclick = () => {
 
   // on클래스 삽입
   for (let x of newList) x.classList.remove("on");
-  newList[3].classList.add("on");
+  newList[2].classList.add("on");
 
   setTimeout(() => {
     slides.prepend(list[list.length - 1]);
@@ -152,15 +152,17 @@ pbtn.onclick = () => {
     slides.style.left = "0px";
     slides.style.transition = "none";
   }, 1000);
-}; //이전 클릭이벤트
+}; ///////////////////이전 클릭이벤트
 
-nbtn.onclick = () => {
+nbtn.onclick = (evt,sts=true) => {
   // 광클금지
   if (prot) return;
   prot = true;
   setTimeout(() => {
     prot = false;
   }, 1000);
+
+  console.log("페이지 후 넘기기",sts);
 
   let list = slides.querySelectorAll("li");
 
@@ -182,7 +184,7 @@ nbtn.onclick = () => {
 
   // on클래스 삽입
   for (let x of newList) x.classList.remove("on");
-  newList[5].classList.add("on");
+  newList[4].classList.add("on");
 
   setTimeout(() => {
     slides.appendChild(list[0]);
@@ -198,39 +200,52 @@ window.scrollTo(0,0);
 ////////////////////////////////////////////////////////////////////////////////////
 // 마우스 오버시 뒷배경 사진 띄우기
 
-const backImg = document.querySelector('#msc-back-img');
 
 // 초기화 세팅
-for(let i=0; i<3;i++){
+
+
+const slideImg = document.querySelectorAll(".msc-list img");
+const cntSLide = slideImg.length;
+const backImg = document.querySelector('#msc-back-img');
+for(let i=0; i<4;i++){
   backImg.innerHTML+=`
   <li><img src="./img/back/main_msc3_${i+1}.JPG" alt="사진.." /></li>
   `;
 }
+const tg = backImg.querySelectorAll("#msc-back-img img");
 
-const slideImg = document.querySelectorAll(".msc-list img");
-const cntSLide = slideImg.length;
-const tg = document.querySelectorAll("#msc-back-img img");
+const rdm1 = () => Math.ceil(Math.random()*50);
+const rdm2 = () => Math.ceil(Math.random() * 10)+50;
 
-const rdm = () => Math.ceil(Math.random() * 100);
-console.log("Math.random()",Math.random())
-console.log("Math.random() * 200",Math.random() * 200)
-console.log("Math.ceil(Math.random() * 200)",Math.ceil(Math.random() * 200))
-console.log("Math.ceil(Math.random() * 200)+200",Math.ceil(Math.random() * 200)+200)
+// console.log("Math.random()",Math.random())
+// console.log("Math.random() * 200",Math.random() * 200)
+// console.log("Math.ceil(Math.random() * 200)",Math.ceil(Math.random() * 200))
+// console.log("Math.ceil(Math.random() * 200)+200",Math.ceil(Math.random() * 200)+200)
 
 slideImg.forEach((val, idx) => {
   slideImg[idx].onmouseover = () => {
     if (idx - imgNum == 3) {
       console.log("마우스오버 오케이, 숫자도 맞음");
       // 여기다쓰면됨!! 이미지 관련!!!
-      tg[0].style.top = rdm()+'%';
-      tg[0].style.left = rdm()+'%';
+      tg[0].style.top = rdm1()+'%';
+      tg[0].style.left = rdm1()+'%';
 
       tg[0].style.display = 'block';
 
-      tg[1].style.top = rdm()+'%';
-      tg[1].style.left = rdm()+'%';
+      // tg[1].style.top = rdm2()+'%';
+      // tg[1].style.left = rdm1()+'%';
 
-      tg[1].style.display = 'block';
+      // tg[1].style.display = 'block';
+
+      // tg[2].style.top = rdm2()+'%';
+      // tg[2].style.left = rdm1()+'%';
+
+      // tg[2].style.display = 'block';
+
+      // tg[3].style.top = rdm2()+'%';
+      // tg[3].style.left = rdm2()+'%';
+
+      // tg[3].style.display = 'block';
 
 
     } else {
@@ -265,3 +280,43 @@ slideImg.forEach((val, idx) => {
 // // for (let i=0; i<cntSLide;i++){
 
 // // }///for문///
+
+
+///////////////////////////////////////////////////////////////////////////////////////////////
+// 자동넘김
+
+let slideShow = document.querySelector('.slideShow');
+
+
+
+// 인터발용 변수(지울목적)
+let autoI;
+// 타임아웃용 변수(지울목적)
+let autoT;
+
+  // setInterval(함수,시간)
+  // - 일정시간간격으로 함수를 호출
+function autoSlide(){
+
+  autoI= setInterval(() => {
+    goSlide(false,false);
+  }, 3000);
+
+}////////autoslide함수///////////////
+
+  // clearInterval(인터발변수)
+  // - 변수에 담긴 인터발을 지움(멈춤)
+function clearAuto(){
+  // 지우기 확인
+  console.log('인터발지워!');
+  clearInterval(autoI);
+
+  // 타임아웃지우기 : 실행쓰나미 방지
+  clearTimeout(autoT);
+
+  // 5초후 아무작동도 안하면 다시 인터발호출
+  autoT=setTimeout(() => {
+    autoSlide();
+  }, 5000);
+}///////clearAuto함수///////////////
+
