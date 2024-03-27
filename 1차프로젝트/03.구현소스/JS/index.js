@@ -122,6 +122,7 @@ pbtn.onclick = () => {
     prot = false;
   }, 1000);
 
+  clearAuto();
   console.log("페이지 전 넘기기");
 
   let list = slides.querySelectorAll("li");
@@ -153,49 +154,54 @@ pbtn.onclick = () => {
     slides.style.transition = "none";
   }, 1000);
 }; ///////////////////이전 클릭이벤트
+////////////////////////////////////////////////////////////////////////////////////
 
-nbtn.onclick = (evt,sts=true) => {
-  // 광클금지
-  if (prot) return;
-  prot = true;
-  setTimeout(() => {
-    prot = false;
-  }, 1000);
 
-  console.log("페이지 후 넘기기",sts);
-
-  let list = slides.querySelectorAll("li");
-
-  sldSeq++;
-  imgNum++;
-
-  // 이미지 넣을려고 숫자 조절하는 if문
-  if (imgNum > 6) {
-    imgNum = 0;
-  }
-
-  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
-
-  let newList = slides.querySelectorAll("li");
-
-  slides.style.left = "-310px";
-  slides.style.transition = "none";
-  slides.style.transition = "1s ease-out";
-
-  // on클래스 삽입
-  for (let x of newList) x.classList.remove("on");
-  newList[4].classList.add("on");
-
-  setTimeout(() => {
-    slides.appendChild(list[0]);
-    // console.log(slides.appendChild(list[0]));
-    slides.style.left = "0px";
+  nbtn.onclick = (evt,sts=true)=>{
+    // 광클금지
+    if (prot) return;
+    prot = true;
+    setTimeout(() => {
+      prot = false;
+    }, 1000);
+  
+    console.log("엔버튼 클릭 확인",sts)
+  
+    let list = slides.querySelectorAll("li");
+  
+    sldSeq++;
+    imgNum++;
+  
+    // 이미지 넣을려고 숫자 조절하는 if문
+    if (imgNum > 6) {
+      imgNum = 0;
+    }
+  
+    console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
+  
+    let newList = slides.querySelectorAll("li");
+  
+    slides.style.left = "-310px";
     slides.style.transition = "none";
-  }, 1000);
-}; //click이벤트
+    slides.style.transition = "1s ease-out";
+  
+    // on클래스 삽입
+    for (let x of newList) x.classList.remove("on");
+    newList[4].classList.add("on");
+  
+    setTimeout(() => {
+      slides.appendChild(list[0]);
+      // console.log(slides.appendChild(list[0]));
+      slides.style.left = "0px";
+      slides.style.transition = "none";
+    }, 1000);
+  
+  }; //click이벤트
+
 
 // 맨위로 올리기
 window.scrollTo(0,0);
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 // 마우스 오버시 뒷배경 사진 띄우기
@@ -255,7 +261,9 @@ slideImg.forEach((val, idx) => {
   }; ///마우스 엔터이벤트
 }); ///forEach문///
 
-
+// if(sts==false){
+//   clearAuto();
+// }
 
 // // 이벤트대상
 // const slideImg = document.querySelectorAll(".msc-list img");
@@ -287,6 +295,9 @@ slideImg.forEach((val, idx) => {
 
 let slideShow = document.querySelector('.slideShow');
 
+// if(nbtn.onclick()&&pbtn.onclick()){
+
+// }
 
 
 // 인터발용 변수(지울목적)
@@ -294,13 +305,17 @@ let autoI;
 // 타임아웃용 변수(지울목적)
 let autoT;
 
+// autoSlide();
+
+
   // setInterval(함수,시간)
   // - 일정시간간격으로 함수를 호출
 function autoSlide(){
 
   autoI= setInterval(() => {
-    goSlide(false,false);
-  }, 3000);
+    console.log("들어가나?");
+    nbtn.onclick();
+  }, 5000);
 
 }////////autoslide함수///////////////
 

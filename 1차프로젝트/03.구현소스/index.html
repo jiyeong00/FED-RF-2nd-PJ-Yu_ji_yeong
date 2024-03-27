@@ -2,7 +2,11 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- <meta name="viewport" content="width=device-width, initial-scale=1.0" /> -->
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1, minimum-scale=1"
+    />
     <title>1차프로젝트</title>
     <link rel="stylesheet" href="./css/main.css" />
     <link
@@ -38,26 +42,33 @@
     </div>
 
     <!-- 2. 메인영역 -->
-    <div id="main-area" class="cont">
+    <main id="main-area" class="cont">
       <section class="main-area part">
-        <!-- 메인 타이틀 -->
+        <!-- 타이틀 -->
         <div class="main-tit-area">
-          <!-- 뒷타이틀 -->
-
+          <!-- 클릭시 영상 -->
+          <div class="screen">
+            <iframe
+              class="ifr"
+              src="https://www.youtube.com/embed/WixdTHZYU7Y?autoplay=1&mute=1&loop=1&playlist=WixdTHZYU7Y"
+              allow="autoplay"
+            >
+            </iframe>
+          </div>
+          
+          <!-- 배경 타이틀 -->
           <div class="back-title">
             <dt>MUSICAL</dt>
             <dt>EXHIBIT</dt>
           </div>
 
+          <!-- 메인타이틀 -->
           <div class="main-flaot">
             <dl class="main-tit">
               <dt>MUSICAL</dt>
-              <br />
-              <dt>& EXHIBIT</dt>
+              <dt>&ensp; & EXHIBIT</dt>
               <!-- &ensp;  -->
-              <dd id="sub-tit">
-                꿈같은 공간에서 펼쳐지는 아름다운 이야기
-              </dd>
+              <dd id="sub-tit">꿈같은 공간에서 펼쳐지는 아름다운 이야기</dd>
             </dl>
           </div>
 
@@ -102,7 +113,7 @@
           </div> -->
         </div>
       </section>
-    </div>
+    </main>
 
     <!-- 3. 뮤지컬영역 -->
     <div id="msc-area" class="cont">
@@ -152,7 +163,7 @@
                 </dl>
               </a>
             </li>
-            <li>
+            <li class="on">
               <a href="#">
                 <img
                   class="main-img"
