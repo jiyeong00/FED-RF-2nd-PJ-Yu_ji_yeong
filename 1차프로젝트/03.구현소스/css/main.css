@@ -103,21 +103,17 @@
   font-family: "Black Han Sans", sans-serif;
 }
 
-/* 메인타이틀 오버시 그림 */
 .main-tit dt:nth-child(1) {
   left: -20%;
   opacity: 0;
   animation: main-tit-ani 2s ease-in-out forwards;
-}
-.main-tit dt:nth-child(1):hover .screen{
-  background-color: red;
-  /* height: 44%; */
 }
 .main-tit dt:nth-child(2) {
   left: -30%;
   opacity: 0;
   animation: main-tit-ani 2s ease-in-out 0.5s forwards;
 }
+
 
 /* 서브타이틀 */
 .main-tit dd {
@@ -142,22 +138,23 @@
   }
 }
 
-.main-tit-area .screen {
+.main-tit-area .screen{
   /* outline: 2px dashed red; */
   /*  */
   position: absolute;
   right: 5px;
-  width: 50%;
-  height: 44%;
+  width: 100%;
+  height: 100%;
   margin-left: 5%;
-  opacity: 0.5;
   filter: sepia(1);
 }
-.screen .ifr {
+.screen .ifr{
   border: none;
   width: 100%;
   height: 100%;
   pointer-events : none;
+
+  opacity: 0;
 }
 /* 메인 움직이는 그림 */
 /* .main-img-part {

@@ -202,6 +202,32 @@ pbtn.onclick = () => {
 // 맨위로 올리기
 window.scrollTo(0,0);
 
+////////////////////////////////////////////////////////////////////////////////////
+// 마우스 오버시 메인 유튜브가 opacity .5%로 변경
+
+const dt=document.querySelectorAll('.main-tit dt');
+const screen=document.querySelectorAll('.main-tit-area .screen .ifr');
+const cntDT=dt.length;
+
+dt.forEach((ele, idx)=>{
+  dt[idx].onmouseenter =()=>{
+    console.log(screen[idx]);
+    console.log('마우스 엔터되었나');
+    dt[idx].style.color = 'white';
+    screen[idx].style.opacity = 0.5;
+    screen[idx].style.transition = '0.5s ease-in-out';
+  };
+  dt[idx].onmouseleave =()=>{
+    console.log(idx);
+    console.log('마우스 떠났나');
+    dt[idx].style.color = '#c373ff';
+    screen[idx].style.opacity = 0;
+    dt[idx].style.transition = '0.5s ease-in-out';
+    screen[idx].style.transition = '0.5s ease-in-out';
+  };
+}); ///for each문///
+
+
 
 ////////////////////////////////////////////////////////////////////////////////////
 // 마우스 오버시 뒷배경 사진 띄우기
