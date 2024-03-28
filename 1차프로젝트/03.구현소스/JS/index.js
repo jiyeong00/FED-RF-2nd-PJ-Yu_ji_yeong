@@ -206,14 +206,15 @@ const cntDT = dt.length;
 const cntScr = screen.length;
 
 function Menter(i){
-  dt[i].style.color = "white";
+  dt[i].style.color = "#650ba7";
+  dt[i].style.textShadow = "0 0 5px black";
   screen[i].style.opacity = 0.5;
   screen[i].style.transition = "0.5s ease-in-out";
   console.log("마우스 엔터되었나",screen[i]);
 }
 function Mleave(i){
       console.log("마우스 떠났나");
-      dt[i].style.color = "#c373ff";
+      dt[i].style.color = "#bebec4";
       screen[i].style.opacity = 0;
       dt[i].style.transition = "0.5s ease-in-out";
       screen[i].style.transition = "0.5s ease-in-out";

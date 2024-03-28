@@ -85,7 +85,7 @@
   display: flex;
   align-items: center;
   white-space: nowrap;
-  /* justify-content: center; */
+  justify-content: center;
 
   padding: 0 100px;
   float: left;
@@ -97,7 +97,7 @@
   position: relative;
   /* left: 0; */
 
-  color: #b559fb;
+  color: #bebec4;
   /* font-size: 74px; */
   font-size: max(min(10vw, 70px), 6vw);
   font-family: "Black Han Sans", sans-serif;
@@ -105,13 +105,14 @@
 
 .main-tit dt:nth-child(1) {
   left: -20%;
-  opacity: 0;
-  animation: main-tit-ani 2s ease-in-out forwards;
+  /* left: -5%; */
+  opacity: 1;
+  animation: main-tit-ani1 2s ease-in-out forwards;
 }
 .main-tit dt:nth-child(2) {
   left: -30%;
   opacity: 0;
-  animation: main-tit-ani 2s ease-in-out 0.5s forwards;
+  animation: main-tit-ani2 2s ease-in-out 0.5s forwards;
 }
 
 
@@ -123,15 +124,21 @@
   opacity: 0;
 
   color: #c8c8ce;
-  font-size: max(min(20px), 1.5vw);
+  font-size: max(min(2.5vw,35px), 1.5vw);
   font-weight: bold;
   letter-spacing: 1.2rem;
   font-family: "Noto Sans KR", sans-serif;
 
-  animation: main-tit-ani 2s ease-in-out 0.5s forwards;
+  animation: main-tit-ani1 2s ease-in-out 0.5s forwards;
 }
 
-@keyframes main-tit-ani {
+@keyframes main-tit-ani1 {
+  to {
+    left: 0%;
+    opacity: 1;
+  }
+}
+@keyframes main-tit-ani2 {
   to {
     left: 10%;
     opacity: 1;
