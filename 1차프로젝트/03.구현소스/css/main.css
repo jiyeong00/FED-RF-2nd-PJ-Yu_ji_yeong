@@ -156,6 +156,10 @@
 
   opacity: 0;
 }
+/* .screen .ifr.on{
+  opacity: 0.5;
+} */
+
 /* 메인 움직이는 그림 */
 /* .main-img-part {
   position: relative;

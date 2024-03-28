@@ -8,10 +8,10 @@ const winW = window.innerHeight;
 
 const gnb = document.querySelectorAll(".menu a");
 
-const cntgnb=gnb.length;
+const cntgnb = gnb.length;
 
 ////////////////상단 메뉴 이벤트 ////////////////////////////////////
-gnb.forEach((ele,idx)=>{
+gnb.forEach((ele, idx) => {
   gnb[idx].onclick = () => {
     for (let x of gnb) {
       x.classList.remove("on");
@@ -19,18 +19,18 @@ gnb.forEach((ele,idx)=>{
 
     // 2.전체 메뉴에 on빼기
     gnb[idx].classList.add("on");
-  };//클릭이벤트
-});//for each문
+  }; //클릭이벤트
+}); //for each문
 
 //////////////////이건 위랑 같은 이벤트지만 휠로 움직일 수 있게할려고///////////////
-function wheelMov(page){
+function wheelMov(page) {
   for (let x of gnb) {
     x.classList.remove("on");
   } /// for of ///
 
   // 2.전체 메뉴에 on빼기
-  gnb[page-1].classList.add("on");
-};
+  gnb[page - 1].classList.add("on");
+}
 
 ///////////////////////////스크롤 이벤트////////////////////////////////////
 console.log(lastPage);
@@ -60,24 +60,22 @@ window.addEventListener(
     }
 
     if (e.deltaY > 0) {
-        if (page == 1) {
-          page++;
-          window.scrollTo(0, winW * 1);
-          console.log("+페이지", winW, page);
-          wheelMov(page);
-
-        } else if (page == 2) {
-          page++;
-          window.scrollTo(0, winW * 2);
-          console.log("+페이지", winW, page);
-          wheelMov(page);
-
-          }else if (page == 3) {
-            window.scrollTo(0, winW * 3);
-            console.log("+페이지", winW, page);
-            wheelMov(page);
-        }
-      }else if (e.deltaY < 0) {
+      if (page == 1) {
+        page++;
+        window.scrollTo(0, winW * 1);
+        console.log("+페이지", winW, page);
+        wheelMov(page);
+      } else if (page == 2) {
+        page++;
+        window.scrollTo(0, winW * 2);
+        console.log("+페이지", winW, page);
+        wheelMov(page);
+      } else if (page == 3) {
+        window.scrollTo(0, winW * 3);
+        console.log("+페이지", winW, page);
+        wheelMov(page);
+      }
+    } else if (e.deltaY < 0) {
       if (page == 1) {
         window.scrollTo(0, winW * 0);
         console.log("+페이지", winW, page);
@@ -156,98 +154,107 @@ pbtn.onclick = () => {
 }; ///////////////////이전 클릭이벤트
 ////////////////////////////////////////////////////////////////////////////////////
 
+nbtn.onclick = (evt, sts = true) => {
+  // 광클금지
+  if (prot) return;
+  prot = true;
+  setTimeout(() => {
+    prot = false;
+  }, 1000);
 
-  nbtn.onclick = (evt,sts=true)=>{
-    // 광클금지
-    if (prot) return;
-    prot = true;
-    setTimeout(() => {
-      prot = false;
-    }, 1000);
-  
-    console.log("엔버튼 클릭 확인",sts)
-  
-    let list = slides.querySelectorAll("li");
-  
-    sldSeq++;
-    imgNum++;
-  
-    // 이미지 넣을려고 숫자 조절하는 if문
-    if (imgNum > 6) {
-      imgNum = 0;
-    }
-  
-    console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
-  
-    let newList = slides.querySelectorAll("li");
-  
-    slides.style.left = "-310px";
+  console.log("엔버튼 클릭 확인", sts);
+
+  let list = slides.querySelectorAll("li");
+
+  sldSeq++;
+  imgNum++;
+
+  // 이미지 넣을려고 숫자 조절하는 if문
+  if (imgNum > 6) {
+    imgNum = 0;
+  }
+
+  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
+
+  let newList = slides.querySelectorAll("li");
+
+  slides.style.left = "-310px";
+  slides.style.transition = "none";
+  slides.style.transition = "1s ease-out";
+
+  // on클래스 삽입
+  for (let x of newList) x.classList.remove("on");
+  newList[4].classList.add("on");
+
+  setTimeout(() => {
+    slides.appendChild(list[0]);
+    // console.log(slides.appendChild(list[0]));
+    slides.style.left = "0px";
     slides.style.transition = "none";
-    slides.style.transition = "1s ease-out";
-  
-    // on클래스 삽입
-    for (let x of newList) x.classList.remove("on");
-    newList[4].classList.add("on");
-  
-    setTimeout(() => {
-      slides.appendChild(list[0]);
-      // console.log(slides.appendChild(list[0]));
-      slides.style.left = "0px";
-      slides.style.transition = "none";
-    }, 1000);
-  
-  }; //click이벤트
-
+  }, 1000);
+}; //click이벤트
 
 // 맨위로 올리기
-window.scrollTo(0,0);
+window.scrollTo(0, 0);
 
 ////////////////////////////////////////////////////////////////////////////////////
 // 마우스 오버시 메인 유튜브가 opacity .5%로 변경
 
-const dt=document.querySelectorAll('.main-tit dt');
-const screen=document.querySelectorAll('.main-tit-area .screen .ifr');
-const cntDT=dt.length;
+const dt = document.querySelectorAll(".main-tit dt");
+const screen = document.querySelectorAll(".screen .ifr");
+const cntDT = dt.length;
+const cntScr = screen.length;
 
-dt.forEach((ele, idx)=>{
-  dt[idx].onmouseenter =()=>{
-    console.log(screen[idx]);
-    console.log('마우스 엔터되었나');
-    dt[idx].style.color = 'white';
-    screen[idx].style.opacity = 0.5;
-    screen[idx].style.transition = '0.5s ease-in-out';
-  };
-  dt[idx].onmouseleave =()=>{
-    console.log(idx);
-    console.log('마우스 떠났나');
-    dt[idx].style.color = '#c373ff';
-    screen[idx].style.opacity = 0;
-    dt[idx].style.transition = '0.5s ease-in-out';
-    screen[idx].style.transition = '0.5s ease-in-out';
-  };
-}); ///for each문///
+function Menter(i){
+  dt[i].style.color = "white";
+  screen[i].style.opacity = 0.5;
+  screen[i].style.transition = "0.5s ease-in-out";
+  console.log("마우스 엔터되었나",screen[i]);
+}
+function Mleave(i){
+      console.log("마우스 떠났나");
+      dt[i].style.color = "#c373ff";
+      screen[i].style.opacity = 0;
+      dt[i].style.transition = "0.5s ease-in-out";
+      screen[i].style.transition = "0.5s ease-in-out";
+}
 
+console.log('아쒸 : ',dt,screen,cntDT);
 
+dt[0].onmouseenter=()=>{
+  Menter(0);
+}
+dt[0].onmouseleave=()=>{
+  Mleave(0);
+}
+dt[1].onmouseenter=()=>{
+  screen[0].style.display="none";
+  screen[0].style.transition = "display 0.5s ease-in-out";
+  Menter(1);
+}
+dt[1].onmouseleave=()=>{
+  screen[0].style.display="inline";
+  screen[0].style.transition = "display 0.5s ease-in-out";
+  Mleave(1);
+}
 
 ////////////////////////////////////////////////////////////////////////////////////
 // 마우스 오버시 뒷배경 사진 띄우기
 
-
 // 초기화 세팅
-
 
 const slideImg = document.querySelectorAll(".msc-list img");
 const cntSLide = slideImg.length;
-const backImg = document.querySelector('#msc-back-img');
-for(let i=0; i<4;i++){
-  backImg.innerHTML+=`
-  <li><img src="./img/back/main_msc3_${i+1}.JPG" alt="사진.." /></li>
+const backImg = document.querySelector("#msc-back-img");
+for (let i = 0; i < 4; i++) {
+  backImg.innerHTML += `
+  <li><img src="./img/back/main_msc3_${i + 1}.JPG" alt="사진.." /></li>
   `;
 }
 const tg = backImg.querySelectorAll("#msc-back-img img");
 
-const rdm1 = () => Math.ceil(Math.random()*50);
-const rdm2 = () => Math.ceil(Math.random() * 10)+50;
+const rdm1 = () => Math.ceil(Math.random() * 50);
+const rdm2 = () => Math.ceil(Math.random() * 10) + 50;
 
 // console.log("Math.random()",Math.random())
 // console.log("Math.random() * 200",Math.random() * 200)
@@ -259,10 +266,10 @@ slideImg.forEach((val, idx) => {
     if (idx - imgNum == 3) {
       console.log("마우스오버 오케이, 숫자도 맞음");
       // 여기다쓰면됨!! 이미지 관련!!!
-      tg[0].style.top = rdm1()+'%';
-      tg[0].style.left = rdm1()+'%';
+      tg[0].style.top = rdm1() + "%";
+      tg[0].style.left = rdm1() + "%";
 
-      tg[0].style.display = 'block';
+      tg[0].style.display = "block";
 
       // tg[1].style.top = rdm2()+'%';
       // tg[1].style.left = rdm1()+'%';
@@ -278,8 +285,6 @@ slideImg.forEach((val, idx) => {
       // tg[3].style.left = rdm2()+'%';
 
       // tg[3].style.display = 'block';
-
-
     } else {
       console.log("마우스오버가 됐지만 먼가 안맞음");
       console.log("안맞으면 찍어보기", idx, imgNum);
@@ -315,16 +320,14 @@ slideImg.forEach((val, idx) => {
 
 // // }///for문///
 
-
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // 자동넘김
 
-let slideShow = document.querySelector('.slideShow');
+let slideShow = document.querySelector(".slideShow");
 
 // if(nbtn.onclick()&&pbtn.onclick()){
 
 // }
-
 
 // 인터발용 변수(지울목적)
 let autoI;
@@ -333,31 +336,27 @@ let autoT;
 
 // autoSlide();
 
-
-  // setInterval(함수,시간)
-  // - 일정시간간격으로 함수를 호출
-function autoSlide(){
-
-  autoI= setInterval(() => {
+// setInterval(함수,시간)
+// - 일정시간간격으로 함수를 호출
+function autoSlide() {
+  autoI = setInterval(() => {
     console.log("들어가나?");
     nbtn.onclick();
   }, 5000);
+} ////////autoslide함수///////////////
 
-}////////autoslide함수///////////////
-
-  // clearInterval(인터발변수)
-  // - 변수에 담긴 인터발을 지움(멈춤)
-function clearAuto(){
+// clearInterval(인터발변수)
+// - 변수에 담긴 인터발을 지움(멈춤)
+function clearAuto() {
   // 지우기 확인
-  console.log('인터발지워!');
+  console.log("인터발지워!");
   clearInterval(autoI);
 
   // 타임아웃지우기 : 실행쓰나미 방지
   clearTimeout(autoT);
 
   // 5초후 아무작동도 안하면 다시 인터발호출
-  autoT=setTimeout(() => {
+  autoT = setTimeout(() => {
     autoSlide();
   }, 5000);
-}///////clearAuto함수///////////////
-
+} ///////clearAuto함수///////////////
