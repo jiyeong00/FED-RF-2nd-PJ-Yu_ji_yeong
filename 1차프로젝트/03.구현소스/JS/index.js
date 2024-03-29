@@ -278,23 +278,25 @@ function Mleave(i){
 }
 
 dtSpan[0].onmouseenter=()=>{
+  console.log(1);
   dtSpan[0].style.textShadow = "0 0 5px black";
   Menter(0);
 }
 dtSpan[0].onmouseleave=()=>{
+  console.log(2);
   dtSpan[0].style.textShadow = "none";
   Mleave(0);
 }
 dtSpan[1].onmouseenter=()=>{
+  console.log(11);
   dtSpan[1].style.textShadow = "0 0 5px black";
-  screen[0].style.display="none";
 
   Menter(1);
 }
 dtSpan[1].onmouseleave=()=>{
+  console.log(22);
   dtSpan[1].style.textShadow = "none";
 
-  screen[0].style.display="inline";
   screen[0].style.transition = "display 0.5s ease-in-out";
   
   Mleave(1);
@@ -316,19 +318,22 @@ const tg = backImg.querySelectorAll("#msc-back-img img");
 // 이거 여쭤보기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 // 리스트 하나당 이미지 4개 들어가게
 
-// const wrapping=(j)=>{
-//   for (let i = 0; i < 4; i++) {
-//     tgLi.innerHTML += `
-//     <img src="./img/back/main_msc${j}_${i + 1}.JPG" alt="사진.." />
-//     `;
-//   }////i의 for문
-// };
-// for(let j=0; j<2;j++){
-//   backImg.innerHTML +=`
-//   <li> ${wrapping(j)}</li>
-//   `;
+const wrapping=(j)=>{
+  let hcode='';
+  for (let i = 0; i < 4; i++) {
+    hcode += `
+    <img src="./img/back/main_msc${j}_${i + 1}.JPG" alt="사진.." />
+    `;
+  }////i의 for문
+  // 이미지코드 리턴
+  return hcode;
+};
+for(let j=0; j<2;j++){
+  backImg.innerHTML +=`
+  <li> ${wrapping(j)}</li>
+  `;
 
-// }/////j의 for문
+}/////j의 for문
 
 // console.log(backImg);
 // ul - backImg / ul내 li - tgLi / ul내 img - tg
