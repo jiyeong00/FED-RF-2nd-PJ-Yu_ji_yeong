@@ -57,10 +57,6 @@
 
 /************************************* 메인영역 *************************************/
 
-.main-area{
-  position: relative;
-}
-
 .back-title dt:nth-child(1) {
   position: absolute;
   top: 0;
@@ -80,7 +76,6 @@
   font-family: "Black Han Sans", sans-serif;
   transform: scale(-1);
 }
-
 
 .main-tit-area {
   width: 100vw;
@@ -131,15 +126,15 @@
 
   color: #707075;
   font-size: max(min(2.5vw, 35px), 1.5vw);
-  font-weight: normal;
+  font-weight: bold;
   letter-spacing: 1.2rem;
   font-family: "Noto Sans KR", sans-serif;
 
-  animation: main-tit-ani1 2s ease-in-out 0.8s forwards;
+  animation: sub-tit-ani 2s ease-in-out 0.8s forwards;
 }
 
 @keyframes main-tit-ani1 {
-  0%{
+  0% {
     left: 0%;
     opacity: 0;
   }
@@ -148,12 +143,12 @@
     opacity: 1;
   }
   100% {
-    left: -30%;
+    left: -40%;
     opacity: 1;
   }
 }
 @keyframes main-tit-ani2 {
-  0%{
+  0% {
     left: 0%;
     opacity: 0;
   }
@@ -163,7 +158,14 @@
   }
   100% {
     /* left: 0%; */
-    left: -20%;
+    left: -30%;
+    opacity: 1;
+  }
+}
+@keyframes sub-tit-ani {
+  to {
+    /* left: 0%; */
+    left: -38%;
     opacity: 1;
   }
 }
@@ -193,13 +195,18 @@
 /* 메인 이미지 */
 .main-img-part {
   position: absolute;
-  top: 0;
+  top: 30px;
   right: 0;
-  
+
   width: 50%;
   height: 100%;
+  opacity: 1;
+
+  animation: img-ani 2s linear 0.8s infinite alternate;
+  /* opa-ani 2s linear 1s ease-in-out forwards; */
 }
-.main-img{
+
+.main-img {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
@@ -208,8 +215,18 @@
 }
 .main-img-part img {
   width: 35vw;
-  aspect-ratio: 5/8;
 }
+
+@keyframes img-ani {
+  to {
+    top: 40px;
+  }
+}
+/* @keyframes opa-ani {
+to{
+  opacity: 1;
+}
+} */
 /* 메인 움직이는 그림 */
 /* .main-img-part {
   position: relative;
