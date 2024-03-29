@@ -214,10 +214,11 @@
 
   animation: 
   img-ani 2.5s linear 0.8s infinite alternate,
-  img-ani2 2.5s ease-in-out 0.8s forwards;
+  img-ani2 2.5s linear 1.5s forwards;
 }
 .main-img-part img {
   width: 100%;
+  transform: scaleX(-1);
 }
 
 @keyframes img-ani {

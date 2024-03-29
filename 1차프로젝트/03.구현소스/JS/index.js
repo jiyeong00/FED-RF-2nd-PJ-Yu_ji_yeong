@@ -278,23 +278,19 @@ function Mleave(i){
 }
 
 dtSpan[0].onmouseenter=()=>{
-  console.log(1);
   dtSpan[0].style.textShadow = "0 0 5px black";
   Menter(0);
 }
 dtSpan[0].onmouseleave=()=>{
-  console.log(2);
   dtSpan[0].style.textShadow = "none";
   Mleave(0);
 }
 dtSpan[1].onmouseenter=()=>{
-  console.log(11);
   dtSpan[1].style.textShadow = "0 0 5px black";
 
   Menter(1);
 }
 dtSpan[1].onmouseleave=()=>{
-  console.log(22);
   dtSpan[1].style.textShadow = "none";
 
   screen[0].style.transition = "display 0.5s ease-in-out";
@@ -311,13 +307,8 @@ const slideImg = document.querySelectorAll(".msc-list img");
 const cntSLide = slideImg.length;
 const backImg = document.querySelector("#msc-back-img");
 
-const tgLi =backImg.querySelectorAll("#msc-back-img li");
-const cntTgLi =tgLi.length;
-const tg = backImg.querySelectorAll("#msc-back-img img");
 
-// 이거 여쭤보기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-// 리스트 하나당 이미지 4개 들어가게
-
+// 이미지 넣기
 const wrapping=(j)=>{
   let hcode='';
   for (let i = 0; i < 4; i++) {
@@ -332,53 +323,62 @@ for(let j=0; j<2;j++){
   backImg.innerHTML +=`
   <li> ${wrapping(j)}</li>
   `;
-
+  
 }/////j의 for문
 
-// console.log(backImg);
+const tgLi =backImg.querySelectorAll("#msc-back-img li");
+const cntTgLi =tgLi.length;
+const tg = backImg.querySelectorAll("#msc-back-img img");
+
 // ul - backImg / ul내 li - tgLi / ul내 img - tg
 
-const rdm1 = () => Math.ceil(Math.random() * 50);
-const rdm2 = () => Math.ceil(Math.random() * 50) + 50;
+const rdm1 = () => Math.ceil(Math.random() * 50); //0~50
+const rdm2 = () => Math.ceil(Math.random() * 50) + 50; //50~100
 
 // console.log("Math.random()",Math.random())
 // console.log("Math.random() * 200",Math.random() * 200)
 // console.log("Math.ceil(Math.random() * 200)",Math.ceil(Math.random() * 200))
 // console.log("Math.ceil(Math.random() * 200)+200",Math.ceil(Math.random() * 200)+200)
 
+
+
+
+
 slideImg.forEach((val, idx) => {
   slideImg[idx].onmouseover = () => {
     if (idx - imgNum == 3) {
-      console.log("마우스오버 오케이, 숫자도 맞음",imgNum);
+      console.log("마우스오버 오케이, 숫자도 맞음",idx,imgNum);
       // 여기다쓰면됨!! 이미지 관련!!!
-      for(let i=0;i<cntTgLi;i++) {
-        if(imgNum==tgLi[i]){
+      // for(let i=0;i<cntTgLi;i++) {
+      //   if(imgNum==i){
+      //     tg[0].style.top = rdm1() + "%" ;
+      //     tg[0].style.left = rdm1() + "%";
 
-          tg[0].style.top = rdm1() + "%";
-          tg[0].style.left = rdm1() + "%";
+      //     tg[0].style.transform= 'translateX(-50%)';
+      //     tg[0].style.transform= 'translateY(-50%)';
     
-          tg[0].style.display = "block";
+      //     tg[0].style.display = "block";
     
-          // tg[1].style.top = rdm2()+'%';
-          // tg[1].style.left = rdm1()+'%';
+      //     tg[1].style.top = rdm1()+'%';
+      //     tg[1].style.left = rdm2()+'%';
     
-          // tg[1].style.display = 'block';
+      //     tg[1].style.display = 'block';
     
-          // tg[2].style.top = rdm2()+'%';
-          // tg[2].style.left = rdm1()+'%';
+      //     tg[2].style.top = rdm2()+'%';
+      //     tg[2].style.left = rdm1()+'%';
     
-          // tg[2].style.display = 'block';
+      //     tg[2].style.display = 'block';
     
-          // tg[3].style.top = rdm2()+'%';
-          // tg[3].style.left = rdm2()+'%';
-    
-          // tg[3].style.display = 'block';
-        }///if문
-        else{
-          console.log("뭔가 이상함");
-        }
-
-      }///for문 - 배경이미지 리스트 총 개수(길이)
+      //     tg[3].style.top = rdm2()+'%';
+      //     tg[3].style.left = rdm2()+'%';
+          
+      //     tg[3].style.display = 'block';
+        
+      //   }///if문
+      //   else{
+      //     console.log("뭔가 이상함",i,cntTgLi);
+      //   }
+      // }///for문 - 배경이미지 리스트 총 개수(길이)
     } else {
       console.log("마우스오버가 됐지만 먼가 안맞음");
       console.log("안맞으면 찍어보기", idx, imgNum);
