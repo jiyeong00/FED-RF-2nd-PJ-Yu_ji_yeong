@@ -188,81 +188,41 @@
 
   opacity: 0;
 }
-/* .screen .ifr.on{
-  opacity: 0.5;
-} */
+
 
 /* 메인 이미지 */
 .main-img-part {
   position: absolute;
-  top: 30px;
+  top: 0;
   right: 0;
 
   width: 50%;
   height: 100%;
-  opacity: 1;
 
-  animation: img-ani 2s linear 0.8s infinite alternate;
-  /* opa-ani 2s linear 1s ease-in-out forwards; */
 }
 
-.main-img {
+.main-tit-img {
   position: absolute;
   left: 50%;
-  transform: translateX(-50%);
+  top: 49%;
+  transform: translate(-50%, -50%);
+  opacity: 1;
 
   text-align: center;
+  width: 800px;
+
+  animation: img-ani 2.5s linear 0.8s infinite alternate;
+
 }
 .main-img-part img {
-  width: 35vw;
+  width: 100%;
 }
 
 @keyframes img-ani {
   to {
-    top: 40px;
+    top: 51%;
   }
 }
-/* @keyframes opa-ani {
-to{
-  opacity: 1;
-}
-} */
-/* 메인 움직이는 그림 */
-/* .main-img-part {
-  position: relative;
-  margin-top: 47px;
-  right: 0%;
-
-  display: flex;
-
-  animation: main-img-opty 2.5s ease-in-out 1s forwards;
-}
-
-.main-img-part li:nth-child(2) {
-  margin-top: 47px;
-}
-.main-img-part ul:nth-child(2) {
-  margin-top: 47px;
-  margin-left: 20%;
-}
-.main-img-part img {
-  width: 300px;
-}
-
-.main-img-1 {
-  opacity: 0;
-  right: -50px;
-}
-.main-img-2 {
-  opacity: 0;
-}
-
-@keyframes main-img-opty {
-  to {
-    right: -18%;
-    opacity: 1;
-  }
-} */
 
 /************************************* 뮤지컬영역 *************************************/
 #msc-area {
