@@ -209,7 +209,7 @@
   opacity: 1;
 
   text-align: center;
-  width: 800px;
+  width: max(40vw,300px);
 
   animation: img-ani 2.5s linear 0.8s infinite alternate;
 
