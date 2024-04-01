@@ -122,6 +122,7 @@ window.addEventListener(
 // 뮤지컬영역 - 버튼 눌럿을 때 슬라이드
 
 let slides = document.querySelectorAll(".core-list");
+let cntSlides = slides.length;
 // let slides2 = document.querySe/lector(".exh-list");
 
 let mscPbtn = document.querySelectorAll(".pbtn");
@@ -136,26 +137,40 @@ let sldSeq = 0;
 // 이미지 넣을려고 만든 변수--------------///
 let imgNum = 0;
 
-let i;
 
 slides.forEach((ele,idx) => {
   console.log('포문',idx);
-  if(idx==1){
-    i=0;
-  }else if(idx==2){
-    i=1;
-  }
 
-  mscPbtn[idx].onclick = () => {
-    pbtn(i);
-    console.log('전버튼 클릭',idx,i);
-  };
-  mscNbtn[idx].onclick = () => {
-    nbtn(i);
-    console.log('후버튼 클릭',idx,i);
-  };
+    mscPbtn[idx].onclick = () => {
+      pbtn(idx);
+      console.log('전버튼 클릭',idx,i);
+    };
+    mscNbtn[idx].onclick = () => {
+      nbtn(idx);
+      console.log('후버튼 클릭',idx,i);
+    };
 
-
+  // if(idx==0){
+  //   i=0;
+  //   mscPbtn[idx].onclick = () => {
+  //     pbtn(i);
+  //     console.log('전버튼 클릭',idx,i);
+  //   };
+  //   mscNbtn[idx].onclick = () => {
+  //     nbtn(i);
+  //     console.log('후버튼 클릭',idx,i);
+  //   };
+  // }else if(idx==1){
+  //   i=1;
+  //   mscPbtn[idx].onclick = () => {
+  //     pbtn(i);
+  //     console.log('전버튼 클릭',idx,i);
+  //   };
+  //   mscNbtn[idx].onclick = () => {
+  //     nbtn(i);
+  //     console.log('후버튼 클릭',idx,i);
+  //   };
+  // }
 
 });
 
@@ -279,7 +294,7 @@ let autoT;
 function autoSlide() {
   autoI = setInterval(() => {
     console.log("들어가나?");
-    mscNbtn.onclick();
+    // mscNbtn.onclick();
   }, 5000);
 } ////////autoslide함수///////////////
 
