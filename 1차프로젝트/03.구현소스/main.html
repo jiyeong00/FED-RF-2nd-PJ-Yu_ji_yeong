@@ -137,13 +137,14 @@
 
     <!-- 3. 뮤지컬영역 -->
     <div id="msc-area" class="cont">
-      <section class="msc-area part">
+      <section class="msc-area part ME-part">
+        <div class="cir"></div>
         <!-- <div class="cir"></div> -->
 
         <h1>MUSICAL</h1>
         <div class="slideShow">
           <!-- 이미지 슬라이드 -->
-          <ul class="msc-list">
+          <ul class="msc-list core-list">
             <li>
               <a href="#">
                 <img
@@ -190,7 +191,7 @@
                   src="./img/poster_msc_img_6.jpg"
                   alt="이솝이야기 포스터"
                 />
-                <dl>
+                <dl class="on">
                   <dt>이솝이야기</dt>
                   <dd>충무아트센터</dd>
                 </dl>
@@ -243,7 +244,7 @@
                 type="button"
                 value="왼쪽"
                 id="msc-left-pass-btn"
-                class="main-btn"
+                class="main-btn pbtn"
               >
                 <i class="fa-solid fa-circle-left"></i>
               </button>
@@ -259,7 +260,7 @@
                 type="button"
                 value="오른쪽"
                 id="msc-right-pass-btn"
-                class="main-btn"
+                class="main-btn nbtn"
               >
                 <i class="fa-solid fa-circle-right"></i>
               </button>
@@ -272,20 +273,17 @@
       <!-- 배경이미지 박스 -->
       <div class="backImg">
         <ul id="msc-back-img">
-          <!-- <li><img src="./img/back/main_msc3_1.JPG" alt="사진.." /></li>
-          <li><img src="./img/back/main_msc3_2.JPG" alt="사진.." /></li>
-          <li><img src="./img/back/main_msc3_3.JPG" alt="사진.." /></li>
-          <li><img src="./img/back/main_msc3_4.JPG" alt="사진.." /></li> -->
         </ul>
       </div>
     </div>
 
     <!-- 4. 전시회영역 -->
     <div id="exh-area" class="cont">
-      <section class="exh-area part">
+      <section class="exh-area part ME-part">
         <div class="cir"></div>
         <h1>EXHIBIT</h1>
-        <ul class="exh-list">
+        <div class="slideShow">
+        <ul class="exh-list core-list">
           <li>
             <a href="#">
               <img
@@ -320,6 +318,19 @@
                 alt="이솝이야기 포스터"
               />
               <dl>
+                <dt>이솝이야기</dt>
+                <dd>충무아트센터</dd>
+              </dl>
+            </a>
+          </li>
+          <li class="on">
+            <a href="#">
+              <img
+                class="main-img"
+                src="./img/poster_msc_img_6.jpg"
+                alt="이솝이야기 포스터"
+              />
+              <dl class="on">
                 <dt>이솝이야기</dt>
                 <dd>충무아트센터</dd>
               </dl>
@@ -372,7 +383,7 @@
               type="button"
               value="왼쪽"
               id="exh-left-pass-btn"
-              class="main-btn"
+              class="main-btn pbtn"
             >
               <i class="fa-solid fa-circle-left"></i>
             </button>
@@ -389,13 +400,23 @@
               type="button"
               value="오른쪽"
               id="exh-right-pass-btn"
-              class="main-btn"
+              class="main-btn nbtn"
             >
               <i class="fa-solid fa-circle-right"></i>
             </button>
           </div>
         </section>
+        
+      </div>
+      <!-- 슬라이드 쇼 div -->
       </section>
+
+            <!-- 배경이미지 박스 -->
+            <div class="backImg">
+              <ul id="exh-back-img">
+
+              </ul>
+
     </div>
   </body>
 </html>

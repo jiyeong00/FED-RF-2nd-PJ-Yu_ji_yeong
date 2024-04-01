@@ -74,7 +74,7 @@ window.addEventListener(
       page = 1;
     } else if (st == 919) {
       page = 2;
-    } else if (st == 1838) {
+    } else if (st >= 1838) {
       page = 3;
     }
 
@@ -121,17 +121,49 @@ window.addEventListener(
 /////////////////////////////////////////////////////////////////////////////////
 // 뮤지컬영역 - 버튼 눌럿을 때 슬라이드
 
-let slides = document.querySelector(".msc-list");
+let slides = document.querySelectorAll(".core-list");
+// let slides2 = document.querySe/lector(".exh-list");
 
-let pbtn = document.querySelector("#msc-left-pass-btn");
-let nbtn = document.querySelector("#msc-right-pass-btn");
+let mscPbtn = document.querySelectorAll(".pbtn");
+let mscNbtn = document.querySelectorAll(".nbtn");
+// let mscPbtn = document.querySelector("#msc-left-pass-btn");
+// let mscNbtn = document.querySelector("#msc-right-pass-btn");
+// let exhPbtn = document.querySelector("#exh-left-pass-btn");
+// let exhNbtn = document.querySelector("#exh-right-pass-btn");
 
 let sldSeq = 0;
 
 // 이미지 넣을려고 만든 변수--------------///
 let imgNum = 0;
 
-pbtn.onclick = () => {
+let i;
+
+slides.forEach((ele,idx) => {
+  console.log('포문',idx);
+  if(idx==1){
+    i=0;
+  }else if(idx==2){
+    i=1;
+  }
+
+  mscPbtn[idx].onclick = () => {
+    pbtn(i);
+    console.log('전버튼 클릭',idx,i);
+  };
+  mscNbtn[idx].onclick = () => {
+    nbtn(i);
+    console.log('후버튼 클릭',idx,i);
+  };
+
+
+
+});
+
+
+
+
+function pbtn(){
+  console.log('으아아악 전',i,slides[i]);
   if (prot) return;
   prot = true;
   setTimeout(() => {
@@ -141,7 +173,7 @@ pbtn.onclick = () => {
   clearAuto();
   console.log("페이지 전 넘기기");
 
-  let list = slides.querySelectorAll("li");
+  let list = slides[i].querySelectorAll("li");
 
   sldSeq--;
   imgNum--;
@@ -153,75 +185,87 @@ pbtn.onclick = () => {
 
   console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
 
-  let newList = slides.querySelectorAll("li");
-
-  slides.style.left = "310px";
-  slides.style.transition = "none";
-  slides.style.transition = "1s ease-out";
+  let newList = slides[i].querySelectorAll("li");
+  let newDl = slides[i].querySelectorAll("dl");
+  
+  slides[i].style.left = "310px";
+  slides[i].style.transition = "none";
+  slides[i].style.transition = "1s ease-out";
 
   // on클래스 삽입
   for (let x of newList) x.classList.remove("on");
+  for (let x of newDl) x.classList.remove("on");
   newList[2].classList.add("on");
+  newDl[2].classList.add("on");
+
 
   setTimeout(() => {
-    slides.prepend(list[list.length - 1]);
-    // console.log(slides.appendChild(list[0]));
-    slides.style.left = "0px";
-    slides.style.transition = "none";
+    slides[i].prepend(list[list.length - 1]);
+    // console.log(slides[i].appendChild(list[0]));
+    slides[i].style.left = "0px";
+    slides[i].style.transition = "none";
   }, 1000);
-}; ///////////////////이전 클릭이벤트
+};///////pbtn함수 : 이전클릭이벤트////////////////
 
-nbtn.onclick = (evt, sts = true) => {
-  // 광클금지
-  if (prot) return;
-  prot = true;
-  setTimeout(() => {
-    prot = false;
-  }, 1000);
 
-  console.log("엔버튼 클릭 확인", sts);
+function nbtn(evt, sts = true){
+  console.log('으아아악',i,slides[i]);
+// 광클금지
+if (prot) return;
+prot = true;
+setTimeout(() => {
+  prot = false;
+}, 1000);
 
-  let list = slides.querySelectorAll("li");
+console.log("엔버튼 클릭 확인", sts);
 
-  sldSeq++;
-  imgNum++;
+let list = slides[i].querySelectorAll("li");
 
-  // 이미지 넣을려고 숫자 조절하는 if문
-  if (imgNum > 6) {
-    imgNum = 0;
-  }
+sldSeq++;
+imgNum++;
 
-  console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
+// 이미지 넣을려고 숫자 조절하는 if문
+if (imgNum > 6) {
+  imgNum = 0;
+}
 
-  let newList = slides.querySelectorAll("li");
+console.log("sldSeq:", sldSeq, list, list[0].offsetWidth, "imgNum", imgNum);
 
-  slides.style.left = "-310px";
-  slides.style.transition = "none";
-  slides.style.transition = "1s ease-out";
+let newList = slides[i].querySelectorAll("li");
+let newDl = slides[i].querySelectorAll("dl");
 
-  // on클래스 삽입
-  for (let x of newList) x.classList.remove("on");
-  newList[4].classList.add("on");
+slides[i].style.left = "-310px";
+slides[i].style.transition = "none";
+slides[i].style.transition = "1s ease-out";
 
-  setTimeout(() => {
-    slides.appendChild(list[0]);
-    // console.log(slides.appendChild(list[0]));
-    slides.style.left = "0px";
-    slides.style.transition = "none";
-  }, 1000);
-}; ///////////////////다음 클릭이벤트
+// on클래스 삽입
+for (let x of newList) x.classList.remove("on");
+for (let x of newDl) x.classList.remove("on");
+newList[4].classList.add("on");
+newDl[4].classList.add("on");
+
+setTimeout(() => {
+  slides[i].appendChild(list[0]);
+  // console.log(slides[i].appendChild(list[0]));
+  slides[i].style.left = "0px";
+  slides[i].style.transition = "none";
+}, 1000);
+};///////pbtn함수 : 다음클릭이벤트////////////////
+
+
 
 // 맨위로 올리기
 window.scrollTo(0, 0);
+
+
+
+
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 // 뮤지컬 영역 - 슬라이드 자동넘김
 
 let slideShow = document.querySelector(".slideShow");
 
-// if(nbtn.onclick()&&pbtn.onclick()){
-
-// }
 
 // 인터발용 변수(지울목적)
 let autoI;
@@ -235,7 +279,7 @@ let autoT;
 function autoSlide() {
   autoI = setInterval(() => {
     console.log("들어가나?");
-    nbtn.onclick();
+    mscNbtn.onclick();
   }, 5000);
 } ////////autoslide함수///////////////
 
