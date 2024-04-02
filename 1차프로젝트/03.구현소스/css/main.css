@@ -263,12 +263,12 @@
 
 .ME-part .slideShow {
   padding: 50px 0;
-  height: 47%;
+  height: 50%;
   overflow: hidden;
 }
 
 /* 포스터 리스트 영역 - msc-list */
-.msc-list,.exh-list {
+.core-list {
   position: relative;
   left: 0px;
   /* transform: translateX(-384px); */
@@ -281,6 +281,7 @@
   z-index: 1;
 
   transition: 1s ease-out;
+  padding: 24px 0;
 }
 
 .msc-list li, .exh-list li {
@@ -309,11 +310,13 @@
   display: none;
 }
 
+/* ---------이미지리스트 제목 및 장소, 날짜-------------- */
 /* 이미지 리스트 제목 및 장소 */
 #msc-area dt,
 #exh-area dt {
   font-weight: bold;
   color: #c373ff;
+  font-size: 1.7rem;
 }
 /* 메인 포스터 제목 및 장소 말줄임표 */
 .ME-part dt,
@@ -327,7 +330,11 @@ dd {
 
 .ME-part dd {
   font-weight: normal;
-  font-size: 15px;
+  font-size: 1.5rem;
+}
+.ME-part dd:last-child {
+  font-weight: weight;
+  font-size: 1.3rem;
 }
 .ME-part dl {
   opacity: 0;
