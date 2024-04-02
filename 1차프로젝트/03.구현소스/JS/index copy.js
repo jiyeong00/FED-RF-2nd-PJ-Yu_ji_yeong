@@ -129,22 +129,16 @@ let sldSeq = 0;
 // 이미지 넣을려고 만든 변수--------------///
 let imgNum = 0;
 
-// 이전 이미지 버튼 눌리게 만들려고 만든 변수
-let beforeNum=0;
 
 function loadFn() {
   let slides = document.querySelector(".msc-list");
   // let slides = document.querySelectorAll(".core-list");
-  let SLIDE_CNT = 7;
-
-  let mscPbtn = document.querySelector("#msc-left-pass-btn");
-  let mscNbtn = document.querySelector("#msc-right-pass-btn");
 
   // console.log('로딩완료');
   let passBtn = document.querySelectorAll(".pbtn");
 
   let list = slides.querySelectorAll(".msc-list li");
-  console.log('리스트',list);
+  // console.log('리스트',list);
 
   ///////////////////////////////////////////////초기세팅
 
@@ -196,7 +190,8 @@ function loadFn() {
         slides.style.left = "0px";
         slides.style.transition = "none";
       }, 1000);
-    } else {
+    }///////여기까지 오른쪽 클릭 ///////// 
+    else {
 
       sldSeq--;
       imgNum--;
