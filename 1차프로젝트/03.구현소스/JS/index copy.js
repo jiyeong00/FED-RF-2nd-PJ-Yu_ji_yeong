@@ -126,8 +126,11 @@ addEvt(window, "DOMContentLoaded", loadFn);
 // 슬라이드 전역변수
 let sldSeq = 0;
 
-// 이미지 넣을려고 만든 변수--------------///
+// 배경이미지 넣을려고 만든 변수--------------///
 let imgNum = 0;
+
+// 이전으로 넘길때 계산할려고 넣은 변수....
+let beforeNum=0;
 
 
 function loadFn() {
@@ -157,8 +160,7 @@ function loadFn() {
     console.log(list.length);
 
     if (isRbtn) {
-      sldSeq++;
-      imgNum++;
+
 
       // 이미지 넣을려고 숫자 조절하는 if문
       if (imgNum > 6) {
@@ -184,17 +186,20 @@ function loadFn() {
       newList[4].classList.add("on");
       newDl[4].classList.add("on");
 
+      // 앞에 거 뒤에 붙이기
       setTimeout(() => {
         slides.appendChild(list[sldSeq-1]);
         // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
       }, 1000);
+
+      sldSeq++;
+      imgNum++;
+      beforeNum--;
     }///////여기까지 오른쪽 클릭 ///////// 
     else {
 
-      sldSeq--;
-      imgNum--;
 
 
       // 이미지 넣을려고 숫자 조절하는 if문
@@ -203,6 +208,9 @@ function loadFn() {
       }
       if(sldSeq<0){
         sldSeq = 6;
+      }
+      if(beforeNum>6){
+        beforeNum = 0;
       }
 
       console.log("sldSeq:",sldSeq,list,"imgNum",imgNum);
@@ -220,12 +228,18 @@ function loadFn() {
       newList[2].classList.add("on");
       newDl[2].classList.add("on");
 
+      // 뒤에 거 앞에 붙이기
       setTimeout(() => {
-        slides.prepend(list[list.length - 1]);
+        slides.prepend(list[list.length - (beforeNum)]);
         // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
       }, 1000);
+
+      
+      sldSeq--;
+      imgNum--;
+      beforeNum++;
     } //////isRbtn? IF문/////////////
   } ////goSlide함수////
 } ///////loadFn/////////////////
