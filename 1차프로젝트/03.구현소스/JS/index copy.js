@@ -372,36 +372,36 @@ slideImg.forEach((val, idx) => {
     if (idx - imgNum == 3) {
       console.log("마우스오버 오케이, 숫자도 맞음", idx, imgNum);
       // 여기다쓰면됨!! 이미지 관련!!!
-      // for(let i=0;i<cntTgLi;i++) {
-      //   if(imgNum==i){
-      //     tg[0].style.top = rdm1() + "%" ;
-      //     tg[0].style.left = rdm1() + "%";
+      for(let i=0;i<cntTgLi;i++) {
+        if(imgNum==i){
+          tg[0].style.top = rdm1() + "%" ;
+          tg[0].style.left = rdm1() + "%";
 
-      //     tg[0].style.transform= 'translateX(-50%)';
-      //     tg[0].style.transform= 'translateY(-50%)';
+          tg[0].style.transform= 'translateX(-50%)';
+          tg[0].style.transform= 'translateY(-50%)';
 
-      //     tg[0].style.display = "block";
+          tg[0].style.display = "block";
 
-      //     tg[1].style.top = rdm1()+'%';
-      //     tg[1].style.left = rdm2()+'%';
+          tg[1].style.top = rdm1()+'%';
+          tg[1].style.left = rdm2()+'%';
 
-      //     tg[1].style.display = 'block';
+          tg[1].style.display = 'block';
 
-      //     tg[2].style.top = rdm2()+'%';
-      //     tg[2].style.left = rdm1()+'%';
+          tg[2].style.top = rdm2()+'%';
+          tg[2].style.left = rdm1()+'%';
 
-      //     tg[2].style.display = 'block';
+          tg[2].style.display = 'block';
 
-      //     tg[3].style.top = rdm2()+'%';
-      //     tg[3].style.left = rdm2()+'%';
+          tg[3].style.top = rdm2()+'%';
+          tg[3].style.left = rdm2()+'%';
 
-      //     tg[3].style.display = 'block';
+          tg[3].style.display = 'block';
 
-      //   }///if문
-      //   else{
-      //     console.log("뭔가 이상함",i,cntTgLi);
-      //   }
-      // }///for문 - 배경이미지 리스트 총 개수(길이)
+        }///if문
+        else{
+          console.log("뭔가 이상함",i,cntTgLi);
+        }
+      }///for문 - 배경이미지 리스트 총 개수(길이)
     } else {
       console.log("마우스오버가 됐지만 먼가 안맞음");
       console.log("안맞으면 찍어보기", idx, imgNum);
