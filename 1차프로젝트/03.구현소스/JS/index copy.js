@@ -205,7 +205,7 @@ function loadFn() {
         sldSeq = 6;
       }
 
-      console.log("sldSeq:",sldSeq,list,"imgNum",imgNum,beforeNum);
+      console.log("sldSeq:",sldSeq,list,"imgNum",imgNum);
 
       let newList = slides.querySelectorAll("li");
       let newDl = slides.querySelectorAll("dl");
@@ -221,7 +221,7 @@ function loadFn() {
       newDl[2].classList.add("on");
 
       setTimeout(() => {
-        slides.prepend(list[list.length -1]);
+        slides.prepend(list[list.length - 1]);
         // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
