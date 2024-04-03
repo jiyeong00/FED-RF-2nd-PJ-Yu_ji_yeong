@@ -36,7 +36,7 @@
     padding: 10px;
 
     color: #ffffff9e;
-    font-size: 27px;
+    font-size: 2.7rem;
 
     background-color:#c8c8ce9e;
 
@@ -55,7 +55,6 @@
     color: white;
     background-color: #b559fb;
   }
-
 
 
 /********************************* .5 공통영역 *********************************/
@@ -225,3 +224,45 @@
 .more-list-area li:nth-child(15) span{
   letter-spacing: -1px;
 }
+
+
+  /* 화면이 800px이하일때 */
+  @media screen and (max-width: 800px) {
+    .more-change-menu{
+      position: fixed;
+      top: auto;
+      right: 50%;
+      transform: translateX(50%);
+      bottom: 0%;
+
+      width: 100%;
+      height: 15%;
+      /* outline: 2px dashed red; */
+
+      border-radius: 50px 50px 0 0;
+      background-color: #b559fba1;
+      z-index: 2;
+    }
+    .more-change-menu ul{
+      display: flex;
+      height: 100%;
+      align-items: center;
+      justify-content: center;
+      gap: 0 5rem;
+    }
+    .more-change-menu li button{
+      font-size: 5rem;
+    }
+
+    .more-list-area ul {
+      display: flex;
+      flex-wrap: nowrap;
+      gap: 0 10%;
+      justify-content: center;
+      
+    }
+    .more-list-area .card {
+      /* width: 400px; */
+    }
+
+  }
