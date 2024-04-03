@@ -127,11 +127,10 @@ addEvt(window, "DOMContentLoaded", loadFn);
 let sldSeq = 0;
 
 // 배경이미지 넣을려고 만든 변수--------------///
-let imgNum = 0;
+let imgNum = 3;
 
 // 이전으로 넘길때 계산할려고 넣은 변수....
-let beforeNum=0;
-
+let beforeNum = 0;
 
 function loadFn() {
   let slides = document.querySelector(".msc-list");
@@ -161,18 +160,6 @@ function loadFn() {
 
     if (isRbtn) {
 
-
-      // 이미지 넣을려고 숫자 조절하는 if문
-      if (imgNum > 6) {
-        imgNum = 0;
-      }
-      if(sldSeq>6){
-        sldSeq = 0;
-      }
-
-
-      console.log("sldSeq:",sldSeq,list,"imgNum",imgNum);
-
       let newList = slides.querySelectorAll("li");
       let newDl = slides.querySelectorAll("dl");
 
@@ -188,7 +175,11 @@ function loadFn() {
 
       // 앞에 거 뒤에 붙이기
       setTimeout(() => {
-        slides.appendChild(list[sldSeq-1]);
+        if((sldSeq-1) ==-1){
+          slides.appendChild(list[6]);
+        }else{
+          slides.appendChild(list[sldSeq-1]);
+        }
         // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
@@ -197,23 +188,23 @@ function loadFn() {
       sldSeq++;
       imgNum++;
       beforeNum--;
-    }///////여기까지 오른쪽 클릭 ///////// 
-    else {
-
-
 
       // 이미지 넣을려고 숫자 조절하는 if문
-      if (imgNum < 0) {
-        imgNum = 6;
+      if (imgNum > 6) {
+        imgNum = 0;
       }
-      if(sldSeq<0){
-        sldSeq = 6;
+      if (sldSeq > 6) {
+        sldSeq = 0;
       }
-      if(beforeNum>6){
-        beforeNum = 0;
+      if (beforeNum < 0) {
+        beforeNum = 6;
       }
 
-      console.log("sldSeq:",sldSeq,list,"imgNum",imgNum);
+      console.log("sldSeq:", sldSeq, list, "imgNum", imgNum);
+
+
+    } ///////여기까지 오른쪽 클릭 /////////
+    else {
 
       let newList = slides.querySelectorAll("li");
       let newDl = slides.querySelectorAll("dl");
@@ -230,20 +221,30 @@ function loadFn() {
 
       // 뒤에 거 앞에 붙이기
       setTimeout(() => {
-        slides.prepend(list[list.length - (beforeNum)]);
+        slides.prepend(list[list.length - beforeNum]);
         // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
       }, 1000);
 
-      
       sldSeq--;
       imgNum--;
       beforeNum++;
+      // 이미지 넣을려고 숫자 조절하는 if문
+      if (imgNum < 0) {
+        imgNum = 6;
+      }
+      if (sldSeq < 0) {
+        sldSeq = 6;
+      }
+      if (beforeNum > 6) {
+        beforeNum = 0;
+      }
+
+      console.log("sldSeq:", sldSeq, list, "imgNum", imgNum);
     } //////isRbtn? IF문/////////////
   } ////goSlide함수////
 } ///////loadFn/////////////////
-
 
 // 맨위로 올리기
 window.scrollTo(0, 0);
@@ -356,6 +357,7 @@ for (let j = 0; j < 2; j++) {
 const tgLi = backImg.querySelectorAll("#msc-back-img li");
 const cntTgLi = tgLi.length;
 const tg = backImg.querySelectorAll("#msc-back-img img");
+const cntTg = tg.length;
 
 // ul - backImg / ul내 li - tgLi / ul내 img - tg
 
@@ -369,44 +371,42 @@ const rdm2 = () => Math.ceil(Math.random() * 50) + 50; //50~100
 
 slideImg.forEach((val, idx) => {
   slideImg[idx].onmouseover = () => {
-    if (idx - imgNum == 3) {
-      console.log("마우스오버 오케이, 숫자도 맞음", idx, imgNum);
+    if (idx == imgNum) {
       // 여기다쓰면됨!! 이미지 관련!!!
-      for(let i=0;i<cntTgLi;i++) {
-        if(imgNum==i){
-          tg[0].style.top = rdm1() + "%" ;
-          tg[0].style.left = rdm1() + "%";
+      console.log("마우스오버 오케이, 숫자도 맞음", idx, imgNum);
 
-          tg[0].style.transform= 'translateX(-50%)';
-          tg[0].style.transform= 'translateY(-50%)';
+      tg[0].style.top = rdm1() + "%";
+      tg[0].style.left = rdm1() + "%";
 
-          tg[0].style.display = "block";
+      tg[0].style.transform = "translateX(-50%)";
+      tg[0].style.transform = "translateY(-50%)";
 
-          tg[1].style.top = rdm1()+'%';
-          tg[1].style.left = rdm2()+'%';
+      tg[0].style.display = "block";
 
-          tg[1].style.display = 'block';
+      tg[1].style.top = rdm1() + "%";
+      tg[1].style.left = rdm2() + "%";
 
-          tg[2].style.top = rdm2()+'%';
-          tg[2].style.left = rdm1()+'%';
+      tg[1].style.display = "block";
 
-          tg[2].style.display = 'block';
+      tg[2].style.top = rdm2() + "%";
+      tg[2].style.left = rdm1() + "%";
 
-          tg[3].style.top = rdm2()+'%';
-          tg[3].style.left = rdm2()+'%';
+      tg[2].style.display = "block";
 
-          tg[3].style.display = 'block';
+      tg[3].style.top = rdm2() + "%";
+      tg[3].style.left = rdm2() + "%";
 
-        }///if문
-        else{
-          console.log("뭔가 이상함",i,cntTgLi);
-        }
-      }///for문 - 배경이미지 리스트 총 개수(길이)
+      tg[3].style.display = "block";
     } else {
       console.log("마우스오버가 됐지만 먼가 안맞음");
       console.log("안맞으면 찍어보기", idx, imgNum);
     } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
   }; ///마우스 엔터이벤트
+  slideImg[idx].onmouseleave = () => {
+    for (let i = 0; i < cntTg; i++) {
+      tg[i].style.display = "none";
+    }
+  };
 }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든
 
 // if(sts==false){

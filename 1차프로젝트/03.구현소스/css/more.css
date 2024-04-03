@@ -222,3 +222,6 @@
   max-height: 50px;
   font-weight: bold;
 }
+.more-list-area li:nth-child(15) span{
+  letter-spacing: -1px;
+}
