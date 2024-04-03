@@ -200,7 +200,8 @@ function loadFn() {
         beforeNum = 6;
       }
 
-      console.log("sldSeq:", sldSeq, list, "imgNum", imgNum);
+      // console.log("sldSeq:", sldSeq, list, "\nimgNum", imgNum,"\nbeforeNum",beforeNum);
+
 
 
     } ///////여기까지 오른쪽 클릭 /////////
@@ -221,7 +222,11 @@ function loadFn() {
 
       // 뒤에 거 앞에 붙이기
       setTimeout(() => {
-        slides.prepend(list[list.length - beforeNum]);
+        if((list.length - beforeNum) ==7){
+           slides.prepend(list[0]);
+        }else{
+          slides.prepend(list[list.length - beforeNum]);
+        }
         // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
@@ -241,7 +246,7 @@ function loadFn() {
         beforeNum = 0;
       }
 
-      console.log("sldSeq:", sldSeq, list, "imgNum", imgNum);
+      // console.log("sldSeq:", sldSeq, list, "\nimgNum", imgNum,"\nbeforeNum",list.length - beforeNum);
     } //////isRbtn? IF문/////////////
   } ////goSlide함수////
 } ///////loadFn/////////////////
@@ -372,31 +377,33 @@ const rdm2 = () => Math.ceil(Math.random() * 50) + 50; //50~100
 slideImg.forEach((val, idx) => {
   slideImg[idx].onmouseover = () => {
     if (idx == imgNum) {
-      // 여기다쓰면됨!! 이미지 관련!!!
-      console.log("마우스오버 오케이, 숫자도 맞음", idx, imgNum);
-
-      tg[0].style.top = rdm1() + "%";
-      tg[0].style.left = rdm1() + "%";
-
-      tg[0].style.transform = "translateX(-50%)";
-      tg[0].style.transform = "translateY(-50%)";
-
-      tg[0].style.display = "block";
-
-      tg[1].style.top = rdm1() + "%";
-      tg[1].style.left = rdm2() + "%";
-
-      tg[1].style.display = "block";
-
-      tg[2].style.top = rdm2() + "%";
-      tg[2].style.left = rdm1() + "%";
-
-      tg[2].style.display = "block";
-
-      tg[3].style.top = rdm2() + "%";
-      tg[3].style.left = rdm2() + "%";
-
-      tg[3].style.display = "block";
+      for (const x of tgLi) {
+        console.log("마우스오버 오케이, 숫자도 맞음", tg);
+  
+        tg[0].style.top = rdm1() + "%";
+        tg[0].style.left = rdm1() + "%";
+  
+        tg[0].style.transform = "translateX(-50%)";
+        tg[0].style.transform = "translateY(-50%)";
+  
+        tg[0].style.display = "block";
+  
+        tg[1].style.top = rdm1() + "%";
+        tg[1].style.left = rdm2() + "%";
+  
+        tg[1].style.display = "block";
+  
+        tg[2].style.top = rdm2() + "%";
+        tg[2].style.left = rdm1() + "%";
+  
+        tg[2].style.display = "block";
+  
+        tg[3].style.top = rdm2() + "%";
+        tg[3].style.left = rdm2() + "%";
+  
+        tg[3].style.display = "block";   
+        // 여기다쓰면됨!! 이미지 관련!!!
+      }
     } else {
       console.log("마우스오버가 됐지만 먼가 안맞음");
       console.log("안맞으면 찍어보기", idx, imgNum);
