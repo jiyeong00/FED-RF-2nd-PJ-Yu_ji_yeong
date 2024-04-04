@@ -27,7 +27,7 @@
     z-index: 2;
   }
   .more-change-menu li{
-    padding-bottom: 15px;
+    padding-bottom: 4rem;
   }
 
   
@@ -35,7 +35,7 @@
     padding: 10px;
 
     color: #ffffff9e;
-    font-size: 27px;
+    font-size: 2.7rem;
     
     background-color:#c8c8ce9e;
     
@@ -53,6 +53,42 @@
   .more-change-menu button:hover{
     color: white;
     background-color: #b559fb;
+    transition: .3s;
+  }
+
+  .more-change-menu li:nth-child(1)::after{
+    content: '뮤지컬';
+    position: absolute;
+    color: #ffffff9e;
+    top: 30%;
+    left: 50%;
+    width: 100%;
+    font-size: 1.5rem;
+    transform: translateX(-50%);
+    text-align: center;
+    font-family: "Noto Sans KR", sans-serif;
+
+  }
+
+  .more-change-menu li:nth-child(2)::after{
+    content: '전시회';
+    position: absolute;
+    color: #b559fb;
+    bottom: 8%;
+    left: 50%;
+    width: 100%;
+    transform: translateX(-50%);
+
+    font-size: 1.5rem;
+    text-align: center;
+    font-family: "Noto Sans KR", sans-serif;
+    font-weight: bold;
+  }
+
+  .more-change-menu button:hover{
+    color: white;
+    background-color: #b559fb;
+    transition: .3s;
   }
 
 

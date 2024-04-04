@@ -10,3 +10,6 @@
 body{
     background-color: #bee2d4;
 }
+body *{
+    outline: 2px dashed red;
+}

@@ -19,7 +19,8 @@
 
   width: 500px;
   height: 500px;
-  background-color: #c8c8ce15;
+  background: linear-gradient(to bottom,#55555830,#32323423);
+  /* background-color: #c8c8ce11; */
 
   border-radius: 50%;
 }
@@ -52,6 +53,7 @@
   height: 100vh;
 }
 
+
 /************************************* 상단메뉴 *************************************/
 /* 공통 CSS : common.css에 넣음 */
 
@@ -61,7 +63,7 @@
   position: absolute;
   top: 0;
   left: 0;
-  font-size: 25vh;
+  font-size: 10vh;
   color: rgba(255, 255, 255, 0.031);
   letter-spacing: 5vw;
   font-family: "Black Han Sans", sans-serif;
@@ -70,7 +72,7 @@
   position: absolute;
   bottom: 0;
   right: 0;
-  font-size: 25vh;
+  font-size: 10vh;
   color: rgba(255, 255, 255, 0.031);
   letter-spacing: 5vw;
   font-family: "Black Han Sans", sans-serif;
@@ -210,7 +212,7 @@
   opacity: 0;
 
   text-align: center;
-  width: max(40vw,300px);
+  width: max(35vw, 300px);
 
   animation: 
   img-ani 2.5s linear 0.8s infinite alternate,
@@ -264,7 +266,7 @@
 .ME-part .slideShow {
   padding: 50px 0;
   height: 50%;
-  /* overflow: hidden; */
+  overflow: hidden;
 }
 
 /* 포스터 리스트 영역 - msc-list */
@@ -291,11 +293,13 @@
   text-align: center;
   font-size: 17px;
   margin: 0 30px;
-  transition: transform 1s;
+  transition: transform 1s, filter 1s;
+  filter: grayscale(.8)
 }
 
 .msc-list li.on, .exh-list li.on {
   transform: scale(1.2);
+  filter: grayscale(0)
 }
 
 .msc-list img, .exh-list img {
