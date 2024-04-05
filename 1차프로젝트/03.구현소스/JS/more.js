@@ -11,14 +11,4 @@
 // topBtnImg.classList.add('.on');
 // };
 
-const cardWrap = document.querySelectorAll(".card-wrap img");
 
-cardWrap.onclick(()=>{
-    console.log('클릭');
-    
-});
-
-
-// function movePage() {
-// 	// location.href = "detail_des.html";
-// }

@@ -9,6 +9,11 @@
 @import url(./grid_12_flex.css);
 
 /********************************** 공통 **********************************/
+/* 가로스크롤 없애기 */
+html{
+  overflow-x :  hidden;
+}
+
 /* 메인 공용 원 */
 .cir {
   position: absolute;

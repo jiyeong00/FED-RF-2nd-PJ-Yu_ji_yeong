@@ -5,11 +5,21 @@
 @import url(./core.css);
 @import url(./common.css);
 /* 그리드 12 불러오기 */
-@import url(./grid_12_float.css);
+@import url(./grid_12_flex.css);
 
-body{
-    background-color: #bee2d4;
-}
 body *{
     outline: 2px dashed red;
+}
+
+/* <!-- 정보페이지 --> */
+.info{
+    color: white;
+}
+.info h1{
+    font-size: 5rem;
+}
+
+
+.rep-poster img{
+    width: 300px;
 }
