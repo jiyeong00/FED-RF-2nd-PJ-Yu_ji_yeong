@@ -121,25 +121,36 @@ window.addEventListener(
 
 /////////////////////////////////////////////////////////////////////////////////
 // 뮤지컬영역 - 버튼 눌럿을 때 슬라이드
-addEvt(window, "DOMContentLoaded", loadFn);
+// addEvt(window, "DOMContentLoaded", loadFn);
+const slideEle = document.querySelectorAll('.slideShow');
+console.log(slideEle);
 
-// 슬라이드 전역변수
-let sldSeq = 0;
+slideEle.forEach(ele=>slideFn(ele));
 
-// 배경이미지 넣을려고 만든 변수--------------///
-let imgNum = 3;
 
-// 이전으로 넘길때 계산할려고 넣은 변수....
-let beforeNum = 0;
 
-function loadFn() {
-  let slides = document.querySelector(".msc-list");
+function slideFn(target) {
+
+  console.log(target);
+
+  // 슬라이드 전역변수
+  let sldSeq = 0;
+
+  // 배경이미지 넣을려고 만든 변수--------------///
+  let imgNum = 3;
+  
+  // 이전으로 넘길때 계산할려고 넣은 변수....
+  let beforeNum = 0;
+
+
+  let slides = target.querySelector(".core-list");
+  console.log(slides);
   // let slides = document.querySelectorAll(".core-list");
 
   // console.log('로딩완료');
-  let passBtn = document.querySelectorAll(".pbtn");
+  let passBtn = target.querySelectorAll(".pbtn");
 
-  let list = slides.querySelectorAll(".msc-list li");
+  let list = slides.querySelectorAll(".core-list li");
   // console.log('리스트',list);
 
   ///////////////////////////////////////////////초기세팅
@@ -244,12 +255,9 @@ function loadFn() {
       // console.log("sldSeq:", sldSeq, list, "\nimgNum", imgNum,"\nbeforeNum",list.length - beforeNum);
     } //////isRbtn? IF문/////////////
   } ////goSlide함수////
-} ///////loadFn/////////////////
 
-// 맨위로 올리기
-window.scrollTo(0, 0);
 
-///////////////////////////////////////////////////////////////////////////////////////////////
+  ///////////////////////////////////////////////////////////////////////////////////////////////
 // 뮤지컬 영역 - 슬라이드 자동넘김
 
 let slideShow = document.querySelector(".slideShow");
@@ -417,3 +425,11 @@ slideImg.forEach((val, idx) => {
 // if(sts==false){
 //   clearAuto();
 // }
+
+
+
+} ///////slideFn/////////////////
+
+// 맨위로 올리기
+window.scrollTo(0, 0);
+
