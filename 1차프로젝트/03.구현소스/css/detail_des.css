@@ -8,17 +8,20 @@
 @import url(./grid_12_flex.css);
 
 body * {
-  /* outline: 2px dashed red; */
+  outline: 2px dashed red;
 }
 body {
   box-sizing: border-box;
   padding: 0 10rem;
+  overflow-x: hidden;
 }
 /********************* <!-- 정보페이지 --> *********************/
 .info {
   position: relative;
   color: white;
   padding: 10rem;
+
+
 }
 .info h1 {
   font-family: "Black Han Sans", sans-serif;
@@ -70,20 +73,38 @@ body {
 }
 
 /************************** 홍보페이지 **************************/
-.rep-cont {
-  /* p박스 부모자격 */
+.story-page{
   position: relative;
+  height: 1000px;
 
+}
+.story-page-inbox2{
+  position: absolute;
+  top: 20%;
+  /* padding-top: 20%; */
+  left: 100%;
+  width: 0%;
+  height: 100vh;
+}
+
+.rep-cont {
+  width: 100%;
+  /* p박스 부모자격 */
   padding: 5rem;
   color: white;
   font-family: "Noto Sans KR", sans-serif;
+  overflow: hidden;
 }
 .rep-cont p {
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
   text-align: center;
   font-size: 1.8rem;
+
+  width: 640px;
+  height: 440px;
+
 }
 .rep-cont strong {
   font-size: 2rem;
@@ -91,4 +112,16 @@ body {
 }
 .rep-cont span {
   font-size: 4rem;
+}
+
+/************************** 인트로영상 **************************/
+.video-page{
+  position: relative;
+}
+.video-page iframe{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  
 }
