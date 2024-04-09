@@ -15,6 +15,12 @@ body {
   padding: 0 10rem;
   overflow-x: hidden;
 }
+
+
+/* 뒤로 이동 */
+.top-btn img{
+transform: rotate(-90deg);
+}
 /********************* <!-- 정보페이지 --> *********************/
 .info {
   position: relative;
@@ -67,7 +73,7 @@ body {
   line-height: 100vh;
 }
 .poster img {
-  width: 45rem;
+  width: 50rem;
   aspect-ratio: 3 / 4;
   vertical-align: middle;
 }
@@ -95,7 +101,7 @@ body {
   font-family: "Noto Sans KR", sans-serif;
   overflow: hidden;
 }
-.rep-cont p {
+.rep-cont .rep-p {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -103,8 +109,10 @@ body {
   font-size: 1.8rem;
 
   width: 640px;
-  height: 440px;
-
+  height: 475px;
+}
+.story-page-inbox2 .rep-cont p{
+  line-height: 43px;
 }
 .rep-cont strong {
   font-size: 2rem;
@@ -115,7 +123,7 @@ body {
 }
 
 /************************** 인트로영상 **************************/
-.video-page{
+/* .video-page{
   position: relative;
 }
 .video-page iframe{
@@ -123,5 +131,60 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  
+} */
+
+/* 인트로 동영상 박스 */
+.intro-mv-img{
+  position: relative;
+  /* 부모자격 */
+  aspect-ratio: 2/1.1;
+}
+/* 가상요소로 플레이버튼 만들기 
+-> .off를 준 경우에만 가상요소 버튼 보임 
+따라서 비디오 태그를 넣을 경우 .off를 지울 것
+*/
+
+.intro-mv-img.off::after{
+  content: '';
+  position: absolute;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  background: url(../img/icon_play.png) no-repeat;
+  cursor: pointer;
+}
+
+/* 하위 이미지/동영상 */
+.intro-mv-img img,
+.intro-mv-img iframe{
+  position: relative;
+  top: 66%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+
+  width: 65%;
+  height: 65%;
+  object-fit: cover;
+  border-radius: 5px;
+}
+/* 동영상 설명박스 */
+.intro-mv-box figcaption{
+  font-size: 1.5rem;
+  color: rgba(255, 255, 255, 0.108);
+  text-align: center;
+  padding-top: 10px;
+  margin-bottom: 20%;
+  font-family: "Noto Sans KR", sans-serif;
+}
+.intro-mv-box h2{
+  position: relative;
+  /* top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%); */
+
+  font-size: 2rem;
+  color: white;
+  text-align: center;
 }

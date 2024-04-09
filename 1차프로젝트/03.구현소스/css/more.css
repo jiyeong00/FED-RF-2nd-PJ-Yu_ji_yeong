@@ -246,8 +246,8 @@
     /* outline: 2px dashed red; */
 
     border-radius: 50px 50px 0 0;
-    background-color: white;
-    z-index: 2;
+    background-color: #a93bfa5c;
+    z-index: 1;
   }
   .more-change-menu ul {
     display: flex;

@@ -89,3 +89,19 @@ function moveSc() {
   //   stage.style.transition = ".5s";
   // } //if문
 } //////////////moveTit함수/////////////////
+
+
+
+const introMv = document.querySelector(".intro-mv-img");
+
+introMv.onclick = () => {
+  console.log("인트로 영상");
+  // 1. 동영상 넣기
+  introMv.innerHTML = `
+  <iframe src="https://www.youtube.com/embed/9Bg5NwTaZJI?autoplay=1&mute=1&loop=1&playlist=9Bg5NwTaZJI" allow="autoplay"></iframe>
+    `;
+  // 2. 클래스 off 지우기 (플레이 버튼 안나오게)
+  introMv.classList.remove("off");
+}; ////////////click이벤트
+
+
