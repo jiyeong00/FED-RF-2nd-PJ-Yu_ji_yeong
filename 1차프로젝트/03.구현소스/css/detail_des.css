@@ -113,13 +113,11 @@ transform: rotate(-90deg);
 }
 .story-page-inbox2 .rep-cont p{
   line-height: 43px;
+  height: 563px;
 }
 .rep-cont strong {
   font-size: 2rem;
   font-style: italic;
-}
-.rep-cont span {
-  font-size: 4rem;
 }
 
 /************************** 인트로영상 **************************/
