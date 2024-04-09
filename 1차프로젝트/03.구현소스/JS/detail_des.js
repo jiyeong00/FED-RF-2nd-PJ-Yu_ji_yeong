@@ -45,14 +45,14 @@ function moveSc() {
         inbox1.style.transition = "1s";
       }
 
-      if (scTop > 1100){
+      if (scTop > 1230){
         inbox2.style.left = '0';
         inbox2.style.width = '100%';
         inbox2.style.opacity = 1;
         inbox2.style.transition = "1s";
 
       }
-      else if(scTop<1100){
+      else if(scTop<1230){
         inbox2.style.opacity = 0;
         inbox2.style.left = '100%';
         inbox2.style.width = '0';

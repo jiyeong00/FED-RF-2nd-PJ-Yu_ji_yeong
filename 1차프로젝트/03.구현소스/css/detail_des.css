@@ -8,7 +8,7 @@
 @import url(./grid_12_flex.css);
 
 body * {
-  outline: 2px dashed red;
+  /* outline: 2px dashed red; */
 }
 body {
   box-sizing: border-box;
@@ -86,7 +86,7 @@ transform: rotate(-90deg);
 }
 .story-page-inbox2{
   position: absolute;
-  top: 20%;
+  top: 45%;
   /* padding-top: 20%; */
   left: 100%;
   width: 0%;
@@ -131,6 +131,11 @@ transform: rotate(-90deg);
   transform: translate(-50%, -50%);
 } */
 
+.intro-mv-box{
+  position: relative;
+  top: 15rem;
+}
+
 /* 인트로 동영상 박스 */
 .intro-mv-img{
   position: relative;
@@ -145,7 +150,7 @@ transform: rotate(-90deg);
 .intro-mv-img.off::after{
   content: '';
   position: absolute;
-  top: 66%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
   width: 72px;
@@ -158,7 +163,7 @@ transform: rotate(-90deg);
 .intro-mv-img img,
 .intro-mv-img iframe{
   position: relative;
-  top: 66%;
+  top: 70%;
   left: 50%;
   transform: translate(-50%, -50%);
 
@@ -172,17 +177,14 @@ transform: rotate(-90deg);
   font-size: 1.5rem;
   color: rgba(255, 255, 255, 0.108);
   text-align: center;
-  padding-top: 10px;
-  margin-bottom: 20%;
+  padding-top: 23px;
+  margin-bottom: 25%;
   font-family: "Noto Sans KR", sans-serif;
 }
 .intro-mv-box h2{
   position: relative;
-  /* top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%); */
-
-  font-size: 2rem;
+  top: 23rem;
+  font-size: 5rem;
   color: white;
   text-align: center;
 }
