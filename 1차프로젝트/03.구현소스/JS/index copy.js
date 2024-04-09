@@ -377,49 +377,51 @@ function slideFn(target) {
   const rdm1 = () => Math.ceil(Math.random() * 50); //0~50
   const rdm2 = () => Math.ceil(Math.random() * 50) + 50; //50~100
 
-  // console.log("Math.random()",Math.random())
-  // console.log("Math.random() * 200",Math.random() * 200)
-  // console.log("Math.ceil(Math.random() * 200)",Math.ceil(Math.random() * 200))
-  // console.log("Math.ceil(Math.random() * 200)+200",Math.ceil(Math.random() * 200)+200)
-
   slideImg.forEach((val, idx) => {
     slideImg[idx].onmouseover = () => {
       
-      setImgNow(imgNum-3);
+      setImgNow(imgNum);
       console.log("idx:", idx, "/imgNum:", imgNum, imgNum-3);
       let tg = document.querySelectorAll("#msc-back-img img");
-
+      
       if (idx == imgNum) {
         console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
 
-
         tg[0].style.top = rdm1() + "%";
-        tg[0].style.left = rdm1() + "%";
-        tg[0].style.transform = "translateX(-50%)";
-        tg[0].style.transform = "translateY(-50%)";
+        // tg[0].style.left = rdm1() + "%";
+        // tg[0].style.transform = "translateX(-50%)";
+        tg[0].style.transform = "translate(50%)";
 
         tg[0].style.display = "block";
+        tg[0].style.transition = "1s ease-in-out";
 
+        
         tg[1].style.top = rdm1() + "%";
-        tg[1].style.left = rdm2() + "%";
-        tg[1].style.transform = "translateX(-50%)";
-        tg[1].style.transform = "translateY(-50%)";
+        // tg[1].style.left = rdm2() + "%";
+        // tg[1].style.transform = "translateX(-50%)";
+        tg[1].style.transform = "translateX(50%)";
 
         tg[1].style.display = "block";
-
+        tg[1].style.transition = "1s ease-in-out";
+        
         tg[2].style.top = rdm2() + "%";
-        tg[2].style.left = rdm1() + "%";
-        tg[2].style.transform = "translateX(-50%)";
-        tg[2].style.transform = "translateY(-50%)";
-
+        // tg[2].style.left = rdm1() + "%";
+        // tg[2].style.transform = "translateX(-50%)";
+        tg[2].style.transform = "translateX(50%)";
+        
         tg[2].style.display = "block";
-
+        tg[2].style.transition = "1s ease-in-out";
+        
         tg[3].style.top = rdm2() + "%";
-        tg[3].style.left = rdm2() + "%";
-        tg[3].style.transform = "translateX(-50%)";
-        tg[3].style.transform = "translateY(-50%)";
-
+        // tg[3].style.left = rdm2() + "%";
+        // tg[3].style.transform = "translateX(-50%)";
+        tg[3].style.transform = "translateX(50%)";
+        
         tg[3].style.display = "block";
+        tg[3].style.transition = "1s ease-in-out";
+        
+        
+
         // 여기다쓰면됨!! 이미지 관련!!!
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");

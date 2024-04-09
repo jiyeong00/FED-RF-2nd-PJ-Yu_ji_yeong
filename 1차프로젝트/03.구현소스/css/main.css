@@ -317,7 +317,10 @@ html{
   position: absolute;
   top: 0;
   display: none;
+  width: 30rem;
+  transition: 1s ease-in-out;
 }
+
 
 /* ---------이미지리스트 제목 및 장소, 날짜-------------- */
 /* 이미지 리스트 제목 및 장소 */
