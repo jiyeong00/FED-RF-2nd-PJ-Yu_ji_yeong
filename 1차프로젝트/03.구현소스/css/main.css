@@ -299,12 +299,14 @@ html{
   font-size: 17px;
   margin: 0 30px;
   transition: transform 1s, filter 1s;
-  filter: grayscale(.8)
+  /* filter: grayscale(.8); */
+  opacity: .9;
 }
 
 .msc-list li.on, .exh-list li.on {
   transform: scale(1.2);
-  filter: grayscale(0)
+  /* filter: grayscale(0) */
+  opacity: 1;
 }
 
 .msc-list img, .exh-list img {
@@ -316,9 +318,12 @@ html{
 #msc-back-img img {
   position: absolute;
   top: 0;
-  display: none;
-  /* opacity: 0; */
-  width: 30rem;
+  max-height: 0px;
+
+  width: 28rem;
+  /* z-index: 1; */
+  transition: .5s ease-out;
+  filter: grayscale(.8);
 }
 
 
