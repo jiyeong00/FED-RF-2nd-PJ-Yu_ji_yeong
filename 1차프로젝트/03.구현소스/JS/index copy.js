@@ -195,7 +195,7 @@ function slideFn(target) {
       imgNum == 6 ? (imgNum = 0) : imgNum++;
       beforeNum--;
 
-      console.log("증가하나? imgNum:", imgNum);
+      // console.log("증가하나? imgNum:", imgNum);
 
       // 이미지 넣을려고 숫자 조절하는 if문
       // if (imgNum == 7) {
@@ -257,6 +257,10 @@ function slideFn(target) {
     } //////isRbtn? IF문/////////////
   } ////goSlide함수////
 
+
+
+
+
   ///////////////////////////////////////////////////////////////////////////////////////////////
   // 뮤지컬 영역 - 슬라이드 자동넘김
 
@@ -274,7 +278,7 @@ function slideFn(target) {
   function autoSlide() {
     autoI = setInterval(() => {
       console.log("들어가나?");
-      // mscNbtn.onclick();
+      // pbtn.onclick();
     }, 5000);
   } ////////autoslide함수///////////////
 
@@ -385,48 +389,47 @@ function slideFn(target) {
       let tg = document.querySelectorAll("#msc-back-img img");
       
       if (idx == imgNum) {
-        console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
+        // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
 
         tg[0].style.top = rdm1() + "%";
-        // tg[0].style.left = rdm1() + "%";
-        // tg[0].style.transform = "translateX(-50%)";
-        tg[0].style.transform = "translate(50%)";
+        tg[0].style.left = rdm1() + "%";
+        tg[0].style.transform = "translateX(-50%)";
+        tg[0].style.transform = "translateY(-50%)";
 
         tg[0].style.display = "block";
-        tg[0].style.transition = "1s ease-in-out";
 
         
         tg[1].style.top = rdm1() + "%";
-        // tg[1].style.left = rdm2() + "%";
-        // tg[1].style.transform = "translateX(-50%)";
-        tg[1].style.transform = "translateX(50%)";
+        tg[1].style.left = rdm2() + "%";
+        tg[1].style.transform = "translateX(-50%)";
+        tg[1].style.transform = "translateY(-50%)";
 
         tg[1].style.display = "block";
-        tg[1].style.transition = "1s ease-in-out";
         
         tg[2].style.top = rdm2() + "%";
-        // tg[2].style.left = rdm1() + "%";
-        // tg[2].style.transform = "translateX(-50%)";
-        tg[2].style.transform = "translateX(50%)";
+        tg[2].style.left = rdm1() + "%";
+        tg[2].style.transform = "translateX(-50%)";
+        tg[2].style.transform = "translateY(-50%)";
         
         tg[2].style.display = "block";
-        tg[2].style.transition = "1s ease-in-out";
         
         tg[3].style.top = rdm2() + "%";
-        // tg[3].style.left = rdm2() + "%";
-        // tg[3].style.transform = "translateX(-50%)";
-        tg[3].style.transform = "translateX(50%)";
+        tg[3].style.left = rdm2() + "%";
+        tg[3].style.transform = "translateX(-50%)";
+        tg[3].style.transform = "translateY(-50%)";
         
         tg[3].style.display = "block";
-        tg[3].style.transition = "1s ease-in-out";
         
         
+        tg[0].style.transition = "1s ease-in-out";
+
 
         // 여기다쓰면됨!! 이미지 관련!!!
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
         console.log("안맞으면 찍어보기", idx, imgNum);
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
+
     }; ///마우스 엔터이벤트
     slideImg[idx].onmouseleave = () => {
       
