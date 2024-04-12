@@ -470,8 +470,8 @@ function slideFn(target, SFidx) {
     `;
   }; //// setImgNow 함수 /////
 
-  slideImg2.forEach((val, idx2) => {
-    slideImg2[idx2].onmouseover = () => {
+  slideImg2.forEach((val, idx) => {
+    slideImg2[idx].onmouseover = () => {
       let winWid2 = window.innerWidth;
       let winHei2 = window.innerHeight * 2;
 
@@ -486,11 +486,11 @@ function slideFn(target, SFidx) {
       let Hrdm2 = () => Math.ceil((winHei2 / 2) * Math.random()) + winHei2 / 2; //50~100
 
       setImgNow2(imgNum2);
-      console.log("idx2:", idx2, "/imgNum2:", imgNum2);
+      console.log("idx:", idx, "/imgNum2:", imgNum2);
       let tg2 = document.querySelectorAll("#exh-back-img img");
-      if (idx2 == imgNum2) {
+      if (idx == imgNum2) {
         // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
-        slideImg2[idx2].style.boxShadow = "0 0 5px white";
+        slideImg2[idx].style.boxShadow = "0 0 5px white";
 
         tg2[0].style.top = Hrdm1() + "px";
         tg2[0].style.left = Wrdm1() + "px";
@@ -524,13 +524,13 @@ function slideFn(target, SFidx) {
         // 여기다쓰면됨!! 이미지 관련!!!
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
-        console.log("안맞으면 찍어보기", idx2, imgNum2);
+        console.log("안맞으면 찍어보기", idx, imgNum2);
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
     }; ///마우스 엔터이벤트
-    slideImg2[idx2].onmouseleave = () => {
-      let tg2 = document.querySelectorAll("#msc-back-img img");
+    slideImg2[idx].onmouseleave = () => {
+      let tg2 = document.querySelectorAll("#exh-back-img img");
       tg2.forEach((ele) => {
-        slideImg2[idx2].style.boxShadow = "none";
+        slideImg2[idx].style.boxShadow = "none";
         ele.style.maxHeight = 0;
       });
     }; //////mosuseleave///////////////////
