@@ -128,18 +128,16 @@ window.addEventListener(
 const slideEle = document.querySelectorAll(".slideShow");
 console.log("슬라이드는 두개? ", slideEle);
 
-slideEle.forEach((ele, SFidx) => slideFn(ele, SFidx));
+slideEle.forEach((ele) => slideFn(ele));
 
 // 배경이미지 넣을려고 만든 변수--------------///
 let imgNum = 3;
-let imgNum2 = 3;
 
-function slideFn(target, SFidx) {
+function slideFn(target) {
   console.log(target);
 
   // 슬라이드 전역변수
   let sldSeq = 0;
-  let sldSeq2 = 0;
 
   // 이전으로 넘길때 계산할려고 넣은 변수....
   let beforeNum = 0;
@@ -159,13 +157,13 @@ function slideFn(target, SFidx) {
 
   for (let x of passBtn) {
     x.onclick = goSlide;
-    console.log("넘기기 버튼", passBtn);
+    console.log('넘기기 버튼',passBtn);
   } /// for of ///
 
   function goSlide(evt, sts = true) {
     // 버튼 클릭 시 멈춤
     if (sts) {
-      // clearAuto();
+      clearAuto();
     } //if문
 
     // 광클 금지
@@ -202,26 +200,29 @@ function slideFn(target, SFidx) {
         } else {
           slides.appendChild(list[sldSeq - 1]);
         }
+        // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
       }, 1000);
 
       sldSeq++;
-      if (SFidx == 0) {
-        imgNum == 6 ? (imgNum = 0) : imgNum++;
-      } else if (SFidx == 1) {
-        imgNum2 == 6 ? (imgNum2 = 0) : imgNum2++;
-      }
-
+      imgNum == 6 ? (imgNum = 0) : imgNum++;
       beforeNum--;
-      console.log("증가하나? imgNum:", imgNum, "imgNum2:", imgNum2);
 
+      // console.log("증가하나? imgNum:", imgNum);
+
+      // 이미지 넣을려고 숫자 조절하는 if문
+      // if (imgNum == 7) {
+      //   imgNum = 0;
+      // }
       if (sldSeq > 6) {
         sldSeq = 0;
       }
       if (beforeNum < 0) {
         beforeNum = 6;
       }
+
+      // console.log("sldSeq:", sldSeq, list, "\nimgNum", imgNum,"\nbeforeNum",beforeNum);
     } ///////여기까지 오른쪽 클릭 /////////
     else {
       let newList = slides.querySelectorAll("li");
@@ -250,15 +251,10 @@ function slideFn(target, SFidx) {
       }, 1000);
 
       sldSeq--;
-      if (SFidx == 0) {
-        imgNum === 0 ? (imgNum = 6) : imgNum--;
-      } else if (SFidx == 1) {
-        imgNum2 === 0 ? (imgNum2 = 6) : imgNum2--;
-      }
-
+      imgNum === 0 ? (imgNum = 6) : imgNum--;
       beforeNum++;
 
-      console.log("감소하나? imgNum:", imgNum, "imgNum2:", imgNum2);
+      console.log("감소하나? imgNum:", imgNum);
 
       // 이미지 넣을려고 숫자 조절하는 if문
       // if (imgNum <= 0) {
@@ -270,6 +266,8 @@ function slideFn(target, SFidx) {
       if (beforeNum > 6) {
         beforeNum = 0;
       }
+
+      // console.log("sldSeq:", sldSeq, list, "\nimgNum", imgNum,"\nbeforeNum",list.length - beforeNum);
     } //////isRbtn? IF문/////////////
   } ////goSlide함수////
 
@@ -357,7 +355,7 @@ function slideFn(target, SFidx) {
   const slideImg = document.querySelectorAll(".msc-list img");
   const backImg = document.querySelector("#msc-back-img");
 
-  // console.log("kkkkkk", slideImg);
+  console.log("kkkkkk", slideImg);
 
   // 이미지 넣기
   const wrapping = (j) => {
@@ -371,12 +369,17 @@ function slideFn(target, SFidx) {
     // console.log('ssssss',hcode);
     return hcode;
   };
+  // for (let j = 0; j < 2; j++) {
   const setImgNow = (seq) => {
     backImg.innerHTML = `
     <li> ${wrapping(seq)}</li>
     `;
   }; //// setImgNow 함수 /////
+  // } /////j의 for문
 
+  // const tgLi = backImg.querySelectorAll("#msc-back-img li");
+  // const tg = backImg.querySelectorAll("#msc-back-img img");
+  // ul - backImg / ul내 li - tgLi / ul내 img - tg
 
   // console.log(winWid, winHei);
 
@@ -461,19 +464,30 @@ function slideFn(target, SFidx) {
     `;
     } ////i의 for문
     // 이미지코드 리턴
+    // console.log('ssssss',hcode);
     return hcode;
   };
-
+  // for (let j = 0; j < 2; j++) {
   const setImgNow2 = (seq) => {
     backImg2.innerHTML = `
     <li> ${wrapping2(seq)}</li>
     `;
   }; //// setImgNow 함수 /////
+  // } /////j의 for문
 
-  slideImg2.forEach((val, idx2) => {
-    slideImg2[idx2].onmouseover = () => {
+  // let winWid2 = window.innerWidth;
+  // let winHei2 = window.innerHeight;
+
+  // let Wrdm1 = () => Math.ceil((winWid2 / 2) * Math.random()); //0~50
+  // let Wrdm2 = () => Math.ceil((winWid2 / 2) * Math.random()) + winWid2 / 2; //50~100
+
+  // let Hrdm1 = () => Math.ceil((winHei2 / 2) * Math.random()); //0~50
+  // let Hrdm2 = () => Math.ceil((winHei2 / 2) * Math.random()) + winHei2 / 2; //50~100
+
+  slideImg2.forEach((val, idx) => {
+    slideImg2[idx].onmouseover = () => {
       let winWid2 = window.innerWidth;
-      let winHei2 = window.innerHeight * 2;
+      let winHei2 = window.innerHeight;
 
       // backImg2.style.height=winHei2;
       console.log("전시회", winHei2, backImg2.scrollTop);
@@ -485,12 +499,12 @@ function slideFn(target, SFidx) {
       let Hrdm1 = () => Math.ceil((winHei2 / 2) * Math.random()); //0~50
       let Hrdm2 = () => Math.ceil((winHei2 / 2) * Math.random()) + winHei2 / 2; //50~100
 
-      setImgNow2(imgNum2);
-      console.log("idx2:", idx2, "/imgNum2:", imgNum2);
-      let tg2 = document.querySelectorAll("#exh-back-img img");
-      if (idx2 == imgNum2) {
+      setImgNow2(imgNum);
+      console.log("idx:", idx, "/imgNum:", imgNum);
+      let tg2 = document.querySelectorAll("#msc-back-img img");
+      if (idx == imgNum) {
         // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
-        slideImg2[idx2].style.boxShadow = "0 0 5px white";
+        slideImg2[idx].style.boxShadow = "0 0 5px white";
 
         tg2[0].style.top = Hrdm1() + "px";
         tg2[0].style.left = Wrdm1() + "px";
@@ -524,13 +538,13 @@ function slideFn(target, SFidx) {
         // 여기다쓰면됨!! 이미지 관련!!!
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
-        console.log("안맞으면 찍어보기", idx2, imgNum2);
+        console.log("안맞으면 찍어보기", idx, imgNum);
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
     }; ///마우스 엔터이벤트
-    slideImg2[idx2].onmouseleave = () => {
+    slideImg2[idx].onmouseleave = () => {
       let tg2 = document.querySelectorAll("#msc-back-img img");
       tg2.forEach((ele) => {
-        slideImg2[idx2].style.boxShadow = "none";
+        slideImg2[idx].style.boxShadow = "none";
         ele.style.maxHeight = 0;
       });
     }; //////mosuseleave///////////////////

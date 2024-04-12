@@ -315,7 +315,7 @@ html{
 }
 
 /* ---------백이미지 박스-------------- */
-#msc-back-img img {
+.sub-back-img img {
   position: absolute;
   top: 0;
   max-height: 0px;
