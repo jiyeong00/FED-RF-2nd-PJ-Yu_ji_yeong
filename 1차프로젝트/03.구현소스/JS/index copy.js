@@ -139,13 +139,12 @@ function slideFn(target, SFidx) {
 
   // 슬라이드 전역변수
   let sldSeq = 0;
-  let sldSeq2 = 0;
 
   // 이전으로 넘길때 계산할려고 넣은 변수....
   let beforeNum = 0;
 
   let slides = target.querySelector(".core-list");
-  console.log(slides);
+  console.log('슬라이드',slides);
   // let slides = document.querySelectorAll(".core-list");
 
   // console.log('로딩완료');
@@ -162,6 +161,9 @@ function slideFn(target, SFidx) {
     console.log("넘기기 버튼", passBtn);
   } /// for of ///
 
+
+
+  
   function goSlide(evt, sts = true) {
     // 버튼 클릭 시 멈춤
     if (sts) {
@@ -214,7 +216,7 @@ function slideFn(target, SFidx) {
       }
 
       beforeNum--;
-      console.log("증가하나? imgNum:", imgNum, "imgNum2:", imgNum2);
+      // console.log("증가하나? imgNum:", imgNum, "imgNum2:", imgNum2);
 
       if (sldSeq > 6) {
         sldSeq = 0;
@@ -258,12 +260,8 @@ function slideFn(target, SFidx) {
 
       beforeNum++;
 
-      console.log("감소하나? imgNum:", imgNum, "imgNum2:", imgNum2);
+      // console.log("감소하나? imgNum:", imgNum, "imgNum2:", imgNum2);
 
-      // 이미지 넣을려고 숫자 조절하는 if문
-      // if (imgNum <= 0) {
-      //   imgNum = 6;
-      // }
       if (sldSeq < 0) {
         sldSeq = 6;
       }
@@ -281,14 +279,13 @@ function slideFn(target, SFidx) {
   // 타임아웃용 변수(지울목적)
   let autoT;
 
-  // autoSlide();
 
   // setInterval(함수,시간)
   // - 일정시간간격으로 함수를 호출
   function autoSlide() {
     autoI = setInterval(() => {
       console.log("들어가나?");
-      // goSlide(false,false);
+      goSlide(false,false);
     }, 5000);
   } ////////autoslide함수///////////////
 
@@ -313,17 +310,22 @@ function slideFn(target, SFidx) {
 
   const dtSpan = document.querySelectorAll(".main-tit span");
   const screen = document.querySelectorAll(".screen .ifr");
+  const staImg = document.querySelector(".main-tit-img img");
 
   function Menter(i) {
+    staImg.style.opacity = 0;
     dtSpan[i].style.color = "#650ba7";
     screen[i].style.opacity = 0.5;
+    staImg.style.transition = "0.5s ease-in-out";
     screen[i].style.transition = "0.5s ease-in-out";
     // console.log("마우스 엔터되었나",screen[i]);
   }
   function Mleave(i) {
     // console.log("마우스 떠났나");
+    staImg.style.opacity = 1;
     dtSpan[i].style.color = "#bebec4";
     screen[i].style.opacity = 0;
+    staImg.style.transition = "0.5s ease-in-out";
     dtSpan[i].style.transition = "0.5s ease-in-out";
     screen[i].style.transition = "0.5s ease-in-out";
   }
@@ -358,7 +360,6 @@ function slideFn(target, SFidx) {
   const backImg = document.querySelector("#msc-back-img");
 
   // console.log("kkkkkk", slideImg);
-
   // 이미지 넣기
   const wrapping = (j) => {
     let hcode = "";
@@ -385,8 +386,6 @@ function slideFn(target, SFidx) {
       let winWid = window.innerWidth;
       let winHei = window.innerHeight;
 
-      console.log("전시회1", winHei);
-
       let Wrdm1 = () => Math.ceil((winWid / 2) * Math.random()); //0~50
       let Wrdm2 = () => Math.ceil((winWid / 2) * Math.random()) + winWid / 2; //50~100
 
@@ -396,10 +395,14 @@ function slideFn(target, SFidx) {
       setImgNow(imgNum);
       console.log("idx:", idx, "/imgNum:", imgNum);
       let tg = document.querySelectorAll("#msc-back-img img");
+
+
+
       if (idx == imgNum) {
         // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
-        slideImg[idx].style.boxShadow = "0 0 5px white";
+        slideImg[idx].style.boxShadow = "0 0 10px white";
 
+        
         tg[0].style.top = Hrdm1() + "px";
         tg[0].style.left = Wrdm1() + "px";
         tg[0].style.transform = "translate(-50%,-50%)";
@@ -417,24 +420,28 @@ function slideFn(target, SFidx) {
         tg[3].style.transform = "translate(-50%,-50%)";
 
         setTimeout(() => {
-          tg[0].style.maxHeight = "500px";
+          tg[0].style.maxHeight = "800px";
         }, 50);
         setTimeout(() => {
-          tg[1].style.maxHeight = "500px";
+          tg[1].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg[3].style.maxHeight = "500px";
+          tg[3].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg[2].style.maxHeight = "500px";
+          tg[2].style.maxHeight = "800px";
         }, 300);
-
         // 여기다쓰면됨!! 이미지 관련!!!
+
+        // console.log('가로세로1',tg[idx].width,tg[idx].maxHeight);
+
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
-        console.log("안맞으면 찍어보기", idx, imgNum);
+
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
-    }; ///마우스 엔터이벤트
+    }; ///마우스 엔터이벤트///////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
+
     slideImg[idx].onmouseleave = () => {
       let tg = document.querySelectorAll("#msc-back-img img");
       tg.forEach((ele) => {
@@ -473,7 +480,7 @@ function slideFn(target, SFidx) {
   slideImg2.forEach((val, idx) => {
     slideImg2[idx].onmouseover = () => {
       let winWid2 = window.innerWidth;
-      let winHei2 = window.innerHeight * 2;
+      let winHei2 = window.innerHeight;
 
       // backImg2.style.height=winHei2;
       console.log("전시회", winHei2, backImg2.scrollTop);
@@ -490,7 +497,7 @@ function slideFn(target, SFidx) {
       let tg2 = document.querySelectorAll("#exh-back-img img");
       if (idx == imgNum2) {
         // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
-        slideImg2[idx].style.boxShadow = "0 0 5px white";
+        slideImg2[idx].style.boxShadow = "0 0 10px white";
 
         tg2[0].style.top = Hrdm1() + "px";
         tg2[0].style.left = Wrdm1() + "px";
@@ -509,17 +516,19 @@ function slideFn(target, SFidx) {
         tg2[3].style.transform = "translate(-50%,-50%)";
 
         setTimeout(() => {
-          tg2[0].style.maxHeight = "500px";
+          tg2[0].style.maxHeight = "800px";
         }, 50);
         setTimeout(() => {
-          tg2[1].style.maxHeight = "500px";
+          tg2[1].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg2[3].style.maxHeight = "500px";
+          tg2[3].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg2[2].style.maxHeight = "500px";
+          tg2[2].style.maxHeight = "800px";
         }, 300);
+
+        // console.log('가로세로',tg2[idx].width,tg2[idx].maxHeight);
 
         // 여기다쓰면됨!! 이미지 관련!!!
       } else {

@@ -28,9 +28,15 @@
 */
 
 /********* 공통 클래스 *********/
+/* 가로스크롤 없애기 */
+body>*{
+    overflow:  hidden;
+  }
+
+  
 /* 배경색 */
 body{
-    background: linear-gradient(to right,#1f1f20,#0d0d0e);
+    background: linear-gradient(to right,#2d2d2e,#0d0d0e);
   }
 
   

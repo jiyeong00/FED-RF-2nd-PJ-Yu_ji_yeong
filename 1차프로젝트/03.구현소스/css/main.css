@@ -9,22 +9,18 @@
 @import url(./grid_12_flex.css);
 
 /********************************** 공통 **********************************/
-/* 가로스크롤 없애기 */
-html{
-  overflow-x :  hidden;
-}
 
 /* 메인 공용 원 */
 .cir {
   position: absolute;
   /* 중앙정렬 */
-  top: 55%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
 
   width: 500px;
   height: 500px;
-  background: linear-gradient(to bottom,#55555830,#32323423);
+  background: linear-gradient(to bottom, #55555838, #171718a3);
   /* background-color: #c8c8ce11; */
 
   border-radius: 50%;
@@ -57,7 +53,6 @@ html{
   width: 100%;
   height: 100vh;
 }
-
 
 /************************************* 상단메뉴 *************************************/
 /* 공통 CSS : common.css에 넣음 */
@@ -197,7 +192,6 @@ html{
   opacity: 0;
 }
 
-
 /* 메인 이미지 */
 .main-img-part {
   position: absolute;
@@ -206,7 +200,6 @@ html{
 
   width: 50%;
   height: 100%;
-
 }
 
 .main-tit-img {
@@ -219,9 +212,8 @@ html{
   text-align: center;
   width: max(35vw, 300px);
 
-  animation: 
-  img-ani 2.5s linear 0.8s infinite alternate,
-  img-ani2 2.5s linear 1.5s forwards;
+  animation: img-ani 2.5s linear 0.8s infinite alternate,
+    img-ani2 2.5s linear 1.5s forwards;
 }
 .main-img-part img {
   width: 100%;
@@ -239,22 +231,25 @@ html{
   }
 }
 
-
 /************************************* 뮤지컬영역 *************************************/
-#msc-area,#exh-area {
+#msc-area,
+#exh-area {
   /* 부모자격 - 뮤지컬 리스트 */
   position: relative;
 }
 .ME-part {
+  position: relative;
+  top: calc(50% + 32px);
+  transform: translateY(-50%);
+
   display: flex;
   flex-direction: column;
   justify-content: center;
 
   max-width: 1400px;
-  height: 1000px;
+  height: auto;
   margin: 0 auto;
 }
-
 
 .ME-part h1 {
   text-align: center;
@@ -291,7 +286,8 @@ html{
   padding: 24px 0;
 }
 
-.msc-list li, .exh-list li {
+.msc-list li,
+.exh-list li {
   position: relative;
 
   width: 100%;
@@ -300,16 +296,23 @@ html{
   margin: 0 30px;
   transition: transform 1s, filter 1s;
   /* filter: grayscale(.8); */
-  opacity: .9;
+  opacity: 0.9;
 }
 
-.msc-list li.on, .exh-list li.on {
+.msc-list li.on,
+.exh-list li.on {
   transform: scale(1.2);
+
   /* filter: grayscale(0) */
   opacity: 1;
 }
 
-.msc-list img, .exh-list img {
+/* .msc-list dl, .exh-list dl{
+  display: none;
+} */
+
+.msc-list img,
+.exh-list img {
   border-radius: 5%;
   width: 250px;
 }
@@ -320,12 +323,12 @@ html{
   top: 0;
   max-height: 0px;
 
-  width: 28rem;
+  width: 30rem;
+  /* width: 15vw; */
   /* z-index: 1; */
-  transition: .5s ease-out;
-  filter: grayscale(.8);
+  transition: 0.5s ease-out;
+  filter: grayscale(0.8);
 }
-
 
 /* ---------이미지리스트 제목 및 장소, 날짜-------------- */
 /* 이미지 리스트 제목 및 장소 */
@@ -362,4 +365,3 @@ dd {
 }
 
 /************************************* 전시회영역 *************************************/
-
