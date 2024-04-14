@@ -8,7 +8,7 @@
 @import url(./grid_12_flex.css);
 
 body * {
-  /* outline: 2px dashed red; */
+  outline: 2px dashed red;
 }
 body {
   box-sizing: border-box;
@@ -18,8 +18,13 @@ body {
 
 
 /* 뒤로 이동 */
+
 .top-btn img{
 transform: rotate(-90deg);
+}
+.top-btn img:hover{
+  right: 4vw;
+  transition: .1s ease-out;
 }
 /********************* <!-- 정보페이지 --> *********************/
 .info {

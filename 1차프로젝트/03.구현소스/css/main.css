@@ -9,6 +9,9 @@
 @import url(./grid_12_flex.css);
 
 /********************************** 공통 **********************************/
+body>*{
+  overflow:  hidden;
+}
 
 /* 메인 공용 원 */
 .cir {
@@ -24,6 +27,27 @@
   /* background-color: #c8c8ce11; */
 
   border-radius: 50%;
+  animation: cir-ani 4s ease-in-out  infinite alternate;
+}
+@keyframes cir-ani {
+  0%{
+    width: 550px;
+    height: 550px;
+  }
+  30%{
+    width: 500px;
+    height: 500px;
+  }
+  60%{
+    width: 600px;
+    height: 600px;
+  }
+  100%{
+    width: 500px;
+    height: 500px;
+
+  }
+  
 }
 
 /* 메인 좌우 넘기기 버튼 */
@@ -32,6 +56,9 @@
   justify-content: center;
   margin-top: 47px;
   gap: 0 20px;
+}
+.pass-btn button{
+  cursor: pointer;
 }
 #msc-more-btn,
 #exh-more-btn {
@@ -47,6 +74,9 @@
 }
 .main-btn:hover {
   color: #b559fb;
+}
+.more-btn{
+  font-weight: bold;
 }
 
 .cont {

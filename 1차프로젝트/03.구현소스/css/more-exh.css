@@ -14,9 +14,10 @@
 /* .top-area{
     height: 100px;
 } */
-
+.top-btn img{
+  opacity: 0;
+}
   
-
 
   /* 뮤지컬이랑 전시회 더보기 메뉴 체인지 버튼 */
   .more-change-menu{

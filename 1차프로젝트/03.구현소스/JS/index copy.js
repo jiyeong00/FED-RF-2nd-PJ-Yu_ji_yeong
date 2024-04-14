@@ -17,8 +17,21 @@
   - 랜덤
 
 */
+const myFn = {
+  // 요소선택함수 ////////
+  qs: (x) => document.querySelector(x),
+  qsEl: (el, x) => el.querySelector(x),
+  qsa: (x) => document.querySelectorAll(x),
+  qsaEl: (el, x) => el.querySelectorAll(x),
 
-const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
+  // 이벤트셋팅함수
+  addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
+  // 바운딩 함수
+  getBCR: (ele) => ele.getBoundingClientRect().top,
+  // 옵셋탑값 반환함수
+  getOT: (ele) => ele.offsetTop,
+}; /////// domFn 객체 /////////////
+
 
 const wrap = document.getElementsByClassName("wrap")[0]; // 보일 영역
 const container = document.querySelectorAll(".cont");
@@ -121,6 +134,40 @@ window.addEventListener(
   },
   { passive: false }
 ); // 디폴트 기능 제거 - 스크롤
+
+const topBtn=document.querySelector('.top-btn');
+let docH = document.body.clientHeight;
+let winH = window.innerHeight;
+let scLimit = docH - winH;
+
+topBtn.onclick=()=>{
+  page==1;
+}
+myFn.addEvt(window, "scroll", scrollTop);
+
+function scrollTop() {
+  let scTop = window.scrollY;
+
+    let wTop = (winH * scTop) / scLimit;
+
+  // console.log("스크롤 위치 : ", scTop);
+
+  topBtn.style.top = wTop + "px";
+
+if(scTop>=200){
+    console.log('200인가?')
+    topBtn.style.opacity = 1;
+    topBtn.style.transition = ".3s ease-in";
+}else if(scTop<200){
+    topBtn.style.opacity = 0;
+    topBtn.style.transition = ".3s ease-in";
+
+}
+
+} ////////////scrollTop////////
+
+
+
 
 /////////////////////////////////////////////////////////////////////////////////
 // 뮤지컬영역 - 버튼 눌럿을 때 슬라이드
@@ -446,7 +493,7 @@ function slideFn(target, SFidx) {
       let tg = document.querySelectorAll("#msc-back-img img");
       tg.forEach((ele) => {
         slideImg[idx].style.boxShadow = "none";
-        ele.style.maxHeight = 0;
+        ele.style.maxHeight = '0px';
       });
     }; //////mosuseleave///////////////////
   }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든
@@ -540,7 +587,7 @@ function slideFn(target, SFidx) {
       let tg2 = document.querySelectorAll("#exh-back-img img");
       tg2.forEach((ele) => {
         slideImg2[idx].style.boxShadow = "none";
-        ele.style.maxHeight = 0;
+        ele.style.maxHeight = '0px';
       });
     }; //////mosuseleave///////////////////
   }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든

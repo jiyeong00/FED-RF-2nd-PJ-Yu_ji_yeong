@@ -1,3 +1,6 @@
+
+
+
 const storyPage = document.querySelector(".story-page");
 const inbox1 = document.querySelector(".story-page-inbox1");
 const inbox2 = document.querySelector(".story-page-inbox2");
@@ -103,5 +106,7 @@ introMv.onclick = () => {
   // 2. 클래스 off 지우기 (플레이 버튼 안나오게)
   introMv.classList.remove("off");
 }; ////////////click이벤트
+
+
 
 
