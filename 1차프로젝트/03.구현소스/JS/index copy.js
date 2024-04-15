@@ -50,7 +50,6 @@ gnb.forEach((ele, idx) => {
       x.classList.remove("on");
     } /// for of ///
 
-    // 2.전체 메뉴에 on빼기
     gnb[idx].classList.add("on");
   }; //클릭이벤트
 }); //for each문
@@ -61,7 +60,6 @@ function wheelMov(page) {
     x.classList.remove("on");
   } /// for of ///
 
-  // 2.전체 메뉴에 on빼기
   gnb[page - 1].classList.add("on");
 }
 
@@ -73,10 +71,7 @@ console.log(lastPage);
 
 let prot = 0;
 
-window.addEventListener(
-  "wheel",
-  (e) => {
-    e.preventDefault();
+window.addEventListener("wheel",(e) => {e.preventDefault();
 
     // 광휠 막기
     if (prot) return;
@@ -141,7 +136,12 @@ let winH = window.innerHeight;
 let scLimit = docH - winH;
 
 topBtn.onclick=()=>{
-  page==1;
+  page==0;
+  for (let x of gnb) {
+    x.classList.remove("on");
+  } /// for of ///
+
+  gnb[0].classList.add("on");
 }
 myFn.addEvt(window, "scroll", scrollTop);
 
