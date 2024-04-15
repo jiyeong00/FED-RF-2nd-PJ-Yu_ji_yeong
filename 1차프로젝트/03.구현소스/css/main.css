@@ -50,6 +50,9 @@ body>*{
   
 }
 
+.top-btn{
+  opacity: 0;
+}
 /* 메인 좌우 넘기기 버튼 */
 .pass-btn {
   display: flex;
@@ -167,7 +170,8 @@ body>*{
   opacity: 0;
   /* left: -25%; */
 
-  color: #707075;
+  /* color: #707075; */
+  color: white;
   font-size: max(min(2.5vw, 35px), 1.5vw);
   font-weight: bold;
   letter-spacing: 1.2rem;
