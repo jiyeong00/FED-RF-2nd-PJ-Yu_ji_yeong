@@ -214,7 +214,7 @@ function slideFn(target, SFidx) {
   function goSlide(evt, sts = true) {
     // 버튼 클릭 시 멈춤
     if (sts) {
-      // clearAuto();
+      clearAuto();
     } //if문
 
     // 광클 금지
@@ -326,6 +326,7 @@ function slideFn(target, SFidx) {
   // 타임아웃용 변수(지울목적)
   let autoT;
 
+  // autoSlide();
 
   // setInterval(함수,시간)
   // - 일정시간간격으로 함수를 호출
@@ -357,7 +358,7 @@ function slideFn(target, SFidx) {
 
   const dtSpan = document.querySelectorAll(".main-tit span");
   const screen = document.querySelectorAll(".screen .ifr");
-  const staImg = document.querySelector(".main-tit-img img");
+  const staImg = document.querySelector(".main-tit-img");
 
   function Menter(i) {
     staImg.style.opacity = 0;

@@ -175,7 +175,7 @@ body>*{
     opacity: 1;
   }
   100% {
-    left: -40%;
+    left: -45%;
     opacity: 1;
   }
 }
@@ -190,14 +190,14 @@ body>*{
   }
   100% {
     /* left: 0%; */
-    left: -30%;
+    left: -38%;
     opacity: 1;
   }
 }
 @keyframes sub-tit-ani {
   to {
     /* left: 0%; */
-    left: -38%;
+    left: -48%;
     opacity: 1;
   }
 }
@@ -223,7 +223,7 @@ body>*{
 }
 
 /* 메인 이미지 */
-.main-img-part {
+/* .main-img-part {
   position: absolute;
   top: 0;
   right: 0;
@@ -258,6 +258,102 @@ body>*{
 @keyframes img-ani2 {
   to {
     opacity: 1;
+  }
+} */
+
+/* 메인 이미지 */
+.main-img-part {
+  position: absolute;
+  top: 0;
+  right: 20px;
+
+  width: 50%;
+  height: 100%;
+}
+
+.main-tit-img {
+  position: absolute;
+  top: 52%;
+  transform: translateY(-50%);
+  opacity: 0;
+
+  text-align: center;
+  /* animation: img-ani 2.5s linear 0.8s infinite alternate,
+  img-ani2 2.5s linear 1.5s forwards; */
+  animation: img-ani2 2.5s linear 1.5s forwards;
+}
+
+.main-img-part img {
+  width: 250px;
+  border-radius: 20px;
+}
+.main-img-part img:nth-child(1) {
+  position: relative;
+  /* transform: rotate(349deg); */
+  transform: rotate(0deg);
+  left: 33px;
+  box-shadow: 0 0 20px black;
+  animation: img-ani3 .5s ease-out 1.5s forwards;
+}
+.main-img-part img:nth-child(2) {
+  position: relative;
+  /* transform: rotate(4deg); */
+  transform: rotate(0deg);
+  box-shadow: 0 0 20px black;
+  animation: img-ani4 .5s ease-out 1.5s forwards;
+  top: -50px;
+}
+.main-img-part img:nth-child(3) {
+  position: relative;
+  /* transform: rotate(349deg); */
+  transform: rotate(0deg);
+  box-shadow: 0 0 20px black;
+  animation: img-ani5 .5s ease-out 1.5s forwards;
+  right: 20px;
+}
+.main-img-part img:nth-child(4) {
+  position: relative;
+  /* transform: rotate(349deg); */
+  transform: rotate(0deg);
+  box-shadow: 0 0 20px black;
+  animation: img-ani5 .5s ease-out 1.5s forwards;
+  left: -5px;
+  top: -40px;
+
+}
+.main-img-part img:nth-child(5) {
+  position: relative;
+  /* transform: rotate(14deg); */
+  transform: rotate(0deg);
+  box-shadow: 0 0 20px black;
+  animation: img-ani4 1s ease-out 1.5s forwards;
+  top: -40px;
+  right: 17px;
+}
+
+/* @keyframes img-ani {
+  to {
+    top: 51%;
+  }
+} */
+@keyframes img-ani2 {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes img-ani3 {
+  to {
+    transform: rotate(-15deg);
+  }
+}
+@keyframes img-ani4 {
+  to {
+    transform: rotate(14deg);
+  }
+}
+@keyframes img-ani5 {
+  to {
+    transform: rotate(-5deg);
   }
 }
 

@@ -70,12 +70,12 @@ html,body,.part{
 }
 .scbar::-webkit-scrollbar-thumb{
   /* 스크롤바 */
-  background-color: #555;
+  background-color: #b559fb;
   border-radius: 5px;
 }
 .scbar::-webkit-scrollbar-track{
   /* 스크롤바 트랙 */
-  background-color: #ddd;
+  background-color: #0d0d0e;
   border-radius: 5px;
 }
 
