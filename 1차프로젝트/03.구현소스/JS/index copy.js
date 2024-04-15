@@ -326,7 +326,7 @@ function slideFn(target, SFidx) {
   // 타임아웃용 변수(지울목적)
   let autoT;
 
-  // autoSlide();
+  autoSlide();
 
   // setInterval(함수,시간)
   // - 일정시간간격으로 함수를 호출
