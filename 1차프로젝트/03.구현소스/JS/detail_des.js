@@ -1,6 +1,4 @@
 
-
-
 const storyPage = document.querySelector(".story-page");
 const inbox1 = document.querySelector(".story-page-inbox1");
 const inbox2 = document.querySelector(".story-page-inbox2");

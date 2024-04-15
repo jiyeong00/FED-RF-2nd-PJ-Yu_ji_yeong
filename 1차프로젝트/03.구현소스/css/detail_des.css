@@ -8,7 +8,7 @@
 @import url(./grid_12_flex.css);
 
 body * {
-  outline: 2px dashed red;
+  /* outline: 2px dashed red; */
 }
 body {
   box-sizing: border-box;
