@@ -600,10 +600,23 @@ function slideFn(target, SFidx) {
   // }
 } ///////slideFn/////////////////
 const footer = myFn.qs("footer");
+let footSeq=myFn.qsa('footer span');
+
+setTimeout(() => {
+  if (sldSeq - 1 == -1) {
+    slides.appendChild(footSeq[0]);
+  } else {
+    slides.appendChild(list[sldSeq - 1]);
+  }
+  slides.style.left = "0px";
+  slides.style.transition = "none";
+}, 1000);
 
 let platBana=setInterval(() => {
   console.log("으아아");
   footer.style.left=" -303px";
+  footer.style.transition = "none";
+  footer.style.transition = "1s ease-out";
 }, 3000);
 // let banaI;
 

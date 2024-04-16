@@ -516,6 +516,7 @@ footer{
   /* height: 20px; */
   font-family: "Libre Baskerville", serif;
   text-wrap: nowrap;
+  transition: 1s ease-out;
   
 }
 footer span{
