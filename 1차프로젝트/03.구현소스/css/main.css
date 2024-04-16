@@ -505,4 +505,19 @@ dd {
   opacity: 1;
 }
 
-/************************************* 전시회영역 *************************************/
+/************************************* 하단영역 *************************************/
+
+footer{
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  color: white;
+  font-size: 20px;
+  /* height: 20px; */
+  font-family: "Libre Baskerville", serif;
+  text-wrap: nowrap;
+  
+}
+footer span{
+  color: #b559fb;
+}

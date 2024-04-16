@@ -43,6 +43,8 @@ const gnb = document.querySelectorAll(".menu a");
 
 const cntgnb = gnb.length;
 
+
+
 ////////////////상단 메뉴 이벤트 ////////////////////////////////////
 gnb.forEach((ele, idx) => {
   gnb[idx].onclick = () => {
@@ -597,3 +599,22 @@ function slideFn(target, SFidx) {
   //   clearAuto();
   // }
 } ///////slideFn/////////////////
+
+// let banaI;
+
+// const footer = myFn.qs("footer");
+// setTimeout(() => {
+//   autoBana();
+// }, 100);
+
+//   // 인터발용 변수(지울목적)
+
+//   // [자동넘김호출]
+//   function autoBana(){
+//     console.log('배너 움직임?');
+  
+//     banaI= setInterval(() => {
+//       // goSlide(false,false);
+//      footer.style.left=" -303px";
+//     }, 3000);
+//   }
