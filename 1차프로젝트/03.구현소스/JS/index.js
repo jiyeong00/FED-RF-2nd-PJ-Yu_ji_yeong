@@ -599,10 +599,14 @@ function slideFn(target, SFidx) {
   //   clearAuto();
   // }
 } ///////slideFn/////////////////
+const footer = myFn.qs("footer");
 
+let platBana=setInterval(() => {
+  console.log("으아아");
+  footer.style.left=" -303px";
+}, 3000);
 // let banaI;
 
-// const footer = myFn.qs("footer");
 // setTimeout(() => {
 //   autoBana();
 // }, 100);
