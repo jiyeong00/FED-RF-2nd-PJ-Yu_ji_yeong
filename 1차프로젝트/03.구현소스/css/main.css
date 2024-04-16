@@ -511,14 +511,15 @@ footer{
   position: absolute;
   left: 0;
   bottom: 10px;
-  color: white;
+  color: rgba(255, 255, 255, 0.624);
   font-size: 20px;
-  /* height: 20px; */
+  
   font-family: "Libre Baskerville", serif;
+  display: flex;
   text-wrap: nowrap;
-  transition: 1s ease-out;
+  transition: 3s linear;
   
 }
 footer span{
-  color: #b559fb;
+  color: #b559fbb1;
 }

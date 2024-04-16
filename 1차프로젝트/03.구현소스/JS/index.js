@@ -32,7 +32,6 @@ const myFn = {
   getOT: (ele) => ele.offsetTop,
 }; /////// domFn 객체 /////////////
 
-
 const wrap = document.getElementsByClassName("wrap")[0]; // 보일 영역
 const container = document.querySelectorAll(".cont");
 let page = 1; // 영역 포지션 초기값
@@ -42,8 +41,6 @@ const winW = window.innerHeight;
 const gnb = document.querySelectorAll(".menu a");
 
 const cntgnb = gnb.length;
-
-
 
 ////////////////상단 메뉴 이벤트 ////////////////////////////////////
 gnb.forEach((ele, idx) => {
@@ -73,7 +70,10 @@ console.log(lastPage);
 
 let prot = 0;
 
-window.addEventListener("wheel",(e) => {e.preventDefault();
+window.addEventListener(
+  "wheel",
+  (e) => {
+    e.preventDefault();
 
     // 광휠 막기
     if (prot) return;
@@ -132,44 +132,84 @@ window.addEventListener("wheel",(e) => {e.preventDefault();
   { passive: false }
 ); // 디폴트 기능 제거 - 스크롤
 
-const topBtn=document.querySelector('.top-btn');
+const topBtn = document.querySelector(".top-btn");
 let docH = document.body.clientHeight;
 let winH = window.innerHeight;
 let scLimit = docH - winH;
 
-topBtn.onclick=()=>{
-  page==0;
+topBtn.onclick = () => {
+  page == 0;
   for (let x of gnb) {
     x.classList.remove("on");
   } /// for of ///
 
   gnb[0].classList.add("on");
-}
+};
 myFn.addEvt(window, "scroll", scrollTop);
 
 function scrollTop() {
   let scTop = window.scrollY;
 
-    let wTop = (winH * scTop) / scLimit;
+  let wTop = (winH * scTop) / scLimit;
 
   // console.log("스크롤 위치 : ", scTop);
 
   topBtn.style.top = wTop + "px";
 
-if(scTop>=200){
-    console.log('200인가?')
+  if (scTop >= 200) {
+    console.log("200인가?");
     topBtn.style.opacity = 1;
     topBtn.style.transition = ".3s ease-in";
-}else if(scTop<200){
+  } else if (scTop < 200) {
     topBtn.style.opacity = 0;
     topBtn.style.transition = ".3s ease-in";
-
-}
-
+  }
 } ////////////scrollTop////////
 
+  // 메인영역 - 타이틀 마우스 오버시 메인 유튜브가 opacity .5%로 변경
 
+  const dtSpan = document.querySelectorAll(".main-tit span");
+  const screen = document.querySelectorAll(".screen .ifr");
+  const staImg = document.querySelector(".main-tit-img");
 
+  function Menter(i) {
+    staImg.style.opacity = 0;
+    dtSpan[i].style.color = "#650ba7";
+    screen[i].style.opacity = 0.5;
+    staImg.style.transition = "0.5s ease-in-out";
+    screen[i].style.transition = "0.5s ease-in-out";
+    // console.log("마우스 엔터되었나",screen[i]);
+  }
+  function Mleave(i) {
+    // console.log("마우스 떠났나");
+    staImg.style.opacity = 1;
+    dtSpan[i].style.color = "#bebec4";
+    screen[i].style.opacity = 0;
+    staImg.style.transition = "0.5s ease-in-out";
+    dtSpan[i].style.transition = "0.5s ease-in-out";
+    screen[i].style.transition = "0.5s ease-in-out";
+  }
+
+  dtSpan[0].onmouseenter = () => {
+    dtSpan[0].style.textShadow = "0 0 5px black";
+    Menter(0);
+  };
+  dtSpan[0].onmouseleave = () => {
+    dtSpan[0].style.textShadow = "none";
+    Mleave(0);
+  };
+  dtSpan[1].onmouseenter = () => {
+    dtSpan[1].style.textShadow = "0 0 5px black";
+
+    Menter(1);
+  };
+  dtSpan[1].onmouseleave = () => {
+    dtSpan[1].style.textShadow = "none";
+
+    screen[0].style.transition = "display 0.5s ease-in-out";
+
+    Mleave(1);
+  };
 
 /////////////////////////////////////////////////////////////////////////////////
 // 뮤지컬영역 - 버튼 눌럿을 때 슬라이드
@@ -193,7 +233,7 @@ function slideFn(target, SFidx) {
   let beforeNum = 0;
 
   let slides = target.querySelector(".core-list");
-  console.log('슬라이드',slides);
+  console.log("슬라이드", slides);
   // let slides = document.querySelectorAll(".core-list");
 
   // console.log('로딩완료');
@@ -210,9 +250,6 @@ function slideFn(target, SFidx) {
     console.log("넘기기 버튼", passBtn);
   } /// for of ///
 
-
-
-  
   function goSlide(evt, sts = true) {
     // 버튼 클릭 시 멈춤
     if (sts) {
@@ -295,7 +332,6 @@ function slideFn(target, SFidx) {
         } else {
           slides.prepend(list[list.length - beforeNum]);
         }
-        // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
       }, 1000);
@@ -330,12 +366,13 @@ function slideFn(target, SFidx) {
 
   autoSlide();
 
+
   // setInterval(함수,시간)
   // - 일정시간간격으로 함수를 호출
   function autoSlide() {
     autoI = setInterval(() => {
       console.log("들어가나?");
-      goSlide(false,false);
+      goSlide(false, false);
     }, 5000);
   } ////////autoslide함수///////////////
 
@@ -356,57 +393,12 @@ function slideFn(target, SFidx) {
   } ///////clearAuto함수///////////////
 
   ////////////////////////////////////////////////////////////////////////////////////
-  // 메인영역 - 타이틀 마우스 오버시 메인 유튜브가 opacity .5%로 변경
-
-  const dtSpan = document.querySelectorAll(".main-tit span");
-  const screen = document.querySelectorAll(".screen .ifr");
-  const staImg = document.querySelector(".main-tit-img");
-
-  function Menter(i) {
-    staImg.style.opacity = 0;
-    dtSpan[i].style.color = "#650ba7";
-    screen[i].style.opacity = 0.5;
-    staImg.style.transition = "0.5s ease-in-out";
-    screen[i].style.transition = "0.5s ease-in-out";
-    // console.log("마우스 엔터되었나",screen[i]);
-  }
-  function Mleave(i) {
-    // console.log("마우스 떠났나");
-    staImg.style.opacity = 1;
-    dtSpan[i].style.color = "#bebec4";
-    screen[i].style.opacity = 0;
-    staImg.style.transition = "0.5s ease-in-out";
-    dtSpan[i].style.transition = "0.5s ease-in-out";
-    screen[i].style.transition = "0.5s ease-in-out";
-  }
-
-  dtSpan[0].onmouseenter = () => {
-    dtSpan[0].style.textShadow = "0 0 5px black";
-    Menter(0);
-  };
-  dtSpan[0].onmouseleave = () => {
-    dtSpan[0].style.textShadow = "none";
-    Mleave(0);
-  };
-  dtSpan[1].onmouseenter = () => {
-    dtSpan[1].style.textShadow = "0 0 5px black";
-
-    Menter(1);
-  };
-  dtSpan[1].onmouseleave = () => {
-    dtSpan[1].style.textShadow = "none";
-
-    screen[0].style.transition = "display 0.5s ease-in-out";
-
-    Mleave(1);
-  };
-
-  ////////////////////////////////////////////////////////////////////////////////////
   // 뮤지컬 영역 - 마우스 오버시 뒷배경 사진 띄우기
 
   // 초기화 세팅
 
   const slideImg = document.querySelectorAll(".msc-list img");
+
   const backImg = document.querySelector("#msc-back-img");
 
   // console.log("kkkkkk", slideImg);
@@ -428,7 +420,6 @@ function slideFn(target, SFidx) {
     `;
   }; //// setImgNow 함수 /////
 
-
   // console.log(winWid, winHei);
 
   slideImg.forEach((val, idx) => {
@@ -446,13 +437,10 @@ function slideFn(target, SFidx) {
       console.log("idx:", idx, "/imgNum:", imgNum);
       let tg = document.querySelectorAll("#msc-back-img img");
 
-
-
       if (idx == imgNum) {
         // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
         slideImg[idx].style.boxShadow = "0 0 10px white";
 
-        
         tg[0].style.top = Hrdm1() + "px";
         tg[0].style.left = Wrdm1() + "px";
         tg[0].style.transform = "translate(-50%,-50%)";
@@ -484,10 +472,8 @@ function slideFn(target, SFidx) {
         // 여기다쓰면됨!! 이미지 관련!!!
 
         // console.log('가로세로1',tg[idx].width,tg[idx].maxHeight);
-
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
-
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
     }; ///마우스 엔터이벤트///////////////////////////////////////////////
     ///////////////////////////////////////////////////////////
@@ -496,7 +482,7 @@ function slideFn(target, SFidx) {
       let tg = document.querySelectorAll("#msc-back-img img");
       tg.forEach((ele) => {
         slideImg[idx].style.boxShadow = "none";
-        ele.style.maxHeight = '0px';
+        ele.style.maxHeight = "0px";
       });
     }; //////mosuseleave///////////////////
   }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든
@@ -533,7 +519,7 @@ function slideFn(target, SFidx) {
       let winHei2 = window.innerHeight;
 
       // backImg2.style.height=winHei2;
-      console.log("전시회", winHei2, backImg2.scrollTop);
+      // console.log("전시회", winHei2, backImg2.scrollTop);
       // console.log(winHei);
 
       let Wrdm1 = () => Math.ceil((winWid2 / 2) * Math.random()); //0~50
@@ -582,15 +568,15 @@ function slideFn(target, SFidx) {
 
         // 여기다쓰면됨!! 이미지 관련!!!
       } else {
-        console.log("마우스오버가 됐지만 먼가 안맞음");
-        console.log("안맞으면 찍어보기", idx, imgNum2);
+        // console.log("마우스오버가 됐지만 먼가 안맞음");
+        // console.log("안맞으면 찍어보기", idx, imgNum2);
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
     }; ///마우스 엔터이벤트
     slideImg2[idx].onmouseleave = () => {
       let tg2 = document.querySelectorAll("#exh-back-img img");
       tg2.forEach((ele) => {
         slideImg2[idx].style.boxShadow = "none";
-        ele.style.maxHeight = '0px';
+        ele.style.maxHeight = "0px";
       });
     }; //////mosuseleave///////////////////
   }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든
@@ -599,39 +585,36 @@ function slideFn(target, SFidx) {
   //   clearAuto();
   // }
 } ///////slideFn/////////////////
-const footer = myFn.qs("footer");
-let footSeq=myFn.qsa('footer span');
 
-setTimeout(() => {
-  if (sldSeq - 1 == -1) {
-    slides.appendChild(footSeq[0]);
-  } else {
-    slides.appendChild(list[sldSeq - 1]);
-  }
-  slides.style.left = "0px";
-  slides.style.transition = "none";
-}, 1000);
 
-let platBana=setInterval(() => {
-  console.log("으아아");
-  footer.style.left=" -303px";
-  footer.style.transition = "none";
-  footer.style.transition = "1s ease-out";
-}, 3000);
-// let banaI;
 
-// setTimeout(() => {
-//   autoBana();
-// }, 100);
+////////////////////////////////////////////////////////////////////////////////////////////
+//하단 무한배너 끝마무리임
+const foot = myFn.qs("footer");
+const footSlide = myFn.qsa(".footer-slide");
+console.log('풋슬라이드',foot,footSlide);
+let footCnt = 0;
+let banaI;
+let footLeft = 0;
 
-//   // 인터발용 변수(지울목적)
+platBana();
 
-//   // [자동넘김호출]
-//   function autoBana(){
-//     console.log('배너 움직임?');
-  
-//     banaI= setInterval(() => {
-//       // goSlide(false,false);
-//      footer.style.left=" -303px";
-//     }, 3000);
-//   }
+function platBana() {
+  banaI = setInterval(() => {
+    console.log("배너임!!!");
+    setTimeout(() => {
+      footLeft += -303;
+      foot.style.left = footLeft + "px";
+      footCnt++;
+    }, 500);
+
+    setTimeout(() => {
+      const clone = footSlide[0].cloneNode(true); // 첫 번째 요소 복사
+      foot.appendChild(clone); // 마지막에 추가
+      console.log("뒤에붙이는 셋 타임아웃");
+    }, 500);
+
+    foot.style.transition = "none";
+    foot.style.transition = "3s linear";
+  }, 3000);
+} ////////platBanae함수///////////////
