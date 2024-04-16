@@ -17,8 +17,21 @@
   - 랜덤
 
 */
+const myFn = {
+  // 요소선택함수 ////////
+  qs: (x) => document.querySelector(x),
+  qsEl: (el, x) => el.querySelector(x),
+  qsa: (x) => document.querySelectorAll(x),
+  qsaEl: (el, x) => el.querySelectorAll(x),
 
-const addEvt = (ele, evt, fn) => ele.addEventListener(evt, fn);
+  // 이벤트셋팅함수
+  addEvt: (ele, evt, fn) => ele.addEventListener(evt, fn),
+  // 바운딩 함수
+  getBCR: (ele) => ele.getBoundingClientRect().top,
+  // 옵셋탑값 반환함수
+  getOT: (ele) => ele.offsetTop,
+}; /////// domFn 객체 /////////////
+
 
 const wrap = document.getElementsByClassName("wrap")[0]; // 보일 영역
 const container = document.querySelectorAll(".cont");
@@ -37,7 +50,6 @@ gnb.forEach((ele, idx) => {
       x.classList.remove("on");
     } /// for of ///
 
-    // 2.전체 메뉴에 on빼기
     gnb[idx].classList.add("on");
   }; //클릭이벤트
 }); //for each문
@@ -48,7 +60,6 @@ function wheelMov(page) {
     x.classList.remove("on");
   } /// for of ///
 
-  // 2.전체 메뉴에 on빼기
   gnb[page - 1].classList.add("on");
 }
 
@@ -60,10 +71,7 @@ console.log(lastPage);
 
 let prot = 0;
 
-window.addEventListener(
-  "wheel",
-  (e) => {
-    e.preventDefault();
+window.addEventListener("wheel",(e) => {e.preventDefault();
 
     // 광휠 막기
     if (prot) return;
@@ -122,18 +130,58 @@ window.addEventListener(
   { passive: false }
 ); // 디폴트 기능 제거 - 스크롤
 
+const topBtn=document.querySelector('.top-btn');
+let docH = document.body.clientHeight;
+let winH = window.innerHeight;
+let scLimit = docH - winH;
+
+topBtn.onclick=()=>{
+  page==0;
+  for (let x of gnb) {
+    x.classList.remove("on");
+  } /// for of ///
+
+  gnb[0].classList.add("on");
+}
+myFn.addEvt(window, "scroll", scrollTop);
+
+function scrollTop() {
+  let scTop = window.scrollY;
+
+    let wTop = (winH * scTop) / scLimit;
+
+  // console.log("스크롤 위치 : ", scTop);
+
+  topBtn.style.top = wTop + "px";
+
+if(scTop>=200){
+    console.log('200인가?')
+    topBtn.style.opacity = 1;
+    topBtn.style.transition = ".3s ease-in";
+}else if(scTop<200){
+    topBtn.style.opacity = 0;
+    topBtn.style.transition = ".3s ease-in";
+
+}
+
+} ////////////scrollTop////////
+
+
+
+
 /////////////////////////////////////////////////////////////////////////////////
 // 뮤지컬영역 - 버튼 눌럿을 때 슬라이드
 // addEvt(window, "DOMContentLoaded", loadFn);
 const slideEle = document.querySelectorAll(".slideShow");
 console.log("슬라이드는 두개? ", slideEle);
 
-slideEle.forEach((ele) => slideFn(ele));
+slideEle.forEach((ele, SFidx) => slideFn(ele, SFidx));
 
 // 배경이미지 넣을려고 만든 변수--------------///
 let imgNum = 3;
+let imgNum2 = 3;
 
-function slideFn(target) {
+function slideFn(target, SFidx) {
   console.log(target);
 
   // 슬라이드 전역변수
@@ -143,7 +191,7 @@ function slideFn(target) {
   let beforeNum = 0;
 
   let slides = target.querySelector(".core-list");
-  console.log(slides);
+  console.log('슬라이드',slides);
   // let slides = document.querySelectorAll(".core-list");
 
   // console.log('로딩완료');
@@ -157,9 +205,12 @@ function slideFn(target) {
 
   for (let x of passBtn) {
     x.onclick = goSlide;
-    console.log('넘기기 버튼',passBtn);
+    console.log("넘기기 버튼", passBtn);
   } /// for of ///
 
+
+
+  
   function goSlide(evt, sts = true) {
     // 버튼 클릭 시 멈춤
     if (sts) {
@@ -200,29 +251,26 @@ function slideFn(target) {
         } else {
           slides.appendChild(list[sldSeq - 1]);
         }
-        // console.log(slides.appendChild(list[0]));
         slides.style.left = "0px";
         slides.style.transition = "none";
       }, 1000);
 
       sldSeq++;
-      imgNum == 6 ? (imgNum = 0) : imgNum++;
+      if (SFidx == 0) {
+        imgNum == 6 ? (imgNum = 0) : imgNum++;
+      } else if (SFidx == 1) {
+        imgNum2 == 6 ? (imgNum2 = 0) : imgNum2++;
+      }
+
       beforeNum--;
+      // console.log("증가하나? imgNum:", imgNum, "imgNum2:", imgNum2);
 
-      // console.log("증가하나? imgNum:", imgNum);
-
-      // 이미지 넣을려고 숫자 조절하는 if문
-      // if (imgNum == 7) {
-      //   imgNum = 0;
-      // }
       if (sldSeq > 6) {
         sldSeq = 0;
       }
       if (beforeNum < 0) {
         beforeNum = 6;
       }
-
-      // console.log("sldSeq:", sldSeq, list, "\nimgNum", imgNum,"\nbeforeNum",beforeNum);
     } ///////여기까지 오른쪽 클릭 /////////
     else {
       let newList = slides.querySelectorAll("li");
@@ -251,23 +299,22 @@ function slideFn(target) {
       }, 1000);
 
       sldSeq--;
-      imgNum === 0 ? (imgNum = 6) : imgNum--;
+      if (SFidx == 0) {
+        imgNum === 0 ? (imgNum = 6) : imgNum--;
+      } else if (SFidx == 1) {
+        imgNum2 === 0 ? (imgNum2 = 6) : imgNum2--;
+      }
+
       beforeNum++;
 
-      console.log("감소하나? imgNum:", imgNum);
+      // console.log("감소하나? imgNum:", imgNum, "imgNum2:", imgNum2);
 
-      // 이미지 넣을려고 숫자 조절하는 if문
-      // if (imgNum <= 0) {
-      //   imgNum = 6;
-      // }
       if (sldSeq < 0) {
         sldSeq = 6;
       }
       if (beforeNum > 6) {
         beforeNum = 0;
       }
-
-      // console.log("sldSeq:", sldSeq, list, "\nimgNum", imgNum,"\nbeforeNum",list.length - beforeNum);
     } //////isRbtn? IF문/////////////
   } ////goSlide함수////
 
@@ -279,14 +326,14 @@ function slideFn(target) {
   // 타임아웃용 변수(지울목적)
   let autoT;
 
-  // autoSlide();
+  autoSlide();
 
   // setInterval(함수,시간)
   // - 일정시간간격으로 함수를 호출
   function autoSlide() {
     autoI = setInterval(() => {
       console.log("들어가나?");
-      // goSlide(false,false);
+      goSlide(false,false);
     }, 5000);
   } ////////autoslide함수///////////////
 
@@ -311,17 +358,22 @@ function slideFn(target) {
 
   const dtSpan = document.querySelectorAll(".main-tit span");
   const screen = document.querySelectorAll(".screen .ifr");
+  const staImg = document.querySelector(".main-tit-img");
 
   function Menter(i) {
+    staImg.style.opacity = 0;
     dtSpan[i].style.color = "#650ba7";
     screen[i].style.opacity = 0.5;
+    staImg.style.transition = "0.5s ease-in-out";
     screen[i].style.transition = "0.5s ease-in-out";
     // console.log("마우스 엔터되었나",screen[i]);
   }
   function Mleave(i) {
     // console.log("마우스 떠났나");
+    staImg.style.opacity = 1;
     dtSpan[i].style.color = "#bebec4";
     screen[i].style.opacity = 0;
+    staImg.style.transition = "0.5s ease-in-out";
     dtSpan[i].style.transition = "0.5s ease-in-out";
     screen[i].style.transition = "0.5s ease-in-out";
   }
@@ -355,8 +407,7 @@ function slideFn(target) {
   const slideImg = document.querySelectorAll(".msc-list img");
   const backImg = document.querySelector("#msc-back-img");
 
-  console.log("kkkkkk", slideImg);
-
+  // console.log("kkkkkk", slideImg);
   // 이미지 넣기
   const wrapping = (j) => {
     let hcode = "";
@@ -369,17 +420,12 @@ function slideFn(target) {
     // console.log('ssssss',hcode);
     return hcode;
   };
-  // for (let j = 0; j < 2; j++) {
   const setImgNow = (seq) => {
     backImg.innerHTML = `
     <li> ${wrapping(seq)}</li>
     `;
   }; //// setImgNow 함수 /////
-  // } /////j의 for문
 
-  // const tgLi = backImg.querySelectorAll("#msc-back-img li");
-  // const tg = backImg.querySelectorAll("#msc-back-img img");
-  // ul - backImg / ul내 li - tgLi / ul내 img - tg
 
   // console.log(winWid, winHei);
 
@@ -387,8 +433,6 @@ function slideFn(target) {
     slideImg[idx].onmouseover = () => {
       let winWid = window.innerWidth;
       let winHei = window.innerHeight;
-
-      console.log("전시회1", winHei);
 
       let Wrdm1 = () => Math.ceil((winWid / 2) * Math.random()); //0~50
       let Wrdm2 = () => Math.ceil((winWid / 2) * Math.random()) + winWid / 2; //50~100
@@ -399,10 +443,14 @@ function slideFn(target) {
       setImgNow(imgNum);
       console.log("idx:", idx, "/imgNum:", imgNum);
       let tg = document.querySelectorAll("#msc-back-img img");
+
+
+
       if (idx == imgNum) {
         // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
-        slideImg[idx].style.boxShadow = "0 0 5px white";
+        slideImg[idx].style.boxShadow = "0 0 10px white";
 
+        
         tg[0].style.top = Hrdm1() + "px";
         tg[0].style.left = Wrdm1() + "px";
         tg[0].style.transform = "translate(-50%,-50%)";
@@ -420,29 +468,33 @@ function slideFn(target) {
         tg[3].style.transform = "translate(-50%,-50%)";
 
         setTimeout(() => {
-          tg[0].style.maxHeight = "500px";
+          tg[0].style.maxHeight = "800px";
         }, 50);
         setTimeout(() => {
-          tg[1].style.maxHeight = "500px";
+          tg[1].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg[3].style.maxHeight = "500px";
+          tg[3].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg[2].style.maxHeight = "500px";
+          tg[2].style.maxHeight = "800px";
         }, 300);
-
         // 여기다쓰면됨!! 이미지 관련!!!
+
+        // console.log('가로세로1',tg[idx].width,tg[idx].maxHeight);
+
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
-        console.log("안맞으면 찍어보기", idx, imgNum);
+
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
-    }; ///마우스 엔터이벤트
+    }; ///마우스 엔터이벤트///////////////////////////////////////////////
+    ///////////////////////////////////////////////////////////
+
     slideImg[idx].onmouseleave = () => {
       let tg = document.querySelectorAll("#msc-back-img img");
       tg.forEach((ele) => {
         slideImg[idx].style.boxShadow = "none";
-        ele.style.maxHeight = 0;
+        ele.style.maxHeight = '0px';
       });
     }; //////mosuseleave///////////////////
   }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든
@@ -464,25 +516,14 @@ function slideFn(target) {
     `;
     } ////i의 for문
     // 이미지코드 리턴
-    // console.log('ssssss',hcode);
     return hcode;
   };
-  // for (let j = 0; j < 2; j++) {
+
   const setImgNow2 = (seq) => {
     backImg2.innerHTML = `
     <li> ${wrapping2(seq)}</li>
     `;
   }; //// setImgNow 함수 /////
-  // } /////j의 for문
-
-  // let winWid2 = window.innerWidth;
-  // let winHei2 = window.innerHeight;
-
-  // let Wrdm1 = () => Math.ceil((winWid2 / 2) * Math.random()); //0~50
-  // let Wrdm2 = () => Math.ceil((winWid2 / 2) * Math.random()) + winWid2 / 2; //50~100
-
-  // let Hrdm1 = () => Math.ceil((winHei2 / 2) * Math.random()); //0~50
-  // let Hrdm2 = () => Math.ceil((winHei2 / 2) * Math.random()) + winHei2 / 2; //50~100
 
   slideImg2.forEach((val, idx) => {
     slideImg2[idx].onmouseover = () => {
@@ -499,12 +540,12 @@ function slideFn(target) {
       let Hrdm1 = () => Math.ceil((winHei2 / 2) * Math.random()); //0~50
       let Hrdm2 = () => Math.ceil((winHei2 / 2) * Math.random()) + winHei2 / 2; //50~100
 
-      setImgNow2(imgNum);
-      console.log("idx:", idx, "/imgNum:", imgNum);
-      let tg2 = document.querySelectorAll("#msc-back-img img");
-      if (idx == imgNum) {
+      setImgNow2(imgNum2);
+      console.log("idx:", idx, "/imgNum2:", imgNum2);
+      let tg2 = document.querySelectorAll("#exh-back-img img");
+      if (idx == imgNum2) {
         // console.log("마우스오버 오케이, 숫자도 맞음", tgLi[sldSeq], sldSeq);
-        slideImg2[idx].style.boxShadow = "0 0 5px white";
+        slideImg2[idx].style.boxShadow = "0 0 10px white";
 
         tg2[0].style.top = Hrdm1() + "px";
         tg2[0].style.left = Wrdm1() + "px";
@@ -523,29 +564,31 @@ function slideFn(target) {
         tg2[3].style.transform = "translate(-50%,-50%)";
 
         setTimeout(() => {
-          tg2[0].style.maxHeight = "500px";
+          tg2[0].style.maxHeight = "800px";
         }, 50);
         setTimeout(() => {
-          tg2[1].style.maxHeight = "500px";
+          tg2[1].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg2[3].style.maxHeight = "500px";
+          tg2[3].style.maxHeight = "800px";
         }, 100);
         setTimeout(() => {
-          tg2[2].style.maxHeight = "500px";
+          tg2[2].style.maxHeight = "800px";
         }, 300);
+
+        // console.log('가로세로',tg2[idx].width,tg2[idx].maxHeight);
 
         // 여기다쓰면됨!! 이미지 관련!!!
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
-        console.log("안맞으면 찍어보기", idx, imgNum);
+        console.log("안맞으면 찍어보기", idx, imgNum2);
       } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
     }; ///마우스 엔터이벤트
     slideImg2[idx].onmouseleave = () => {
-      let tg2 = document.querySelectorAll("#msc-back-img img");
+      let tg2 = document.querySelectorAll("#exh-back-img img");
       tg2.forEach((ele) => {
         slideImg2[idx].style.boxShadow = "none";
-        ele.style.maxHeight = 0;
+        ele.style.maxHeight = '0px';
       });
     }; //////mosuseleave///////////////////
   }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든
