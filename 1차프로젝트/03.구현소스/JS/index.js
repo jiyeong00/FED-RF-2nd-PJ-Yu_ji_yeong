@@ -399,6 +399,7 @@ function slideFn(target, SFidx) {
 
   const slideImg = document.querySelectorAll(".msc-list img");
 
+
   const backImg = document.querySelector("#msc-back-img");
 
   // console.log("kkkkkk", slideImg);
@@ -481,8 +482,8 @@ function slideFn(target, SFidx) {
     slideImg[idx].onmouseleave = () => {
       let tg = document.querySelectorAll("#msc-back-img img");
       tg.forEach((ele) => {
-        slideImg[idx].style.boxShadow = "none";
         ele.style.maxHeight = "0px";
+        slideImg[idx].style.boxShadow = "none";
       });
     }; //////mosuseleave///////////////////
   }); ///forEach문/// - 마우스엔터 이벤트 할려고 만든
