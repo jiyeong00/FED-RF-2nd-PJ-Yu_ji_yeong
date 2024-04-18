@@ -7,9 +7,10 @@
 /* 그리드 12 불러오기 */
 @import url(./grid_12_flex.css);
 
-body>* {
+body > *, [class*='col-']{
   outline: 2px dashed red;
 }
+
 body {
   box-sizing: border-box;
   padding: 0 10rem;
@@ -25,4 +26,57 @@ transform: rotate(-90deg);
 .top-btn img:hover{
   right: 4vw;
   transition: .1s ease-out;
+}
+
+
+
+/********************* 정보페이지 맨 첫페이지 *********************/
+.info >*{
+  width: 100%;
+  color: white;
+  text-align: center;
+}
+/* 정보 */
+.info{
+  font-size: 2.2rem;
+}
+.info h1{
+  font-size: 5rem;
+
+  /* 폰트 그라데이션 */
+  background-image: linear-gradient(to bottom, #c373ff, #650ba7);
+  color: transparent;
+  background-clip: text;
+
+  font-family: "Black Han Sans", sans-serif;
+  font-weight: normal;
+}
+
+
+/* 정보와 메인 포스터 크기 위치 지정 */
+.info-poster img,.info .simple-info{
+  position: relative;
+  left: 50%;
+  transform: translateX(-50%);
+
+  height: 100%;
+  padding: 0px 8rem;
+}
+/*  정보 > 테이블 */
+.simple-info th{
+  width: 50%;
+}
+
+.simple-info tr:nth-child(5) td:hover{
+  cursor: pointer;
+  color: #b559fb;
+  font-weight: bold;
+}
+/* 정보 > 테이블 > 지도 */
+.simple-info iframe{
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  box-sizing: border-box;
+  padding-bottom: 10%;
 }
