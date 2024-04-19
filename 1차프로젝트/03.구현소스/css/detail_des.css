@@ -7,7 +7,8 @@
 /* 그리드 12 불러오기 */
 @import url(./grid_12_flex.css);
 
-body > *, [class*='col-']{
+body > *,
+[class*="col-"] {
   outline: 2px dashed red;
 }
 
@@ -17,30 +18,27 @@ body {
   overflow-x: hidden;
 }
 
-
 /* 뒤로 이동 */
 
-.top-btn img{
-transform: rotate(-90deg);
+.top-btn img {
+  transform: rotate(-90deg);
 }
-.top-btn img:hover{
+.top-btn img:hover {
   right: 4vw;
-  transition: .1s ease-out;
+  transition: 0.1s ease-out;
 }
-
-
 
 /********************* 정보페이지 맨 첫페이지 *********************/
-.info >*{
+.info > * {
   width: 100%;
   color: white;
   text-align: center;
 }
 /* 정보 */
-.info{
+.info {
   font-size: 2.2rem;
 }
-.info h1{
+.info h1 {
   font-size: 5rem;
 
   /* 폰트 그라데이션 */
@@ -52,9 +50,9 @@ transform: rotate(-90deg);
   font-weight: normal;
 }
 
-
 /* 정보와 메인 포스터 크기 위치 지정 */
-.info-poster img,.info .simple-info{
+.info-poster img,
+.info .simple-info {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
@@ -63,20 +61,57 @@ transform: rotate(-90deg);
   padding: 0px 8rem;
 }
 /*  정보 > 테이블 */
-.simple-info th{
+.simple-info th {
   width: 50%;
 }
 
-.simple-info tr:nth-child(5) td:hover{
+.simple-info tr:nth-child(5) td:hover {
   cursor: pointer;
   color: #b559fb;
   font-weight: bold;
 }
 /* 정보 > 테이블 > 지도 */
-.simple-info iframe{
+.simple-info iframe {
   width: 100%;
   height: 100%;
   border-radius: 10px;
   box-sizing: border-box;
   padding-bottom: 10%;
+}
+
+/******************** 홍보 및 줄거리 ********************/
+.story-page {
+  color: white;
+}
+.story-page .rep-p {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+
+  font-size: 1.7rem;
+}
+.story-page .rep-p span {
+  font-size: 5.7rem;
+  display: block;
+  height: 2rem;
+  text-align: center;
+}
+.story-page .rep-p strong {
+  display: block;
+  text-align: center;
+  font-size: 2.7rem;
+}
+
+.story-page .poster img {
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+
+    height: 100%;
+}
+
+/*********************** 등장인물 소개 ***********************/
+
+.acter-area .hero-img{
+  display: flex;
 }
