@@ -245,6 +245,7 @@ function slideFn(target, SFidx) {
 
   ///////////////////////////////////////////////초기세팅
 
+
   for (let x of passBtn) {
     x.onclick = goSlide;
     console.log("넘기기 버튼", passBtn);
@@ -364,6 +365,7 @@ function slideFn(target, SFidx) {
   // 타임아웃용 변수(지울목적)
   let autoT;
 
+  // slides.autoSlide();
   autoSlide();
 
 
@@ -389,7 +391,7 @@ function slideFn(target, SFidx) {
     // 5초후 아무작동도 안하면 다시 인터발호출
     autoT = setTimeout(() => {
       autoSlide();
-    }, 5000);
+    }, 3000);
   } ///////clearAuto함수///////////////
 
   ////////////////////////////////////////////////////////////////////////////////////
@@ -425,6 +427,8 @@ function slideFn(target, SFidx) {
 
   slideImg.forEach((val, idx) => {
     slideImg[idx].onmouseover = () => {
+
+
       let winWid = window.innerWidth;
       let winHei = window.innerHeight;
 
@@ -472,6 +476,8 @@ function slideFn(target, SFidx) {
         }, 300);
         // 여기다쓰면됨!! 이미지 관련!!!
 
+        clearAuto();
+
         // console.log('가로세로1',tg[idx].width,tg[idx].maxHeight);
       } else {
         console.log("마우스오버가 됐지만 먼가 안맞음");
@@ -480,6 +486,8 @@ function slideFn(target, SFidx) {
     ///////////////////////////////////////////////////////////
 
     slideImg[idx].onmouseleave = () => {
+      autoSlide();
+
       let tg = document.querySelectorAll("#msc-back-img img");
       tg.forEach((ele) => {
         ele.style.maxHeight = "0px";
@@ -516,12 +524,10 @@ function slideFn(target, SFidx) {
 
   slideImg2.forEach((val, idx) => {
     slideImg2[idx].onmouseover = () => {
+            
       let winWid2 = window.innerWidth;
       let winHei2 = window.innerHeight;
 
-      // backImg2.style.height=winHei2;
-      // console.log("전시회", winHei2, backImg2.scrollTop);
-      // console.log(winHei);
 
       let Wrdm1 = () => Math.ceil((winWid2 / 2) * Math.random()); //0~50
       let Wrdm2 = () => Math.ceil((winWid2 / 2) * Math.random()) + winWid2 / 2; //50~100
@@ -568,12 +574,14 @@ function slideFn(target, SFidx) {
         // console.log('가로세로',tg2[idx].width,tg2[idx].maxHeight);
 
         // 여기다쓰면됨!! 이미지 관련!!!
-      } else {
-        // console.log("마우스오버가 됐지만 먼가 안맞음");
-        // console.log("안맞으면 찍어보기", idx, imgNum2);
-      } //if문 - 슬라이드가 가운데 오는지 확인하는 if문
+      } 
+
+      clearAuto();
+
     }; ///마우스 엔터이벤트
     slideImg2[idx].onmouseleave = () => {
+      autoSlide();
+
       let tg2 = document.querySelectorAll("#exh-back-img img");
       tg2.forEach((ele) => {
         slideImg2[idx].style.boxShadow = "none";
@@ -607,15 +615,15 @@ function platBana() {
       footLeft += -303;
       foot.style.left = footLeft + "px";
       footCnt++;
-    }, 500);
+    }, 0);
 
     setTimeout(() => {
       const clone = footSlide[0].cloneNode(true); // 첫 번째 요소 복사
       foot.appendChild(clone); // 마지막에 추가
       console.log("뒤에붙이는 셋 타임아웃");
-    }, 500);
+    }, 0);
 
     foot.style.transition = "none";
-    foot.style.transition = "3s linear";
-  }, 3000);
+    foot.style.transition = "4s linear";
+  }, 2000);
 } ////////platBanae함수///////////////

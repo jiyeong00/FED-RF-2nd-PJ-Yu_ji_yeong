@@ -29,11 +29,15 @@ body {
 }
 
 /********************* 정보페이지 맨 첫페이지 *********************/
+.simple-info{
+  height: auto;
+}
 .info > * {
   width: 100%;
   color: white;
   text-align: center;
 }
+
 /* 정보 */
 .info {
   font-size: 2.2rem;
@@ -51,15 +55,15 @@ body {
 }
 
 /* 정보와 메인 포스터 크기 위치 지정 */
-.info-poster img,
+.simple-page .info-poster img,
 .info .simple-info {
   position: relative;
   left: 50%;
   transform: translateX(-50%);
-
-  height: 100%;
-  padding: 0px 8rem;
+  /* padding: 0px 8rem; */
+  width: 100%;
 }
+
 /*  정보 > 테이블 */
 .simple-info th {
   width: 50%;
@@ -82,6 +86,7 @@ body {
 /******************** 홍보 및 줄거리 ********************/
 .story-page {
   color: white;
+  height: auto;
 }
 .story-page .rep-p {
   position: relative;
@@ -106,12 +111,18 @@ body {
     position: relative;
     left: 50%;
     transform: translateX(-50%);
-
-    height: 100%;
+width: 100%;
+    /* height: 100%; */
 }
 
 /*********************** 등장인물 소개 ***********************/
-
+.acter-area{
+  /* position: relative; */
+}
 .acter-area .hero-img{
   display: flex;
+  height: 100%;
+}
+.acter-area img{
+  width: 200px;
 }
