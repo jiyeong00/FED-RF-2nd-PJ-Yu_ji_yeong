@@ -1,0 +1,100 @@
+@charset "utf-8";
+
+/* 팀 PJ : 공통 클래스 CSS - core.css */
+/* 공통 셋팅을 위한 클래스 + 웹폰트 */
+
+/* 웹폰트*/
+
+
+
+
+/**************** 공통 글자체*************** */
+/* 메인 제목 */
+.tit{
+  font-family: 'Pretendard-Regular';
+  font-size: 5rem;
+  color: #fff;
+  text-align: center;
+  ;
+}
+.txt{
+  color: red;
+}
+/* 메인밑글자 */
+
+/* /
+/* 
+    0. 메뉴 등 일반체
+    font-family: 
+  
+}
+
+    1. 캐릭터 설명 제목체
+    
+    2. 캐릭터 설명 내용체
+    
+    3. 캐릭터 설명 한자체
+    
+    4. 전체 공통체(메뉴 등)
+    
+*/
+
+/* 공사중 표시 */
+body * {
+  /* outline:1px solid red; */
+   
+}
+
+
+/* 모바일에서 오른쪽 여백 생기는 문제 해결 */
+body>*{
+  overflow-x:hidden;
+}
+
+
+/* 전체 감싼 박스 */
+#wrap {
+  position: relative;
+}
+
+
+.inbox {
+  max-width: 1400px;
+  height: 100%;
+  /* outline: 1px solid red; */
+  margin:0 auto;
+}
+
+
+/* 글자날리기 */
+.ir {
+  display: block;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+}
+
+/* 임시타이틀 */
+.temp-tit {
+  position: absolute;
+  font-size: 2vw;
+  color: #888;
+}
+
+/* 공통클래스: 클리어 설정 */
+.clb::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+/* rem 계산 편하게 하기 위해 */
+html {
+  font-size: 10px;
+}
+
+body {
+  /* 폰트 */
+  font-family: "Noto Sans KR", sans-serif;
+}
+

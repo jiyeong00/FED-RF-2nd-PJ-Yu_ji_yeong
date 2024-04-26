@@ -1,0 +1,312 @@
+@charset "utf-8";
+
+/* 팀 PJ : 공통 모듈 CSS - common.css */
+/* 공유기능 요소 셋팅 */
+
+/************* 상단영역 *************/
+#top-area {
+  /* 폰트 */
+  /* font-family:; */
+
+  height: 10rem;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  transition: 0.3s;
+}
+
+#top-area.on {
+  background-color: #052a46;
+}
+
+/* 상단 내부박스 */
+#top-area .inbox {
+  width: 95%;
+  height: 100%;
+  /* outline: 1px solid red; */
+  margin: 0 auto;
+}
+
+.top-area {
+  /* 플렉스로 가로 정렬 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 로고 */
+h1.logo {
+  width: 16%;
+  min-width: 25rem;
+  max-width: 30rem;
+}
+.logo a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.logo img {
+  width: 100%;
+}
+
+/* 메뉴 */
+
+#gnb {
+  min-width: 50rem;
+}
+#gnb ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+#gnb ul li a {
+  color: #fff;
+  line-height: 2;
+  font-size: 1.8rem;
+  font-family: "Kanit", sans-serif;
+}
+
+/* 우측 상단영역에 아이콘 */
+.gnb img {
+  width: 40px;
+  height: 40px;
+}
+
+/* 검색*/
+
+/* 검색버튼 */
+.search {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s linear;
+  border-radius: 50px;
+}
+
+/* input창 */
+.input-box {
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: #052a46;
+  text-indent: 20px;
+  transition: 0.3s;
+  color: #fff;
+  box-sizing: border-box;
+}
+.input-box:focus {
+  outline: none;
+}
+
+/* 검색 아이콘 */
+.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #052a46;
+}
+/* 클릭시 on */
+.search.on {
+  width: 200px;
+  background-color: #052a46;
+}
+
+/* 아이콘 */
+.fa-magnifying-glass:before,
+.fa-search:before {
+  content: "\f002";
+}
+
+/* 모바일 햄버거 버튼 */
+.ham {
+  width: 50px;
+  height: 50px;
+  background-color: transparent;
+  border: none;
+  font-size: 40px;
+  transform: scaleX(1.5);
+
+  /* 처음에 숨기기 */
+  display: none;
+}
+/* 햄버거모양 가상요소넣기 */
+.ham::before {
+  content: "≡";
+  color: #fff;
+}
+
+/************* 하단영역 *************/
+#bottom-area {
+  background: url(../images/common/fb.jpg) no-repeat bottom/cover;
+  height: 100%;
+}
+#bottom-area .inbox {
+  max-width:1400px;
+  height: 100%;
+  /* outline: 1px solid red; */
+  margin:0 auto;
+}
+
+.bottom-area h3 {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.bottom-area .move-gallery {
+  background-color:#000;
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+  /* border-top:1px solid #c8c8c8;
+  border-bottom:1px solid #c8c8c8; */
+}
+/* 옆으로 움직이는 태양계 */
+.bottom-area .gbox {
+  overflow: hidden;
+  /* background-color: red; */
+}
+.bottom-area .gbox ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.bottom-area .gbox li {
+  width: 15vw;
+  /* 플렉스 부모박스크기에 맞춰줄여라에
+  0을 쓰면 아니! 안줄여 이런뜻임! */
+  flex-shrink: 0;
+  aspect-ratio: 480/360;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+
+.bottom-area .gbox li span {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+.bottom-area .gbox li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 돌아가는 3d 궤도 애니메이션*/
+
+.bottom-area .spinner-box{
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.bottom-area .leo{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.bottom-area .blue-orbit{
+  width: 165px;
+  height: 165px;
+  border:1px solid #91daffa6;
+  animation: spin3D 3s linear 0.2s infinite;
+}
+
+.bottom-area .green-orbit{
+  width: 125px;
+  height: 125px;
+  border:1px solid #91daffa6;
+  animation: spin3D 2s linear 0s infinite;
+}
+
+.bottom-area .red-orbit{
+  width: 90px;
+  height: 90px;
+  border:1px solid #ffca91a5;
+  animation: spin3D 1s linear 0s infinite;
+}
+
+.bottom-area .white-orbit{
+  width: 60px;
+  height: 60px;
+  border:2px solid #ffffff;
+  animation: spin3D 10s linear 0s infinite;
+}
+
+.bottom-area .w1{
+  transform: rotate3d(1,1,1,90deg);
+}
+
+.bottom-area .w2{
+  transform: rotate3d(1,2,0.5,90deg);
+}
+
+.bottom-area .w3{
+  transform: rotate3d(0.5,1,2,90deg);
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin3D {
+  0%{
+    transform: rotate3d(0.5,0.5,0.5,360deg);
+  }
+  100%{
+    transform: rotate3d(0deg);
+  }
+} 
+
+
+
+/* sns공유하기 */
+.bottom-area .sns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.bottom-area .fa-brands{
+  color: #fff;
+  font-size: 3.5rem;
+}
+
+/* 저작권 표시 */
+.bottom-area .copy-right{
+  margin-bottom: 50px;
+}
+
+.bottom-area .copy-right p{
+  font-size:1.6rem;
+  color: #c8c8c8;
+  text-align: center;
+  margin-top: 30px;
+}
