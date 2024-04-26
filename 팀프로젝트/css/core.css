@@ -3,7 +3,15 @@
 /* 팀 PJ : 공통 클래스 CSS - core.css */
 /* 공통 셋팅을 위한 클래스 + 웹폰트 */
 
-/* 웹폰트*/
+/********************************* 웹폰트*********************************/
+@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;700;900&display=swap');
+
+@font-face {
+  font-family: 'RixInooAriDuriR';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 
 
 
@@ -11,11 +19,10 @@
 /**************** 공통 글자체*************** */
 /* 메인 제목 */
 .tit{
-  font-family: 'Pretendard-Regular';
+  font-family: 'RixInooAriDuriR';
   font-size: 5rem;
   color: #fff;
   text-align: center;
-  ;
 }
 .txt{
   color: red;

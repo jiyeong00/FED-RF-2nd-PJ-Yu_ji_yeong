@@ -50,7 +50,7 @@ body *{
     left: 10%;
 }
 .jupiter1-text h1{
-    font-family: 'Pretendard-Regular';
+    /* font-family: 'Pretendard-Regular'; */
     /* font-size: max(18vw,12rem); */
     font-size: 18rem;
     letter-spacing: 10px;
