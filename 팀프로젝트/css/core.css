@@ -62,7 +62,7 @@
 /* 내용 제목 글씨 */
 .cont-tit{
   font-family: 'Freesentation-9Black';
-  font-size: max(2.5vw, 20px);
+  font-size: 5rem;
 }
 
 
@@ -98,6 +98,7 @@
 /* 모바일에서 오른쪽 여백 생기는 문제 해결 */
 body > * {
   overflow-x: hidden;
+  cursor: default;
 }
 
 /* 전체 감싼 박스 */
