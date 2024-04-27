@@ -57,6 +57,7 @@ body * {
   max-width: 1400px;
   min-width: 600px;
   margin: 0 auto;
+  margin-top: 8rem;
 }
 .desc {
   display: flex;
@@ -101,7 +102,6 @@ body * {
 
 /* ---------------------네번째 페이지--------------------- */
 .jupiter4 {
-    outline: 1px dashed red;
   max-width: 1400px;
   min-height: auto;
   margin: 0 auto;
@@ -182,6 +182,7 @@ body * {
 .jupiter5 {
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: 18rem;
 }
 .jupit5-cont {
   box-sizing: border-box;
@@ -195,6 +196,8 @@ body * {
   display: grid;
   max-width: 1400px;
   margin: 0 auto;
+  margin-top: 2.5rem;
+
   text-align: center;
   grid-template-columns: repeat(3, 1fr);
 }
@@ -204,8 +207,6 @@ body * {
 }
 /* 각 그리드 박스 */
 .jupit5-box {
-  border-bottom: 1px solid #dcbfbf;
-  border-right: 1px solid #dcbfbf;
   padding: 33px 33px 33px 33px;
 }
 .circle-num {
