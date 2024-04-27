@@ -4,74 +4,113 @@
 /* 공통 셋팅을 위한 클래스 + 웹폰트 */
 
 /********************************* 웹폰트*********************************/
-@import url('https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kanit:wght@100;200;300;400;500;700;900&display=swap");
 
 @font-face {
-  font-family: 'RixInooAriDuriR';
-  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2207-01@1.0/RixInooAriDuriR.woff2') format('woff2');
-  font-weight: normal;
+  font-family: "PyeongChangPeace-Bold";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2")
+    format("woff2");
+  font-weight: 700;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Freesentation-9Black';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2') format('woff2');
+  font-weight: 900;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 100;
   font-style: normal;
 }
 
 
 
+/* 최대 페이지 넓이 */
+.page{
+  max-width: 1400px;
+  margin: 0 auto;
+}
 
-/**************** 공통 글자체*************** */
-/* 메인 제목 */
-.tit{
-  font-family: 'RixInooAriDuriR';
-  font-size: 5rem;
+/*************** 제목 **************8*/
+/* 메인 제목 위치 및 크기 */
+.main-text {
   color: #fff;
+  position: absolute;
+  width: 40%;
+}
+
+/* 메인 제목 글씨 */
+.main-tit {
+  font-family: "PyeongChangPeace-Bold";
+  font-size: 12rem;
+  letter-spacing: 10px;
+  text-shadow: 1px 1px 2px #333;
+}
+
+/* 서브 제목 글씨 */
+.sub-tit{
+  font-family: 'Freesentation-9Black';
+  font-size: 5rem;
   text-align: center;
 }
-.txt{
-  color: red;
-}
-/* 메인밑글자 */
 
-/* /
-/* 
-    0. 메뉴 등 일반체
-    font-family: 
-  
+/* 내용 제목 글씨 */
+.cont-tit{
+  font-family: 'Freesentation-9Black';
+  font-size: max(2.5vw, 20px);
 }
 
-    1. 캐릭터 설명 제목체
-    
-    2. 캐릭터 설명 내용체
-    
-    3. 캐릭터 설명 한자체
-    
-    4. 전체 공통체(메뉴 등)
-    
-*/
 
-/* 공사중 표시 */
-body * {
-  /* outline:1px solid red; */
-   
+/******************* 내용 *******************/
+
+/* 메인 설명 */
+.main-desc{
+  font-family: 'Pretendard-Regular';
+
+  width: 100%;
+
+  font-size: min(3vw,1.8rem);
+  line-height: 1.3;
+
+  text-indent: 10px;
+  text-align: justify;
+
+  border-top: 1px dashed #ccc;
 }
 
+/* 서브 내용 */
+.sub-desc{
+  font-family: 'Pretendard-Regular';
+
+  font-size: max(1vw, 14px);
+  text-align: justify;
+  font-weight: normal;
+  line-height: 25px;
+}
+
+/************************************************************************************/
 
 /* 모바일에서 오른쪽 여백 생기는 문제 해결 */
-body>*{
-  overflow-x:hidden;
+body > * {
+  overflow-x: hidden;
 }
-
 
 /* 전체 감싼 박스 */
 #wrap {
   position: relative;
 }
 
-
 .inbox {
   max-width: 1400px;
   height: 100%;
   /* outline: 1px solid red; */
-  margin:0 auto;
+  margin: 0 auto;
 }
-
 
 /* 글자날리기 */
 .ir {
@@ -104,4 +143,3 @@ body {
   /* 폰트 */
   font-family: "Noto Sans KR", sans-serif;
 }
-

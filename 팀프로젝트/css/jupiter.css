@@ -6,269 +6,227 @@
 @import url(./reset.css);
 
 /************* 공통구역 *************/
-body *{
-    outline: 2px dashed red;
+body * {
+  /* outline: 2px dashed red; */
 }
-.jupiter{
-    width: 100%;
-    min-height: 100vh;
+.jupiter {
+  width: 100%;
+  min-height: 100vh;
 }
 /************* 상단영역 *************/
 /* common.css */
 
-
 /************* 메인영역 *************/
 /* ---------------------첫페이지--------------------- */
-.jupiter1{
-    position: relative;
-    width: 100%;
-    height: 100vh;
-    background: url(../images/jupiter/main_bg4.jpg) no-repeat;
-    /* background-size: cover; */
-    background-position: right;
-    background-color: #000;
+.jupiter1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(../images/jupiter/main_bg4.jpg) no-repeat;
+  /* background-size: cover; */
+  background-position: right;
+  background-color: #000;
 }
-.jupiter1-bg{
-    position: absolute;
-    width: 100%;
-    height: 100vh;
-    background: linear-gradient(to right, rgb(0, 0, 0) 5%, #ffffff00 50%);
-    /* background-color: #fff; */
+.jupiter1-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, rgb(0, 0, 0) 8%, #ffffff00 45%);
+  /* background-color: #fff; */
 }
-.jupiter1 video{
-    position: absolute;
-    right: 0;
-    /* width: 100%; */
-    height: 100vh;
+.jupiter1 video {
+  position: absolute;
+  right: 0;
+  /* width: 100%; */
+  height: 100vh;
 }
-.jupiter1-text{
-    color: #fff;
-    position: absolute;
-    width: 40%;
-
-    bottom: 25vh;
-    left: 10%;
+.jupiter1-text {
+  bottom: 25vh;
+  left: 10%;
 }
-.jupiter1-text h1{
-    /* font-family: 'Pretendard-Regular'; */
-    /* font-size: max(18vw,12rem); */
-    font-size: 18rem;
-    letter-spacing: 10px;
-    text-shadow: 1px 1px 2px #333;
-    /* opacity: 0; */
-    /* animation: fadein 1.4s ease-in-out 1.3s forwards; */
+.jupiter1-text h1 {
+  /* font-size: max(18vw,12rem); */
+  /* opacity: 0; */
 }
-.jupiter1-text p{
-    /* width: min(70vw,522px); */
-    width: 100%;
-
-    font-size: min(3vw,1.8rem);
-    line-height: 1.3;
-    font-weight: 200;
-
-    text-indent: 5px;
-    text-align: justify;
-
-    border-top: 1px solid #ccc;
+.jupiter1-text p {
+  /* width: min(70vw,522px); */
 }
 
 /* ---------------------두번째 페이지--------------------- */
-.jupiter2{
-    max-width: 1400px;
-    min-width: 600px;
-    margin: 0 auto;
+.jupiter2 {
+  max-width: 1400px;
+  min-width: 600px;
+  margin: 0 auto;
 }
-.desc{
-    display: flex;
-    font-size: max(1vw,14px);
-    gap: 2rem;
-    margin-top: 20px;
+.desc {
+  display: flex;
+  gap: 2rem;
+  margin-top: 20px;
 }
-.desc strong{
-    font-size: max(1.5vw,20px);
-    
-}
-.desc2{
-    flex-direction: row-reverse;
+
+.desc2 {
+  flex-direction: row-reverse;
 }
 /* 2-1 첫번째 사진 */
-.desc1-img{
-    width: 45vw;
-    height: auto;
+.desc1-img {
+  width: 45vw;
+  height: auto;
 }
 /* ---------------------세번째 페이지--------------------- */
-.jupiter3{
-    background-color: #000;
+.jupiter3-cont {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: 800px;
+  background-color: #000;
+  margin: 0 auto;
 }
-.jupiter3-cont{
-    position: relative;
-    display: grid;
-    grid-template-columns: repeat(2, 2fr);
-    grid-template-rows: 800px;
-    margin: 0 auto;
+.jupiter3-text {
+  position: relative;
+  /* top: 100%; */
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 0;
+  color: white;
 }
-.jupiter3-text{
-    position: relative;
-    /* top: 100%; */
-    top: 50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 70%;
-    height: 0;
-    color: white;
+.jupiter3-text h3 {
+  margin-bottom: 30px;
 }
-.jupiter3-text h3{
-    font-size: max(1.5vw,20px);
-    margin-bottom: 30px;
-}
-.jupiter3-text p{
-    font-size: max(1vw,14px);
-}
-.jupiter3-cont iframe{
-    width: 100%;
-    height: 100%;
+.jupiter3-cont iframe {
+  width: 100%;
+  height: 100%;
 }
 
 /* ---------------------네번째 페이지--------------------- */
-.jupiter4{
-    max-width: 1400px;
-    min-height: auto;
-    margin: 0 auto;
+.jupiter4 {
+  max-width: 1400px;
+  min-height: auto;
+  margin: 0 auto;
 }
-.jupiter4 h2{
-    font-size: 4rem;
-    text-align: center;
-    margin: 100px 0 50px;
+.moon-cont {
+  display: flex;
+  justify-content: center;
+  gap: 1.6rem;
 }
-.moon-cont{
-    display: flex;
-    justify-content: center;
-    gap: 1.6rem;
-}
-.moon{
-    position: relative;
-    cursor: pointer;
+.moon {
+  position: relative;
+  cursor: pointer;
 }
 /* 4-2 달 이미지 */
 .moon-img {
-    aspect-ratio: 1/2;
-    width: 17.6vw;
-    min-width: 200px;
-    background-color: #000;
-    overflow: hidden;
+  aspect-ratio: 1/2;
+  width: 17.6vw;
+  min-width: 200px;
+  background-color: #000;
+  overflow: hidden;
 }
-.moon-img img{
-    height: 100%;
+.moon-img img {
+  height: 100%;
 }
-.moon1 img{
-    transform: scaleX(-1) translateX(14%);
+.moon1 img {
+  transform: scaleX(-1) translateX(14%);
 }
 /* moon 가상요소로 위성이름 작성 */
-.moon-txt{
-    position: absolute;
-    bottom: 0px;
-    margin: 10px;
+.moon-txt {
+  position: absolute;
+  bottom: 0px;
+  margin: 10px;
 
-    color: white;
-    font-size: max(1.5vw,20px);
+  color: white;
 
-    z-index: 1;
+  z-index: 1;
 }
 /* 4-2 달 설명 */
-.M-text{
-    position: absolute;
-    top: 0;
-    color: white;
-    /* outline: 2px solid yellow; */
-    padding: 10px;
-    padding-top: 50px;
-    opacity: 0;
+.M-text {
+  position: absolute;
+  top: 0;
+  color: white;
+  /* outline: 2px solid yellow; */
+  padding: 10px;
+  padding-top: 50px;
+  opacity: 0;
 }
-.M-text h4{
-    font-size: max(1.5vw,20px);
-    font-weight: bold;
-}
-.M-text p{
-    font-size: max(1vw,14px);
-    height: 100%;
-    text-align: justify;
-    margin-top: 3rem;
-    line-height: 25px;
+
+.M-text p {
+  height: 100%;
+  margin-top: 3rem;
 }
 
 /* 설명 이미지 오버시 */
-.moon:hover .M-text{
-    opacity: 1;
-    transition: .3s ease-in;
-
+.moon:hover .M-text {
+  opacity: 1;
+  transition: 0.3s ease-in;
 }
-.moon:hover img{
-    opacity: 0.6;
-    transition: .3s ease-in;
+.moon:hover img {
+  opacity: 0.6;
+  transition: 0.3s ease-in;
 }
-.moon:hover .moon-txt{
-    opacity: 0;
-    transition: .3s ease-in;
+.moon:hover .moon-txt {
+  opacity: 0;
+  transition: 0.3s ease-in;
 }
 /* 더 많은 달 */
-.jupiter-more{
-    display: block;
-    text-align: right;
-    font-size: 3rem;
-    margin-bottom: 50px;
+.jupiter-more {
+  display: block;
+  text-align: right;
+  font-size: 3rem;
+  margin-bottom: 50px;
 }
-.jupiter-more:hover i{
-    color: yellow;
+.jupiter-more a:hover i {
+  color: yellow;
 }
 /* ---------------------다섯번째 페이지--------------------- */
-.jupit5-cont{
-    box-sizing: border-box;
-    margin-top: 50px;
-    padding: 80px 48px 100px;
+.jupiter5 {
+  max-width: 1400px;
+  margin: 0 auto;
 }
-.jupit5-head{
-    text-align: center;
-    font-size: 30px;
-    margin-bottom: 50px;
+.jupit5-cont {
+  box-sizing: border-box;
+  margin-top: 50px;
+}
+.jupit5-head {
+  margin-bottom: 50px;
 }
 /* 전체 그리드박스 */
-.jupit5-gbox{
-    display: grid;
-    max-width: 1400px;
-    margin: 0 auto;
-    text-align: center;
-    grid-template-columns: repeat(3,1fr);
+.jupit5-gbox {
+  display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
 }
-.jupit5-gbox h2{
-    font-size: 2rem;
-    margin-bottom: 12px;
+.jupit5-gbox h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
 }
 /* 각 그리드 박스 */
-.jupit5-box{
-    border-bottom: 1px solid #dcbfbf;
-    border-right: 1px solid #dcbfbf;
-    padding: 33px 33px 33px 33px;
+.jupit5-box {
+  border-bottom: 1px solid #dcbfbf;
+  border-right: 1px solid #dcbfbf;
+  padding: 33px 33px 33px 33px;
 }
-.circle-num{
-    background-color: #232220;
-    color: white;
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    border: none;
-    margin: 0 auto;
-    line-height: 60px;
-    margin-bottom: 17px;
-    font-size: 22px;
+.circle-num {
+  background-color: #232220;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 auto;
+  line-height: 60px;
+  margin-bottom: 17px;
+  font-size: 22px;
 }
-.jupit5-text p{
-    font-size: 15px;
-    margin: 15px 0
+.jupit5-text{
+  text-align: center;
+  font-size: max(0.9vw, 14px);
+  margin: 15px 0;
 }
+
 
 /************* 하단영역 *************/
 /* common.css */
-
-
 
 /************* 미디어쿼리 *************/
