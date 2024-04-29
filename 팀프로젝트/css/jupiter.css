@@ -126,8 +126,8 @@ body * {
 /* 4-2 달 이미지 */
 .moon-img {
   aspect-ratio: 1/2;
-  width: 15.8vw;
-  min-width: 200px;
+  width: 17.6vw;
+  min-width: 150px;
   background-color: #000;
   overflow: hidden;
 }
@@ -240,9 +240,51 @@ body * {
 /* common.css */
 
 /************* 미디어쿼리 *************/
+@media screen and (max-width: 1380px) {
+  /* 두번째 페이지 */
+  .desc1-img {
+    width: auto;
+  }
+}
 
+@media screen and (max-width:1310px) {
 
-@media screen and (max-width: 800px) {
+  /* 네번째페이지 */
+  .moon-txt{
+    font-size: 3vw;
+  }
+  .M-text h4{
+    font-size: 3.5rem;
+  }
+}
+@media screen and (max-width:930px) {
+    /* ---------------------두번째 페이지--------------------- */
+    .desc {
+      flex-direction: column-reverse;
+    }
+    
+    .desc2 {
+      flex-direction:none;
+    }
+    
+    .desc strong{
+      display: block;
+      text-align: center;
+    } 
+    .desc1-img{
+      width: auto;
+    }
+    .desc img{
+      width: 100%;
+    }
+
+    /* 네번째페이지 */
+    .jupiter-more{
+      font-size: 3rem;
+    }
+}
+
+@media screen and (max-width: 850px) {
   /* ---------------------첫페이지--------------------- */
 .jupiter1-text {
   top: 50%;
@@ -261,25 +303,6 @@ body * {
   font-size: 1.5rem;
 }
 
-/* ---------------------두번째 페이지--------------------- */
-.desc {
-  flex-direction: column-reverse;
-}
-
-.desc2 {
-  flex-direction:none;
-}
-
-.desc strong{
-  display: block;
-  text-align: center;
-} 
-.desc1-img{
-  width: auto;
-}
-.desc img{
-  width: 100%;
-}
 /* ---------------------세번째 페이지--------------------- */
 .M-text h4{
   font-size: 3rem;
@@ -287,10 +310,15 @@ body * {
 
 /* ---------------------네,다섯번째 페이지--------------------- */
 .jupiter4 h2, .jupiter5 h2{
-  font-size: 4rem;
+  font-size: 6vw;
 }
-.moon-txt, .jupiter-more{
-  font-size: 3rem;
+.jupiter4 h4{
+  font-size: 2.5vw;
 }
+.jupiter4 p{
+  font-size: 12px;
+  line-height: 15px;
+}
+
 
 }

@@ -41,10 +41,16 @@ body * {
 .saturn1-text {
   bottom: 25vh;
   left: 10%;
+  opacity: 0;
+  animation: fadein 1.4s ease-in-out 1.3s forwards;
 }
 .saturn1-text h1 {
-  /* opacity: 0; */
   /* animation: fadein 1.4s ease-in-out 1.3s forwards; */
+}
+@keyframes fadein {
+  to{
+    opacity: 1;
+  }
 }
 .saturn1-text p {
   /* width: min(70vw,522px); */
@@ -75,6 +81,9 @@ body * {
 .desc2{
     position: relative;
     height: 50vh;
+}
+.desc2-text{
+  margin-top: 5rem;
 }
 .desc2-3D{
     position: relative;
