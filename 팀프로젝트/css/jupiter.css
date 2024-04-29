@@ -5,6 +5,7 @@
 @import url(./core.css);
 @import url(./reset.css);
 
+
 /************* 공통구역 *************/
 body * {
   /* outline: 2px dashed red; */
@@ -185,6 +186,10 @@ body * {
 }
 .jupiter-more a:hover i {
   color: yellow;
+}
+.jupiter-more a:hover span {
+  /* font-family: 'Freesentation-9Black'; */
+  color: red;
 }
 /* ---------------------다섯번째 페이지--------------------- */
 .jupiter5 {
