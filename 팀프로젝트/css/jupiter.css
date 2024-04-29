@@ -68,6 +68,9 @@ body * {
 .desc2 {
   flex-direction: row-reverse;
 }
+.desc2-text{
+  margin-top: 5rem;
+}
 /* 2-1 첫번째 사진 */
 .desc1-img {
   width: 45vw;
@@ -270,15 +273,16 @@ body * {
 .desc strong{
   display: block;
   text-align: center;
-}
-.desc2-text{
-  margin-top: 5rem;
-}
+} 
 .desc1-img{
   width: auto;
 }
 .desc img{
   width: 100%;
+}
+/* ---------------------세번째 페이지--------------------- */
+.M-text h4{
+  font-size: 3rem;
 }
 
 /* ---------------------네,다섯번째 페이지--------------------- */
