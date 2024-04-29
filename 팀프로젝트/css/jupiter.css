@@ -237,3 +237,56 @@ body * {
 /* common.css */
 
 /************* 미디어쿼리 *************/
+
+
+@media screen and (max-width: 800px) {
+  /* ---------------------첫페이지--------------------- */
+.jupiter1-text {
+  top: 50%;
+  bottom: auto;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 600px;
+}
+.jupiter1-text h1 {
+  font-size: 9.5rem;
+  text-align: center;
+  /* opacity: 0; */
+}
+.jupiter1-text p {
+  /* font-size: 30px; */
+  font-size: 1.5rem;
+}
+
+/* ---------------------두번째 페이지--------------------- */
+.desc {
+  flex-direction: column-reverse;
+}
+
+.desc2 {
+  flex-direction:none;
+}
+
+.desc strong{
+  display: block;
+  text-align: center;
+}
+.desc2-text{
+  margin-top: 5rem;
+}
+.desc1-img{
+  width: auto;
+}
+.desc img{
+  width: 100%;
+}
+
+/* ---------------------네,다섯번째 페이지--------------------- */
+.jupiter4 h2, .jupiter5 h2{
+  font-size: 4rem;
+}
+.moon-txt, .jupiter-more{
+  font-size: 3rem;
+}
+
+}

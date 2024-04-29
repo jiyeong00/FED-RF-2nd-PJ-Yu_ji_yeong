@@ -41,7 +41,7 @@
 .main-text {
   color: #fff;
   position: absolute;
-  width: 40%;
+  width: 700px;
 }
 
 /* 메인 제목 글씨 */
@@ -144,3 +144,4 @@ body {
   /* 폰트 */
   font-family: "Noto Sans KR", sans-serif;
 }
+
