@@ -15,11 +15,14 @@ body *{
 .ball-img{
     width: 100%;
     height: 100%;
+    opacity: 0;
 }
 .ball-img img{
     position: absolute;
     top: 50%;
     left: 50%;
+
+    width: 220px;
     transform: translate(-50%, -50%) rotate(0deg);
     cursor: pointer;
     z-index: 1;
@@ -33,14 +36,54 @@ body *{
         transform: translate(-50%, -50%) rotate(18deg);
     }
 }
+.ball-img img.move{
+    top: auto;
+    width: 100px;
+    bottom: 0;
+    transition: .3s ease-in-out;
+    transform: translate(-50%);
+}
 
-.main-img > *{
+.main-img{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+.main-img-wrap > *{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%,-50%);
-    opacity: 0;
+    /* opacity: 1; */
     /* display: none; */
+}
+/* 포켓몬스터 이미지 배치 */
+.main-img .poke-1{
+    width: 390px;
+}
+.main-img .poke-2{
+    top: 42%;
+    left: 34%;
+    width: 200px;
+}
+.main-img .poke-3{
+    top: 53%;
+    left: 36%;
+    rotate: 344deg;
+    width: 260px;
+}
+.main-img .poke-5{
+    top: 61%;
+    left: 57%;
+    rotate: 18deg;
+    width: 300px;
+}
+.main-img .poke-6{
+    top: 20%;
+    left: 35%;
+    transform: scaleX(-1);
+    width: 350px;
 }
 /****************************** 하단영역 ****************************/
 
