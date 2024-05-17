@@ -5,85 +5,106 @@
 @import url(./common.css);
 
 body *{
-    /* outline: 2px dashed red; */
+    outline: 2px dashed red;
 }
 /****************************** 상단영역 ****************************/
 /****************************** 메인영역 ****************************/
 .main-area{
-    /* background-color: yellow; */
+    background: no-repeat url(../img/main_bg_1.png) center/cover;
+    font-family: 'Noto Sans KR', sans-serif;
 }
-.ball-img{
-    width: 100%;
+.main-wrap{
+    max-width: 1600px;
+    display: flex;
+    margin: 0 auto;
+}
+.main-wrap>section{
+    width: 50%;
+    height: 100vh;
+    position: relative;
+}
+
+/* 메인 이미지 구역 */
+.main-card-wrap{
+    position: relative;
     height: 100%;
-    opacity: 0;
 }
-.ball-img img{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-
-    width: 220px;
-    transform: translate(-50%, -50%) rotate(0deg);
-    cursor: pointer;
-    z-index: 1;
-}
-.ball-img img.on{
-    animation: ballMove .2s ease-in-out 4 alternate;
-    
-}
-@keyframes ballMove {
-    to{
-        transform: translate(-50%, -50%) rotate(18deg);
-    }
-}
-.ball-img img.move{
-    top: auto;
-    width: 100px;
-    bottom: 0;
-    transition: .3s ease-in-out;
-    transform: translate(-50%);
-}
-
 .main-img{
     position: absolute;
-    top: 0;
-    width: 100%;
-    height: 100%;
+    right: 12rem;
+    top: 47.6%;
+    transform: translateY(-50%) rotate(350deg);
+    width: 430px;
+    height: 620px;
+    aspect-ratio: 430 / 620;
+    border-radius: 50px;
+    overflow: hidden;
+    z-index: 1;
+    /* opacity: 0; */
 }
-.main-img-wrap > *{
+.main-card-area img{
+    width: 100%;
+}
+.back-card{
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+
+    max-width: 430px;
+    height: 620px;
+    aspect-ratio: 430 / 620;
+    border-radius: 50px;
+
+    background-color: #370c51;
+}
+.back-card span{
+    position: absolute;
+    right: 0;
+
+
+    font-size: 5rem;
+    color: white;
+
+    writing-mode: tb-rl;
+
+    padding: 2rem;
+    padding-top: 5rem;
+}
+/* 메인글자 구역 */
+.text-area-wrap{
     position: absolute;
     top: 50%;
-    left: 50%;
-    transform: translate(-50%,-50%);
-    /* opacity: 1; */
-    /* display: none; */
+    transform: translateY(-50%);
 }
-/* 포켓몬스터 이미지 배치 */
-.main-img .poke-1{
-    width: 390px;
+.text-area-wrap h2{
+    font-size: 8rem;
+    line-height: 1.2;
+    font-weight: 500;
 }
-.main-img .poke-2{
-    top: 42%;
-    left: 34%;
-    width: 200px;
+.text-area-wrap h3{
+    font-size: 4rem;
+    letter-spacing: -4px;
+    font-weight: 300;
 }
-.main-img .poke-3{
-    top: 53%;
-    left: 36%;
-    rotate: 344deg;
-    width: 260px;
+.text-area-wrap button{
+    width: 160px;
+    height: 50px;
+    background-color: #ffffff00;
+
+    margin-top: 1.8rem;
+
+    cursor: pointer;
 }
-.main-img .poke-5{
-    top: 61%;
-    left: 57%;
-    rotate: 18deg;
-    width: 300px;
+.text-area-wrap button span{
+    width: 0%;
+    height: 100%;
+    color: red;
+
 }
-.main-img .poke-6{
-    top: 20%;
-    left: 35%;
-    transform: scaleX(-1);
-    width: 350px;
+.text-area-wrap button:hover span{
+    width: 100%;
+    transition: 1s ease-in-out;
 }
 /****************************** 하단영역 ****************************/
 

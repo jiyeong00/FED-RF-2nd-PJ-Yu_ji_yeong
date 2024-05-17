@@ -34,11 +34,6 @@
 /********* 공통 클래스 *********/
 /* 가로스크롤 없애기 */
 
-/* 배경색 */
-body{
-    background: linear-gradient(to bottom,#0d0d0e ,#1d1d1f,#0d0d0e);
-  }
-
   
 /* 스크롤 애니메이션 */
 html{
