@@ -15,7 +15,12 @@ body *{
 }
 .main-wrap{
     max-width: 1600px;
+    min-width: 1000px;
+
     display: flex;
+    gap: 30px;
+    justify-content: space-between;
+
     margin: 0 auto;
 }
 .main-wrap>section{
@@ -34,8 +39,8 @@ body *{
     right: 12rem;
     top: 47.6%;
     transform: translateY(-50%) rotate(350deg);
-    width: 430px;
-    height: 620px;
+
+    height: 70vh;
     aspect-ratio: 430 / 620;
     border-radius: 50px;
     overflow: hidden;
@@ -51,11 +56,10 @@ body *{
     top: 50%;
     transform: translateY(-50%);
 
-    max-width: 430px;
-    height: 620px;
+    height: 70vh;
     aspect-ratio: 430 / 620;
     border-radius: 50px;
-
+    
     background-color: #370c51;
 }
 .back-card span{
@@ -87,7 +91,8 @@ body *{
     letter-spacing: -4px;
     font-weight: 300;
 }
-.text-area-wrap button{
+
+.text-area-wrap .more_btn{
     width: 160px;
     height: 50px;
     background-color: #ffffff00;
@@ -96,15 +101,21 @@ body *{
 
     cursor: pointer;
 }
-.text-area-wrap button span{
-    width: 0%;
-    height: 100%;
-    color: red;
-
-}
-.text-area-wrap button:hover span{
+.text-area-wrap .more_btn span{
+    display: inline-block;
     width: 100%;
-    transition: 1s ease-in-out;
+    height: 100%;
+
+    text-align: center;
+    line-height: 50px;
+}
+.text-area-wrap .more-btn a{
+    width: 100%;
+}
+.text-area-wrap .more-btn:hover a{
+
+    background-color: #fff;
+    /* transition: 1s ease-in-out; */
 }
 /****************************** 하단영역 ****************************/
 
