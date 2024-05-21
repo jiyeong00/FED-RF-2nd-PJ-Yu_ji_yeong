@@ -40,7 +40,7 @@ body *{
     top: 47.6%;
     transform: translateY(-50%) rotate(350deg);
 
-    max-height: 70vh;
+    width: min(400px, 30vw);
     aspect-ratio: 430 / 620;
     border-radius: 50px;
     overflow: hidden;
@@ -56,14 +56,17 @@ body *{
     top: 50%;
     transform: translateY(-50%);
 
+    width: min(400px, 30vw);
     aspect-ratio: 430 / 620;
-    height: 30vw;
     border-radius: 50px;
     overflow: hidden;
     background-color: #370c51;
 
 }
-/* .back-card span{
+.back-card img{
+    opacity: 0;
+}
+.back-card span{
     position: absolute;
     right: 0;
 
@@ -75,7 +78,7 @@ body *{
 
     padding: 2rem;
     padding-top: 5rem;
-} */
+}
 /* 메인글자 구역 */
 .text-area-wrap{
     position: absolute;
