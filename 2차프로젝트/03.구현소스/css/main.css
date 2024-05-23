@@ -96,30 +96,26 @@ body *{
     font-weight: 300;
 }
 
-.text-area-wrap .more_btn{
+.more_btn{
     width: 160px;
     height: 50px;
     background-color: #ffffff00;
 
     margin-top: 1.8rem;
-
     cursor: pointer;
 }
-.text-area-wrap .more_btn span{
-    display: inline-block;
+.more-btn a{
+    display: block;
     width: 100%;
     height: 100%;
 
-    text-align: center;
-    line-height: 50px;
+    font: 2.5vw/8vw 'Black Ops One';
 }
-.text-area-wrap .more-btn a{
-    width: 100%;
-}
-.text-area-wrap .more-btn:hover a{
+.more-btn:hover{
 
-    background-color: #fff;
+    background-color: red;
     /* transition: 1s ease-in-out; */
 }
+
 /****************************** 하단영역 ****************************/
 
