@@ -2,7 +2,7 @@
 
 const comData = {
   // 1. 상단영역 코드
-  headerArea:`    
+  headerArea: `    
   <header class="header-area inbox">
   <!-- 로고 -->
   <h1 class="logo">
@@ -42,50 +42,12 @@ const comData = {
 </header>
   `,
   // 2. 하단영역 코드
-  footerArea:`    
+  footerArea: `    
   <footer class="footer-area">
-        <div class="inbox">
-          <!-- 돌아가는 3d 궤도 애니메이션 -->
-          <div class="spinner-box">
-            <div class="blue-orbit leo"></div>
-            <div class="green-orbit leo"></div>
-            <div class="red-orbit leo"></div>
-            <div class="white-orbit w1 leo"></div>
-            <div class="white-orbit w2 leo"></div>
-            <div class="white-orbit w3 leo"></div>
-          </div>
-
-          <!-- sns공유하기 -->
-          <ul class="sns">
-            <li>
-              <a href=""><i class="fa-brands fa-square-facebook"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fa-brands fa-square-instagram"></i></a>
-            </li>
-            <li>
-              <a href=""><i class="fa-brands fa-square-twitter"></i></a>
-            </li>
-          </ul>
-          <!-- 저작권 표시 -->
-          <div class="copy-right">
-            <p>
-              This site is maintained by the Planetary Science Communications team at<br />
-              NASA’s Jet Propulsion Laboratory for NASA’s Science Mission Directorate.
-            </p>
-          </div>
-        </div>
-        <!-- 탑버튼 -->
-        <a href="javascript:;" class="top-btn"><span class="ir">상단으로 이동</span></a>
-      </footer>
-  
-
+ 
+  </footer>
   `,
-
-
 }; /////////// comData 객체 ////////////////
-
-
 
 // 내보내기
 export default comData;

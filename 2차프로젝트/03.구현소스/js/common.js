@@ -6,12 +6,8 @@ import mFn from "./my_function.js";
 // 공통 처리 데이터 불러오기
 import comData from "./data/common_data.js";
 
-
-
 // GNB 메뉴 데이터 불러오기
 import gnbData from "./data/gnb_data.js";
-
-
 
 /****************************************************
      [ 상단/하단 공통 함수 ]
@@ -23,12 +19,9 @@ export default function setElement() {
   const headerArea = mFn.qs("#header-area");
   const footerArea = mFn.qs("#footer-area");
 
-
-
   // 2. 코드넣기 ///////
   headerArea.innerHTML = comData.headerArea;
   footerArea.innerHTML = comData.footerArea;
-
 
   /****************************************************
      [ GNB메뉴 ]
@@ -43,19 +36,19 @@ export default function setElement() {
     ${Object.keys(gnbData)
       .map(
         (v) => `
-        <li>
+        <ol>
           ${`
                 ${gnbData[v]
                   .map(
                     (v) => `
-                      <li>
-                        <a href="./${v}.html">${v}</a>
-                      </li>          
+                    <li>
+                        <a href="./${v}.html">${v}</a>       
+                    </li>
                     `
                   )
                   .join("")}
             `}
-        </li>
+        </ol>
       `
       )
       .join("")}
@@ -71,6 +64,8 @@ export default function setElement() {
   // 1. 대상선정
   // 헤더
   const hdArea = mFn.qs("#header-area");
+  const gnbA=mFn.qsa("#gnb ul li a");
+  let logoImg=mFn.qs(".logo img");
 
   // 세로 스크롤이 80px 넘어가면 헤더 색 변경
   mFn.addEvt(window, "scroll", function () {
@@ -96,7 +91,6 @@ export default function setElement() {
     search.classList.toggle("on");
   };
 
-
   /****************************************************
      [ 모바일 햄버거 버튼 클릭시 사이트맵 열고 닫기 ]
 ******************************************************/
@@ -109,19 +103,17 @@ export default function setElement() {
   // 사이트맵
   const siteMap = mFn.qs(".m-sitemap");
 
-
-
   // 2. 함수실행
   icon2.onclick = () => {
     icon2.classList.add("on");
     icon3.classList.add("on");
-    
+
     siteMap.classList.add("on");
   };
   icon3.onclick = () => {
     icon2.classList.remove("on");
     icon3.classList.remove("on");
-    
+
     siteMap.classList.remove("on");
   };
 
@@ -133,23 +125,18 @@ export default function setElement() {
 
   mFn.addEvt(window, "scroll", scrollTopBtn);
 
-  function scrollTopBtn(){
+  function scrollTopBtn() {
     let scTop = window.scrollY;
     // console.log("스크롤 위치 : ", scTop);
 
-    if(scTop>=300){
+    if (scTop >= 300) {
       topBtn.classList.add("on");
-    }
-    else{
+    } else {
       topBtn.classList.remove("on");
     }
-  }////////////scrollTopBtn함수////////////
+  } ////////////scrollTopBtn함수////////////
 
   topBtn.onclick = () => {
     window.scrollTo({ top: 0, behavior: "smooth" });
   }; ///////click///////////
 } /////////// setElement 함수 ///////////////
-
-
-
-

@@ -39,7 +39,7 @@ position: fixed;
   font-family: "Noto Sans KR", sans-serif;
 }
 .main-wrap {
-  max-width: 1600px;
+  max-width: 1500px;
   min-width: 600px;
   margin: 0 auto;
 
@@ -60,7 +60,8 @@ position: fixed;
   top: 47.6%;
   transform: translateY(-50%) rotate(350deg);
 
-  width: min(700px, 50vh);
+  /* width: min(700px, 50vh); */
+  width: 23vw;
   aspect-ratio: 430 / 620;
   border-radius: 50px;
   overflow: hidden;
@@ -76,7 +77,8 @@ position: fixed;
   top: 50%;
   transform: translateY(-50%);
 
-  width: min(700px, 50vh);
+  /* width: min(700px, 50vh); */
+  width: 23vw;
   aspect-ratio: 430 / 620;
   border-radius: 50px;
   overflow: hidden;
@@ -167,7 +169,7 @@ position: fixed;
 
 /* ---------------------두번째 페이지--------------------- */
 .main2 {
-  max-width: 1600px;
+  max-width: 1500px;
   min-width: 600px;
   margin: 7rem auto;
 }
