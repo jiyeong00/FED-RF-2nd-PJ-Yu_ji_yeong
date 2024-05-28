@@ -9,7 +9,404 @@
 } */
 
 
-/************* 1. 상단영역 *************/
+/************* 상단영역 *************/
+#header-area {
+  height: 90px;
+  background-color: rgba(0, 0, 0, 0.5);
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 9999;
+  width: 100%;
+  transition: 0.3s;
+}
 
-/************ 2. 메인영역 ************/
-/************* 3. 하단영역 *************/
+
+/* 헤더 색상 변경 */
+#header-area.on {
+  background: url(../images/common/space.jpg) no-repeat top / cover;
+}
+
+
+/* 상단 내부박스 */
+#header-area .inbox {
+  width: 95%;
+  height: 100%;
+  /* outline: 1px solid red; */
+  margin: 0 auto;
+}
+
+.header-area {
+  /* 플렉스로 가로 정렬 */
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+/* 로고 */
+h1.logo {
+  width: 16%;
+  min-width: 25rem;
+  max-width: 30rem;
+}
+.logo a {
+  display: inline-block;
+  width: 100%;
+  height: 100%;
+}
+.logo img {
+  width: 100%;
+}
+
+/* 메뉴 */
+
+#gnb {
+  min-width: 50rem;
+}
+#gnb ul {
+  display: flex;
+  justify-content: space-between;
+}
+
+#gnb ul li a {
+  color: white;
+  line-height: 2;
+  font-size: 1.8rem;
+  font-family: "Kanit", sans-serif;
+}
+
+/* 메뉴 마우스 오버시 글자 네온효과 */
+#gnb ul li a:hover{
+  text-shadow: 0 0 40px #fff,0 0 35px #fff,0 0 30px #fff,0 0 25px #fff,0 0 20px #fff,0 0 15px #fff,0 0 10px #fff,0 0 5px #fff;
+}
+
+/* 우측 상단영역에 아이콘 */
+.gnb img {
+  width: 40px;
+  height: 40px;
+}
+
+
+/* 기타 */
+.etc{
+  display: flex;
+  align-items: center;
+
+}
+
+
+
+
+/* 검색*/
+
+/* 검색버튼 */
+.search {
+  position: relative;
+  width: 40px;
+  height: 40px;
+  transition: 0.3s linear;
+  border-radius: 50px;
+}
+
+/* input창 */
+.input-box {
+  border: none;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background-color: #193f93;
+  text-indent: 20px;
+  transition: 0.3s;
+  color: #fff;
+  box-sizing: border-box;
+}
+.input-box:focus {
+  outline: none;
+}
+
+/* 검색 아이콘 */
+.icon {
+  position: absolute;
+  right: 0;
+  top: 0;
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #193f93;
+}
+/* 클릭시 on */
+.search.on {
+  width: 20rem;
+  background-color: #193f93;
+}
+
+/* 아이콘 */
+.fa-magnifying-glass:before,
+.fa-search:before {
+  content: "\f002";
+}
+
+
+/* 모바일 햄버거 버튼 */
+.mobile-btn{
+  width: 40px;
+  height: 40px;
+  transition: 0.3s linear;
+  border-radius: 50px;
+  margin-left: 10px;
+  display: none;
+}
+
+/* 햄버거 아이콘 */
+.icon2 {
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #193f93;
+
+
+}
+
+.icon2.on{
+  display: none;
+}
+
+.icon3 {
+  text-align: center;
+  line-height: 40px;
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  color: #fff;
+  font-size: 1.8rem;
+  cursor: pointer;
+  background-color: #193f93;
+  display: none;
+
+}
+
+.icon3.on{
+  display: block;
+}
+
+
+/* 모바일 사이트맵 */
+
+.m-sitemap{
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 90px;
+  background: #fff;
+  left:100%;
+  transition: all 0.3s ease-in-out;
+
+  
+
+}
+
+.m-sitemap.on{
+  left:0;
+}
+
+.m-sitemap li{
+  position: relative;
+
+}
+
+.m-sitemap li a{
+  display: block;
+  width: 100%;
+  line-height:11rem;
+  font-size: 4rem;
+  text-align: center;
+  color:#333;
+  font-weight: bold;
+  border-bottom:1px solid #c8c8c8;
+  
+
+}
+
+.m-sitemap li a:hover{
+  color:#fff;
+  background-color: #193f93;
+}
+
+
+
+
+/************* 하단영역 *************/
+
+#footer-area {
+  /* background: url(../images/common/space.jpg) no-repeat top / cover; */
+  background-color: #000;
+  height: 100%;
+}
+
+
+#footer-area .inbox{
+  width:90%;
+}
+
+.footer-area h3 {
+  font-size: 3rem;
+  color: #fff;
+  text-align: center;
+  margin-bottom: 20px;
+  line-height: 3.7rem;
+}
+
+.footer-area .move-gallery {
+  background: url(../images/common/section02_bg.png) no-repeat top/cover;
+  width: 100%;
+  height: auto;
+  padding: 40px 0;
+  /* border-top:1px solid #c8c8c8;
+  border-bottom:1px solid #c8c8c8; */
+}
+/* 옆으로 움직이는 태양계 */
+.footer-area .gbox {
+  overflow: m-sitemap;
+  /* background-color: red; */
+}
+.footer-area .gbox ul {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.footer-area .gbox li {
+  width: 15vw;
+  /* 플렉스 부모박스크기에 맞춰줄여라에
+  0을 쓰면 아니! 안줄여 이런뜻임! */
+  flex-shrink: 0;
+  aspect-ratio: 480/360;
+  padding: 2vw;
+  box-sizing: border-box;
+}
+
+.footer-area .gbox li span {
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+  display: inline-block;
+  width: 100%;
+  margin-top: 20px;
+}
+.footer-area .gbox li img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+
+/* 돌아가는 3d 궤도 애니메이션*/
+
+.footer-area .spinner-box{
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.footer-area .leo{
+  position: absolute;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+}
+.footer-area .blue-orbit{
+  width: 165px;
+  height: 165px;
+  border:1px solid #91daffa6;
+  animation: spin3D 4s linear 0.2s infinite;
+}
+
+.footer-area .green-orbit{
+  width: 125px;
+  height: 125px;
+  border:1px solid #91daffa6;
+  animation: spin3D 3s linear 0s infinite;
+}
+
+.footer-area .red-orbit{
+  width: 90px;
+  height: 90px;
+  border:1px solid #ffca91a5;
+  animation: spin3D 2s linear 0s infinite;
+}
+
+.footer-area .white-orbit{
+  width: 60px;
+  height: 60px;
+  border:2px solid #ffffff;
+  animation: spin3D 10s linear 0s infinite;
+}
+
+.footer-area .w1{
+  transform: rotate3d(1,1,1,90deg);
+}
+
+.footer-area .w2{
+  transform: rotate3d(1,2,0.5,90deg);
+}
+
+.footer-area .w3{
+  transform: rotate3d(0.5,1,2,90deg);
+}
+
+@keyframes spin {
+  0%{
+    transform: rotate(0);
+  }
+  100%{
+    transform: rotate(359deg);
+  }
+}
+
+@keyframes spin3D {
+  0%{
+    transform: rotate3d(0.5,0.5,0.5,360deg);
+  }
+  100%{
+    transform: rotate3d(0deg);
+  }
+} 
+
+
+
+/* sns공유하기 */
+.footer-area .sns{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3rem;
+}
+
+.footer-area .fa-brands{
+  color: #fff;
+  font-size: 3.5rem;
+}
+
+/* 저작권 표시 */
+.footer-area .copy-right{
+  padding-bottom: 50px;
+}
+
+.footer-area .copy-right p{
+  font-size:1.6rem;
+  color: #c8c8c8;
+  text-align: center;
+  margin-top: 30px;
+}

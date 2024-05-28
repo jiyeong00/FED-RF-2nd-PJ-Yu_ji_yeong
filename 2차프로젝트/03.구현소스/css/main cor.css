@@ -169,8 +169,7 @@ position: fixed;
 .main2 {
   max-width: 1600px;
   min-width: 600px;
-  margin: 0 auto;
-  margin-top: 7rem;
+  margin: 7rem auto;
 }
 /* 제목 */
 .main2-tit {
