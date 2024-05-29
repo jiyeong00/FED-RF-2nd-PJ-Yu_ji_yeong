@@ -52,7 +52,10 @@ position: fixed;
   height: 100vh;
   position: relative;
 }
-
+/* 인딕 */
+.indic li.on{
+  color: white;
+}
 /* 메인 이미지 구역 */
 .main-img {
   position: absolute;
@@ -66,10 +69,19 @@ position: fixed;
   border-radius: 50px;
   overflow: hidden;
   z-index: 1;
-  /* opacity: 0; */
+  /* opacity: 1; */
+  transition: .6s ease-in-out;
 }
+/* .main-img.on {
+  right: 25rem;
+  transition: .6s ease-in-out;
+  opacity: 0;
+} */
 .main-card-area img {
   width: 100%;
+}
+.main-card-area img:first-child {
+  width: 106%;
 }
 .back-card {
   position: absolute;

@@ -61,7 +61,7 @@ function loadFn() {
   function goSlide(evt,sts=true){
 
     if(sts){
-      clearAuto();
+      // clearAuto();
     }///if문
 
     // 광클금지 설정하기 ///////////
@@ -72,8 +72,10 @@ function loadFn() {
     }, 600);
     /////////////////////////////////////
 
-    // 1.오른쪽 버튼인 .ab2인가?
-    let isRbtn = sts?this.classList.contains("ab2"):true;
+    // 1.두번째 버튼인 .ab2인가?
+    let isRbtn = this.classList.contains("ab2");
+    // 슬라이드 상태 변환 변수
+    let slideSts=0;
 
 
     // 함수호출확인
@@ -81,11 +83,12 @@ function loadFn() {
     // this는 호출한 버튼 자신
 
     // 2. 버튼별 분기하기 //////
-    // 2-1.오른쪽 버튼일 경우 ////
+    // 2-1. 2번 버튼일 경우 ////
     if (isRbtn) {
       // (1)먼저 왼쪽으로 이동하기
-      slide.style.left = "-100%";
-      slide.style.transition = ".6s ease-in-out";
+      slide.style.right = "30rem";
+      slide.style.opacity = 0;
+      slide.style.transition = "1.5s ease-in-out";
 
       // (2)이동하는 시간 0.6초간 기다림!
       setTimeout(() => {
@@ -93,33 +96,39 @@ function loadFn() {
         slide.appendChild(slide.querySelectorAll("li")[0]);
         // 슬라이드 left 값이 -100% 이므로
         // (2-2) left값을 0으로 변경
-        slide.style.left = "0";
+        slide.style.right = "12rem";
         // (2-3) left 트랜지션 없애기
-        slide.style.transition = "none";
-      }, 600);
+        // slide.style.transition = "none";
+        slide.style.opacity = 1;
+        slide.style.transition = "1.5s ease-in-out";
+      }, 1500);
 
     } //// if ////
 
-    // 2-2.왼쪽 버튼일 경우 ////
+    // 2-2 두번쨰쪽 버튼일 경우 ////
     else {
       // 하위 li수집
       let list = slide.querySelectorAll("li");
+      // console.log("dd",list);
 
-      slide.insertBefore(list[list.length - 1], list[0]);
-
-      slide.style.left = "-100%";
-      // 트랜지션이 한번 버튼클릭후 생기므로 없애줌
-      slide.style.transition = "none";
-
+      slide.style.right = "30rem";
+      slide.style.opacity = 0;
+      slide.style.transition = "1.5s ease-in-out";
+      
       //////////////////////////////////
 
       setTimeout(() => {
         // (3) left 값을 0으로 트랜지션하여 들어옴
-        slide.style.left = "0";
-        slide.style.transition = ".6s ease-in-out";
-      }, 0);
+        slide.insertBefore(list[list.length - 1], list[0]);
+        slide.style.right = "12rem";
+        // (2-3) left 트랜지션 없애기
+        // slide.style.transition = "none";
+        slide.style.opacity = 1;
+        slide.style.transition = "1.5s ease-in-out";
+      }, 1500);
     } /// else ///
 
+/////////////////////////////////////////////////////////////////
 
     let seq = 
     slide.querySelectorAll('li')[isRbtn?1:0]
@@ -136,6 +145,7 @@ function loadFn() {
             // ==으로 비교해야 결과가 나옴
             // data-seq 속성은 문자형숫자이므로!
             // ===은 형까지 비교하기때문에 안나옴!
+            console.log("누구냐",ele);
             ele.classList.add('on');
         } /// if ///
         else{ // 나머지는 on빼기
@@ -160,41 +170,41 @@ function loadFn() {
 //   autoSlide();
 
   // [자동넘김호출]
-  function autoSlide(){
-    // setInterval(함수,시간)
-    // - 일정시간간격으로 함수를 호출
-    // clearInterval(인터발변수)
-    // - 변수에 담긴 인터발을 지움(멈춤)
+  // function autoSlide(){
+  //   // setInterval(함수,시간)
+  //   // - 일정시간간격으로 함수를 호출
+  //   // clearInterval(인터발변수)
+  //   // - 변수에 담긴 인터발을 지움(멈춤)
   
-    // setInterval(() => {
-    //   abtn[1].onclick();
-    // }, 3000);
-    // >> 뜻 : 오른쪽버튼을 온 클릭해라
+  //   // setInterval(() => {
+  //   //   abtn[1].onclick();
+  //   // }, 3000);
+  //   // >> 뜻 : 오른쪽버튼을 온 클릭해라
   
-    autoI= setInterval(() => {
-      // abtn[1].onclick();
-      // 값을 2개 보내야함.
-      // 첫번째 전달값은 이밴트 객체가 들어가는 변수임으로 false값을 쓰고
-      // 두번째 전달값은 자동호출임을 알리는 변수임으로 false값을 전달한다.
-      goSlide(false,false);
-    }, 3000);
+  //   autoI= setInterval(() => {
+  //     // abtn[1].onclick();
+  //     // 값을 2개 보내야함.
+  //     // 첫번째 전달값은 이밴트 객체가 들어가는 변수임으로 false값을 쓰고
+  //     // 두번째 전달값은 자동호출임을 알리는 변수임으로 false값을 전달한다.
+  //     goSlide(false,false);
+  //   }, 3000);
 
-  }////////autoslide함수///////////////
+  // }////////autoslide함수///////////////
 
-  // [인터발지우기 함수]
-  function clearAuto(){
-    // 지우기 확인
-    console.log('인터발지워!');
-    clearInterval(autoI);
+  // // [인터발지우기 함수]
+  // function clearAuto(){
+  //   // 지우기 확인
+  //   console.log('인터발지워!');
+  //   clearInterval(autoI);
 
-    // 타임아웃지우기 : 실행쓰나미 방지
-    clearTimeout(autoT);
+  //   // 타임아웃지우기 : 실행쓰나미 방지
+  //   clearTimeout(autoT);
 
-    // 5초후 아무작동도 안하면 다시 인터발호출
-    autoT=setTimeout(() => {
-      autoSlide();
-    }, 5000);
-  }///////clearAuto함수///////////////
+  //   // 5초후 아무작동도 안하면 다시 인터발호출
+  //   autoT=setTimeout(() => {
+  //     autoSlide();
+  //   }, 5000);
+  // }///////clearAuto함수///////////////
   
 
 
