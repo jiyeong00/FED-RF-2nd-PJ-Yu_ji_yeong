@@ -121,22 +121,22 @@ export default function setElement() {
      [ top버튼-클릭시 상단으로 이동하는 버튼]
 ******************************************************/
 
-  const topBtn = mFn.qs(".top-btn");
+  // const topBtn = mFn.qs(".top-btn");
 
-  mFn.addEvt(window, "scroll", scrollTopBtn);
+  // mFn.addEvt(window, "scroll", scrollTopBtn);
 
-  function scrollTopBtn() {
-    let scTop = window.scrollY;
-    // console.log("스크롤 위치 : ", scTop);
+  // function scrollTopBtn() {
+  //   let scTop = window.scrollY;
+  //   // console.log("스크롤 위치 : ", scTop);
 
-    if (scTop >= 300) {
-      topBtn.classList.add("on");
-    } else {
-      topBtn.classList.remove("on");
-    }
-  } ////////////scrollTopBtn함수////////////
+  //   if (scTop >= 300) {
+  //     topBtn.classList.add("on");
+  //   } else {
+  //     topBtn.classList.remove("on");
+  //   }
+  // } ////////////scrollTopBtn함수////////////
 
-  topBtn.onclick = () => {
-    window.scrollTo({ top: 0, behavior: "smooth" });
-  }; ///////click///////////
+  // topBtn.onclick = () => {
+  //   window.scrollTo({ top: 0, behavior: "smooth" });
+  // }; ///////click///////////
 } /////////// setElement 함수 ///////////////
