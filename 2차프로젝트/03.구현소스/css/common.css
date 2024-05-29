@@ -262,6 +262,11 @@ h1.logo {
   color: #666;
 }
 
+.foot{
+  padding: 2rem 0px;
+  border-bottom: 1px solid #66666686;
+}
+
 .bottom1 {
   color: white;
   font-size: 2.5rem;
@@ -269,7 +274,17 @@ h1.logo {
 
 .bottom2 {
   display: flex;
+  justify-content: space-between;
+
   font-size: 1.3rem;
+}
+.sns-icon{ 
+  display: flex;
+  gap: 30px;
+  margin-top: 10px;
+}
+.info-area span{
+  color: #999;
 }
 
 /* 돌아가는 3d 궤도 애니메이션*/

@@ -45,11 +45,11 @@ const comData = {
   footerArea: `    
   <footer class="footer-area">
   <!-- 하단 1줄 -->
-      <div class="bottom1">
+      <div class="bottom1 foot">
         최신 정보 받기
       </div>
       <!-- 하단 2줄 -->
-      <div class="bottom2">
+      <div class="bottom2 foot">
         <!-- sns -->
         <div class="sns-area">
           <div class="txt">
@@ -62,7 +62,6 @@ const comData = {
             <i class="fa-brands fa-youtube"></i>
             <i class="fa-brands fa-instagram"></i>
             <i class="fa-brands fa-square-twitter"></i>
-            <i class="fa-solid fa-envelope"></i>
             <i class="fa-brands fa-product-hunt"></i>
           </div>
         </div>
@@ -88,7 +87,7 @@ const comData = {
         </div>
       </div>
       <!-- 하단 4줄 -->
-      <div class="bottom4">
+      <div class="bottom4 foot">
         <img src="./img/logo_w.png" alt="하단 로고">
         <span>ⓒ Copyright 2024 ShinHan Art Materials Inc. All Rights Reserved.</span>
         <span>
