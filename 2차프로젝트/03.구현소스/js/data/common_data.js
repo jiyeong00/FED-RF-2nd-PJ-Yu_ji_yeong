@@ -93,7 +93,9 @@ const comData = {
         <span>
           <ul>
             <li>이용약관</li>
+            &nbsp;|&nbsp; 
             <li>개인정보 처리방침</li>
+            &nbsp;|&nbsp; 
             <li>저작권 안내</li>
           </ul>
         </span>

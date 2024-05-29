@@ -255,7 +255,7 @@ h1.logo {
 }
 
 .footer-area{
-  max-width: 1500px;
+  width: 90%;
   margin: 0 auto;
   
   font-family: 'Noto Sans KR', sans-serif;
@@ -263,7 +263,7 @@ h1.logo {
 }
 
 .foot{
-  padding: 2rem 0px;
+  padding: 3rem 0px;
   border-bottom: 1px solid #66666686;
 }
 
@@ -275,116 +275,37 @@ h1.logo {
 .bottom2 {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 
   font-size: 1.3rem;
+}
+.bottom2 td{
+  padding-right: 10px;
 }
 .sns-icon{ 
   display: flex;
   gap: 30px;
   margin-top: 10px;
+  color: #999;
+  font-size: 3rem;
 }
+
 .info-area span{
   color: #999;
+  font-weight: bold;
 }
 
-/* 돌아가는 3d 궤도 애니메이션*/
-
-.footer-area .spinner-box{
+.bottom4{
   display: flex;
-  height: 300px;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  background-color: transparent;
-}
 
-.footer-area .leo{
-  position: absolute;
+  font-size: 1.1rem;
+}
+.bottom4 img{
+  margin-bottom: 15px;
+}
+.bottom4 ul{
   display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 50%;
-}
-.footer-area .blue-orbit{
-  width: 165px;
-  height: 165px;
-  border:1px solid #91daffa6;
-  animation: spin3D 4s linear 0.2s infinite;
 }
 
-.footer-area .green-orbit{
-  width: 125px;
-  height: 125px;
-  border:1px solid #91daffa6;
-  animation: spin3D 3s linear 0s infinite;
-}
-
-.footer-area .red-orbit{
-  width: 90px;
-  height: 90px;
-  border:1px solid #ffca91a5;
-  animation: spin3D 2s linear 0s infinite;
-}
-
-.footer-area .white-orbit{
-  width: 60px;
-  height: 60px;
-  border:2px solid #ffffff;
-  animation: spin3D 10s linear 0s infinite;
-}
-
-.footer-area .w1{
-  transform: rotate3d(1,1,1,90deg);
-}
-
-.footer-area .w2{
-  transform: rotate3d(1,2,0.5,90deg);
-}
-
-.footer-area .w3{
-  transform: rotate3d(0.5,1,2,90deg);
-}
-
-@keyframes spin {
-  0%{
-    transform: rotate(0);
-  }
-  100%{
-    transform: rotate(359deg);
-  }
-}
-
-@keyframes spin3D {
-  0%{
-    transform: rotate3d(0.5,0.5,0.5,360deg);
-  }
-  100%{
-    transform: rotate3d(0deg);
-  }
-} 
-
-
-
-/* sns공유하기 */
-.footer-area .sns{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 3rem;
-}
-
-.footer-area .fa-brands{
-  color: #fff;
-  font-size: 3.5rem;
-}
-
-/* 저작권 표시 */
-.footer-area .copy-right{
-  padding-bottom: 50px;
-}
-
-.footer-area .copy-right p{
-  font-size:1.6rem;
-  color: #c8c8c8;
-  text-align: center;
-  margin-top: 30px;
-}
