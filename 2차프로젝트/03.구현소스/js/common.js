@@ -65,7 +65,6 @@ export default function setElement() {
   // 헤더
   const hdArea = mFn.qs("#header-area");
   const gnbA=mFn.qsa("#gnb ul li a");
-  let logoImg=mFn.qs(".logo img");
 
   // 세로 스크롤이 80px 넘어가면 헤더 색 변경
   mFn.addEvt(window, "scroll", function () {
