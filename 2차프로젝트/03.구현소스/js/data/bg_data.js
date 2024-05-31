@@ -2,18 +2,16 @@
 
 const bgData={
     OilColors: {
-        idx:0,
-        "제목": "Oil Colors",
-        "서브내용": "컬러 제조 기술의 정점, 신한 전문가 유화",
-        "경로": "fashion",
-        "색코드": "#370c51",
+        idx:"0",
+        "tit": "Oil Colors",
+        "stxt": "컬러 제조 기술의 정점, 신한 전문가 유화",
+        "color": "#370c51",
     },
     KoreanColors: {
-        idx:1,
-        "제목": "Korean Colors",
-        "서브내용": "대한민국 전통 회화의 정신과 맥을 잇는 신한 전문가 한국화",
-        "경로": "beauty",
-        "색코드": "#13510c",
+        idx:"1",
+        "tit": "Korean Colors",
+        "stxt": "대한민국 전통 회화의 정신과 맥을 잇는 신한 전문가 한국화",
+        "color": "#13510c",
     }
 };
 
