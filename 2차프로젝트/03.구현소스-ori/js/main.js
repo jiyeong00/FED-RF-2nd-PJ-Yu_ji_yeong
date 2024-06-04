@@ -86,7 +86,7 @@ function loadFn() {
     // 2. 버튼별 분기하기 //////
     // 2-1. 2번 버튼일 경우 ////
 
-    if (sts) {
+    if (!sts) {
       btn2();
     } //// if ////
 
@@ -200,7 +200,6 @@ function loadFn() {
     setInterval(() => {
       abtn[1].onclick();
     }, 3000);
-    // >> 뜻 : 오른쪽버튼을 온 클릭해라
 
     autoI = setInterval(() => {
       abtn[1].onclick();
