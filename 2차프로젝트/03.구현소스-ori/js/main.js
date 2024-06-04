@@ -31,7 +31,6 @@ function loadFn() {
   // console.log(abtn,slide);
 
   //////////// 초기셋팅하기 ////////
-  // 5개의 슬라이드와 블릿을 만들어준다!
   for (let i = 0; i < 2; i++) {
     // 슬라이드 넣기
     slide.innerHTML += `
@@ -87,7 +86,7 @@ function loadFn() {
     // 2. 버튼별 분기하기 //////
     // 2-1. 2번 버튼일 경우 ////
 
-    if (!sts) {
+    if (sts) {
       btn2();
     } //// if ////
 
@@ -121,12 +120,10 @@ function loadFn() {
       console.log("Ddmdmd");
       // bgImg[0].style.diplay="none";
     }
-var imgUrl1="../img/main_bg_4.png";
-var imgUrl2="../img/main_bg_1.png";
     if(seq==1){
       bgspan.innerText="Korean Colors";
       bgColor.style.backgroundColor="#13510c";
-      bg.style.backgroundImage = "url('" + imgUrl1 + "')";
+
 
       bgspan.style.transition = "1.5s ease-in-out";
       bgColor.style.transition = "1.5s ease-in-out";
@@ -134,7 +131,7 @@ var imgUrl2="../img/main_bg_1.png";
     else if(seq==0){
       bgspan.innerText="Oil Colors";
       bgColor.style.backgroundColor="#370c51";
-      bg.style.backgroundImage = "url('" + imgUrl2 + "')";
+
 
       bgspan.style.transition = "1.5s ease-in-out";
       bgColor.style.transition = "1.5s ease-in-out";
@@ -200,13 +197,13 @@ var imgUrl2="../img/main_bg_1.png";
     // clearInterval(인터발변수)
     // - 변수에 담긴 인터발을 지움(멈춤)
 
-    // setInterval(() => {
-    //   abtn[1].onclick();
-    // }, 3000);
+    setInterval(() => {
+      abtn[1].onclick();
+    }, 3000);
     // >> 뜻 : 오른쪽버튼을 온 클릭해라
 
     autoI = setInterval(() => {
-      // abtn[1].onclick();
+      abtn[1].onclick();
       // 값을 2개 보내야함.
       // 첫번째 전달값은 이밴트 객체가 들어가는 변수임으로 false값을 쓰고
       // 두번째 전달값은 자동호출임을 알리는 변수임으로 false값을 전달한다.
