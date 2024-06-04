@@ -24,20 +24,26 @@ function loadFn() {
   // 변경대상 : 백카드 색
   const bgColor = mFn.qs(".back-card");
   // 배경이미지
-  const bg=mFn.qs(".main1");
+  const bg = mFn.qs(".main1");
 
   // 블릿버튼 : .indic
   let indic = mFn.qs(".indic");
   // console.log(abtn,slide);
 
+  // 인터발변수
+  let myIval;
+
   //////////// 초기셋팅하기 ////////
   for (let i = 0; i < 2; i++) {
     // 슬라이드 넣기
-    slide.innerHTML += `
-    <li data-seq="${i}">
-    <img src="./img/main_card${i + 1}.jpg" alt="오일컬러 사진" />
-    </li>    
-    `;
+    slide.innerHTML = Object.values(bgData).map(
+      (v) =>
+        `
+        <li data-seq="${v.idx}">
+          <img src="./img/main_card${v.idx}.jpg" alt="${v.tit}" />
+        </li>    
+      `
+    );
     // 블릿 넣기
     // indic.innerHTML += `
     // <li ${i === 0 ? 'class="on"' : ""}>
@@ -53,7 +59,8 @@ function loadFn() {
 
   // 2. 버튼을 모두 이벤트 설정하기
   for (let x of abtn) {
-    x.onclick = goSlide;
+    x.onclick = () => btn2(x.innerText);
+    clearMyInterval();
   } /// for of ///
 
   // 광클 금지변수
@@ -86,7 +93,7 @@ function loadFn() {
     // 2. 버튼별 분기하기 //////
     // 2-1. 2번 버튼일 경우 ////
 
-    if (!sts) {
+    if (sts) {
       btn2();
     } //// if ////
 
@@ -116,48 +123,92 @@ function loadFn() {
       } /// else ///
     }); ///// forEach /////
 
-    if(seq==0){
+    if (seq == 0) {
       console.log("Ddmdmd");
       // bgImg[0].style.diplay="none";
     }
-    if(seq==1){
-      bgspan.innerText="Korean Colors";
-      bgColor.style.backgroundColor="#13510c";
+    if (seq == 1) {
+      bgspan.innerText = "Korean Colors";
+      bgColor.style.backgroundColor = "#13510c";
 
+      bgspan.style.transition = "1.5s ease-in-out";
+      bgColor.style.transition = "1.5s ease-in-out";
+    } else if (seq == 0) {
+      bgspan.innerText = "Oil Colors";
+      bgColor.style.backgroundColor = "#370c51";
 
       bgspan.style.transition = "1.5s ease-in-out";
       bgColor.style.transition = "1.5s ease-in-out";
     }
-    else if(seq==0){
-      bgspan.innerText="Oil Colors";
-      bgColor.style.backgroundColor="#370c51";
-
-
-      bgspan.style.transition = "1.5s ease-in-out";
-      bgColor.style.transition = "1.5s ease-in-out";
-    }
-
   } ///////////// goSlide 함수 ////////////////
   /////////////////////////////////////////////
 
+  function myInterval (){
 
-  function btn2() {
+    myIval = setInterval(btn2, 3000);
+  }
+
+  function clearMyInterval (){
+    clearInterval(myIval);
+  }
+
+  myInterval();
+
+
+  function btn2(txt) {
+    let number;
+    if(txt) number = Number(txt)-1;
+    console.log("여기봐~~~",number);
+
+    // 퇴장
     slide.style.right = "30rem";
     slide.style.opacity = 0;
     slide.style.transition = "1.5s ease-in-out";
-
     // (2)이동하는 시간 0.6초간 기다림!
+
+
+    let orgTg = document.querySelector(".back-card");
+    let myTg = orgTg.querySelector("span");
+    let codeName = slide
+    .querySelectorAll("li")[number?number:1]
+    .querySelector("img").getAttribute("alt").replace(/\s/g,'');
+
+    myTg.style.opacity = 0;
+    myTg.style.translate = "0 20%";
+    myTg.style.transition = "1.5s ease-in-out";
+
+    // 배경색도 변경
+    orgTg.style.backgroundColor = bgData[codeName].color;
+    orgTg.style.transition = "1.5s ease-in-out";
+
+    let myValue = slide
+      .querySelectorAll("li")[number?number:1]
+      .querySelector("img")
+      .getAttribute("alt");
+    console.log(myValue);
+
+    setTimeout(() => {
+      myTg.style.opacity = 1;
+      myTg.style.translate = "0 0";
+      myTg.innerText = myValue;
+    }, 1500);
+
+    // 1.5초후 등장
     setTimeout(() => {
       // (2-1) 맨앞 li 맨뒤로 이동
-      slide.appendChild(slide.querySelectorAll("li")[0]);
+      slide.appendChild(slide.querySelectorAll("li")[number?number:0]);
       // 슬라이드 left 값이 -100% 이므로
       // (2-2) left값을 0으로 변경
       slide.style.right = "12rem";
       // (2-3) left 트랜지션 없애기
       slide.style.opacity = 1;
       slide.style.transition = "1.5s ease-in-out";
+
+      // console.log(slide.querySelectorAll("li")[0].querySelector("img").getAttribute("alt").replace(/\s/g,''));
     }, 1500);
   } /////////오른쪽버튼 클릭 함수
+
+
   function btn1() {
     // 하위 li수집
     let list = slide.querySelectorAll("li");
@@ -188,7 +239,7 @@ function loadFn() {
   let autoT;
 
   // 자동넘김호출함수 최초호출하기
-  autoSlide();
+  // autoSlide();
 
   // [자동넘김호출]
   function autoSlide() {
@@ -206,7 +257,7 @@ function loadFn() {
       // 값을 2개 보내야함.
       // 첫번째 전달값은 이밴트 객체가 들어가는 변수임으로 false값을 쓰고
       // 두번째 전달값은 자동호출임을 알리는 변수임으로 false값을 전달한다.
-      goSlide(false, false);
+      // goSlide(false, false);
     }, 3000);
   } ////////autoslide함수///////////////
 
