@@ -75,11 +75,11 @@ position: fixed;
   opacity: 0;
 } */
 .main-card-area img {
+  width: 102%;
+}
+/* .main-card-area img:first-child {
   width: 100%;
-}
-.main-card-area img:first-child {
-  width: 106%;
-}
+} */
 .back-card {
   position: absolute;
   right: 0;
@@ -113,7 +113,10 @@ position: fixed;
 .text-area-wrap {
   position: absolute;
   top: 50%;
+  width: 90rem;
+  aspect-ratio: 2/1;
   transform: translateY(-50%);
+  overflow: hidden;
 }
 .text-area-wrap h2 {
   font-size: 8rem;
@@ -170,12 +173,12 @@ position: fixed;
   bottom: 8%;
 
   display: flex;
+  gap: 7rem;
   font-size: 3rem;
 }
-
-.indic li:last-child {
+/* .indic li:last-child {
   margin-left: 55px;
-}
+} */
 
 .indic li a{
   color: black;
