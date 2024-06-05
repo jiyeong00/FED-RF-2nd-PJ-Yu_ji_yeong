@@ -163,8 +163,9 @@ function loadFn() {
 
     //    }); ///// forEach /////
 
-    let slideList=slide.qs('li');
-    let seq = slideList.getAttribute("data-seq");
+    let seq = slide
+      .querySelectorAll("li")
+      [sts ? 0 : 1].getAttribute("data-seq");
     console.log("블릿이 읽어올 슬순번:", seq, "/데이터형:", typeof seq);
 
     // 4. 블릿변경하기 ///////////
@@ -172,10 +173,6 @@ function loadFn() {
     indic.forEach((ele, idx) => {
       // ele - 각각의 li, idx - 각각의 순번
       if (idx == seq) {
-        // 현재순번 on넣기
-        // ==으로 비교해야 결과가 나옴
-        // data-seq 속성은 문자형숫자이므로!
-        // ===은 형까지 비교하기때문에 안나옴!
         console.log("누구냐", ele);
         ele.classList.add("on");
       } /// if ///
@@ -272,41 +269,41 @@ function loadFn() {
   let autoT;
 
   // 자동넘김호출함수 최초호출하기
-  autoSlide();
+  // autoSlide();
 
-  // [자동넘김호출]
-  function autoSlide() {
-    // setInterval(함수,시간)
-    // - 일정시간간격으로 함수를 호출
-    // clearInterval(인터발변수)
-    // - 변수에 담긴 인터발을 지움(멈춤)
+  // // [자동넘김호출]
+  // function autoSlide() {
+  //   // setInterval(함수,시간)
+  //   // - 일정시간간격으로 함수를 호출
+  //   // clearInterval(인터발변수)
+  //   // - 변수에 담긴 인터발을 지움(멈춤)
 
-    setInterval(() => {
-      abtn[1].onclick();
-    }, 3000);
+  //   setInterval(() => {
+  //     abtn[1].onclick();
+  //   }, 3000);
 
-    autoI = setInterval(() => {
-      abtn[1].onclick();
-      // 값을 2개 보내야함.
-      // 첫번째 전달값은 이밴트 객체가 들어가는 변수임으로 false값을 쓰고
-      // 두번째 전달값은 자동호출임을 알리는 변수임으로 false값을 전달한다.
-      goSlide(false, false);
-    }, 3000);
-  } ////////autoslide함수///////////////
+  //   autoI = setInterval(() => {
+  //     abtn[1].onclick();
+  //     // 값을 2개 보내야함.
+  //     // 첫번째 전달값은 이밴트 객체가 들어가는 변수임으로 false값을 쓰고
+  //     // 두번째 전달값은 자동호출임을 알리는 변수임으로 false값을 전달한다.
+  //     goSlide(false, false);
+  //   }, 3000);
+  // } ////////autoslide함수///////////////
 
-  // [인터발지우기 함수]
-  function clearAuto() {
-    // 지우기 확인
-    console.log("인터발지워!");
-    clearInterval(autoI);
+  // // [인터발지우기 함수]
+  // function clearAuto() {
+  //   // 지우기 확인
+  //   console.log("인터발지워!");
+  //   clearInterval(autoI);
 
-    // 타임아웃지우기 : 실행쓰나미 방지
-    clearTimeout(autoT);
+  //   // 타임아웃지우기 : 실행쓰나미 방지
+  //   clearTimeout(autoT);
 
-    // 5초후 아무작동도 안하면 다시 인터발호출
-    autoT = setTimeout(() => {
-      autoSlide();
-    }, 5000);
-  } ///////clearAuto함수///////////////
+  //   // 5초후 아무작동도 안하면 다시 인터발호출
+  //   autoT = setTimeout(() => {
+  //     autoSlide();
+  //   }, 5000);
+  // } ///////clearAuto함수///////////////
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
