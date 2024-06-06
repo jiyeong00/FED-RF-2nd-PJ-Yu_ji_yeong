@@ -30,6 +30,8 @@ function loadFn() {
   // console.log(abtn,slide);
   // 인터발변수
   let myIval;
+  // 광클 금지변수
+  let prot = false;
 
   //////////// 초기셋팅하기 ////////
   // 왼쪽 정보넣기
@@ -49,7 +51,7 @@ function loadFn() {
     .map(
       (v) =>
         `
-        <li data-seq="${v.idx}">
+        <li class="s${v.idx}">
           <img src="./img/main_card${v.idx}.jpg" alt="${v.tit}" />
         </li>    
       `
@@ -68,24 +70,39 @@ function loadFn() {
   // 블릿의 li까지 수집! indic 변수
   indic = mFn.qsa(".indic li");
 
-
   // 2. 버튼을 모두 이벤트 설정하기
-  for (let x of abtn) {
-    x.onclick = goSlide;
+  for (let x of indic) {
+    x.onclick = () => {
+      // 읽어온 숫자 앞에 "0"빼고 숫자화
+      let pNum = Number(x.innerText);
+      console.log(pNum);
+      nowNum = pNum;
+      showSlide(pNum);
+      clearMyInterval();
+    };
   } /// for of ///
 
-  // 광클 금지변수
-  let prot = false;
+  function myInterval() {
+    myIval = setInterval(showSlide, 3000);
+  }
+
+  function clearMyInterval() {
+    clearInterval(myIval);
+  }
+
+  myInterval();
+
+  // 현재작동번호
+  let nowNum = 1;
 
   /****************************************** 
      함수명: goSlide
      기능: 슬라이드 이동
      ******************************************/
-  function goSlide(evt, sts = true) {
-    // 만약 버튼 클릭일 경우 인터발 지우기함수호출
-    if (sts) {
-      clearAuto();
-    } ///if문
+  // function showSlide(evt, sts = true,pNum) {
+  function showSlide(pNum) {
+    console.log("현재작동번호:", nowNum);
+    console.log("클릭된번호:", pNum);
 
     // 광클금지 설정하기 ///////////
     if (prot) return; // 돌아가!(함수나감!)
@@ -95,13 +112,17 @@ function loadFn() {
     }, 600);
     /////////////////////////////////////
 
+    // 만약 버튼 클릭일 경우 인터발 지우기함수호출
+    // if (sts) {
+    //   clearAuto();
+    // } ///if문
+
     // 불릿버튼을 눌렀는가
     // let isRbtn = sts?this.classList.contains("abtn"):true;
 
     if (!sts) {
       btnClick();
     } //// if ////
-
     // 2-2.왼쪽 버튼일 경우 ////
     // else {
     //   // 하위 li수집
@@ -181,13 +202,14 @@ function loadFn() {
         ele.classList.remove("on");
       } /// else ///
     }); ///// forEach /////
-  } ///////////// goSlide 함수 ////////////////
+  } ///////////// showSlide 함수 ////////////////
   /////////////////////////////////////////////
 
-  function btnClick(txt) {
-    let number;
-    if (txt) number = Number(txt);
-    console.log("여기봐~~~", number);
+  // function btnClick(txt) {
+  function btnClick() {
+    // let number;
+    // if (txt) number = Number(txt);
+    // console.log("여기봐~~~", number);
 
     // 퇴장
     slide.style.right = "30rem";
