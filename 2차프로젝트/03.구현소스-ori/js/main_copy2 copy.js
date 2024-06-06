@@ -55,6 +55,17 @@ function loadFn() {
       `
     )
     .join("");
+      // 오른쪽 슬라이드 넣기
+  slide.innerHTML = Object.values(bgData)
+  .map(
+    (v) =>
+      `
+      <li class="s${v.idx}">
+        <img src="./img/main_card${v.idx}.jpg" alt="${v.tit}" />
+      </li>    
+    `
+  )
+  .join("");
   // 블릿 넣기
   // indic.innerHTML += `
   // <li ${i === 0 ? 'class="on"' : ""}>
@@ -164,6 +175,6 @@ function loadFn() {
     if (!pNum) nowNum++;
     if (nowNum < slide.querySelectorAll("li").length) nowNum = 1;
 
-  } /////////오른쪽버튼 클릭 함수
+  } ////////SHOW슬라이드
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////

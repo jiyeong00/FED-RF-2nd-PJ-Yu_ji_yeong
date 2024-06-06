@@ -75,7 +75,7 @@ function loadFn() {
     x.onclick = () => {
       // 읽어온 숫자 앞에 "0"빼고 숫자화
       let pNum = Number(x.innerText);
-      console.log(pNum);
+      // console.log(pNum);
       nowNum = pNum;
       showSlide(pNum);
       clearMyInterval();
@@ -100,7 +100,7 @@ function loadFn() {
      기능: 슬라이드 이동
      ******************************************/
   // function showSlide(evt, sts = true,pNum) {
-  function showSlide(pNum) {
+  function showSlide(pNum, sts = true) {
     console.log("현재작동번호:", nowNum);
     console.log("클릭된번호:", pNum);
 
@@ -119,10 +119,12 @@ function loadFn() {
 
     // 불릿버튼을 눌렀는가
     // let isRbtn = sts?this.classList.contains("abtn"):true;
+    // if (pNum == nowNum) return;
 
-    if (!sts) {
-      btnClick();
-    } //// if ////
+      btnClick(pNum);
+
+    // if (!sts) {
+    // } //// if ////
     // 2-2.왼쪽 버튼일 경우 ////
     // else {
     //   // 하위 li수집
@@ -184,29 +186,29 @@ function loadFn() {
 
     //    }); ///// forEach /////
 
-    let seq = slide
-      .querySelectorAll("li")
-      [sts ? 0 : 1].getAttribute("data-seq");
-    console.log("블릿이 읽어올 슬순번:", seq, "/데이터형:", typeof seq);
+    // let seq = slide
+    //   .querySelectorAll("li")
+    //   [sts ? 0 : 1].getAttribute("data-seq");
+    // console.log("블릿이 읽어올 슬순번:", seq, "/데이터형:", typeof seq);
 
-    // 4. 블릿변경하기 ///////////
-    // 모든 클래스 on지우기+현재 순번 클래스 넣기
-    indic.forEach((ele, idx) => {
-      // ele - 각각의 li, idx - 각각의 순번
-      if (idx == seq) {
-        console.log("누구냐", ele);
-        ele.classList.add("on");
-      } /// if ///
-      else {
-        // 나머지는 on빼기
-        ele.classList.remove("on");
-      } /// else ///
-    }); ///// forEach /////
+    // // 4. 블릿변경하기 ///////////
+    // // 모든 클래스 on지우기+현재 순번 클래스 넣기
+    // indic.forEach((ele, idx) => {
+    //   // ele - 각각의 li, idx - 각각의 순번
+    //   if (idx == seq) {
+    //     console.log("누구냐", ele);
+    //     ele.classList.add("on");
+    //   } /// if ///
+    //   else {
+    //     // 나머지는 on빼기
+    //     ele.classList.remove("on");
+    //   } /// else ///
+    // }); ///// forEach /////
   } ///////////// showSlide 함수 ////////////////
   /////////////////////////////////////////////
 
   // function btnClick(txt) {
-  function btnClick() {
+  function btnClick(pNum) {
     // let number;
     // if (txt) number = Number(txt);
     // console.log("여기봐~~~", number);
@@ -217,61 +219,74 @@ function loadFn() {
     slide.style.transition = "1.5s ease-in-out";
     // (2)이동하는 시간 0.6초간 기다림!
 
+    console.log("놔우",nowNum);
     let orgTg = document.querySelector(".back-card");
     let myTg = orgTg.querySelector("span");
     let codeName = slide
-      .querySelectorAll("li")
-      [number ? number : 1].querySelector("img")
+      .querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
+      .querySelector("img")
       .getAttribute("alt");
+    console.log("코드네임",codeName);
 
-    // 왼쪽카드
-    // 왼쪽 작은 카드 이미지
-    let smallCard = mFn.qs(".text-area-wrap img");
-    // 왼쪽 작은 카드 h2
-    let smallH2 = mFn.qs(".text-area-wrap h2");
-    // 왼쪽 작은 카드 h3
-    let smallH3 = mFn.qs(".text-area-wrap h3");
+    nowNum = Number(bgData[codeName].idx);
+    // nowNum++;
+
+    // // 왼쪽카드
+    // // 왼쪽 작은 카드 이미지
+    // let smallCard = mFn.qs(".text-area-wrap img");
+    // // 왼쪽 작은 카드 h2
+    // let smallH2 = mFn.qs(".text-area-wrap h2");
+    // // 왼쪽 작은 카드 h3
+    // let smallH3 = mFn.qs(".text-area-wrap h3");
 
     myTg.style.opacity = 0;
     myTg.style.translate = "0 20%";
     myTg.style.transition = "1.5s ease-in-out";
-    // 왼쪽카드내용 h2
-    smallH2.style.opacity = 0;
-    smallH2.style.translate = "0 20%";
-    smallH2.style.transition = "1.5s ease-in-out";
-    // 왼쪽카드내용 h3
-    smallH3.style.opacity = 0;
-    smallH3.style.translate = "0 20%";
-    smallH3.style.transition = "1.5s ease-in-out";
+    // // 왼쪽카드내용 h2
+    // smallH2.style.opacity = 0;
+    // smallH2.style.translate = "0 20%";
+    // smallH2.style.transition = "1.5s ease-in-out";
+    // // 왼쪽카드내용 h3
+    // smallH3.style.opacity = 0;
+    // smallH3.style.translate = "0 20%";
+    // smallH3.style.transition = "1.5s ease-in-out";
 
-    // 배경색도 변경
+    // // 배경색도 변경
     orgTg.style.backgroundColor = bgData[codeName].color;
     orgTg.style.transition = "1.5s ease-in-out";
     let myValue = slide
-      .querySelectorAll("li")
-      [number ? number : 1].querySelector("img")
+      .querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
+      .querySelector("img")
       .getAttribute("alt");
-    let myValue2 = bgData[codeName].stxt;
-    console.log(myValue2);
+    console.log("ddd",myValue);
+    // let myValue2 = bgData[codeName].stxt;
+    // console.log(myValue2);
 
     setTimeout(() => {
       myTg.style.opacity = 1;
       myTg.style.translate = "0 0";
       myTg.innerText = myValue;
-      // 왼쪽카드내용 h2
-      smallH2.style.opacity = 1;
-      smallH2.style.translate = "0 0";
-      smallH2.innerText = myValue;
-      // 왼쪽카드내용 h3
-      smallH3.style.opacity = 1;
-      smallH3.style.translate = "0 0";
-      smallH3.innerText = myValue2;
+      // // 왼쪽카드내용 h2
+      // smallH2.style.opacity = 1;
+      // smallH2.style.translate = "0 0";
+      // smallH2.innerText = myValue;
+      // // 왼쪽카드내용 h3
+      // smallH3.style.opacity = 1;
+      // smallH3.style.translate = "0 0";
+      // smallH3.innerText = myValue2;
     }, 1500);
 
     // 1.5초후 등장
     setTimeout(() => {
       // (2-1) 맨앞 li 맨뒤로 이동
-      slide.appendChild(slide.querySelectorAll("li")[number ? number : 0]);
+      pNum
+        ? slide.insertBefore(
+            slide.querySelectorAll("li")[pNum - 1],
+            slide.querySelectorAll("li")[0]
+          )
+        : slide.appendChild(
+            slide.querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
+          );
       // 슬라이드 left 값이 -100% 이므로
       // (2-2) left값을 0으로 변경
       slide.style.right = "12rem";
