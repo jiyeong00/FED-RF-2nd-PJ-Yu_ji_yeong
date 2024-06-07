@@ -34,11 +34,12 @@ function loadFn() {
   let prot = false;
 
   //////////// 초기셋팅하기 ////////
+  
   // 왼쪽 정보넣기
   smallCardSlide.innerHTML = Object.values(bgData)
     .map(
       (v) =>
-        `<li>
+        `<li class="s${v.idx}">
         <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <h2>${v.tit}</h2>
         <h3>${v.stxt}</h3>
@@ -77,11 +78,12 @@ function loadFn() {
       let pNum = Number(x.innerText);
       // console.log(pNum);
       nowNum = pNum;
-      showSlide(pNum);
+      btnClick(pNum);
       clearMyInterval();
     };
   } /// for of ///
 
+  // 인터발 자동실행
   function myInterval() {
     myIval = setInterval(showSlide, 3000);
   }
@@ -99,8 +101,9 @@ function loadFn() {
      함수명: goSlide
      기능: 슬라이드 이동
      ******************************************/
-  // function showSlide(evt, sts = true,pNum) {
-  function showSlide(pNum, sts = true) {
+
+  // 자동슬라이드
+  function showSlide(pNum) {
     console.log("현재작동번호:", nowNum);
     console.log("클릭된번호:", pNum);
 
@@ -112,79 +115,7 @@ function loadFn() {
     }, 600);
     /////////////////////////////////////
 
-    // 만약 버튼 클릭일 경우 인터발 지우기함수호출
-    // if (sts) {
-    //   clearAuto();
-    // } ///if문
-
-    // 불릿버튼을 눌렀는가
-    // let isRbtn = sts?this.classList.contains("abtn"):true;
-    // if (pNum == nowNum) return;
-
-      btnClick(pNum);
-
-    // if (!sts) {
-    // } //// if ////
-    // 2-2.왼쪽 버튼일 경우 ////
-    // else {
-    //   // 하위 li수집
-    //   let list = slide.querySelectorAll("li");
-    //   // (1)맨뒤 li 맨앞으로 이동하기
-    //   // 놈놈놈 시리즈!
-    //   // insertBefore(넣을놈,넣을놈전놈)
-    //   // insertBefore(맨뒤li,맨앞li)
-    //   slide.insertBefore(list[list.length - 1], list[0]);
-
-    //   // (2) left 값을 -100%로 변경하여
-    //   // 맨뒤 li가 맨앞으로 온것을 숨긴다!
-    //   // 왼쪽에서 슬라이드 들어올 준비!!!
-    //   slide.style.left = "-100%";
-    //   // 트랜지션이 한번 버튼클릭후 생기므로 없애줌
-    //   slide.style.transition = "none";
-
-    //   //////////////////////////////////
-    //   // 같은 left 값을 변경하기 때문에
-    //   // 코드 처리구역을 분리하여준다!
-    //   // 이때 사용되는 메서드는  setTimeout()!
-    //   // 시간차는 어쪄죠? 0을 줘도 코드를
-    //   // 분리하여 처리하므로 동시처리가 아니고
-    //   // 비동기처리하기 때문에 코드가 잘 작동한다!
-    //   setTimeout(() => {
-    //     // (3) left 값을 0으로 트랜지션하여 들어옴
-    //     slide.style.left = "0";
-    //     slide.style.transition = ".6s ease-in-out";
-    //   }, 0);
-    // } /// else ///
-
-    // 3.블릿을 위해 읽어올 슬라이드 순번 구하기
-    // 현재순번은 몇번째 슬라이드의
-    // data-seq속성값이다!
-    // 오른쪽버튼은
-    // 이동후 잘라내므로 두번째순번[1]
-    // 왼쪽버튼은 먼저 앞에 붙이고
-    // 이동하므로 첫번째순번[0]
-    // let seq =
-    // slide.querySelectorAll('li')[isRbtn?1:0]
-    // .getAttribute('data-seq');
-    // console.log('블릿이 읽어올 슬순번:',seq,
-    // '/데이터형:',typeof seq);
-    // // string - 문자형, number - 숫자형
-
-    // // 4. 블릿변경하기 ///////////
-    // // 모든 클래스 on지우기+현재 순번 클래스 넣기
-    // indic.forEach((ele,idx)=>{
-    //     // ele - 각각의 li, idx - 각각의 순번
-    //     if(idx==seq){ // 현재순번 on넣기
-    //         // ==으로 비교해야 결과가 나옴
-    //         // data-seq 속성은 문자형숫자이므로!
-    //         // ===은 형까지 비교하기때문에 안나옴!
-    //         ele.classList.add('on');
-    //     } /// if ///
-    //     else{ // 나머지는 on빼기
-    //         ele.classList.remove('on');
-    //     } /// else ///
-
-    //    }); ///// forEach /////
+    btnClick(null);
 
     // let seq = slide
     //   .querySelectorAll("li")
@@ -207,95 +138,102 @@ function loadFn() {
   } ///////////// showSlide 함수 ////////////////
   /////////////////////////////////////////////
 
-  // function btnClick(txt) {
+  // 버튼 클릭 시
   function btnClick(pNum) {
-    // let number;
-    // if (txt) number = Number(txt);
-    // console.log("여기봐~~~", number);
+    // 슬라이드리스트 다시 수집
+    const slideList = mFn.qsa(".slide li");
 
-    // 퇴장
+    // 현재넘버가 데이터길이만큼 움직이게 만듦
+    if (nowNum >= slideList.length) {
+      nowNum = 1;
+    } else {
+      nowNum++;
+    }
+
+    ////////////////////////////////변수/////////////////////////////////////////
+    // 오른쪽 백카드
+    let orgTg = document.querySelector(".back-card");
+    let myTg = orgTg.querySelector("span");
+
+    let codeName = slide
+      .querySelectorAll(`li.s${pNum ? pNum : nowNum}`)[0]
+      .querySelector("img")
+      .getAttribute("alt");
+    // console.log("코드네임", codeName);
+
+
+    //////////////////////////////////////////////////
+    // 오른쪽 슬라이드 퇴장
     slide.style.right = "30rem";
     slide.style.opacity = 0;
     slide.style.transition = "1.5s ease-in-out";
-    // (2)이동하는 시간 0.6초간 기다림!
 
-    console.log("놔우",nowNum);
-    let orgTg = document.querySelector(".back-card");
-    let myTg = orgTg.querySelector("span");
-    let codeName = slide
-      .querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
-      .querySelector("img")
-      .getAttribute("alt");
-    console.log("코드네임",codeName);
-
-    nowNum = Number(bgData[codeName].idx);
-    // nowNum++;
-
-    // // 왼쪽카드
-    // // 왼쪽 작은 카드 이미지
-    // let smallCard = mFn.qs(".text-area-wrap img");
-    // // 왼쪽 작은 카드 h2
-    // let smallH2 = mFn.qs(".text-area-wrap h2");
-    // // 왼쪽 작은 카드 h3
-    // let smallH3 = mFn.qs(".text-area-wrap h3");
-
+    // 오른쪽 글자 퇴장
     myTg.style.opacity = 0;
     myTg.style.translate = "0 20%";
     myTg.style.transition = "1.5s ease-in-out";
-    // // 왼쪽카드내용 h2
-    // smallH2.style.opacity = 0;
-    // smallH2.style.translate = "0 20%";
-    // smallH2.style.transition = "1.5s ease-in-out";
-    // // 왼쪽카드내용 h3
-    // smallH3.style.opacity = 0;
-    // smallH3.style.translate = "0 20%";
-    // smallH3.style.transition = "1.5s ease-in-out";
+
+    //왼쪽 작은 이미지 카드
+    smallCardSlide.style.opacity = 0;
+    smallCardSlide.style.translate = "0 20%";
+    smallCardSlide.style.transition = "1.5s ease-in-out";
 
     // // 배경색도 변경
     orgTg.style.backgroundColor = bgData[codeName].color;
     orgTg.style.transition = "1.5s ease-in-out";
     let myValue = slide
-      .querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
+      .querySelectorAll(`li.s${pNum ? pNum : nowNum}`)[0]
       .querySelector("img")
       .getAttribute("alt");
-    console.log("ddd",myValue);
-    // let myValue2 = bgData[codeName].stxt;
+    console.log("ddd", myValue);
+    let myValue2 = bgData[codeName].stxt;
     // console.log(myValue2);
 
-    setTimeout(() => {
-      myTg.style.opacity = 1;
-      myTg.style.translate = "0 0";
-      myTg.innerText = myValue;
-      // // 왼쪽카드내용 h2
-      // smallH2.style.opacity = 1;
-      // smallH2.style.translate = "0 0";
-      // smallH2.innerText = myValue;
-      // // 왼쪽카드내용 h3
-      // smallH3.style.opacity = 1;
-      // smallH3.style.translate = "0 0";
-      // smallH3.innerText = myValue2;
-    }, 1500);
+    let clsnm = slide.querySelectorAll("li")[0].getAttribute("class");
+    console.log("WWWWWWWW", clsnm);
+    let num = Number(clsnm.substr(1)) + 1;
+    if (num > slideList.length) num = 1;
+    console.log("다음클래스:", "s" + num);
+
+    let nextN = ".s" + num;
 
     // 1.5초후 등장
     setTimeout(() => {
+      // 오른쪽 span글자
+      myTg.style.opacity = 1;
+      myTg.style.translate = "0 0";
+      myTg.innerText = myValue;
+
       // (2-1) 맨앞 li 맨뒤로 이동
       pNum
         ? slide.insertBefore(
-            slide.querySelectorAll("li")[pNum - 1],
+            slide.querySelectorAll("li.s" + pNum)[0],
             slide.querySelectorAll("li")[0]
           )
-        : slide.appendChild(
-            slide.querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
+        : slide.insertBefore(
+            slide.querySelectorAll("li" + nextN)[0],
+            slide.querySelectorAll("li")[0]
           );
-      // 슬라이드 left 값이 -100% 이므로
-      // (2-2) left값을 0으로 변경
+      pNum
+        ? smallCardSlide.insertBefore(
+            smallCardSlide.querySelectorAll("li.s" + pNum)[0],
+            smallCardSlide.querySelectorAll("li")[0]
+          )
+        : smallCardSlide.insertBefore(
+            smallCardSlide.querySelectorAll("li" + nextN)[0],
+            smallCardSlide.querySelectorAll("li")[0]
+          );
+      // 오른쪽 슬라이드
       slide.style.right = "12rem";
-      // (2-3) left 트랜지션 없애기
       slide.style.opacity = 1;
       slide.style.transition = "1.5s ease-in-out";
+      // 왼쪽 작은 이미지
+      smallCardSlide.style.opacity = 1;
+      smallCardSlide.style.translate = "0 0";
+      smallCardSlide.style.transition = "1.5s ease-in-out";
 
-      // console.log(slide.querySelectorAll("li")[0].querySelector("img").getAttribute("alt").replace(/\s/g,''));
     }, 1500);
+
   } /////////btnClick////////////////////////
 
   // //-----------------------자동넘김-----------------//

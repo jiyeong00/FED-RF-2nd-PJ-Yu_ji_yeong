@@ -1,4 +1,3 @@
-
 // 메인 JS - main.js
 
 // 함수 연결
@@ -30,7 +29,6 @@ function loadFn() {
   // 블릿버튼 : .indic
   let indic = mFn.qs(".indic");
   // console.log(abtn,slide);
-
   // 인터발변수
   let myIval;
 
@@ -55,17 +53,18 @@ function loadFn() {
       `
     )
     .join("");
-      // 오른쪽 슬라이드 넣기
+  // 오른쪽 슬라이드 넣기
   slide.innerHTML = Object.values(bgData)
-  .map(
-    (v) =>
-      `
+    .map(
+      (v) =>
+        `
       <li class="s${v.idx}">
         <img src="./img/main_card${v.idx}.jpg" alt="${v.tit}" />
       </li>    
     `
-  )
-  .join("");
+    )
+    .join("");
+
   // 블릿 넣기
   // indic.innerHTML += `
   // <li ${i === 0 ? 'class="on"' : ""}>
@@ -105,6 +104,9 @@ function loadFn() {
   let nowNum = 1;
 
   function showSlide(pNum) {
+
+    console.log(getComputedStyle(bg));
+    
     // 파라미터로 넘어온 숫자
     console.log("현재작동번호:", nowNum);
     console.log("클릭된번호:", pNum);
@@ -115,15 +117,13 @@ function loadFn() {
     slide.style.right = "30rem";
     slide.style.opacity = 0;
     slide.style.transition = "1.5s ease-in-out";
-    // (2)이동하는 시간 0.6초간 기다림!
 
     let orgTg = document.querySelector(".back-card");
     let myTg = orgTg.querySelector("span");
     let codeName = slide
       .querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
       .querySelector("img")
-      .getAttribute("alt")
-      .replace(/\s/g, "");
+      .getAttribute("alt");
 
     // 현재 슬라이드 이름과 같은 데이터의 idx를 전역변수에 저장하여
     // 같은 번호를 클릭한 경우 못들어오게 한다!
@@ -136,6 +136,8 @@ function loadFn() {
     // 배경색도 변경
     orgTg.style.backgroundColor = bgData[codeName].color;
     orgTg.style.transition = "1.5s ease-in-out";
+
+    // bg.style.background="none";
 
     let myValue = slide
       .querySelectorAll(`li.s${pNum ? pNum - 1 : nowNum}`)[0]
@@ -167,14 +169,12 @@ function loadFn() {
       slide.style.opacity = 1;
       slide.style.transition = "1.5s ease-in-out";
 
-      
       // console.log(slide.querySelectorAll("li")[0].querySelector("img").getAttribute("alt").replace(/\s/g,''));
     }, 1500);
 
     // 넘어온 값이 없으면 기존값을 증가함!
     if (!pNum) nowNum++;
     if (nowNum < slide.querySelectorAll("li").length) nowNum = 1;
-
   } ////////SHOW슬라이드
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
