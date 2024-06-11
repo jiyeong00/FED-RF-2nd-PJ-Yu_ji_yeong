@@ -37,6 +37,7 @@ position: fixed;
 .main1 {
   background: no-repeat url(../img/main_bg_1.png) center/cover;
   font-family: "Noto Sans KR", sans-serif;
+  /* font-family: 'Freesentation-9Black'; */
 }
 .main-wrap {
   max-width: 1500px;
