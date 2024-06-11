@@ -273,6 +273,7 @@ function loadFn() {
       autoSlide();
     }, 5000);
   } ///////clearAuto함수///////////////
+
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
 
@@ -285,10 +286,60 @@ main2Cont.innerHTML = Object.values(bgData)
   .map(
     (v) =>
       `
-      <div class="main2-cont-area">
+    <div class="main2-cont-area">
         <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <span>${v.tit}</span>
-      </div>
-     `
+        </div>
+        `
   )
   .join("");
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ////////////Main 3번째페이지 - 스와이프를 이용한 슬라이드////////////////////////////////////
+//   let swiper;
+//   // 스와이퍼 인스턴스 생성함수
+//   const setSwiper = () => {
+//     swiper = new Swiper(".mySwiper", {
+//         // 한 화면당 슬라이드 수(아래 breakpoint로 설정함)
+//       slidesPerView: 1,
+//       //   슬라이드 간격
+//       spaceBetween: 10,
+//       //   무한넘기기
+//       loop: true,
+//       //   자동넘김
+//       autoplay: {
+//         delay: 2500,
+//         disableOnInteraction: false,
+//       },
+//       //   하단 불릿
+//       pagination: {
+//         el: ".swiper-pagination",
+//         clickable: true,
+//       },
+//       //   양쪽이동버튼
+//       navigation: {
+//         nextEl: ".swiper-button-next",
+//         prevEl: ".swiper-button-prev",
+//       },
+
+//       // 가로 사이즈별 스와이퍼 설정변경
+//       breakpoints: {
+//         //   가로 200px이상
+//         200: {
+//           slidesPerView: 1,
+//           spaceBetween: 0,
+//         },
+//         //   가로 700px이상
+//         700: {
+//           slidesPerView: 2,
+//           spaceBetween: 10,
+//         },
+//         //   가로 1000px이상
+//         1000: {
+//           slidesPerView: 3,
+//           spaceBetween: 20,
+//         },
+//       },
+//     });
+//   }; ///////////////setSwiper 함수///////////////////////////
+
