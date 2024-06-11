@@ -97,8 +97,8 @@ export default function mainFn() {
 
     // 자동슬라이드
     function showSlide(pNum) {
-      console.log("현재작동번호:", nowNum);
-      console.log("클릭된번호:", pNum);
+      // console.log("현재작동번호:", nowNum);
+      // console.log("클릭된번호:", pNum);
 
       // 광클금지 설정하기 ///////////
       if (prot) return; // 돌아가!(함수나감!)
@@ -165,7 +165,7 @@ export default function mainFn() {
       ////////////////////////////////////////////////////////////
 
       let clsnm = slide.querySelectorAll("li")[0].getAttribute("class");
-      console.log("WWWWWWWW", clsnm);
+      // console.log("WWWWWWWW", clsnm);
       let num = Number(clsnm.substr(1)) + 1;
       if (num > slideList.length) num = 1;
       // console.log("다음클래스:", "s" + num);
@@ -179,7 +179,7 @@ export default function mainFn() {
         .getAttribute("alt");
       // console.log("ddd", myValue);
 
-      console.log("요긴가", nowNum, pNum, bgData[myValue].idx);
+      // console.log("요긴가", nowNum, pNum, bgData[myValue].idx);
 
       // 배경이미지 변경
       // bg.style.background = "none";
@@ -254,7 +254,7 @@ export default function mainFn() {
     // [인터발지우기 함수]
     function clearAuto() {
       // 지우기 확인
-      console.log("인터발지워!");
+      // console.log("인터발지워!");
       clearInterval(autoI);
 
       // 타임아웃지우기 : 실행쓰나미 방지

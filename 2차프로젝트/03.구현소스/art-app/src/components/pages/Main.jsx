@@ -8,10 +8,6 @@ import mainFn from "../func/main_fn";
 
 function Main(props) {
 
-    useEffect(()=>{
-        console.log("이펙트");
-    },[]);
-    
     useLayoutEffect(()=>{
         mainFn();
         console.log("레이아웃이펙트");
