@@ -27,7 +27,7 @@ export default function setElement() {
 ******************************************************/
 
   makeMenu(); // 함수호출!!!
-  console.log(gnbData);
+  // console.log(gnbData);
   // [ GNB메뉴코드 만들기 함수 ]
   function makeMenu() {
     mFn.qs("#gnb").innerHTML = `
@@ -63,7 +63,6 @@ export default function setElement() {
   // 1. 대상선정
   // 헤더
   const hdArea = mFn.qs("#header-area");
-  const gnbA=mFn.qsa("#gnb ul li a");
 
   // 세로 스크롤이 80px 넘어가면 헤더 색 변경
   mFn.addEvt(window, "scroll", function () {
@@ -74,20 +73,6 @@ export default function setElement() {
     }
   });
 
-  /****************************************************
-     [ 검색버튼 클릭시 검색창 열고 닫기 ]
-******************************************************/
-
-  // 1. 대상선정
-  // 검색버튼
-  const icon = mFn.qs(".icon");
-  // 검색창
-  const search = mFn.qs(".search");
-
-  // 2. 함수실행: 검색버튼 클릭시 검색창 열리고 닫히기
-  icon.onclick = () => {
-    search.classList.toggle("on");
-  };
 
   /****************************************************
      [ 모바일 햄버거 버튼 클릭시 사이트맵 열고 닫기 ]
