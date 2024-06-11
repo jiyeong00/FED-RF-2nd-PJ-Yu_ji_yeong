@@ -8,6 +8,8 @@ import comData from "./data/common_data.js";
 
 // GNB 메뉴 데이터 불러오기
 import gnbData from "./data/gnb_data.js";
+// 배경데이터
+import bgData from "./data/bg_data.js";
 
 /****************************************************
      [ 상단/하단 공통 함수 ]
@@ -42,7 +44,7 @@ export default function setElement() {
                   .map(
                     (v) => `
                     <li>
-                        <a href="./${v}.html">${v}</a>       
+                        <a href="#">${v}</a>       
                     </li>
                     `
                   )

@@ -4,6 +4,8 @@ export default {
   메뉴: [
     "Oil Colors",
     "Korean Colors",
+    "Paint Colors",
+    "Poster Colors",
   ],
   회원가입:[
     "로그인",

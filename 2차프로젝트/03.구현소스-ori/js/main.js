@@ -275,3 +275,20 @@ function loadFn() {
   } ///////clearAuto함수///////////////
 } //////////////// loadFn 함수 ///////////////
 /////////////////////////////////////////////
+
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////
+////////////Main 2번째페이지////////////////////////////////////
+const main2Cont = mFn.qs(".main2-cont");
+
+//정보넣기
+main2Cont.innerHTML = Object.values(bgData)
+  .map(
+    (v) =>
+      `
+      <div class="main2-cont-area">
+        <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
+        <span>${v.tit}</span>
+      </div>
+     `
+  )
+  .join("");
