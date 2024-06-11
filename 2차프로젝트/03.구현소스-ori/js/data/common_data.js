@@ -16,12 +16,6 @@ const comData = {
 
   <!-- 기타 -->
   <div class="etc">
-    <!-- 검색버튼 -->
-    <div class="search">
-      <input type="text" id="input-box" class="input-box" />
-      <label for="input-box" class="fa-solid fa-magnifying-glass icon"></label>
-    </div>
-
     <!-- 모바일 햄버거 버튼 -->
     <div class="mobile-btn">
       <span class="ir">모바일버튼</span>
