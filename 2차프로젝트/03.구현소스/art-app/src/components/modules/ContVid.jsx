@@ -1,12 +1,14 @@
 // DC.com 배너 컴포넌트 ///////
 import React from "react";
 
+// 데이터 불러오기
+import contData from "../data/cont_data";
 
 // 배너 CSS
 import "../../css/cont_vid.scss";
 
 // function ContVid({ catName }) {
-function ContVid() {
+function ContVid({catName}) {
   // catName 배너 데이터 카테고리이름
 
   // 슬라이드 기능 생성자함수 인스턴스 생성하기
