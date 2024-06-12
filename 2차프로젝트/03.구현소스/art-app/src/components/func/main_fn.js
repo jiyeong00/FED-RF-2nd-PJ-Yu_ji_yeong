@@ -277,9 +277,11 @@ export default function mainFn() {
       (v) =>
         `
     <div class="main2-cont-area">
-        <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
-        <span>${v.tit}</span>
-        </div>
+        <a href="${v.tit}">
+          <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
+          <span>${v.tit}</span>
+        </a>
+      </div>
         `
     )
     .join("");

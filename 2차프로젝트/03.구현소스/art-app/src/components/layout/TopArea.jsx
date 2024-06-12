@@ -1,6 +1,8 @@
 import React from "react";
 
 import gnbData from "../data/main_gnb_data";
+import { Link } from "react-router-dom";
+import Logo from "../modules/Logo";
 
 function TopArea(props) {
   return (
@@ -8,9 +10,9 @@ function TopArea(props) {
       <header className="header-area inbox">
         {/* <!-- 로고 --> */}
         <h1 className="logo">
-          <a href="#" alt="신한 화구 로고">
-            <img src="./img/logo_b.png" alt="로고이미지" />
-          </a>
+          <Link to="/">
+            <Logo />
+          </Link>
         </h1>
 
         {/* <!-- 메뉴 --> */}
@@ -20,13 +22,14 @@ function TopArea(props) {
               <ol>
                 {gnbData["메뉴"].map((v, i) => (
                   <li key={i}>
-                    <a href="#">{v}</a>
+                    {/* <a href="Oil Colors.jsx">{v}</a> */}
+                    <Link to={"/" + v}>{v}</Link>
                   </li>
                 ))}
               </ol>
             </li>
             <li>
-            <ol>
+              <ol>
                 {gnbData["회원가입"].map((v, i) => (
                   <li key={i}>
                     <a href="#">{v}</a>

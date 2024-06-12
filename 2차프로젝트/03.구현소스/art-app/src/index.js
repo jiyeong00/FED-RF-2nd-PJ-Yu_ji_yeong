@@ -6,6 +6,10 @@ import Layout from "./components/layout/Layout";
 // 전체 공통 CSS 불러오기
 import "./css/index.scss";
 import Main from "./components/pages/Main";
+import OilColors from "./components/pages/OilColors";
+import KoreanColors from "./components/pages/KoreanColors";
+import PaintColors from "./components/pages/PaintColors";
+import PosterColors from "./components/pages/PosterColors";
 
 export default function MainComponent() {
   return (
@@ -21,6 +25,10 @@ export default function MainComponent() {
         첫페이지로 구성됨 -> MainArea 컴포넌트 <Outlet/>에
         출력된다!*/}
           <Route index element={<Main />} />
+          <Route path="Oil Colors" element={<OilColors />} />
+          <Route path="Korean Colors" element={<KoreanColors />} />
+          <Route path="Paint Colors" element={<PaintColors />} />
+          <Route path="Poster Colors" element={<PosterColors />} />
           {/* <Route path="comics" element={<Comics />} /> */}
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
