@@ -9,8 +9,8 @@ import "./css/index.scss";
 import Main from "./components/pages/Main";
 import OilColors from "./components/pages/OilColors";
 import KoreanColors from "./components/pages/KoreanColors";
-import PaintColors from "./components/pages/PaintColors";
 import PosterColors from "./components/pages/PosterColors";
+import Gouache from "./components/pages/Gouache";
 
 export default function MainComponent() {
   return (
@@ -28,7 +28,7 @@ export default function MainComponent() {
           <Route index element={<Main />} />
           <Route path="Oil Colors" element={<OilColors />} />
           <Route path="Korean Colors" element={<KoreanColors />} />
-          <Route path="Paint Colors" element={<PaintColors />} />
+          <Route path="Gouache" element={<Gouache />} />
           <Route path="Poster Colors" element={<PosterColors />} />
           {/* <Route path="comics" element={<Comics />} /> */}
         </Route>

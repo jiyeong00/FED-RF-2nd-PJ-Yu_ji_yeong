@@ -9,7 +9,7 @@ import "../../css/cont_desc.scss";
 function ContDesc({ catName }) {
   const selData = cont_data[catName];
   const selData2 = cont_data[catName].option;
-  console.log("끄아아아아앙", selData2.opt_txt);
+  console.log("끄아아아아앙", selData2.img);
 
   return (
     // <!-- 2-2. 컨텐츠 2번째 화면 -->
@@ -27,8 +27,8 @@ function ContDesc({ catName }) {
           <li key={i}>
             <a href="#">
               {/* <!-- 제품사진 --> */}
-              <div>
-                <img src="./img/cont/oil_1.png" alt={v} />
+              <div className="cont2-list-img">
+                <img src={selData2.img[i]} alt={v} />
               </div>
               {/* <!-- 제품요약 리스트--> */}
               <div className="desc-list">

@@ -170,7 +170,7 @@
   .main2 {
     max-width: 1500px;
     min-width: 600px;
-    margin: 7rem auto;
+    margin: 12rem auto;
   }
   /* 제목 */
   .main2-tit {
@@ -187,7 +187,7 @@
     display: flex;
     justify-content: center;
     gap: 2rem;
-    margin-top: 20px;
+    margin-top: 2rem;
   }
   .main2-cont-area {
     position: relative;
@@ -195,19 +195,22 @@
   
     display: flex;
     flex-direction: column;
-    align-items: center;
+    // align-items: center;
     cursor: pointer;
   }
   .main2-cont img {
     width: 100%;
     /* width: 500px; */
-    border-radius: 50px;
+    // border-radius: 50px;
   }
   
   .main2-cont span {
     position: absolute;
-    margin-top: 10px;
-    font-size: 3rem;
+    bottom: 0;
+    left: 0;
+
+    margin: 10px;
+    font-size: 2rem;
     color: white;
   }
   

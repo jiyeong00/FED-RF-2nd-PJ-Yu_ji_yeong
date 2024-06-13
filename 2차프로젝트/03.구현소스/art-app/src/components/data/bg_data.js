@@ -15,10 +15,10 @@ const bgData={
         "color": "#13510c",
         "link":"/OilColors",
     },
-    "paint Colors": {
+    "Gouache": {
         idx:"3",
-        "tit": "paint Colors",
-        "stxt": "페인트 아자뵤",
+        "tit": "Gouache",
+        "stxt": "과슈",
         "color": "#3a73bc",
         "link":"/OilColors",
     },

@@ -5,6 +5,7 @@ import "../../css/main.scss";
 
 // 메인 JS 불러오기
 import mainFn from "../func/main_fn";
+import ContSwiper from "../modules/ContSwiper";
 
 function Main(props) {
 
@@ -57,6 +58,7 @@ function Main(props) {
       </section>
 
       {/* <!-- 2-3. 메인 슬라이드 화면 --> */}
+      <ContSwiper/>
     </>
   );
 }

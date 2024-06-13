@@ -4,7 +4,7 @@ export default {
   메뉴: [
     "Oil Colors",
     "Korean Colors",
-    "Paint Colors",
+    "Gouache",
     "Poster Colors",
   ],
   회원가입:[

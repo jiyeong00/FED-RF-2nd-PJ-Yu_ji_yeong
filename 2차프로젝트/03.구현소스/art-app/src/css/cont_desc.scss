@@ -46,20 +46,37 @@ margin-top: 5rem;
 }
 .cont2-list>li a{
     display: flex;
-    gap:3rem;
+    gap:1rem;
     justify-content: space-between;
     align-items: center;
 
 }
+.cont2-list-img{
+    width: 480px;
+}
+.cont2-list-img img{
+    width: 100%;
+    height: 100%;
+}
 
 // 제품리스트 내 특징
 .desc-list{
+    flex: 1;
+
+    margin-left: 3rem;
+
     font-size: 1.625em;
     letter-spacing: -0.75px;
     color: #111;
-    margin-bottom: 26px;
     font-weight: 300;
 }
 .desc-list li::before{
     content: " · ";
+}
+.desc-list h3{
+    margin-bottom: 1rem;
+    font-size: 2rem;
+}
+.desc-list li{
+    margin-bottom: 0.7rem;
 }
