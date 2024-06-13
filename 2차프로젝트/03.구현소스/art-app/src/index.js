@@ -5,6 +5,7 @@ import Layout from "./components/layout/Layout";
 
 // 전체 공통 CSS 불러오기
 import "./css/index.scss";
+// 컴포넌트 불러오기
 import Main from "./components/pages/Main";
 import OilColors from "./components/pages/OilColors";
 import KoreanColors from "./components/pages/KoreanColors";
