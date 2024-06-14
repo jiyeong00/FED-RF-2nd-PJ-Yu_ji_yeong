@@ -11,6 +11,7 @@ import OilColors from "./components/pages/OilColors";
 import KoreanColors from "./components/pages/KoreanColors";
 import PosterColors from "./components/pages/PosterColors";
 import Gouache from "./components/pages/Gouache";
+import SubPage from "./components/pages/SubPage";
 
 export default function MainComponent() {
   return (
@@ -30,6 +31,7 @@ export default function MainComponent() {
           <Route path="Korean Colors" element={<KoreanColors />} />
           <Route path="Gouache" element={<Gouache />} />
           <Route path="Poster Colors" element={<PosterColors />} />
+          <Route path="subPage" element={<SubPage />} />
           {/* <Route path="comics" element={<Comics />} /> */}
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}

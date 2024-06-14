@@ -10,10 +10,10 @@
   margin-bottom: 2rem;
 }
 .main3-tit h2 {
-  font-size: 5rem;
+  font-size: 3.5vw;
 }
 .main3-tit span {
-  font-size: 2rem;
+  font-size: 1vw;
 }
 
 // 슬라이드
@@ -44,4 +44,11 @@
 .main3-slide:nth-child(n+5) .slide-txt{
   color: black;
 }
-
+// 슬라이드 넘김버튼
+.swiper-button-prev, .swiper-button-next{
+  color: #e30613;
+}
+// 슬라이드 불릿
+.swiper-pagination-bullet-active{
+  background-color: #e30613;
+}

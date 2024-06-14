@@ -5,7 +5,8 @@ import "../../css/main.scss";
 
 // 메인 JS 불러오기
 import mainFn from "../func/main_fn";
-import ContSwiper from "../modules/ContSwiper";
+import MainSwiper from "../modules/MainSwiper";
+
 
 function Main(props) {
 
@@ -54,11 +55,13 @@ function Main(props) {
         </div>
 
         {/* <!-- 2-2-1. 컨텐츠화면 내용 --> */}
-        <div className="main2-cont">{/* <!-- JS에서 내용을 넣음 --> */}</div>
+        <div className="main2-cont">
+        
+        </div>
       </section>
 
       {/* <!-- 2-3. 메인 슬라이드 화면 --> */}
-      <ContSwiper/>
+      <MainSwiper/>
     </>
   );
 }

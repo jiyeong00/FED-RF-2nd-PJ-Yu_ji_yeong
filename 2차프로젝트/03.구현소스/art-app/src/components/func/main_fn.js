@@ -114,14 +114,6 @@ export default function mainFn() {
     } ///////////// showSlide 함수 ////////////////
     /////////////////////////////////////////////
 
-    // // 모든 클래스 on지우기+현재 순번 클래스 넣기
-    // if (pNum) {
-    //   setTimeout(() => {
-    //     if ((pNum == num + 1)) {
-    //       return;
-    //     }
-    //   });
-    // } /////////////if pNum에 값이 있을때
 
     // 버튼 클릭 시
     function btnClick(pNum) {
@@ -242,7 +234,7 @@ export default function mainFn() {
     // //-----------------------자동넘김-----------------//
 
     // 자동넘김호출함수 최초호출하기
-    // autoSlide();
+    autoSlide();
 
     // [자동넘김호출]
     function autoSlide() {
@@ -266,7 +258,17 @@ export default function mainFn() {
       }, 5000);
     } ///////clearAuto함수///////////////
 
-    
+    // 매뉴 클락하면 맨 위 화면으로
+    const logo=mFn.qs(".logo");
+    const gnb=mFn.qsa("#gnb ol li");
+    logo.onclick = () => {
+      window.scrollTo(0, 0);
+    };
+    gnb.forEach((ele) => {
+      ele.onclick = () => {
+        window.scrollTo(0, 0);
+      };
+    });
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ////////////Main 2번째페이지////////////////////////////////////
   const main2Cont = mFn.qs(".main2-cont");
@@ -278,6 +280,7 @@ export default function mainFn() {
         `
     <div class="main2-cont-area">
         <a href="${v.tit}">
+        <div class="black-box"></div>
           <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
           <span>${v.tit}</span>
         </a>
@@ -285,4 +288,19 @@ export default function mainFn() {
         `
     )
     .join("");
+
+    // 마우스오버시 블랙박스 내려옴
+    const blackBox=mFn.qsa(".black-box");
+    blackBox.forEach(ele=>{
+      let tg=ele.style;
+      ele.mouseover=()=>{
+        tg.position="absolute";
+        tg.top="0";
+        tg.width="100%";
+        tg.height="100%";
+        tg.backgroundColor="#0000005d";
+        tg.zIndex="1";
+      }
+    });
+
 } /////////// mainFn //////////////////////////

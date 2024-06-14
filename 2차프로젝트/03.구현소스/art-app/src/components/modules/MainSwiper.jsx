@@ -9,11 +9,11 @@ import "swiper/css/pagination";
 import "../../css/main_swiper.scss";
 
 // 데이터 불러오기
-import slideData from "../data/main_slide_data_copy";
+import slideData from "../data/main_slide_data";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 console.log(slideData);
 
-function ContSwiper() {
+function MainSwiper() {
   const selData = slideData;
 
   return (
@@ -29,18 +29,17 @@ function ContSwiper() {
         </div>
         <Swiper
           slidesPerView={1}
-          // 슬라이드간격
-          spaceBetween={20}
           //   하단불릿
           pagination={{
             el: ".swiper-pagination",
             clickable: true,
           }}
+          speed={1000}
           //   자동넘김
-          //   autoplay={{
-          //     delay: 2500,
-          //     disableOnInteraction: false,
-          //   }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
           loop={true}
           //   이동버튼
           navigation={true}
@@ -54,11 +53,11 @@ function ContSwiper() {
             {selData.map((v, i) => (
               <SwiperSlide key={i}>
                 <div className="main3-slide">
-                  <div style={i+1>=5?{color:"black"}:{color:"white"}} className="slide-txt">
+                  <div style={i+1>=5?{color:"#434343"}:{color:"white"}} className="slide-txt">
                   <h3>{v.tit}</h3>
                   <p>{v.txt}</p>
                   </div>
-                  <img src={v.img} alt="보그갤러리" />
+                  <img src={v.img} alt={v.tit} />
                 </div>
               </SwiperSlide>
             ))}
@@ -71,4 +70,4 @@ function ContSwiper() {
   );
 }
 
-export default ContSwiper;
+export default MainSwiper;

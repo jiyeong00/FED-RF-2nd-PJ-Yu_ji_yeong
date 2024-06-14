@@ -18,14 +18,14 @@ const bgData={
     "Gouache": {
         idx:"3",
         "tit": "Gouache",
-        "stxt": "과슈",
+        "stxt": "생동감 넘치는 고채도 불투명 컬러와 혁신적인 아이디어",
         "color": "#3a73bc",
         "link":"/OilColors",
     },
     "Poster Colors": {
         idx:"4",
         "tit": "Poster Colors",
-        "stxt": "포스터 다요",
+        "stxt": "누구나 한번쯤 경험했던 대한민국 불투명 물감의 대명사",
         "color": "#be2b59",
         "link":"/OilColors",
     }
