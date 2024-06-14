@@ -1,21 +1,47 @@
 //메인 세번째 페이지 슬라이드 css
 
 .main3 {
-    margin: 12rem auto;
-    width: 100%;
-  }
+  margin: 12rem auto;
+  width: 100%;
+}
 /* 제목 */
 .main3-tit {
-    text-align: center;
-    margin-bottom: 2rem;
-  }
-  .main3-tit h2 {
-    font-size: 5rem;
-  }
-  .main3-tit span {
-    font-size: 2rem;
-  }
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.main3-tit h2 {
+  font-size: 5rem;
+}
+.main3-tit span {
+  font-size: 2rem;
+}
 
-.main3-slide>img{
-    width: 100%;
-  }
+// 슬라이드
+.main3-slide {
+  position: relative;
+}
+.main3-slide > img {
+  width: 100%;
+}
+.slide-txt{
+  position: absolute;
+  left: 6%;
+  top: 50%;
+  transform: translateY(-50%);
+
+  width: 40%;
+  margin-left:auto;
+
+}
+.slide-txt h3{
+  font-size: 4rem;
+  margin-bottom: 20px;
+}
+.slide-txt p{
+  font-size: 1.8rem;
+  font-weight: 200;
+}
+.main3-slide:nth-child(n+5) .slide-txt{
+  color: black;
+}
+

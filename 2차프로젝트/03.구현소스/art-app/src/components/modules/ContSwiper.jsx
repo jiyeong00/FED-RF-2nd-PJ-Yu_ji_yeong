@@ -9,7 +9,7 @@ import "swiper/css/pagination";
 import "../../css/main_swiper.scss";
 
 // 데이터 불러오기
-import slideData from "../data/main_slide_data";
+import slideData from "../data/main_slide_data_copy";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 console.log(slideData);
 
@@ -54,7 +54,11 @@ function ContSwiper() {
             {selData.map((v, i) => (
               <SwiperSlide key={i}>
                 <div className="main3-slide">
-                  <img src={v} alt="보그갤러리" />
+                  <div style={i+1>=5?{color:"black"}:{color:"white"}} className="slide-txt">
+                  <h3>{v.tit}</h3>
+                  <p>{v.txt}</p>
+                  </div>
+                  <img src={v.img} alt="보그갤러리" />
                 </div>
               </SwiperSlide>
             ))}
