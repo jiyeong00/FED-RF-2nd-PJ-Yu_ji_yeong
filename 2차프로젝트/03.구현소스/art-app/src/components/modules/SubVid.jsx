@@ -1,11 +1,12 @@
-// 서브페이지 - 첫번째 
+// 서브페이지 - 첫번째
 import React from "react";
 
 // 데이터 불러오기
 import sub_data from "../data/sub/sub_data";
 
-function SubVid({ catName }) {
-  const selData = sub_data[catName];
+function SubVid({ catName, subCatName }) {
+  const selData = sub_data[catName].subCatName;
+  console.log(selData);
 
   return (
     // <!-- 2-1. 컨텐츠 첫화면 -->
@@ -18,10 +19,8 @@ function SubVid({ catName }) {
       <div className="left-area">
         {/* 왼쪽 설명 */}
         <div className="left-txt">
-          <h2>{selData.tit}</h2>
-          <p>
-            {selData.txt}
-          </p>
+          {/* <h2>{selData.tit}</h2> */}
+          {/* <p>{selData.txt}</p> */}
         </div>
         {/* 버튼 */}
         <button className="more-btn">

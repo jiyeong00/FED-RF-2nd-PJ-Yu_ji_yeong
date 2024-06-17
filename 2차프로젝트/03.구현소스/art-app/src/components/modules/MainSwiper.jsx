@@ -19,21 +19,21 @@ function MainSwiper() {
   const selData = slideData;
   // // 스크롤 등장액션 이벤트 설정
   // mFn.addEvt(window, "scroll", showIt);
-  showIt();
+  // showIt();
 
-  function showIt() {
-    const main3 = mFn.qs(".main3");
-    const redBox2 = mFn.qs(".red-box2");
+  // function showIt() {
+  //   const main3 = mFn.qs(".main3");
+  //   const redBox2 = mFn.qs(".red-box2");
 
-    // 스크롤 등장 기준설정 : 화면의 2/3
-    const CRITERIA = (window.innerHeight / 3) * 2;
-    let bcval = mFn.getBCR(main3);
-    if (bcval < CRITERIA) {
-      redBox2.classList.add("on");
-    } else {
-      redBox2.classList.remove("on");
-    }
-  }
+  //   // 스크롤 등장 기준설정 : 화면의 2/3
+  //   const CRITERIA = (window.innerHeight / 3) * 2;
+  //   let bcval = mFn.getBCR(main3);
+  //   if (bcval < CRITERIA) {
+  //     redBox2.classList.add("on");
+  //   } else {
+  //     redBox2.classList.remove("on");
+  //   }
+  // }
 
   return (
     <>
@@ -58,10 +58,10 @@ function MainSwiper() {
             }}
             speed={1000}
             //   자동넘김
-            // autoplay={{
-            //   delay: 5000,
-            //   disableOnInteraction: false,
-            // }}
+            autoplay={{
+              delay: 5000,
+              disableOnInteraction: false,
+            }}
             loop={true}
             //   이동버튼
             navigation={true}

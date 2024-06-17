@@ -7,8 +7,7 @@ function SubPage() {
 
   return (
     <>
-    <h1>서브페이지!</h1>
-      {/* <SubVid catName="OilColors" /> */}
+      <SubVid catName="OilColors" subCatName={"shinhan"}/>
     </>
   );
 }
