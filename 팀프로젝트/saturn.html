@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Saturn</title>
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/common/favicon-16x16.png" />
+
     <!-- 폰트어썸 아이콘CSS -->
     <link
       rel="stylesheet"
@@ -13,14 +17,19 @@
     <!-- 토성CSS -->
     <link rel="stylesheet" href="./css/saturn.css" />
 
-   </head>
+    <!-- 공통 JS연결 -->
+    <script type="module" src="./js/common.js"></script>
+    <!-- 개별 JS연결 -->
+    <script type="module" src="./js/saturn.js"></script>
+  </head>
+
    <body>
 
     
   </head>
   <body>
     <!-- 1. 상단영역 -->
-
+    <div id="header-area"></div>
     <!-- 2. 메인영역 -->
     <main>
       <!-- 첫페이지:제목 -->
@@ -33,9 +42,9 @@
         ></video>
         <div class="saturn1-bg"></div>
 
-        <div class="saturn1-text main-text">
+        <div class="saturn1-text">
           <h1 class="main-tit">SATURN</h1>
-          <p class="main-desc">
+          <p class="main-txt">
             Like fellow gas giant Jupiter, Saturn is a massive ball made mostly
             of hydrogen and helium. Saturn is not the only planet to have rings,
             but none are as spectacular or as complex as Saturn's. Saturn also
@@ -51,7 +60,7 @@
       <!-- 두번째페이지 : 설명 -->
       <section class="saturn saturn2">
         <!-- 2-1.설명 첫번째 -->
-        <div class="desc desc1 sub-desc">
+        <div class="desc desc1 cont-txt">
           <div class="desc1-img">
             <img src="./images/saturn/saturn02.jpg" alt="토성사진" />
           </div>
@@ -71,7 +80,7 @@
           </div>
         </div>
         <!-- 2-2.설명 두번째 -->
-        <div class="desc desc2 sub-desc">
+        <div class="desc desc2 cont-txt">
           <div class="desc2-3D">
             <iframe
               class="imodel"
@@ -81,7 +90,7 @@
             ></iframe>
           </div>
           <div class="desc2-text">
-            <p class="sub-desc">
+            <p>
               <strong class="cont-tit">Potential for Life</strong>
               <br /><br />
               Saturn's environment is not conducive to life as we know it. The
@@ -105,7 +114,7 @@
             <div class="sub-tit">
               <h2>Saturn Rings</h2>
             </div>
-            <p class="sub-desc">
+            <p class="cont-txt">
               Saturn's rings are thought to be pieces of comets, asteroids, or
               shattered moons that broke up before they reached the planet, torn
               apart by Saturn's powerful gravity. They are made of billions of
@@ -120,6 +129,7 @@
               <br /><br />
             </p>
           </div>
+          <div class="saturn3-line"></div>
           <div class="saturn3-link">
             <div class="saturn3-img">
               <img src="./images/saturn/saturn01.jpg" alt="토성 사진" />
@@ -127,7 +137,7 @@
             <div class="saturn3-text sub-tit">
               <h3>NASA's Hubble Waches</h3>
               <h3>'Spoke Season' on Saturn</h3>
-              <a href="#">
+              <a href="https://science.nasa.gov/missions/hubble/nasas-hubble-watches-spoke-season-on-saturn/" target="_blank">
                 <span
                   >Read the Story <i class="fa-solid fa-circle-right"></i>
                 </span>
@@ -135,7 +145,7 @@
             </div>
           </div>
           <div class="saturn3-desc">
-            <p class="sub-desc">
+            <p class="cont-txt">
               <br />
               <strong>Saturn's ring</strong> system extends up to 175,000 miles
               (282,000 kilometers) from the planet, yet the vertical height is
@@ -155,6 +165,8 @@
         </div>
       </section>
 
+      <section class="bonus"></section>
+
       <!-- 네번째페이지 : 토성에 관한 10가지 -->
       <section class="saturn saturn4">
         <div class="sub-tit">
@@ -165,7 +177,7 @@
           <ul>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_1.png" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>Second Largest</h3>
@@ -174,7 +186,7 @@
             </li>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_2.png" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>Sixth from the Sun</h3>
@@ -183,7 +195,7 @@
             </li>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_3.jpg" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>No Surface</h3>
@@ -192,7 +204,7 @@
             </li>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_4.jpg" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>The Nicest Rings</h3>
@@ -201,7 +213,7 @@
             </li>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_5.jpg" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>King of the Moons</h3>
@@ -210,7 +222,7 @@
             </li>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_6.png" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>Distant Destination</h3>
@@ -219,7 +231,7 @@
             </li>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_7.jpg" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>Not Suitable For Life</h3>
@@ -228,7 +240,7 @@
             </li>
             <li>
               <div class="saturn4-img">
-                <img src="./images/jupiter/Callisto.jpg" alt="토성 사진" />
+                <img src="./images/saturn/saturn4_8.gif" alt="토성 사진" />
               </div>
               <div class="saturn4-text">
                 <h3>Cloud Hexagon</h3>
@@ -237,16 +249,16 @@
             </li>
           </ul>
           <div class="saturn-more cont-tit">
-            <a href="#"
-              >Saturn Facts
+            <a href="https://science.nasa.gov/saturn/facts/" target="_blank"
+              ><span>Saturn Facts</span>
               <i class="fa-solid fa-circle-right"></i>
             </a>
           </div>
         </div>
       </section>
 
-      <section class="bonus"></section>
     </main>
     <!-- 3. 하단영역 -->
+    <div id="footer-area"></div>
   </body>
 </html>

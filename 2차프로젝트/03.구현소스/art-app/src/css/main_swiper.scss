@@ -1,9 +1,5 @@
 //메인 세번째 페이지 슬라이드 css
 
-.main3 {
-  margin: 12rem auto;
-  width: 100%;
-}
 /* 제목 */
 .main3-tit {
   text-align: center;
@@ -16,6 +12,21 @@
   font-size: 1vw;
 }
 
+.main3-slide-wrap{
+  position: relative;
+  opacity: 1;
+}
+.red-box2{
+  position: absolute;
+  width: 0%;
+  height: 100%;
+  background-color: #e30613;
+  z-index: 2;
+  &.on{
+    width: 100%;
+    transition: .3s ease-in-out;
+  }
+}
 // 슬라이드
 .main3-slide {
   position: relative;

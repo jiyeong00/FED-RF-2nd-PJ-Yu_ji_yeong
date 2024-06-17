@@ -4,6 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>jupiter</title>
+
+    <!-- 파비콘 -->
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/common/favicon-16x16.png" />
+
     <!-- 폰트어썸 아이콘CSS -->
     <link
       rel="stylesheet"
@@ -12,10 +16,16 @@
 
     <!-- 목성CSS -->
     <link rel="stylesheet" href="./css/jupiter.css" />
+
+    <!-- 공통 JS연결 -->
+    <script type="module" src="./js/common.js"></script>
+    <!-- 개별 JS연결 -->
+    <script type="module" src="./js/jupiter.js"></script>
   </head>
 
   <body>
     <!-- 1. 상단영역 -->
+    <div id="header-area"></div>
     <!-- 2. 메인영역 -->
     <main>
       <!-- 첫페이지:제목 -->
@@ -28,12 +38,14 @@
         ></video>
         <div class="jupiter1-bg"></div>
 
-        <div class="jupiter1-text main-text">
+        <div class="jupiter1-text">
           <h1 class="main-tit">JUPITER</h1>
-          <p class="main-desc">
+          <p class="main-txt">
             Jupiter's signature stripes and swirls are actually cold, windy
             clouds of ammonia and water, floating in an atmosphere of hydrogen
-            and helium. The dark orange stripes are called belts, while the
+            and helium.
+            <br /><br />
+            The dark orange stripes are called belts, while the
             lighter bands are called zones, and they flow east and west in
             opposite directions. Jupiter’s iconic Great Red Spot is a giant
             storm bigger than Earth that has raged for hundreds of years.
@@ -45,7 +57,7 @@
       <!-- 두번째페이지 : 설명 -->
       <section class="jupiter jupiter2">
         <!-- 2-1.설명 첫번째 -->
-        <div class="desc desc1 sub-desc">
+        <div class="desc desc1 cont-txt">
           <div class="desc1-img">
             <img src="./images/jupiter/main_bg2.jpg" alt="목성사진" />
           </div>
@@ -67,7 +79,7 @@
           </div>
         </div>
         <!-- 2-2.설명 두번째 -->
-        <div class="desc desc2 sub-desc">
+        <div class="desc desc2 cont-txt">
           <div class="desc2-img">
             <img src="./images/jupiter/main_bg.jpg" alt="목성사진" />
           </div>
@@ -91,8 +103,9 @@
 
       <!-- 세번째페이지 : 3D -->
       <section class="jupiter jupiter3">
+        <div class="white-box"></div>
         <div class="jupiter3-cont">
-          <div class="jupiter3-text sub-desc">
+          <div class="jupiter3-text cont-txt">
             <h3 class="cont-tit">Surface</h3>
             <p>
               As a gas giant, Jupiter doesn’t have a true surface. The planet is
@@ -133,7 +146,7 @@
               </div>
               <div class="moon1-text M-text">
                 <h4 class="cont-tit">Ganymede</h4>
-                <p class="sub-desc">
+                <p class="cont-txt">
                   Ganymede is Jupiter's largest moon, and the largest moon in
                   our solar system. It's even bigger than Mercury, and Pluto.
                 </p>
@@ -155,7 +168,7 @@
               </div>
               <div class="moon2-text M-text">
                 <h4 class="cont-tit">Callisto</h4>
-                <p class="sub-desc">
+                <p class="cont-txt">
                   Callisto is Jupiter’s second largest moon and the third
                   largest moon in our solar system.
                 </p>
@@ -174,7 +187,7 @@
               </div>
               <div class="moon3-text M-text">
                 <h4 class="cont-tit">Io</h4>
-                <p class="sub-desc">
+                <p class="cont-txt">
                   Io is Jupiter's third largest moon, and the most volcanically
                   active world in our solar system.
                 </p>
@@ -196,7 +209,7 @@
               </div>
               <div class="moon4-text M-text">
                 <h4 class="cont-tit">Europa</h4>
-                <p class="sub-desc">
+                <p class="cont-txt">
                   Europa is Jupiter's fourth largest moon. It's about 90% the
                   size of Earth’s Moon.
                 </p>
@@ -222,7 +235,7 @@
           <div class="jupit5-gbox">
             <div class="jupit5-box">
               <div class="circle-num">1</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>The Biggest</h3>
                 <p>
                   For scale, Jupiter's Great Red Spot is about the size of
@@ -232,7 +245,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">2</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>Fifth From the Sun</h3>
                 <p>
                   Jupiter's distance from the Sun is 5.2 times the Earth-Sun
@@ -242,7 +255,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">3</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>Short and Long</h3>
                 <p>
                   Jupiter's day lasts only 10 Earth hours; its year is 12 Earth
@@ -252,7 +265,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">4</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>Nowhere to Land</h3>
                 <p>
                   As a gas giant, Jupiter has no solid surface. It may have an
@@ -262,7 +275,7 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">5</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>MASSIVE WORLD, LIGHT ELEMENTS</h3>
                 <p>
                   Jupiter's atmosphere is made up mostly of hydrogen (H2) and
@@ -272,28 +285,28 @@
             </div>
             <div class="jupit5-box">
               <div class="circle-num">6</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>Big and Light</h3>
                 <p>Jupiter's atmosphere is mostly hydrogen and helium.</p>
               </div>
             </div>
             <div class="jupit5-box">
               <div class="circle-num">7</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>Many Moons</h3>
                 <p>As of July 2023, Jupiter had 95 moons.</p>
               </div>
             </div>
             <div class="jupit5-box">
               <div class="circle-num">8</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>Exploration</h3>
                 <p>Seven robots flew past; two stayed in orbit.</p>
               </div>
             </div>
             <div class="jupit5-box">
               <div class="circle-num">9</div>
-              <div class="jupit5-text sub-desc">
+              <div class="jupit5-text cont-txt">
                 <h3>Super Storm</h3>
                 <p>
                   The Great Red Spot is a storm that has raged for more than 100
@@ -306,5 +319,6 @@
       </section>
     </main>
     <!-- 3. 하단영역 -->
+    <div id="footer-area"></div>
   </body>
 </html>
