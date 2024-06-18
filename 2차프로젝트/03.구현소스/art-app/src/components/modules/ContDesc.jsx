@@ -24,9 +24,9 @@ function ContDesc({ catName }) {
 
       {/* <!-- 제품목록 --> */}
       <ul className="cont2-list">
-        <Link to="/subPage">
           {selData2.opt_tit.map((v, i) => (
-            <li className="cont2-li" key={i}>
+        <Link to="/subPage" state={{mcat:catName,scat:i}} key={i}>
+            <li className="cont2-li">
               {/* <!-- 제품사진 --> */}
               <div className="cont2-list-img">
                 <img src={selData2.img[i]} alt={v} />
@@ -45,8 +45,8 @@ function ContDesc({ catName }) {
                 <img src="./img/brand/brand_1.png" alt="브랜드로고" />
               </div>
             </li>
-          ))}
         </Link>
+          ))}
       </ul>
     </section>
   );

@@ -17,6 +17,7 @@ import "../../css/sub_sets.scss";
 
 
 function SubSets({ catName, subCatName }) {
+  console.log(subCatName);
   const selData = sub_sets[catName].shinhan;
   console.log(selData);
 

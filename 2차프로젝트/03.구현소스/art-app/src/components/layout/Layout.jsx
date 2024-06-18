@@ -4,6 +4,7 @@ import MainArea from './MainArea';
 import FooterArea from './FooterArea';
 
 function Layout(props) {
+    
     //// 코드 리턴구역 //////////////
     return(
         <>

@@ -10,6 +10,7 @@ import MainSwiper from "../modules/MainSwiper";
 function Main(props) {
   // 새로고침 시 맨 위로
   useLayoutEffect(() => {
+    console.log("ㅋㅋㅋ");
     window.scrollTo(0, 0);
   });
 

@@ -7,14 +7,19 @@ import SubColor from "../modules/SubColor";
 
 function SubPage() {
   // 라우터호출 시 전달한 값을 받는다.
+  const loc = useLocation();
+  const mcat = loc.state.mcat;
+  const scat = loc.state.scat;
+  console.log("요기:",mcat,scat);
+
 
   return (
     <>
-      <SubVid catName="OilColors" subCatName="shinhan" />
+      <SubVid catName={mcat} subCatName={scat} />
 
-      <SubPoint catName="OilColors" subCatName="shinhan" />
+      <SubPoint catName={mcat} subCatName={scat} />
 
-      <SubSets catName="OilColors" subCatName="shinhan" />
+      <SubSets catName={mcat} subCatName={scat} />
 
       <SubColor/>
     </>
