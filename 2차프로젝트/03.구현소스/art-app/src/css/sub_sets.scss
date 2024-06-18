@@ -1,39 +1,38 @@
 // 서브페이지 - 용량
-.sub3{
-    position: relative;
-    background-color: #eee;
+.sub3 {
+  position: relative;
+  background-color: #eee;
 }
-.sub3-slide-wrap{
-    max-width: 1200px;
-    min-width: 600px;
+.sub3-slide-wrap {
+  max-width: 1200px;
+  min-width: 600px;
 
-    margin: 0px auto;
-    padding: 10rem 0;
+  margin: 0px auto;
+  padding: 10rem 0;
 
-    h3{
-        font-size: 2.2rem;
-        line-height: 1.66;
-        letter-spacing: -0.85px;
-        font-weight: 300;
-    }
-    p{
-        font-size: 1.5rem;
-        letter-spacing: -0.75px;
-        color: #333;
-        margin-top: 25px;
-        font-weight: 300;
-    
-        text-align: center;
-    }
-    .swiper-button-prev, .swiper-button-next{
-        top: 46%;
-    }
-}
-.swiper {
+  h3 {
+    font-size: 2.2rem;
+    line-height: 1.66;
+    letter-spacing: -0.85px;
+    font-weight: 300;
     padding: 30px 0;
+  }
+  p {
+    font-size: 1.5rem;
+    letter-spacing: -0.75px;
+    color: #333;
+    margin-top: 25px;
+    font-weight: 300;
+
+    text-align: center;
+  }
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: 46%;
+  }
 }
-.sub3-slide{
-    img{
-        width: 100%;
-    }
+.sub3-slide {
+  img {
+    width: 100%;
+  }
 }

@@ -37,7 +37,7 @@ function SubSets({ catName, subCatName }) {
             navigation={true}
             // 사용할 모듈을 여기에 적용시킨다
             modules={[Navigation]}
-            className="mySwiper"
+            className="mySwiper2"
           >
             {selData.map((v, i) => (
               <SwiperSlide key={i}>
