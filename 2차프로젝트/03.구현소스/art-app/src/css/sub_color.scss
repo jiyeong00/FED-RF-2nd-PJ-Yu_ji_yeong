@@ -1,0 +1,35 @@
+// 서브페이지 - 컬러
+
+.sub4{
+    max-width: 1200px;
+    min-width: 600px;
+
+    margin: 0px auto;
+    padding: 10rem 0;
+}
+.sub4-title{
+    h2{
+        font-size: 4rem;
+        letter-spacing: -0.4px;
+        font-weight: 400;
+        margin-bottom: 20px;
+    }
+}
+.cUlist{
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    justify-content: center;
+    align-content: center;
+    gap:1rem;
+    li{
+        .color-box{
+            aspect-ratio: 1;
+        }
+        p{
+            font-size: 1.2rem;
+            line-height: 16px;
+            color: #000;
+            margin: 5px 0;
+        }
+    }
+}

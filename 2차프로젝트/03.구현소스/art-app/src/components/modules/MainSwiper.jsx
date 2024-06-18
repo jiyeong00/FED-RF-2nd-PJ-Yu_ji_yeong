@@ -12,7 +12,7 @@ import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
 // 데이터 불러오기
 import slideData from "../data/main_slide_data";
-console.log(slideData);
+// console.log(slideData);
 
 function MainSwiper() {
   const selData = slideData;
