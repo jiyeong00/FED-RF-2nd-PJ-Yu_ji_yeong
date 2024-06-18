@@ -11,7 +11,7 @@ import "../../css/sub_point.scss";
 function SubPoint({ catName, subCatName }) {
   const key = subCatName;
   const selData = sub_point[catName].shinhan;
-  console.log(key, selData);
+//   console.log(key, selData);
   return (
     // <!-- 2-2. 서브 두번째화면 -->
     <section className="sub2 sub-area">

@@ -9,7 +9,6 @@ import "swiper/css/pagination";
 import "../../css/main_swiper.scss";
 import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
-import mFn from "../func/my_function.js";
 
 // 데이터 불러오기
 import slideData from "../data/main_slide_data";
