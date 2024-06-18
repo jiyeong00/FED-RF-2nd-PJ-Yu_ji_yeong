@@ -164,13 +164,13 @@
   pointer-events: none;
 }
 
-/* ---------------------두번째 페이지--------------------- */
+///////////////////////////* ---------------------두번째 페이지--------------------- *////////////////////////////
 .main2 {
   max-width: 1500px;
   min-width: 600px;
   margin: 0px auto;
 }
-.main2-wrap{
+.main2-wrap {
   position: relative;
   top: 50%;
   transform: translateY(-50%);
@@ -204,12 +204,24 @@
 
   overflow: hidden;
 
+  // 빨간박스 내려오고 이미지 등장
+  .red-box {
+    position: absolute;
+    width: 100%;
+    // z-index: 1;
+
+    background-color: red;
+
+    &.on {
+      animation: srbox 1.2s ease-in-out;
+    }
+  }
   .img-box {
-    opacity: 0;
+    height: 0%;
     overflow: hidden;
     &.on {
-      opacity: 1;
-      transition: 0s 0.6s ease-in-out;
+      height: 100%;
+      transition: 1.2s ease-in-out;
     }
   }
   // 오버시 이미지 scale 1.1 적용
@@ -235,21 +247,8 @@
     transition: height 0.3s ease-in-out;
   }
   &:hover .black-box {
-      height: 100%;
-      transition: height 0.3s ease-in-out;
-  }
-
-  // 스크롤 이벤트시 빨간박스 먼저
-  .red-box {
-    position: absolute;
-    width: 100%;
-    z-index: 1;
-
-    background-color: red;
-
-    &.on {
-      animation: srbox 1.2s linear;
-    }
+    height: 100%;
+    transition: height 0.3s ease-in-out;
   }
 }
 @keyframes srbox {

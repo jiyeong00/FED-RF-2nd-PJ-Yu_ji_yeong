@@ -272,11 +272,12 @@ export default function mainFn() {
         `
     <div class="main2-cont-area">
         <a href="${v.tit}">
-          <div class="red-box"></div>
-          <div class="img-box">
-           <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
+        <div class="img-box">
+        <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
            <span>${v.tit}</span>
           </div>
+          <div class="red-box"></div>
+          <div class="black-box"></div>
         </div>
         </a>
       </div>
@@ -286,12 +287,21 @@ export default function mainFn() {
 
   // 스크롤 등장액션 이벤트 설정
   mFn.addEvt(window, "scroll", showIt);
-  const main2 = mFn.qsa(".main2-cont-area a>*");
+  const main2On = mFn.qsa(".main2-cont-area a>*");
+  const blackBox = mFn.qsa(".black-box");
 
   // 스크롤 등장액션 함수
   function showIt() {
     // forEach메서드 처리방법
-    main2.forEach((ele) => addOn(ele));
+    main2On.forEach((ele) => addOn(ele));
+    // setTimeout(() => {
+    //   blackBox.forEach(ele=>{
+    //     ele.onmouseover(()=>{
+    //       ele.style.height="100%";
+    //       ele.style.transition="height 0.3s ease-in-out";
+    //     });
+    //   })
+    // }, 3000);
   } /////////////////////showIt함수////////////////
 
   //   //// [ 클래스 on 넣기 함수 ] ///////////
