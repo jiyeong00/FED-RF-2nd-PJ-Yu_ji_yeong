@@ -21,7 +21,7 @@ function SubPage() {
 
       <SubSets catName={mcat} subCatName={scat} />
 
-      <SubColor/>
+      <SubColor catName={mcat} subCatName={scat} />
     </>
   );
 }
