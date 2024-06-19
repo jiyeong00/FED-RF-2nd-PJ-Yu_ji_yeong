@@ -10,8 +10,8 @@ import "../../css/sub_point.scss";
 
 function SubPoint({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_point[catName])[subCatName];
-  // const selData = sub_point[catName][selSubCatName];
-  const selData = sub_point[catName].shinhan;
+  const selData = sub_point[catName][selSubCatName];
+  // const selData = sub_point[catName].shinhan;
 //   console.log(key, selData);
   return (
     // <!-- 2-2. 서브 두번째화면 -->
@@ -32,8 +32,8 @@ function SubPoint({ catName, subCatName }) {
                 </div>
                 <div className="sub2-img-box">
                   <img
-                    src={"/img/sub/OilColors_shinhan_point_" + (i + 1) + ".jpg"}
-                    alt={v.subTit}
+                    src={"/img/sub/"+catName+"_"+selSubCatName+"_point_" + (i + 1) + ".jpg"}
+                    alt={v.subTit+" 이미지"}
                   />
                 </div>
             </div>
