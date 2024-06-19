@@ -17,11 +17,12 @@ import "../../css/sub_sets.scss";
 
 
 function SubSets({ catName, subCatName }) {
-  console.log(subCatName);
-  const selData = sub_sets[catName].shinhan;
-  console.log(selData);
+  let selSubCatName = Object.keys(sub_sets[catName])[subCatName];
+  const selData = sub_sets[catName][selSubCatName];
+  console.log(selSubCatName);
 
   return (
+    selSubCatName !="kit" &&
     // <!-- 2-3. 서브 세번째 -->
     <section className="sub3 sub-area">
       {/* 슬라이드 */}
@@ -44,7 +45,7 @@ function SubSets({ catName, subCatName }) {
               <SwiperSlide key={i}>
                 <div className="sub3-slide">
                   <img
-                    src={"/img/sub/sets/OilColors_shinhan_sets_" + (i+1) + ".png"}
+                    src={"/img/sub/sets/"+catName+"_"+selSubCatName+"_sets_" + (i+1) + ".png"}
                     alt={v.capacity}
                   />
                 </div>
