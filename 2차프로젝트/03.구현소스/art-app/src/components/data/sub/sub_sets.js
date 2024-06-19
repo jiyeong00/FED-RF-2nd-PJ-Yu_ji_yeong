@@ -180,29 +180,25 @@ export default {
       shinhan_tube: [
         {
           idx: "1",
-          capacity: "신한 전문가 유화 7.5ml Tube 13색 세트",
+          capacity: "신한 전문가 포스터 컬러 40ml Tube",
         },
         {
           idx: "2",
-          capacity: "신한 전문가 유화 화용액 아교액 200ml Bottle",
+          capacity: "신한 전문가 포스터 컬러 40ml Tube 24색 세트 A",
         },
         {
           idx: "3",
-          capacity: "신한 전문가 유화 화용액 아교액 55ml Bottle",
+          capacity: "신한 전문가 포스터 컬러 40ml Tube 24색 세트 B",
         },
       ],
       color_list: [
         {
           idx: "1",
-          capacity: "신한 전문가 유화 7.5ml Tube 13색 세트",
+          capacity: "컬러리스트 포스터 컬러 40ml Bottle Twist",
         },
         {
           idx: "2",
-          capacity: "신한 전문가 유화 화용액 아교액 200ml Bottle",
-        },
-        {
-          idx: "3",
-          capacity: "신한 전문가 유화 화용액 아교액 55ml Bottle",
+          capacity: "컬러리스트 포스터 컬러 40ml Bottle Twist 12색 세트",
         },
       ],
       SH: [
