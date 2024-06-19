@@ -12,7 +12,7 @@ function Layout(props) {
         "PosterColors":[1,1,1,1],
     });
 
-    const mCatSet = useRef("");
+    // const mCatSet = useRef("");
 
     useLayoutEffect(()=>{
         let keyArr = Object.keys(rdmNum.current);
@@ -29,7 +29,8 @@ function Layout(props) {
     
     //// 코드 리턴구역 //////////////
     return(
-        <aCon.Provider value={{rdmNum,mCatSet}}>
+        // <aCon.Provider value={{rdmNum,mCatSet}}>
+        <aCon.Provider value={{rdmNum}}>
            {/* 1.상단영역 */}
            <TopArea />
            {/* 2.메인영역 */}

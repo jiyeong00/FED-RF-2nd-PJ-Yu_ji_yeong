@@ -7,15 +7,13 @@ import { aCon } from '../modules/aCon';
 
 
 function TopArea(props) {
-  const myCon = useContext(aCon);
+  // const myCon = useContext(aCon);
 
-  const chgMenu = (txt)=>{
-    myCon.mCatSet.current = txt;
-    console.log(myCon.mCatSet.current);
+  // const chgMenu = (txt)=>{
+  //   myCon.mCatSet.current = txt;
+  //   console.log(myCon.mCatSet.current);
 
-  };
-
-
+  // };
 
   return (
     <header id="header-area">
@@ -33,9 +31,10 @@ function TopArea(props) {
             <li>
               <ol>
                 {gnbData["메뉴"].map((v, i) => (
-                  <li key={i} onClick={(e)=>{
-                    chgMenu(e.currentTarget.querySelector("a").innerText);
-                  }}>
+                  // <li key={i} onClick={(e)=>{
+                  //   chgMenu(e.currentTarget.querySelector("a").innerText);
+                  // }}>
+                  <li key={i}>
                     {/* <a href="Oil Colors.jsx">{v}</a> */}
                     <Link to={"/" + v}>{v}</Link>
                   </li>

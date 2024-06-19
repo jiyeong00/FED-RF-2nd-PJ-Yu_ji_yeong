@@ -204,15 +204,23 @@ export default {
       SH: [
         {
           idx: "1",
-          capacity: "신한 전문가 유화 7.5ml Tube 13색 세트",
+          capacity: "sh 포스터 컬러 100ml Jar 블랙",
         },
         {
           idx: "2",
-          capacity: "신한 전문가 유화 화용액 아교액 200ml Bottle",
+          capacity: "sh 포스터 컬러 100ml Jar 화이트",
         },
         {
           idx: "3",
-          capacity: "신한 전문가 유화 화용액 아교액 55ml Bottle",
+          capacity: "sh 포스터 컬러 30ml Jar 12색 세트",
+        },
+        {
+          idx: "4",
+          capacity: "sh 포스터 컬러 30ml Jar 18색 세트",
+        },
+        {
+          idx: "5",
+          capacity: "sh 포스터 컬러 30ml Jar 24색 세트",
         },
       ],
   },

@@ -10,7 +10,7 @@ import { Link } from "react-router-dom";
 function ContDesc({ catName }) {
   const selData = cont_data[catName];
   const selData2 = cont_data[catName].option;
-  console.log("끄아아아아앙", selData2.img);
+  // console.log("끄아아아아앙", selData2.img);
 
   return (
     // <!-- 2-2. 컨텐츠 2번째 화면 -->
