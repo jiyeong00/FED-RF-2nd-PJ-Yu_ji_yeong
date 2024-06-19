@@ -294,14 +294,11 @@ export default function mainFn() {
   function showIt() {
     // forEach메서드 처리방법
     main2On.forEach((ele) => addOn(ele));
-    // setTimeout(() => {
-    //   blackBox.forEach(ele=>{
-    //     ele.onmouseover(()=>{
-    //       ele.style.height="100%";
-    //       ele.style.transition="height 0.3s ease-in-out";
-    //     });
-    //   })
-    // }, 3000);
+
+    setTimeout(() => {
+      main2Cont.classList.add("on");
+    }, 1200);
+
   } /////////////////////showIt함수////////////////
 
   //   //// [ 클래스 on 넣기 함수 ] ///////////

@@ -7,6 +7,7 @@ import ContVid from "../modules/ContVid";
 // import VidIntro from "../modules/VidIntro";
 
 export default function OilColors() {
+
   //// 코드 리턴구역 //////////////
   return (
     <>

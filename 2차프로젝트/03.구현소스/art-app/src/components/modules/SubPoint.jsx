@@ -9,7 +9,8 @@ import sub_point from "../data/sub/sub_point";
 import "../../css/sub_point.scss";
 
 function SubPoint({ catName, subCatName }) {
-  const key = subCatName;
+  let selSubCatName = Object.keys(sub_point[catName])[subCatName];
+  // const selData = sub_point[catName][selSubCatName];
   const selData = sub_point[catName].shinhan;
 //   console.log(key, selData);
   return (
@@ -31,7 +32,7 @@ function SubPoint({ catName, subCatName }) {
                 </div>
                 <div className="sub2-img-box">
                   <img
-                    src={"/img/sub/oilShinhan_point_" + (i + 1) + ".jpg"}
+                    src={"/img/sub/OilColors_shinhan_point_" + (i + 1) + ".jpg"}
                     alt={v.subTit}
                   />
                 </div>

@@ -38,7 +38,35 @@ function TopArea(props) {
               </ol>
             </li>
           </ul>
-        </nav>      
+        </nav>
+
+        {/* <!-- 기타 --> */}
+        <div className="etc">
+          {/* <!-- 모바일 햄버거 버튼 --> */}
+          <div className="mobile-btn">
+            <span className="ir">모바일버튼</span>
+            <i className="fa-solid fa-bars icon2">
+              {" "}
+              <span className="ir">햄버거 아이콘</span>
+            </i>
+            <i className="fa-solid fa-xmark icon3">
+              {" "}
+              <span className="ir">닫기 아이콘</span>
+            </i>
+          </div>
+
+          {/* <!-- 모바일 사이트맵 --> */}
+          <div className="m-sitemap">
+            <ul>
+              <li>
+                <a href="#">Oil Colors</a>
+              </li>
+              <li>
+                <a href="#">Korean Colors</a>
+              </li>
+            </ul>
+          </div>
+        </div>
       </header>
     </header>
   );
