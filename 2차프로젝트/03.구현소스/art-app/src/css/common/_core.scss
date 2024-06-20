@@ -64,6 +64,10 @@ html,body,.main-area,.part{
 .cont-box{
     height: 100%;
 }
+.main-title::before{
+  content: url("../../../public/img/title_logo.png");
+  padding-right: 10px;
+}
 
 
 /* 스크롤 디자인 클래스 */

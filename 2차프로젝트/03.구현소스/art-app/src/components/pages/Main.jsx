@@ -50,7 +50,7 @@ function Main(props) {
         <div className="main2-wrap">
           {/* <!-- 2-2-1. 컨텐츠화면 제목 --> */}
           <div className="main2-tit">
-            <h2>Products</h2>
+            <h2 className="main-title">Products</h2>
             <span>
               신한화구는 대한민국 대표 전문가 미술재료 제조 기업으로 미술에 관한
               모든 것을 제공합니다.

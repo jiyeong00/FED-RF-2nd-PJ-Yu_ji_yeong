@@ -28,8 +28,7 @@ export default function mainFn() {
   // 광클 금지변수
   let prot = false;
 
-  // 스크롤 등장 기준설정 : 화면의 2/3
-  const CRITERIA = (window.innerHeight / 3) * 2;
+
 
   //////////// 초기셋팅하기 ////////
 
@@ -128,7 +127,7 @@ export default function mainFn() {
     // 오른쪽 백카드
     let orgTg = document.querySelector(".back-card");
     let myTg = orgTg.querySelector("span");
-
+    
     //////////////////////////////////////////////////
     // 오른쪽 슬라이드 퇴장
     slide.style.right = "20rem";
@@ -206,7 +205,7 @@ export default function mainFn() {
       // 왼쪽 작은 이미지
       smallCardSlide.style.opacity = 1;
       smallCardSlide.style.translate = "0 0";
-      smallCardSlide.style.transition = "1.5s ease-in-out";
+      smallCardSlide.style.transition = "1.5s ease-in-out";        
     }, 1000);
 
     //////////// 블릿변경하기 ///////////
@@ -225,7 +224,7 @@ export default function mainFn() {
   // //-----------------------자동넘김-----------------//
 
   // 자동넘김호출함수 최초호출하기
-  // autoSlide();
+  autoSlide();
 
   // [자동넘김호출]
   function autoSlide() {
@@ -249,21 +248,12 @@ export default function mainFn() {
     }, 5000);
   } ///////clearAuto함수///////////////
 
-  // 매뉴 클릭하면 맨 위 화면으로
-  const logo = mFn.qs(".logo");
-  const gnb = mFn.qsa("#gnb ol li");
-  logo.onclick = () => {
-    window.scrollTo(0, 0);
-  };
-  gnb.forEach((ele) => {
-    ele.onclick = () => {
-      window.scrollTo(0, 0);
-    };
-  });
-
   //////////////////////////////////////////////////////////////////////////////////////////////////////////////
   ////////////Main 2번째페이지////////////////////////////////////
   const main2Cont = mFn.qs(".main2-cont");
+
+    // 스크롤 등장 기준설정 : 화면의 2/3
+    const CRITERIA = (window.innerHeight / 3) * 2;
 
   //정보넣기
   main2Cont.innerHTML = Object.values(bgData)
@@ -271,33 +261,37 @@ export default function mainFn() {
       (v) =>
         `
     <div class="main2-cont-area">
-        <a href="${v.tit}">
-        <div class="img-box">
-        <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
-           <span>${v.tit}</span>
-          </div>
-          <div class="red-box"></div>
-          <div class="black-box"></div>
-        </div>
-        </a>
+      <div class="box-wrap">
+        <div class="red-box"></div>
+        <div class="white-box"></div>
       </div>
+      <a href="${v.tit}">
+        <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
+        <span>${v.tit}</span>
+        <div class="black-box"></div>  
+      </a>
+    </div>
+      
         `
     )
     .join("");
 
   // 스크롤 등장액션 이벤트 설정
   mFn.addEvt(window, "scroll", showIt);
-  const main2On = mFn.qsa(".main2-cont-area a>*");
-  const blackBox = mFn.qsa(".black-box");
+  const main2On = mFn.qsa(".box-wrap>*");
+  const main2H2=mFn.qs(".main2-tit h2");
+  const main2Span=mFn.qs(".main2-tit span");
 
   // 스크롤 등장액션 함수
   function showIt() {
+    // let bcrVal = mFn.getBCR(main2H2);
+    // if(bcrVal < CRITERIA){
+    //   scWhite.style.left = "0%";
+    //   scWhite.style.width = "100%";
+    //   scWhite.style.transition = "1s ease-out";
+    // }
     // forEach메서드 처리방법
     main2On.forEach((ele) => addOn(ele));
-
-    setTimeout(() => {
-      main2Cont.classList.add("on");
-    }, 1200);
 
   } /////////////////////showIt함수////////////////
 
@@ -311,12 +305,18 @@ export default function mainFn() {
     // 기준값보다 작을때 등장
     if (bcrVal < CRITERIA) {
       ele.classList.add("on");
+      main2H2.style.top="0";
+      main2H2.style.opacity="1";
+      main2H2.style.transition=".6s ease-in-out";
+      main2Span.style.top="0";
+      main2Span.style.opacity="1";
+      main2Span.style.transition=".9s ease-in-out";
+      
+      setTimeout(() => {
+        main2Cont.classList.add("on");
+      }, 1000);
     }
-    // scProduct.forEach((ele) => {
-    //   setTimeout(() => {
-    //     ele.className = "black-box";
-    //     ele.style.top = "0";
-    //   }, 1400);
-    // });
+
   } ///////////// addOn 함수 //////////////
+
 } /////////// mainFn //////////////////////////

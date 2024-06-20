@@ -22,6 +22,7 @@ export default {
         ],
       ],
       img: ["./img/cont/oil_1.png", "./img/cont/oil_2.png"],
+      brand: ["shinhan","SH",],
     },
   },
   KoreanColors: {
@@ -61,6 +62,7 @@ export default {
         "./img/cont/kor_2.png",
         "./img/cont/kor_3.png",
       ],
+      brand: ["shinhan","SH","kit",],
     },
   },
   Gouache: {
@@ -90,6 +92,7 @@ export default {
         "./img/cont/gou_1.png",
         "./img/cont/gou_2.png",
       ],
+      brand: ["shinhan","pass",],
     },
   },
   PosterColors: {
@@ -131,6 +134,7 @@ export default {
         "./img/cont/pos_3.png",
         "./img/cont/pos_4.png",
       ],
+      brand: ["shinhan","shinhan_tube","color_list","SH",],
     },
   },
 };

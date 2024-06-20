@@ -6,14 +6,11 @@ import $ from "jquery";
 //데이터 불러오기
 import sub_sets from "../data/sub/sub_sets";
 import { Swiper, SwiperSlide } from "swiper/react";
-// import { Navigation } from "swiper/modules";
 
-// Import Swiper styles
 import "swiper/css";
-// import "swiper/css/navigation";
-
 // css
 import "../../css/sub_sets.scss";
+import mFn from "../func/my_function";
 
 function SubSets({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_sets[catName])[subCatName];
@@ -24,6 +21,15 @@ function SubSets({ catName, subCatName }) {
 
   // 컴포넌트 전역변수
   const myRef = useRef(null);
+  const slideItem = mFn.qsa(".sub3-slide img");
+  const slideLeng=slideItem.length;
+  if (slideLeng <= 4) {
+    $(".swiper-button-prev").fadeOut();
+    $(".swiper-button-next").fadeOut();
+  } else {
+    $(".swiper-button-prev").fadeIn();
+    $(".swiper-button-next").fadeIn();
+  }
 
   return (
     selSubCatName != "kit" && (
@@ -44,16 +50,14 @@ function SubSets({ catName, subCatName }) {
                 // 바깥에서 사용하도록 자신을 ref로 저장!
                 onInit={(s) => {
                   myRef.current = s;
+                  // console.log(SwiperSlide.length);
+                  // if(){}
                 }}
                 slidesPerView={4}
                 spaceBetween={30}
                 //   하단불릿
                 speed={1000}
                 loop={true}
-                //   이동버튼
-                // navigation={true}
-                // 사용할 모듈을 여기에 적용시킨다
-                // modules={[Navigation]}
                 className="mySwiper2"
               >
                 {selData.map((v, i) => (
