@@ -72,7 +72,9 @@ function SubVid({ catName, subCatName }) {
           <p>{selData.txt}</p>
         </div>
         {/* 버튼 */}
-        <button className="more-btn sub-more-btn">
+        <button className="more-btn sub-more-btn" onClick={()=>{
+          
+        }}>
           <span>View All Colors</span>
         </button>
       </div>

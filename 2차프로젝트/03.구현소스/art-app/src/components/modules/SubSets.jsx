@@ -17,19 +17,21 @@ function SubSets({ catName, subCatName }) {
   const selData = sub_sets[catName][selSubCatName];
   const sNum = 0;
   // 용량 슬라이드 4개이하면 버튼 안보이게 할려고 만든 변수
-  // console.log(selSubCatName);
-
+  
   // 컴포넌트 전역변수
   const myRef = useRef(null);
-  const slideItem = mFn.qsa(".sub3-slide img");
-  const slideLeng=slideItem.length;
-  if (slideLeng <= 4) {
-    $(".swiper-button-prev").fadeOut();
-    $(".swiper-button-next").fadeOut();
-  } else {
-    $(".swiper-button-prev").fadeIn();
-    $(".swiper-button-next").fadeIn();
-  }
+  useEffect(()=>{
+    const slideItem = mFn.qsa(".sub3-slide img");
+    const slideLeng=slideItem.length;
+    console.log("요 안나오네?",slideItem.length);
+    if (slideLeng <= 4) {
+      $(".swiper-button-prev").fadeOut();
+      $(".swiper-button-next").fadeOut();
+    } else {
+      $(".swiper-button-prev").fadeIn();
+      $(".swiper-button-next").fadeIn();
+    }
+  });
 
   return (
     selSubCatName != "kit" && (
