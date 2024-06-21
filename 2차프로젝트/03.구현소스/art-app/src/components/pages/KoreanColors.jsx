@@ -2,7 +2,7 @@
 import ContDesc from "../modules/ContDesc";
 import ContVid from "../modules/ContVid";
 
-export default function KoreanColors() {
+export default function KoreanColors({aa}) {
   //// 코드 리턴구역 //////////////
   return (
     <>

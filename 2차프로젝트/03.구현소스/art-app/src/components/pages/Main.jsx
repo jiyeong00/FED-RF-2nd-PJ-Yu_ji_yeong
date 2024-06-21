@@ -1,10 +1,10 @@
-import React, { useEffect, useLayoutEffect } from "react";
+import React, { useLayoutEffect } from "react";
 
 // CSS불러오기
 import "../../css/main.scss";
 
 // 메인 JS 불러오기
-import mainFn from "../func/main_fn";
+import {mainFn,autoI} from "../func/main_fn";
 import MainSwiper from "../modules/MainSwiper";
 
 function Main(props) {
@@ -13,10 +13,19 @@ function Main(props) {
     window.scrollTo(0, 0);
   });
 
-  useLayoutEffect(() => {
-    mainFn();
+
+
+  useLayoutEffect(()=>{
     console.log("레이아웃이펙트");
-  }, []);
+    mainFn();
+
+    return(()=>{
+      console.log("메인소멸한다~!");
+      // 인터발지우기
+      clearInterval(autoI);
+    });
+
+  },[]);
 
   // 코드 리턴구역 //////////////
   return (  

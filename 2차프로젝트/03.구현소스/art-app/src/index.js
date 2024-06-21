@@ -28,7 +28,7 @@ export default function MainComponent() {
         출력된다!*/}
           <Route index element={<Main />} />
           <Route path="Oil Colors" element={<OilColors />} />
-          <Route path="Korean Colors" element={<KoreanColors />} />
+          <Route path="Korean Colors" element={<KoreanColors my="aa" />} />
           <Route path="Gouache" element={<Gouache />} />
           <Route path="Poster Colors" element={<PosterColors />} />
           <Route path="subPage" element={<SubPage />} />

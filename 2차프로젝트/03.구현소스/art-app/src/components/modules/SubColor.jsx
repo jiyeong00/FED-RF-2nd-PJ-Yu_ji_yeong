@@ -1,6 +1,6 @@
 // 서브페이지 네번째 - 컬러
 
-import React, { useContext } from "react";
+import React, { Fragment, useContext } from "react";
 
 // css
 import "../../css/sub_color.scss";
@@ -27,9 +27,9 @@ function SubColor({ catName, subCatName }) {
         </div>
         <ul className="cUlist">
           {selData.map((v, i) => (
-            <>
+            <Fragment key={i}>
               {i <= cNum && (
-                <li key={i}>
+                <li>
                   <div
                     className="color-box"
                     style={
@@ -45,7 +45,7 @@ function SubColor({ catName, subCatName }) {
                   <p>{v.name}</p>
                 </li>
               )}
-            </>
+            </Fragment>
           ))}
         </ul>
       </section>
