@@ -41,10 +41,37 @@ function SubPoint({ catName, subCatName }) {
     };
   }, []);
 
-
   return (
     // <!-- 2-2. 서브 두번째화면 -->
     <section className="sub2 sub-area">
+      {selSubCatName == "kit" && (
+        <div className="sub-kit-main">
+          <div className="kit-main-img">
+            <img
+              src="/img/sub/kit-main-title.png"
+              alt="코리안컬러 키트 타이틀이미지"
+            />
+            <img src="/img/sub/kit-main-img.jpg" alt="코리안컬러 키트이미지" />
+          </div>
+          <div className="kit-main-txt">
+            <h3>
+              신한 전문가 한국화채색 마스터 클래스 페인팅 키트 - 민화 시리즈 1
+            </h3>
+            <p>
+              신한 전문가 한국화채색 마스터 클래스 페인팅 키트 – 민화 시리즈 1은
+              가장 한국적인 그림 “민화”를 직접 그리고 배우며 A3 사이즈로 작품을
+              완성할 수 있는 프리미엄 키트입니다. 민화 시리즈 1 키트는 민화의
+              대표적인 그림인 호작도와 화조도 2개의 도안과 신한 전문가
+              한국화채색 12색 세트(키트 전용), 신한 전문가 아교액 55ml, 신한
+              전문가 먹물 50ml, 아교반수 한지(2장), 신한 전문가 한국화 붓(세필,
+              채색), 꽃 모양의 전통 도자 팔레트, 초배지 처리된 A3 사이즈 화판
+              그리고 충분한 연습을 위한 한지 감성의 신한 프리미엄 스케치북
+              하드커버 A5 등 한국 전통 미술 “민화”를 마스터하고 실력을
+              향상시키는데 활용할 수 있는 총 8개의 전통 재료를 담고 있습니다.
+            </p>
+          </div>
+        </div>
+      )}
       {selSubCatName != "kit" && (
         <>
           {/* 배경 */}
