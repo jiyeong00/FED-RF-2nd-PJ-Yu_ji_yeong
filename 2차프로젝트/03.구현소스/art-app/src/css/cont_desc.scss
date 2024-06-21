@@ -57,12 +57,20 @@ margin-top: 5rem;
 
     border: 1px solid #f3f3f3;
     margin: 3rem 0;
+    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0);
+    &:hover{
+        box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.09);
+        transition: .3s ease-out;
+    }
     .cont2-imgbox{
         width: 192px;
         aspect-ratio: 192 / 60;
         img{
+            display: block;
             width: 100%;
             height: 100%;
+            opacity: .5;
+            transition: .3s ease-out;
         }
     }
 }
@@ -73,9 +81,6 @@ margin-top: 5rem;
 .cont2-list-img img{
     width: 100%;
     height: 100%;
-}
-.cont2-li:hover{
-    box-shadow: 5px 5px 30px rgba(0, 0, 0, 0.09);
 }
 
 // 제품리스트 내 특징

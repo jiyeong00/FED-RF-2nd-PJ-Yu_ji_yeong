@@ -234,7 +234,7 @@ function mainFn() {
     autoI = setInterval(() => {
       console.log("인터발");
       showSlide();
-    }, 10000);
+    }, 8000);
   } ////////autoslide함수///////////////
 
   // [인터발지우기 함수]

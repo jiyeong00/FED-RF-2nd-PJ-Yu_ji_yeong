@@ -4,6 +4,7 @@ import React, { useEffect } from "react";
 
 // 데이터 불러오기
 import sub_point from "../data/sub/sub_point";
+import sub_prd_kit from "../data/sub/sub_prd_kit";
 
 // css
 import "../../css/sub_point.scss";
@@ -12,7 +13,7 @@ import mFn from "../func/my_function";
 function SubPoint({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_point[catName])[subCatName];
   const selData = sub_point[catName][selSubCatName];
-  // const selData = sub_point[catName].shinhan;
+  console.log(sub_prd_kit);
 
   useEffect(() => {
     const sub2 = mFn.qs(".sub2");
@@ -120,6 +121,44 @@ function SubPoint({ catName, subCatName }) {
           </li>
         ))}
       </ul>
+
+      {/* 키트 구성품 */}
+      {selSubCatName == "kit" &&(
+        <div className="sub3 prd-kit-area">
+          <div className="prd-kit-tit">
+            <h3>민화 시리즈 1 키트 구성품</h3>
+            <p>
+              신한 전문가 한국화채색 마스터 클래스 페인팅 키트 – 민화 시리즈 1
+              제품에 포함된 신한 전문가 미술재료와 핸드메이드 방식으로 제조되는
+              한국 고유의 전통 재료들을 상세하게 살펴보세요. 민화 시리즈 1
+              키트에 구성된 총 8가지의 고급 재료들은 여러분이 호작도와 화조도
+              2개의 민화 그림을 완벽하게 그려내고 마스터하는데 유용하게 활용할
+              수 있습니다.
+            </p>
+          </div>
+
+          <div className="prd-kit-gbox">
+            <>
+            {sub_prd_kit.map((v, i) => {
+              <div className="prd-kit-box">
+                <div className="prd-kit-img">
+                  <img
+                    src={"/img/prd-kit/prd_kit_"+i+".jpg"}
+                    alt="민화 시리즈 1 키트 구성품"
+                  />
+                </div>
+                <div className="prd-kit-text">
+                  <h3>{v.tit}</h3>
+                  <p>
+                    {v.txt}
+                  </p>
+                </div>
+              </div>
+            })}
+            </>
+          </div>
+        </div>
+      )}
     </section>
   );
 }

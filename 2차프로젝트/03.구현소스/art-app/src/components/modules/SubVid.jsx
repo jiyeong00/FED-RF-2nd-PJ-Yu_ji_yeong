@@ -12,40 +12,6 @@ function SubVid({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_data[catName])[subCatName];
   const selData = sub_data[catName][selSubCatName];
 
-  // useEffect(() => {
-  //   const cont2 = mFn.qs(".cont2");
-
-  //   const cont2Li = mFn.qsa(".cont2-li");
-  //   cont2Li.forEach((ele) => {
-  //     ele.onclick = () => {
-  //       window.scrollTo(0, 0);
-  //     };
-  //   });
-
-  //   if (!cont2) return;
-
-  //   const handleScroll = () => {
-  //     // 스크롤 등장 기준설정 : 화면의 2/3
-  //     const CRITERIA = (window.innerHeight / 3) * 2;
-
-  //     const bcrVal = cont2.getBoundingClientRect();
-
-  //     if (bcrVal.top < CRITERIA) {
-  //       cont2.style.top = "0rem";
-  //       cont2.style.opacity = "1";
-  //       cont2.style.transition = ".5s ease-out";
-
-  //       window.removeEventListener("scroll", handleScroll);
-  //     }
-  //   };
-
-  //   window.addEventListener("scroll", handleScroll);
-
-  //   return () => {
-  //     window.removeEventListener("scroll", handleScroll);
-  //   };
-  // }, []);
-
   return (
     // <!-- 2-1. 서브 첫화면 -->
     <section className="sub1 sub-area part">
@@ -72,11 +38,11 @@ function SubVid({ catName, subCatName }) {
           <p>{selData.txt}</p>
         </div>
         {/* 버튼 */}
-        <button className="more-btn sub-more-btn" onClick={()=>{
-          
-        }}>
-          <span>View All Colors</span>
-        </button>
+        {selSubCatName != "kit" && (
+          <button className="more-btn sub-more-btn" onClick={() => {}}>
+            <span>View All Colors</span>
+          </button>
+        )}
       </div>
     </section>
   );

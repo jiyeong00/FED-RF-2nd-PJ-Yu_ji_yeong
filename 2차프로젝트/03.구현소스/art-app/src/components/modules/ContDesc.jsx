@@ -3,8 +3,8 @@
 import React, { useEffect } from "react";
 // 데이터 불러오기
 import cont_data from "../data/cont_data";
-// 버튼쪽 이미지 넣을려고...............가져옵니다.....
-import sub_point from "../data/sub/sub_point";
+
+import $ from "jquery";
 // CSS
 import "../../css/cont_desc.scss";
 import { Link } from "react-router-dom";
@@ -17,8 +17,8 @@ function ContDesc({ catName, subCatName }) {
 
   useEffect(() => {
     const cont2 = mFn.qs(".cont2");
-
     const cont2Li = mFn.qsa(".cont2-li");
+
     cont2Li.forEach((ele) => {
       ele.onclick = () => {
         window.scrollTo(0, 0);
@@ -81,6 +81,7 @@ function ContDesc({ catName, subCatName }) {
               <div className="cont2-imgbox">
                 {selData2.brand[i] != "SH" ? (
                   <img
+                    className="brand-box"
                     src={
                       "/img/brand/" +
                       catName +
@@ -92,11 +93,11 @@ function ContDesc({ catName, subCatName }) {
                   />
                 ) : (
                   <img
+                    className="brand-box"
                     src={"/img/brand/" + selData2.brand[i] + "_mbrand.png"}
                     alt={selData2.brand[i]}
                   />
                 )}
-                {/* <img src="./img/brand/brand_1.png" alt="브랜드로고" /> */}
               </div>
             </li>
           </Link>
