@@ -10,7 +10,7 @@ function SubPage() {
   const loc = useLocation();
   const mcat = loc.state.mcat;
   const scat = loc.state.scat;
-  console.log("요기:",mcat,scat);
+  // console.log("요기:",mcat,scat);
 
 
   return (

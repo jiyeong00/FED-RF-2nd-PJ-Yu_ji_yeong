@@ -8,7 +8,7 @@
     position: relative;
     top: 20px;
     opacity: 0;
-  
+    font-weight: 400;
     font-size: 3.5vw;
   }
   span {
@@ -106,3 +106,5 @@
 .swiper-pagination-bullet-active {
   background-color: #e30613;
 }
+
+/////////////////////////모바일은 main.scss에다가!!!!///////////////////

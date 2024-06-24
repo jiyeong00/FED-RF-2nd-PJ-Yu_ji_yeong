@@ -32,6 +32,8 @@ function ContDesc({ catName, subCatName }) {
       const CRITERIA = (window.innerHeight / 3) * 2;
 
       const bcrVal = cont2.getBoundingClientRect();
+      // console.log(CRITERIA,bcrVal);
+
 
       if (bcrVal.top < CRITERIA) {
         cont2.style.top = "0rem";

@@ -1,6 +1,6 @@
 // 서브페이지 - 특징 (두번째페이지)
 
-import React, { useEffect } from "react";
+import React, { Fragment, useEffect } from "react";
 
 // 데이터 불러오기
 import sub_point from "../data/sub/sub_point";
@@ -13,7 +13,8 @@ import mFn from "../func/my_function";
 function SubPoint({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_point[catName])[subCatName];
   const selData = sub_point[catName][selSubCatName];
-  console.log(sub_prd_kit);
+  const selData2 = sub_prd_kit;
+  console.log(selData2);
 
   useEffect(() => {
     const sub2 = mFn.qs(".sub2");
@@ -123,8 +124,10 @@ function SubPoint({ catName, subCatName }) {
       </ul>
 
       {/* 키트 구성품 */}
-      {selSubCatName == "kit" &&(
-        <div className="sub3 prd-kit-area">
+      {selSubCatName == "kit" && (
+        <>
+        <div className="bonus"></div>
+        <div className="prd-kit-area">
           <div className="prd-kit-tit">
             <h3>민화 시리즈 1 키트 구성품</h3>
             <p>
@@ -136,28 +139,24 @@ function SubPoint({ catName, subCatName }) {
               수 있습니다.
             </p>
           </div>
-
           <div className="prd-kit-gbox">
-            <>
-            {sub_prd_kit.map((v, i) => {
-              <div className="prd-kit-box">
+            {selData2.map((v, i) => (
+              <div className="prd-kit-box" key={i}>
                 <div className="prd-kit-img">
                   <img
-                    src={"/img/prd-kit/prd_kit_"+i+".jpg"}
+                    src={"/img/prd-kit/prd_kit_" + (i+1) + ".jpg"}
                     alt="민화 시리즈 1 키트 구성품"
                   />
                 </div>
                 <div className="prd-kit-text">
                   <h3>{v.tit}</h3>
-                  <p>
-                    {v.txt}
-                  </p>
+                  <p>{v.txt}</p>
                 </div>
               </div>
-            })}
-            </>
+            ))}
           </div>
         </div>
+        </>
       )}
     </section>
   );

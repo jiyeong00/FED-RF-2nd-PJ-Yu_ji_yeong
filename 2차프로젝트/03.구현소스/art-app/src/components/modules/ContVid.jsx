@@ -8,9 +8,8 @@ import cont_data from "../data/cont_data";
 // CSS
 import "../../css/cont_vid.scss";
 
-
 // function ContVid({ catName }) {
-function ContVid({catName}) {
+function ContVid({ catName }) {
   // catName 배너 데이터 카테고리이름
 
   // 슬라이드 기능 생성자함수 인스턴스 생성하기
@@ -26,17 +25,26 @@ function ContVid({catName}) {
       <div className="visual-img-cont">
         <div className="visual-video" data-type="video">
           <video muted="muted" loop="1" autoPlay="autoplay">
-            <source
-              src={selData.video}
-              type="video/mp4"
-            />
+            <source src={selData.video} type="video/mp4" />
           </video>
         </div>
         {/* 동영상 커버 */}
         <div className="video-cover"></div>
       </div>
+      {/* 네비게이션 경로 */}
+      <nav className="nav">
+        <p>
+          <i className="fa-solid fa-house-chimney"></i>
+        </p>
+        <p>
+          <i className="fa-solid fa-chevron-right"></i>
+        </p>
+        <p>{catName}</p>
+      </nav>
       {/* 스크롤유도표시 */}
-      <a className="scroll" href="#"><span></span>Scroll</a>
+      <a className="scroll" href="#">
+        <span></span>Scroll
+      </a>
     </section>
   );
 }

@@ -12,6 +12,8 @@ export default function KoreanColors({aa}) {
       
       {/* 컨텐츠페이지 2번째 */}
       <ContDesc catName="KoreanColors"/>
+
+      
     </>
   );
 } /////////// KoreanColors /////////////////////

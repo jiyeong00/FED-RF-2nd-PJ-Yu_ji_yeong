@@ -28,7 +28,7 @@
   transform: translateY(-50%) rotate(350deg);
 
   /* width: min(700px, 50vh); */
-  width: 23vw;
+  width: 460px;
   aspect-ratio: 430 / 620;
   border-radius: 50px;
   overflow: hidden;
@@ -52,7 +52,7 @@
   transform: translateY(-50%);
 
   /* width: min(700px, 50vh); */
-  width: 23vw;
+  width: 460px;
   aspect-ratio: 430 / 620;
   border-radius: 50px;
   overflow: hidden;
@@ -78,6 +78,7 @@
 /* 왼쪽 */
 /* 메인글자 구역 */
 .text-area-wrap {
+  z-index: 2;
   position: relative;
   top: 50%;
   width: 116rem;
@@ -109,6 +110,7 @@
   margin-top: 1.8rem;
   cursor: pointer;
   z-index: 1;
+  border-width: thin;
 }
 .more-btn span {
   color: #000;
@@ -150,8 +152,7 @@
 
   cursor: pointer;
   pointer-events: none;
-  & li{
-
+  & li {
     & a {
       display: block;
       text-align: center;
@@ -159,20 +160,17 @@
       color: black;
       width: 100%;
       pointer-events: auto;
-      
-      transition: 1.5s ease-in-out;
 
+      transition: 1.5s ease-in-out;
     }
     &.on a {
       color: red;
       transition: 1.5s ease-in-out;
-    
+
       pointer-events: none;
     }
-
   }
 }
-
 
 ///////////////////////////* ---------------------두번째 페이지--------------------- *////////////////////////////
 .main2 {
@@ -193,6 +191,7 @@
     top: 20px;
     opacity: 0;
     font-size: 3.5vw;
+    font-weight: 400;
   }
   span {
     position: relative;
@@ -222,7 +221,7 @@
   }
   &.on::after {
     display: none;
-  }  
+  }
 }
 
 .main2-cont-area {
@@ -269,19 +268,19 @@
       &.on {
         top: 100%;
         height: 0%;
-        transition: .9s ease-in-out;
+        transition: 0.9s ease-in-out;
       }
-    }///////////흰박스
+    } ///////////흰박스
   }
 
-  a{
+  a {
     display: block;
     height: 0;
     // border: 2px dotted red;
     overflow: hidden;
     transition: height 0.6s ease-in-out 0.6s;
   }
-  a.on{
+  a.on {
     height: 100%;
   }
   // 오버시 이미지 scale 1.1 적용
@@ -312,7 +311,6 @@
   }
 }
 
-
 @keyframes srbox {
   0% {
     top: 0;
@@ -340,4 +338,114 @@
   font-size: 1.2vw;
 }
 
-/****************************** 하단영역 ****************************/
+/****************************** 모바일 ****************************/
+@media screen and (max-width: 1400px) {
+  .main-wrap {
+    width: 90%;
+  }
+}//////////////////////////1400px//////////////
+
+@media screen and (max-width: 1200px) {
+  .main1 {
+    position: relative;
+  }
+  .main-wrap {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    gap: 0;
+
+    & > section {
+      width: 100%;
+      height: 100vh;
+    }
+  }
+  // 오른쪽 구역
+  // .main-card-wrap{
+  //   text-align: center;
+  //   .main-img{
+  //     position: absolute;
+  //     right: auto;
+  //     top: 0;
+  //     left: 50%;
+  //     width: 300px;
+  //     transform: translateX(-50%);
+  //   }
+  //   .back-card{
+  //     position: relative;
+  //     right: auto;
+  //     top: 0;
+  //     left: 50%;
+  //     width: 300px;
+  //     transform: translateX(-50%);
+  //   }
+  // }
+  // .indic{
+  //   left: 50%;
+  //   transform: translateX(-50%);
+  // }
+  .main-card-area {
+    top: -120px;
+  }
+  .main-img,
+  .back-card {
+    display: none;
+  }
+  .indic {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: auto;
+  }
+
+  /* 왼쪽 */
+  /* 메인글자 구역 */
+  .text-area-wrap {
+    top: 50%;
+    left: 50%;
+    bottom: 8%;
+    transform: translate(-50%, -50%);
+    // width: 40rem;
+    // height: 555px;
+    // h2 {
+    //   font-size: 4rem;
+    // }
+    // h3{
+    //   font-size: 3rem;
+    // }
+  }
+
+  // 두번쨰페이지
+  .main2{
+    height: auto;
+  }
+  .main2-wrap {
+    top: 0;
+    transform: none;
+    margin: 4rem 0;
+  }
+  .main2-cont {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 90%;
+    // flex-wrap: wrap;
+  }
+  /* 제목 */
+  .main2-tit {
+    h2 {
+      font-size: 5rem;
+    }
+    span {
+      font-size: 2rem;
+    }
+  }
+
+  // 세번째페이지
+  .main3{
+    padding: 4rem 0;
+    height: auto;
+  }
+  .slide-txt h3 {
+    font-size: 3.5rem;
+  }
+} /////////////////////1200px////////////

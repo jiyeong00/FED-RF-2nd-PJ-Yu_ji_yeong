@@ -68,11 +68,15 @@
     display: flex;
     gap: 2rem;
   }
-  
+
   #gnb ul li a {
     color: rgba(0, 0, 0, 0.529);
     font-size: 2rem;
     font-family: "Kanit", sans-serif;
+    &.on{
+      color: #e30613;
+      font-weight: 700;
+    }
   }
   
   /* 메뉴 마우스 오버시 글자 네온효과 */

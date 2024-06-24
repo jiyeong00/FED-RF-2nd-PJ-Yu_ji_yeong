@@ -1,5 +1,5 @@
 // 서브페이지 - 첫번째
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 
 // 데이터 불러오기
 import sub_data from "../data/sub/sub_data";
@@ -8,11 +8,12 @@ import sub_data from "../data/sub/sub_data";
 import "../../css/sub_vid.scss";
 
 function SubVid({ catName, subCatName }) {
-  console.log(subCatName);
   let selSubCatName = Object.keys(sub_data[catName])[subCatName];
   const selData = sub_data[catName][selSubCatName];
+  console.log("dd", selSubCatName, selData, catName);
 
   return (
+    // <SubPoint/>
     // <!-- 2-1. 서브 첫화면 -->
     <section className="sub1 sub-area part">
       <div
@@ -33,17 +34,61 @@ function SubVid({ catName, subCatName }) {
       {/* 왼쪽 구역 */}
       <div className="left-area">
         {/* 왼쪽 설명 */}
-        <div className="left-txt">
+        <div
+          className="left-txt"
+          style={
+            catName == "OilColors"
+              ? selSubCatName == "SH"
+                ? { color: "white" }
+                : { color: "black" }
+              : catName == "KoreanColors"
+              ? selSubCatName == "SH"
+                ? { color: "white" }
+                : { color: "black" }
+              : catName == "Gouache"
+              ? selSubCatName == "shinhan"
+                ? { color: "white" }
+                : { color: "black" }
+              : catName == "PosterColors"
+              ? selSubCatName == "shinhan_tube"
+                ? { color: "white" }
+                : selSubCatName == "SH"
+                ? { color: "white" }
+                : { color: "black" }
+              : { color: "black" }
+          }
+        >
           <h2>{selData.tit}</h2>
           <p>{selData.txt}</p>
         </div>
         {/* 버튼 */}
         {selSubCatName != "kit" && (
-          <button className="more-btn sub-more-btn" onClick={() => {}}>
-            <span>View All Colors</span>
+          <button
+            className="more-btn sub-more-btn" 
+            style={(catName=="PosterColors"&&selSubCatName=="SH")?{borderColor: "white"}:{}}
+            onClick={() => {
+              console.log("dsdsdsdsd");
+              // <SubSets catName={catName} subCatName={selSubCatName}/>
+            }}
+          >
+            <span style={(catName=="PosterColors"&&selSubCatName=="SH")?{color: "white"}:{}}>View All Colors</span>
           </button>
         )}
       </div>
+      {/* 네비게이션 경로 */}
+      <nav className="nav">
+        <p>
+          <i className="fa-solid fa-house-chimney"></i>
+        </p>
+        <p>
+          <i className="fa-solid fa-chevron-right"></i>
+        </p>
+        <p>{catName}</p>
+        <p>
+          <i className="fa-solid fa-chevron-right"></i>
+        </p>
+        <p>{selData.stit}</p>
+      </nav>
     </section>
   );
 }
