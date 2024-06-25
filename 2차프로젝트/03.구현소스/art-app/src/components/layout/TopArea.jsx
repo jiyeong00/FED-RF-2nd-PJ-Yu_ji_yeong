@@ -1,46 +1,26 @@
-import React, { useContext, useEffect } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 import gnbData from "../data/main_gnb_data";
 import { Link } from "react-router-dom";
 import Logo from "../modules/Logo";
-import { aCon } from "../modules/aCon";
 
 import mFn from "../func/my_function";
 
 function TopArea(props) {
-
+  const [width, setWidth] = useState(window.innerWidth);
+  
+  const handleResize = () => {
+    setWidth(window.innerWidth);
+  };
+  
   useEffect(() => {
     const topArea = mFn.qs("#header-area");
-
-    const topGnb = mFn.qsa("#gnb ul li a");
-    const logo = mFn.qs(".logo");
-
-      topGnb.forEach((ele) => {
-        // ele를 클릭했을때 topGnb에 on추가
-        ele.onclick = () => {
-          topGnb.forEach((item) => {
-            item.classList.remove("on");
-          });
-          ele.classList.add("on");
-        };
-        // 로고 클릭해도 on지우기
-        logo.onclick = () => {
-          topGnb.forEach((item) => {
-            item.classList.remove("on");
-          });
-        };
-      }); /////////////////////forEach
-
-
     if (!topArea) return;
 
     const handleScroll = () => {
       // 스크롤 등장 기준설정 : 화면의 2/3
       const CRITERIA = window.innerHeight;
       let scrollLocation = document.documentElement.scrollTop;
-
-      const bcrVal = topArea.getBoundingClientRect();
-      // console.log("dddd",CRITERIA,"sssss",scrollLocation);
 
       if (CRITERIA < scrollLocation) {
         topArea.style.backgroundColor = "white";
@@ -60,6 +40,19 @@ function TopArea(props) {
     };
   }, []);
 
+  // width 값 실시간으로 가져오기
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      // cleanup
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
+  // function tMenu(){()=>{
+
+  // }};
+
   return (
     <header id="header-area">
       <header className="header-area inbox">
@@ -71,32 +64,48 @@ function TopArea(props) {
         </h1>
 
         {/* <!-- 메뉴 --> */}
+
         <nav id="gnb">
           <ul>
+            {/* 메뉴 리스트 */}
             <li>
               <ol>
                 {gnbData["메뉴"].map((v, i) => (
-                  // <li key={i} onClick={(e)=>{
-                  //   chgMenu(e.currentTarget.querySelector("a").innerText);
-                  // }}>
                   <li key={i}>
-                    {/* <a href="Oil Colors.jsx">{v}</a> */}
-                    <Link to={"/" + v}>
-                      {v}
-                    </Link>
+                    <Link to={"/" + v}>{v}</Link>
                   </li>
                 ))}
               </ol>
             </li>
-            <li>
-              <ol>
-                {gnbData["회원가입"].map((v, i) => (
-                  <li key={i}>
-                    <a href="#">{v}</a>
-                  </li>
-                ))}
-              </ol>
-            </li>
+            {/* 회원가입 리스트 */}
+            {width > 1000 && (
+              <li>
+                <ol>
+                  {gnbData["회원가입"].map((v, i) => (
+                    <li key={i}>
+                      <a href="#">{v}</a>
+                    </li>
+                  ))}
+                </ol>
+              </li>
+            )}
+            {width <= 1000 && (
+              <div className="topMenu-M">
+                {/* 모바일 햄버거버튼 */}
+                <div className="nav-img">
+                  <img src="/img/menu_b.png" alt="메뉴버튼 이미지" />
+                </div>
+                <li className="memberMenu">
+                  <ol>
+                    {gnbData["회원가입"].map((v, i) => (
+                      <li key={i}>
+                        <a href="#">{v}</a>
+                      </li>
+                    ))}
+                  </ol>
+                </li>
+              </div>
+            )}
           </ul>
         </nav>
       </header>

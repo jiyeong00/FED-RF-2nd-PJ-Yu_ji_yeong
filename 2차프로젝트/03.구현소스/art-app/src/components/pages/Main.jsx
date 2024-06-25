@@ -6,6 +6,7 @@ import "../../css/main.scss";
 // 메인 JS 불러오기
 import {mainFn,autoI} from "../func/main_fn";
 import MainSwiper from "../modules/MainSwiper";
+import MainMajor from "../modules/MainMajor";
 
 function Main(props) {
   // 새로고침 시 맨 위로
@@ -73,6 +74,8 @@ function Main(props) {
 
       {/* <!-- 2-3. 메인 슬라이드 화면 --> */}
       <MainSwiper />
+      {/* <!-- 2-3. 메인 메이저 브랜드 화면 --> */}
+      <MainMajor/>
     </>
   );
 }

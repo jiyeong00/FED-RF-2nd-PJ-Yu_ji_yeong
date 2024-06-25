@@ -14,7 +14,7 @@ function SubPoint({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_point[catName])[subCatName];
   const selData = sub_point[catName][selSubCatName];
   const selData2 = sub_prd_kit;
-  console.log(selData2);
+  // console.log(selData2);
 
   useEffect(() => {
     const sub2 = mFn.qs(".sub2");

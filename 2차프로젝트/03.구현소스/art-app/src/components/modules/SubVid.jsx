@@ -15,7 +15,7 @@ function SubVid({ catName, subCatName }) {
   return (
     // <SubPoint/>
     // <!-- 2-1. 서브 첫화면 -->
-    <section className="sub1 sub-area part">
+    <section className="sub1 part">
       <div
         className="sub1-wrap"
         style={{

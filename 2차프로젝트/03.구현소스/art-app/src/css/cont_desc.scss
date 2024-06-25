@@ -47,12 +47,15 @@
 // 제품 리스트
 // ul - cont2-list
 .cont2-list{
-margin-top: 5rem;
+margin: 5rem 0;
 }
 // ul 하위 li - cont2-li
 .cont2-li{
+    width: 100%;
+}
+.cont2-li a{
     display: flex;
-    gap:1rem;
+    gap: 1rem;
     justify-content: space-between;
     align-items: center;
 
@@ -88,12 +91,13 @@ margin-top: 5rem;
 .desc-list{
     flex: 1;
 
-    margin-left: 3rem;
-
+    color: #111;
     font-size: 1.625em;
     letter-spacing: -0.75px;
-    color: #111;
     font-weight: 300;
+    &>*{
+        margin-left: 2rem;
+    }
 }
 .desc-list li::before{
     content: " · ";
@@ -106,4 +110,39 @@ margin-top: 5rem;
     margin-bottom: 0.7rem;
 }
 
-/////////////////////////모바일은 cont_vid.scss에다가!!!!///////////////////
+/// /****************************** 모바일 ****************************/
+@media screen and (max-width: 1200px) {
+    // cont-desc : 컨텐츠 페이지 두번째
+    .cont2 {
+      width: 90%;
+      height: auto;
+    }
+    // 리스트
+    .cont2-list{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+  
+      gap: 50px;
+      .cont2-li{
+        .cont2-list-img{
+          width: 100%;
+        }
+         a{
+          flex-direction: column;
+          flex-wrap: wrap;
+          height: 100%;
+          margin: 0;
+        }
+        .desc-list{
+          width: 100%;
+          &>*{
+            margin-top: 2rem;
+          }
+        }
+        .cont2-imgbox{
+          margin: 20px 0
+        }
+      }///////////cont2-li
+    }/////////////////cont2-list
+  
+  }///////////////////////////1200px//////////////

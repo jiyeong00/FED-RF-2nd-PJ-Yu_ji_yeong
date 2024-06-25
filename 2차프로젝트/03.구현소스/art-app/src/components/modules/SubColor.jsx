@@ -10,7 +10,7 @@ import sub_color from "../data/sub/sub_color";
 import { aCon } from "../modules/aCon";
 
 function SubColor({ catName, subCatName }) {
-  const myCon = useContext(aCon);
+  const myCon = useContext(aCon );
   // 할당배열랜덤수
   const cNum = myCon.rdmNum.current[catName][subCatName];
 

@@ -1,12 +1,11 @@
 // 컨텐츠페이지 - 첫번째, 동영상 관련 컴포넌트
 
-import React from "react";
-
 // 데이터 불러오기
 import cont_data from "../data/cont_data";
 
 // CSS
 import "../../css/cont_vid.scss";
+import { useEffect, useLayoutEffect } from "react";
 
 // function ContVid({ catName }) {
 function ContVid({ catName }) {
@@ -15,6 +14,37 @@ function ContVid({ catName }) {
   // 슬라이드 기능 생성자함수 인스턴스 생성하기
   // 선택 데이터
   const selData = cont_data[catName];
+  
+
+  // 메뉴 on넣기!!!!!!!!!
+  useEffect(() => {
+    const cMenu = document.querySelectorAll("#gnb ul li a");
+    const logo = document.querySelector(".header-area .logo");
+    cMenu.forEach((ele) => {
+      let eleTxt = ele.text.replace(/(\s*)/g, "");
+      // console.log("eleTxt", eleTxt);
+      
+      // 클릭하면 다른 ele on 지우기
+      ele.onclick = () => {
+        cMenu.forEach((item) => {
+          item.classList.remove("on");
+        });
+      }; ////////////cMenu.ele.onclick
+      // 로고 누르면 on지우기
+      logo.onclick = () => {
+        cMenu.forEach((item) => {
+          item.classList.remove("on");
+        });
+      };/////////////////////logo.onclick
+      
+      if (catName == eleTxt) {
+        console.log("dsdsadasdasdafjakl");
+        ele.classList.add("on");
+      }////if
+
+    }); ////////////////////cMenu foreach
+
+  }, []); ///////////////////메뉴 on넣기 useEffect
 
   // 코드 리턴구역 /////////
   return (

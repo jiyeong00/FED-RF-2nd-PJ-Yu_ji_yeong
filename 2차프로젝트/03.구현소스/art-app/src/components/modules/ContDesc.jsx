@@ -34,7 +34,6 @@ function ContDesc({ catName, subCatName }) {
       const bcrVal = cont2.getBoundingClientRect();
       // console.log(CRITERIA,bcrVal);
 
-
       if (bcrVal.top < CRITERIA) {
         cont2.style.top = "0rem";
         cont2.style.opacity = "1";
@@ -64,8 +63,8 @@ function ContDesc({ catName, subCatName }) {
       {/* <!-- 제품목록 --> */}
       <ul className="cont2-list">
         {selData2.opt_tit.map((v, i) => (
-          <Link to="/subPage" state={{ mcat: catName, scat: i }} key={i}>
-            <li className="cont2-li">
+          <li className="cont2-li"  key={i}>
+            <Link to="/subPage" state={{ mcat: catName, scat: i }}>
               {/* <!-- 제품사진 --> */}
               <div className="cont2-list-img">
                 <img src={selData2.img[i]} alt={v} />
@@ -101,8 +100,8 @@ function ContDesc({ catName, subCatName }) {
                   />
                 )}
               </div>
-            </li>
-          </Link>
+            </Link>
+          </li>
         ))}
       </ul>
     </section>

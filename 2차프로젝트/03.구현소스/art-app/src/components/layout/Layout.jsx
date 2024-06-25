@@ -25,6 +25,7 @@ function Layout(props) {
         Math.floor(Math.random() * 29 + 30)
       );
     });
+
     // 매뉴 클릭하면 맨 위 화면으로
     const gnb = mFn.qsa("#gnb ol li");
     gnb.forEach((ele) => {
@@ -33,10 +34,7 @@ function Layout(props) {
       };
     });
     // console.log("최초랜덤:",rdmNum.current);
-  }, []);
-  useLayoutEffect(() => {
-    //  console.log(rdmNum.current);
-  });
+  }, []);//////////랜덤컬러 useLayoutEffect
 
   //// 코드 리턴구역 //////////////
   return (

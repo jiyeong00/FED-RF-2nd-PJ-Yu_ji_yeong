@@ -117,22 +117,3 @@
 }
 
 /****************************** 모바일 ****************************/
-@media screen and (max-width: 1200px) {
-  // cont-desc : 컨텐츠 페이지 두번째
-  .cont2 {
-    width: 90%;
-    height: auto;
-  }
-  // 리스트
-  .cont2-list{
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    gap: 50px;
-    .cont2-li{
-      flex-direction: column;
-      height: 100%;
-      margin: 0;
-    }
-  }
-}///////////////////////////1200px//////////////
