@@ -100,8 +100,8 @@ function SubPoint({ catName, subCatName }) {
             <div className="pdiv">
               <div className="sub2-txt">
                 <div className="sub2-txt-wrap">
-                  <h3>{v.subTit}</h3>
-                  <p>{v.subTxt}</p>
+                  <h3 className="core-h3">{v.subTit}</h3>
+                  <p className="core-p">{v.subTxt}</p>
                 </div>
               </div>
               <div className="sub2-img-box">

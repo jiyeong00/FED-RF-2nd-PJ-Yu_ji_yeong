@@ -41,3 +41,8 @@
       grid-template-columns: repeat(5, 1fr);
     }
   }////////////////////////1030px/////////////////////
+  @media screen and (max-width: 800px) {
+    .cUlist {
+        grid-template-columns: repeat(3, 1fr);
+      }
+  } ////////////////////////800px/////////////////////

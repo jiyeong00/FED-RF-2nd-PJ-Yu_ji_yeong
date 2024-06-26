@@ -19,7 +19,7 @@ function TopArea(props) {
 
     const handleScroll = () => {
       // 스크롤 등장 기준설정 : 화면의 2/3
-      const CRITERIA = window.innerHeight;
+      const CRITERIA = (window.innerHeight * 3) / 4;
       let scrollLocation = document.documentElement.scrollTop;
 
       if (CRITERIA < scrollLocation) {
@@ -49,9 +49,6 @@ function TopArea(props) {
     };
   }, []);
 
-  // function tMenu(){()=>{
-
-  // }};
 
   return (
     <header id="header-area">

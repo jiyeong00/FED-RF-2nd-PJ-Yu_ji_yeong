@@ -55,8 +55,23 @@ function SubSets({ catName, subCatName }) {
                   // console.log(SwiperSlide.length);
                   // if(){}
                 }}
-                slidesPerView={4}
+                // slidesPerView={2}
                 spaceBetween={30}
+                breakpoints={{
+                  1019:{
+                    slidesPerView:4,
+                  },
+                  800:{
+                    slidesPerView:3,
+                  },
+                  500:{
+                    slidesPerView:2,
+                  },
+                  200:{
+                    slidesPerView:1,
+                  }
+                }
+                }
                 //   하단불릿
                 speed={1000}
                 loop={true}

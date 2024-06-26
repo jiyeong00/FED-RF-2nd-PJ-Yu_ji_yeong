@@ -32,7 +32,7 @@ function Main(props) {
   return (  
     <>
       {/* <!-- 2-1. 메인 첫화면 --> */}
-      <section className="main1 main-area">
+      <section className="main1 part ">
         <div className="main-wrap">
           <section className="text-area">
             {/* <!-- 왼쪽구역 이미지+설명 --> */}
@@ -56,12 +56,12 @@ function Main(props) {
       </section>
 
       {/* <!-- 2-2. 메인 컨텐츠 화면 --> */}
-      <section className="main2 main-area">
+      <section className="main2 main-area part">
         <div className="main2-wrap">
           {/* <!-- 2-2-1. 컨텐츠화면 제목 --> */}
           <div className="main2-tit">
-            <h2 className="main-title">Products</h2>
-            <span>
+            <h2 className="main-title core-h2">Products</h2>
+            <span className="core-span">
               신한화구는 대한민국 대표 전문가 미술재료 제조 기업으로 미술에 관한
               모든 것을 제공합니다.
             </span>

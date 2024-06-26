@@ -13,18 +13,9 @@
   h3 {
     line-height: 1.66;
     letter-spacing: -0.85px;
-    color: #000;
-    font-weight: 300;
     font-size: 2.2rem;
   }
-  p {
-    font-size: 1.5rem;
-    line-height: 1.75;
-    letter-spacing: -0.75px;
-    color: #666;
-    margin-top: 1.06em;
-    font-weight: 300;
-  }
+
 }
 
 .kit-main-img {
@@ -43,7 +34,7 @@
   display: flex;
   gap: 45px;
 
-  padding: 40px 0;
+  margin: 40px 0;
 }
 .plist .sub2-txt {
   position: relative;
@@ -51,12 +42,12 @@
   flex: 1;
 }
 .plist .sub2-txt-wrap {
-  position: absolute;
+  position: relative;
   top: 50%;
   transform: translateY(-50%);
 }
 .plist .sub2-img-box {
-  width: 640px;
+  width: 100%;
   aspect-ratio: 640/320;
   flex: 1;
 }
@@ -147,3 +138,26 @@
 
 
 /////////////////////////모바일은 sub_vid.scss에다가!!!!///////////////////
+@media screen and (max-width: 900px) {
+      .sub2-txt-wrap {
+        p{
+          font-size: 1.4rem;
+        }
+      }
+
+} ////////////////////////900px/////////////////////
+@media screen and (max-width: 800px) {
+  .plist {
+    .pdiv{
+      align-items: center;
+      flex-direction: column;
+    }
+    .sub2-txt {
+      width: 100%;
+      .sub2-txt-wrap {
+        top: auto;
+        transform: none;
+      }
+    }
+  }
+} ////////////////////////800px/////////////////////

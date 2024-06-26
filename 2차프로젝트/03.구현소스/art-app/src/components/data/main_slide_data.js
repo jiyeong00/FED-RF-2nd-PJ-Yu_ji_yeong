@@ -4,37 +4,31 @@ const slideData=[
    {
       "tit":"TOUCH",
       "txt":"TOUCH는 정교한 설계와 높은 품질의 디자인 마카를 기반으로 각 분야 디자이너, 애니메이터 일러스트레이터들에게 필요한 다양한 제품 라인업을 갖춘 전 세계 대표 브랜드",
-      "img":"img/main_slide/main3_slide1.png",
       "color":"white",
    },
    {
       "tit":"PROFESSIONAL Line",
       "txt":"SSENCE는 전문가 미술재료 제조 No.1 기업 신한화구의 S와 초석이라는 Essence의 조합으로 탄생한 브랜드입니다. 에쎈스 아크릴컬러는 부드럽고 크리미한 소프트 바디 물성으로 누구나 편리한 사용이 가능한 제품입니다. 높은 부착력으로 공예와 디자인 크래프트 분야에서 활용할 수 있습니다. 에쎈스 아크릴컬러에 대한 자세한 정보를 확인하세요.",
-      "img": "img/main_slide/main3_slide2.png",
       "color":"white",
    },
    {
       "tit":"에쎈스 아크릴컬러",
       "txt":"TOUCH는 정교한 설계와 높은 품질의 디자인 마카를 기반으로 각 분야 디자이너, 애니메이터 일러스트레이터들에게 필요한 다양한 제품 라인업을 갖춘 전 세계 대표 브랜드",
-      "img":"img/main_slide/main3_slide3.png",
       "color":"white",
    },
    {
       "tit":"TOUCH 오펙 마카",
       "txt":"100% 순수 안료 잉크 기반의 새로운 TOUCH오펙 마카를 소개합니다. 불투명 특성의 생생함이 살아있는 선명한 발색과 자유로운 잉크 혼색으로 컬러를 창조하고 모든 표면에 여러분의 아이디어와 영감을 채색해보세요",
-      "img":"img/main_slide/main3_slide4.png",
       "color":"white",
    },
    {
       "tit":"이탈리아 핸드메이드 BB 브러시",
       "txt":"이탈리아 장인들에 의해 완성되는 BB브러시의 신제품을 소개합니다. 붓모 끝이 가늘어지는 환붓 타입의 BB탑그래픽 600 브러시 붓모 끝이 정밀하게 정렬되고 라인 마무리 채색에 최적화된 BB 탑그래픽 601 브러시, 고양이 혓바닥 모양의 둥근 평붓 형상으로 유화 아크릴 등 고정도 물감에 최적화된 BB 신테티코 6 브러시 등을 살펴보세요",
-      "img":"img/main_slide/main3_slide5.png",
       "color":"black",
    },
    {
       "tit":"패스 하이브리드 화이트",
       "txt":"신한 PASS 컬러에서 선보였던 기존 화이트 컬러의 기능을 획기적으로 업그레이드한 Color #899 HYBRID WHITE가 출시되었습니다. 높은 백색도와, 뛰어난 은폐력, 무광의 깔끔한 매트함을 구현합니다.",
-      "img":"img/main_slide/main3_slide6.png",
       "color":"black",
    },
 

@@ -4,20 +4,6 @@
 .main3-tit {
   text-align: center;
   margin-bottom: 2rem;
-  h2 {
-    position: relative;
-    top: 20px;
-    opacity: 0;
-    font-weight: 400;
-    font-size: 2.4vw;
-  }
-  span {
-    position: relative;
-    top: 10px;
-    opacity: 0;
-
-    font-size: 1vw;
-  }
 }
 
 .main3-slide-wrap {
@@ -115,15 +101,27 @@
     margin: 4rem 0;
     height: auto;
   }
-  .slide-txt h3 {
-    font-size: 3.5rem;
-  }
-  .main3-tit {
-    h2 {
-      font-size: 5rem;
+  .slide-txt {
+    h3{
+      font-size: min(3.5rem, 2.5vw);
     }
-    span {
-      font-size: 2rem;
+    p{
+      font-size: min(1.5rem, 2vw);
     }
   }
+
 } ////////////////////////1200px/////////////////////
+@media screen and (max-width: 800px) {
+  .slide-txt {
+    left: 6vw;
+    top: auto;
+    bottom: 0%;
+    width: 90%;
+    h3{
+      font-size: min(3.5rem, 4.5vw);
+    }
+    p{
+      font-size: min(1.5rem, 3vw);
+    }
+}
+}////////////////////////800px/////////////////////

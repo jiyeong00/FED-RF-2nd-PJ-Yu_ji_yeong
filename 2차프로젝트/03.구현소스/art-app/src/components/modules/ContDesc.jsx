@@ -55,9 +55,9 @@ function ContDesc({ catName, subCatName }) {
     <section className="cont2 cont-area">
       {/* <!-- 제목 및 설명 --> */}
       <div className="cont2-txt">
-        <h2 className="main-title">{selData.tit}</h2>
-        <h3>{selData.stit}</h3>
-        <p>{selData.stxt}</p>
+        <h2 className="main-title core-h2">{selData.tit}</h2>
+        <h3 className="core-h3">{selData.stit}</h3>
+        <p className="core-p">{selData.stxt}</p>
       </div>
 
       {/* <!-- 제품목록 --> */}
@@ -74,7 +74,7 @@ function ContDesc({ catName, subCatName }) {
                 <h3>{v}</h3>
                 <ol>
                   {selData2.opt_txt[i].map((v2, i2) => (
-                    <li key={i2}>{v2}</li>
+                    <li className="core-p" key={i2}>{v2}</li>
                   ))}
                 </ol>
               </div>
