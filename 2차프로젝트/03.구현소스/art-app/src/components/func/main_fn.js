@@ -75,7 +75,7 @@ function mainFn() {
 
   // 블릿의 li까지 수집! indic 변수
   indic = mFn.qsa(".indic li");
-  console.log("Ddd");
+  console.log("ddddd");
 
   // 2. 버튼을 모두 이벤트 설정하기
   for (let x of indic) {
@@ -271,7 +271,7 @@ function mainFn() {
         <div class="red-box"></div>
         <div class="white-box"></div>
       </div>
-      <a href="${v.tit}">
+      <a href="${process.env.PUBLIC_URL+v.tit}">
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <span>${v.tit}</span>
         <div class="black-box"></div>  
