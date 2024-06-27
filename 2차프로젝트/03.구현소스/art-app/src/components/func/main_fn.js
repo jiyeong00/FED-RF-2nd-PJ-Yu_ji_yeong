@@ -43,7 +43,7 @@ function mainFn() {
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <h2>${v.tit}</h2>
         <h3>${v.stxt}</h3>
-        <button class="more-btn" onClick="location.href='${v.tit}'">
+        <button class="more-btn" onClick="location.href='${"/"+v.tit}'">
         <span>자세히 보기</span>
       </button>
       </li>
@@ -269,7 +269,7 @@ function mainFn() {
         <div class="red-box"></div>
         <div class="white-box"></div>
       </div>
-      <a href="${process.env.PUBLIC_URL+"/"+v.tit}">
+      <a href="${"/"+v.tit}">
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <span>${v.tit}</span>
         <div class="black-box"></div>  
