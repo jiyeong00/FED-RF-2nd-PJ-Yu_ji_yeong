@@ -90,7 +90,7 @@ function TopArea(props) {
               <div className="topMenu-M">
                 {/* 모바일 햄버거버튼 */}
                 <div className="nav-img">
-                  <img src="/img/menu_b.png" alt="메뉴버튼 이미지" />
+                  <img src={process.env.PUBLIC_URL+"/img/menu_b.png"} alt="메뉴버튼 이미지" />
                 </div>
                 <li className="memberMenu">
                   <ol>

@@ -36,7 +36,7 @@ function SubVid({ catName, subCatName }) {
           className="sub1-wrap"
           style={{
             background:
-              "url(/img/sub/" +
+            "url("+process.env.PUBLIC_URL+"/img/sub/" +
               catName +
               "_" +
               (subCatName + 1) +
@@ -49,7 +49,7 @@ function SubVid({ catName, subCatName }) {
           className="sub1-wrap"
           style={{
             background:
-              "url(/img/sub/M_" +
+              "url("+process.env.PUBLIC_URL+"/img/sub/M_" +
               catName +
               "_" +
               (subCatName + 1) +

@@ -227,7 +227,7 @@ function mainFn() {
   // //-----------------------자동넘김-----------------//
 
   // 자동넘김호출함수 최초호출하기
-  // autoSlide();
+  autoSlide();
 
   // [자동넘김호출]
   function autoSlide() {
@@ -248,7 +248,7 @@ function mainFn() {
 
     // 5초후 아무작동도 안하면 다시 인터발호출
     autoT = setTimeout(() => {
-      // autoSlide();
+      autoSlide();
     }, 5000);
   } ///////clearAuto함수///////////////
 
@@ -270,7 +270,7 @@ function mainFn() {
         <div class="white-box"></div>
       </div>
       <a href="${v.tit}">
-        <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
+        <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <span>${v.tit}</span>
         <div class="black-box"></div>  
       </a>
