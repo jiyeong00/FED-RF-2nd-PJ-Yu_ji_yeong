@@ -73,7 +73,7 @@ function MainMajor(props) {
               </div>
               <li className="main4-txt" key={i}>
                 <div className="main4-img">
-                  <img src={"/img/MainMajor_" + (i + 1) + ".png"} alt={v.tit} />
+                  <img src={process.env.PUBLIC_URL+"/img/MainMajor_" + (i + 1) + ".png"} alt={v.tit} />
                 </div>
                 <h3 className="core-h3">{v.tit}</h3>
                 <p className="core-p">{v.txt}</p>

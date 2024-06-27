@@ -136,7 +136,7 @@ function MainSwiper() {
                   )}
                   {width <= 800 && (
                     <img
-                      src={"/img/main_slide/main3_slide" + (i + 1) + "_M.png"}
+                      src={process.env.PUBLIC_URL+"/img/main_slide/main3_slide" + (i + 1) + "_M.png"}
                       alt={v.tit}
                     />
                   )}
