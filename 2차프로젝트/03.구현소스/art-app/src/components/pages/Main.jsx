@@ -39,14 +39,24 @@ function Main(props) {
             {/* <!-- 왼쪽구역 이미지+설명 --> */}
             <div className="text-area-wrap">
               {Object.values(bgData).map((v, i) => (
-                <li className={"s"+v.idx} key={i}>
+                <li className={"s" + v.idx} key={i}>
                   <img
-                    src={process.env.PUBLIC_URL+"/img/main_small_card"+v.idx+".png"}
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/img/main_small_card" +
+                      v.idx +
+                      ".png"
+                    }
                     alt={v.tit}
                   />
                   <h2>{v.tit}</h2>
                   <h3>{v.stxt}</h3>
-                  <button className="more-btn" onClick={"location.href="+v.link+".jsx"}>
+                  <button
+                    className="more-btn"
+                    onClick={() => {
+                      window.location.href = `${v.link}.jsx`;
+                    }}
+                  >
                     <span>자세히 보기</span>
                   </button>
                 </li>
