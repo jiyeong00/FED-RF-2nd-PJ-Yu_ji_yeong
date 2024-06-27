@@ -37,7 +37,21 @@ function Main(props) {
         <div className="main-wrap">
           <section className="text-area">
             {/* <!-- 왼쪽구역 이미지+설명 --> */}
-            <div className="text-area-wrap"></div>
+            <div className="text-area-wrap">
+              {Object.values(bgData).map((v, i) => (
+                <li className={"s"+v.idx} key={i}>
+                  <img
+                    src={process.env.PUBLIC_URL+"/img/main_small_card"+v.idx+".png"}
+                    alt={v.tit}
+                  />
+                  <h2>{v.tit}</h2>
+                  <h3>{v.stxt}</h3>
+                  <button className="more-btn" onClick={"location.href="+v.link}>
+                    <span>자세히 보기</span>
+                  </button>
+                </li>
+              ))}
+            </div>
           </section>
           <section className="main-card-area">
             {/* <!-- 이미지 순서(불릿) --> */}
@@ -74,18 +88,23 @@ function Main(props) {
           {/* <!-- 2-2-1. 컨텐츠화면 내용 --> */}
           <div className="main2-cont">
             {Object.values(bgData).map((v, i) => (
-              <div class="main2-cont-area" key={i}>
-                <div class="box-wrap">
-                  <div class="red-box"></div>
-                  <div class="white-box"></div>
+              <div className="main2-cont-area" key={i}>
+                <div className="box-wrap">
+                  <div className="red-box"></div>
+                  <div className="white-box"></div>
                 </div>
                 <Link to={v.link}>
                   <img
-                    src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png"
-                    alt="${v.tit}"
+                    src={
+                      process.env.PUBLIC_URL +
+                      "/img/main_small_card" +
+                      v.idx +
+                      ".png"
+                    }
+                    alt={v.tit}
                   />
-                  <span>${v.tit}</span>
-                  <div class="black-box"></div>
+                  <span>{v.tit}</span>
+                  <div className="black-box"></div>
                 </Link>
               </div>
             ))}
