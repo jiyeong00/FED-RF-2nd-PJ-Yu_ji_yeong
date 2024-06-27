@@ -46,7 +46,7 @@ function Main(props) {
                   />
                   <h2>{v.tit}</h2>
                   <h3>{v.stxt}</h3>
-                  <button className="more-btn" onClick={"location.href="+v.link}>
+                  <button className="more-btn" onClick={"location.href="+process.env.PUBLIC_URL+v.link}>
                     <span>자세히 보기</span>
                   </button>
                 </li>
