@@ -375,6 +375,8 @@
     transform: translateX(-50%);
     bottom: auto;
     font-size: min(3rem, 6.7vw);
+    z-index: 2;
+
   }
 
   /* 왼쪽 */
@@ -429,8 +431,24 @@
   }
 } ////////////////////////500px////////////////////
 @media screen and (max-width: 400px) {
+  .main-area{
+    width: 100%;
+  }
+  .text-area-wrap h3 {
+    font-size: min(4rem, 5vw);
+    letter-spacing: -2px;
+    word-wrap: break-word;
+  }
   .main2-cont{
     width: 75%;
-
   }
+  .main-area .core-h2 {
+    font-size: 2.7rem;
+}
+  .main-area .core-span {
+    display: block;
+    font-size: 1.2rem;
+    width: 90vw;
+    margin: 0 auto;
+}
 } ////////////////////////500px////////////////////
