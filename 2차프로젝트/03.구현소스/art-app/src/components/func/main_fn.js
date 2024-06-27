@@ -45,7 +45,7 @@ function mainFn() {
         <h2>${v.tit}</h2>
         <h3>${v.stxt}</h3>
         <button class="more-btn" onClick={()=>{
-          location.href='${v.tit}';
+          location.href = /${v.tit};
         }}>
         <span>자세히 보기</span>
       </button>
