@@ -40,7 +40,7 @@ function mainFn() {
     .map(
       (v) =>
         `<li class="s${v.idx}">
-        <img src="./img/main_small_card${v.idx}.png" alt="${v.tit}" />
+        <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <h2>${v.tit}</h2>
         <h3>${v.stxt}</h3>
         <button class="more-btn" onClick="location.href='${v.tit}'">
@@ -57,7 +57,7 @@ function mainFn() {
       (v) =>
         `
         <li class="s${v.idx}">
-          <img src="./img/main_card${v.idx}.jpg" alt="${v.tit}" />
+          <img src="${process.env.PUBLIC_URL}/img/main_card${v.idx}.jpg" alt="${v.tit}" />
         </li>    
       `
     )
@@ -269,7 +269,7 @@ function mainFn() {
         <div class="red-box"></div>
         <div class="white-box"></div>
       </div>
-      <a href="${v.tit}">
+      <a href="${process.env.PUBLIC_URL+v.tit}">
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <span>${v.tit}</span>
         <div class="black-box"></div>  
