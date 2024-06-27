@@ -43,7 +43,7 @@ function mainFn() {
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <h2>${v.tit}</h2>
         <h3>${v.stxt}</h3>
-        <button class="more-btn" onClick="location.href='${"FED-RF-2nd-PJ-Yu_ji_yeong/2%EC%B0%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4/art-app/"+v.tit}'">
+        <button class="more-btn" onClick="location.href='${v.tit}'">
         <span>자세히 보기</span>
       </button>
       </li>
