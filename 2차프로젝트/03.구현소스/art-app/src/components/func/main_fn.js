@@ -271,7 +271,7 @@ function mainFn() {
         <div class="red-box"></div>
         <div class="white-box"></div>
       </div>
-      <a href="${process.env.PUBLIC_URL+v.tit}">
+      <a href="${process.env.PUBLIC_URL+"/"+v.tit}">
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <span>${v.tit}</span>
         <div class="black-box"></div>  
