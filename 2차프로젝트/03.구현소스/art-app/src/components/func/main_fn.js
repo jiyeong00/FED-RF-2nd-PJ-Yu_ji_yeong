@@ -7,9 +7,8 @@ import mFn from "./my_function.js";
 // 배경데이터
 import bgData from "../data/bg_data.js";
 
-
-  // 인터발용 변수(지울목적)
-  let autoI;
+// 인터발용 변수(지울목적)
+let autoI;
 
 function mainFn() {
   console.log("호출!!!");
@@ -44,7 +43,7 @@ function mainFn() {
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <h2>${v.tit}</h2>
         <h3>${v.stxt}</h3>
-        <button class="more-btn" onClick="location.href='${v.tit}'">
+        <button class="more-btn" onClick="location.href='https://jiyeong00.github.io/FED-RF-2nd-PJ-Yu_ji_yeong/2%EC%B0%A8%ED%94%84%EB%A1%9C%EC%A0%9D%ED%8A%B8/03.%EA%B5%AC%ED%98%84%EC%86%8C%EC%8A%A4/art-app/${v.tit}'">
         <span>자세히 보기</span>
       </button>
       </li>
@@ -99,7 +98,7 @@ function mainFn() {
   // 자동슬라이드
   function showSlide(pNum) {
     // console.log("현재작동번호:", nowNum);
-    // console.log("클릭된번호:", pNum);  
+    // console.log("클릭된번호:", pNum);
 
     // 광클금지 설정하기 ///////////
     if (prot) return; // 돌아가!(함수나감!)
@@ -328,5 +327,4 @@ function mainFn() {
   } ///////////// addOn 함수 //////////////
 } /////////// mainFn //////////////////////////
 
-
-export {autoI,mainFn}
+export { autoI, mainFn };
