@@ -36,6 +36,7 @@ function mainFn() {
   //////////// 초기셋팅하기 ////////
 
   // 왼쪽 정보넣기
+  // <button class="more-btn" onClick="location.href='${v.tit}'">
   smallCardSlide.innerHTML = Object.values(bgData)
     .map(
       (v) =>
@@ -43,7 +44,6 @@ function mainFn() {
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <h2>${v.tit}</h2>
         <h3>${v.stxt}</h3>
-        // <button class="more-btn" onClick="location.href='${v.tit}'">
         <button class="more-btn" onClick="${v.tit}">
         <span>자세히 보기</span>
       </button>
