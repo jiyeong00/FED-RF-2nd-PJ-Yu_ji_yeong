@@ -168,7 +168,7 @@ function mainFn() {
 
     // 배경이미지 변경
     // bg.style.background = "none";
-    bg.style.background = `no-repeat url(img/main_bg_${bgData[myValue].idx}.png) center/cover`;
+    bg.style.background = `no-repeat url(${process.env.PUBLIC_URL}/img/main_bg_${bgData[myValue].idx}.png) center/cover`;
     bg.style.transition = "1.5s ease-in-out";
 
     // // 오른쪽 백카드 배경색도 변경
@@ -269,7 +269,7 @@ function mainFn() {
         <div class="red-box"></div>
         <div class="white-box"></div>
       </div>
-      <a href="${"/"+v.tit}">
+      <a href="${process.env.PUBLIC_URL+"/"+v.tit}">
         <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
         <span>${v.tit}</span>
         <div class="black-box"></div>  
