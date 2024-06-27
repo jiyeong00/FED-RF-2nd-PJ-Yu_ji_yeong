@@ -83,7 +83,7 @@ function ContDesc({ catName, subCatName }) {
                 {selData2.brand[i] != "SH" ? (
                   <img
                     className="brand-box"
-                    src={
+                    src={process.env.PUBLIC_URL+
                       "/img/brand/" +
                       catName +
                       "_" +
@@ -95,7 +95,7 @@ function ContDesc({ catName, subCatName }) {
                 ) : (
                   <img
                     className="brand-box"
-                    src={"/img/brand/" + selData2.brand[i] + "_mbrand.png"}
+                    src={process.env.PUBLIC_URL+"/img/brand/" + selData2.brand[i] + "_mbrand.png"}
                     alt={selData2.brand[i]}
                   />
                 )}

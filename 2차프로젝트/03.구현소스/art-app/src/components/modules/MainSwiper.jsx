@@ -123,14 +123,14 @@ function MainSwiper() {
                     className="slide-txt"
                   >
                     <div className="title-logo">
-                      <img src="/img/title_logo.png" alt="로고이미지" />
+                      <img src={process.env.PUBLIC_URL+"/img/title_logo.png"} alt="로고이미지" />
                       <h3 className="">{v.tit}</h3>
                     </div>
                     <p>{v.txt}</p>
                   </div>
                   {width > 800 && (
                     <img
-                      src={"/img/main_slide/main3_slide" + (i + 1) + ".png"}
+                      src={process.env.PUBLIC_URL+"/img/main_slide/main3_slide" + (i + 1) + ".png"}
                       alt={v.tit}
                     />
                   )}

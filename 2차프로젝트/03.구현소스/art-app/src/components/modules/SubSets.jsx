@@ -81,7 +81,7 @@ function SubSets({ catName, subCatName }) {
                   <SwiperSlide key={i}>
                     <div className="sub3-slide">
                       <img
-                        src={
+                        src={process.env.PUBLIC_URL+
                           "/img/sub/sets/" +
                           catName +
                           "_" +

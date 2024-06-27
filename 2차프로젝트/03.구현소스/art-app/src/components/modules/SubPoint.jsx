@@ -50,10 +50,10 @@ function SubPoint({ catName, subCatName }) {
         <div className="sub-kit-main">
           <div className="kit-main-img">
             <img
-              src="/img/sub/kit-main-title.png"
+              src={process.env.PUBLIC_URL+"/img/sub/kit-main-title.png"}
               alt="코리안컬러 키트 타이틀이미지"
             />
-            <img src="/img/sub/kit-main-img.jpg" alt="코리안컬러 키트이미지" />
+            <img src={process.env.PUBLIC_URL+"/img/sub/kit-main-img.jpg"} alt="코리안컬러 키트이미지" />
           </div>
           <div className="kit-main-txt">
             <h3>
@@ -80,14 +80,14 @@ function SubPoint({ catName, subCatName }) {
           <div className="sub2-title">
             {selSubCatName != "SH" ? (
               <img
-                src={
+                src={process.env.PUBLIC_URL+
                   "/img/brand/" + catName + "_" + selSubCatName + "_brand.png"
                 }
                 alt={selSubCatName}
               />
             ) : (
               <img
-                src={"/img/brand/" + selSubCatName + "_brand.png"}
+                src={process.env.PUBLIC_URL+"/img/brand/" + selSubCatName + "_brand.png"}
                 alt={selSubCatName}
               />
             )}
@@ -106,7 +106,7 @@ function SubPoint({ catName, subCatName }) {
               </div>
               <div className="sub2-img-box">
                 <img
-                  src={
+                  src={process.env.PUBLIC_URL+
                     "/img/sub/" +
                     catName +
                     "_" +
@@ -144,7 +144,7 @@ function SubPoint({ catName, subCatName }) {
               <div className="prd-kit-box" key={i}>
                 <div className="prd-kit-img">
                   <img
-                    src={"/img/prd-kit/prd_kit_" + (i+1) + ".jpg"}
+                    src={process.env.PUBLIC_URL+"/img/prd-kit/prd_kit_" + (i+1) + ".jpg"}
                     alt="민화 시리즈 1 키트 구성품"
                   />
                 </div>
