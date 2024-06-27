@@ -1,12 +1,16 @@
 import React, { useLayoutEffect } from "react";
 
+import { Link } from "react-router-dom";
+
 // CSS불러오기
 import "../../css/main.scss";
 
 // 메인 JS 불러오기
-import {mainFn,autoI} from "../func/main_fn";
+import { mainFn, autoI } from "../func/main_fn";
 import MainSwiper from "../modules/MainSwiper";
 import MainMajor from "../modules/MainMajor";
+
+import bgData from "../data/bg_data";
 
 function Main(props) {
   // 새로고침 시 맨 위로
@@ -14,22 +18,19 @@ function Main(props) {
     window.scrollTo(0, 0);
   });
 
-
-
-  useLayoutEffect(()=>{
+  useLayoutEffect(() => {
     console.log("레이아웃이펙트");
     mainFn();
 
-    return(()=>{
+    return () => {
       console.log("메인소멸한다~!");
       // 인터발지우기
       clearInterval(autoI);
-    });
-
-  },[]);
+    };
+  }, []);
 
   // 코드 리턴구역 //////////////
-  return (  
+  return (
     <>
       {/* <!-- 2-1. 메인 첫화면 --> */}
       <section className="main1 part ">
@@ -47,7 +48,10 @@ function Main(props) {
                 {/* <!-- <img src="./img/main_card1.jpg" alt="오일컬러 사진" /> --> */}
               </div>
               <div className="back-card">
-                <img src={process.env.PUBLIC_URL+"/img/main_card1.jpg"} alt="오일컬러 사진" />
+                <img
+                  src={process.env.PUBLIC_URL + "/img/main_card1.jpg"}
+                  alt="오일컬러 사진"
+                />
                 <span>Oil Colors</span>
               </div>
             </div>
@@ -68,14 +72,31 @@ function Main(props) {
           </div>
 
           {/* <!-- 2-2-1. 컨텐츠화면 내용 --> */}
-          <div className="main2-cont"></div>
+          <div className="main2-cont">
+            {Object.values(bgData).map((v, i) => (
+              <div class="main2-cont-area" key={i}>
+                <div class="box-wrap">
+                  <div class="red-box"></div>
+                  <div class="white-box"></div>
+                </div>
+                <Link to={v.link}>
+                  <img
+                    src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png"
+                    alt="${v.tit}"
+                  />
+                  <span>${v.tit}</span>
+                  <div class="black-box"></div>
+                </Link>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
 
       {/* <!-- 2-3. 메인 슬라이드 화면 --> */}
       <MainSwiper />
       {/* <!-- 2-3. 메인 메이저 브랜드 화면 --> */}
-      <MainMajor/>
+      <MainMajor />
     </>
   );
 }

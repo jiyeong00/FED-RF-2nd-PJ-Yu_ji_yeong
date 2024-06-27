@@ -262,26 +262,26 @@ function mainFn() {
   const CRITERIA = (window.innerHeight / 3) * 2;
 
   //정보넣기
-  main2Cont.innerHTML = Object.values(bgData)
-    .map(
-      (v) =>
-        `
-    <div class="main2-cont-area">
-      <div class="box-wrap">
-        <div class="red-box"></div>
-        <div class="white-box"></div>
-      </div>
-      <a href="${process.env.PUBLIC_URL+"/"+v.tit}">
-        <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
-        <span>${v.tit}</span>
-        <div class="black-box"></div>  
-      </a>
-    </div>
+  // main2Cont.innerHTML = Object.values(bgData)
+  //   .map(
+  //     (v) =>
+  //       `
+  //   <div class="main2-cont-area">
+  //     <div class="box-wrap">
+  //       <div class="red-box"></div>
+  //       <div class="white-box"></div>
+  //     </div>
+  //     <Link to={v.link}>
+  //       <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
+  //       <span>${v.tit}</span>
+  //       <div class="black-box"></div>  
+  //     </Link>
+  //   </div>
       
-        `
-    )
-    .join("");
-
+  //       `
+  //   )
+  //   .join("");
+    // <a href="${process.env.PUBLIC_URL+"/"+v.tit}">
   // 스크롤 등장액션 이벤트 설정
   mFn.addEvt(window, "scroll", showIt);
   const main2On = mFn.qsa(".box-wrap>*");
