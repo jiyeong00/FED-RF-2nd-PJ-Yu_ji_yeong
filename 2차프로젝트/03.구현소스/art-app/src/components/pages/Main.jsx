@@ -54,7 +54,7 @@ function Main(props) {
                   <button
                     className="more-btn"
                     onClick={() => {
-                      window.location.href = `${v.link}.jsx`;
+                      window.location.href = `${process.env.PUBLIC_URL+v.link}.jsx`;
                     }}
                   >
                     <span>자세히 보기</span>
