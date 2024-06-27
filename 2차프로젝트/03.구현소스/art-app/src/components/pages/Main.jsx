@@ -47,7 +47,7 @@ function Main(props) {
                 {/* <!-- <img src="./img/main_card1.jpg" alt="오일컬러 사진" /> --> */}
               </div>
               <div className="back-card">
-                <img src="./img/main_card1.jpg" alt="오일컬러 사진" />
+                <img src={process.env.PUBLIC_URL+"/img/main_card1.jpg"} alt="오일컬러 사진" />
                 <span>Oil Colors</span>
               </div>
             </div>
