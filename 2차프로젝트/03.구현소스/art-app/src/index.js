@@ -16,7 +16,7 @@ import SubPage from "./components/pages/SubPage";
 export default function MainComponent() {
   return (
     // 라우터 루트로 라우터 구성시작
-    <BrowserRouter>
+    <BrowserRouter basename={process.env.PUBLIC_URL}>
       <ScrollTop />
       <Routes>
         {/* 중요!!! 레이아웃 컴포넌트를 루트로 설정!

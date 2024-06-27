@@ -130,13 +130,13 @@ function MainSwiper() {
                   </div>
                   {width > 800 && (
                     <img
-                      src={"img/main_slide/main3_slide" + (i + 1) + ".png"}
+                      src={"/img/main_slide/main3_slide" + (i + 1) + ".png"}
                       alt={v.tit}
                     />
                   )}
                   {width <= 800 && (
                     <img
-                      src={"img/main_slide/main3_slide" + (i + 1) + "_M.png"}
+                      src={"/img/main_slide/main3_slide" + (i + 1) + "_M.png"}
                       alt={v.tit}
                     />
                   )}

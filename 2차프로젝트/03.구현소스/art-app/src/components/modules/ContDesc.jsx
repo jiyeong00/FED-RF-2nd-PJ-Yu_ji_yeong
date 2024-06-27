@@ -67,7 +67,7 @@ function ContDesc({ catName, subCatName }) {
             <Link to="/subPage" state={{ mcat: catName, scat: i }}>
               {/* <!-- 제품사진 --> */}
               <div className="cont2-list-img">
-                <img src={selData2.img[i]} alt={v} />
+                <img src={process.env.PUBLIC_URL+selData2.img[i]} alt={v} />
               </div>
               {/* <!-- 제품요약 리스트--> */}
               <div className="desc-list">
