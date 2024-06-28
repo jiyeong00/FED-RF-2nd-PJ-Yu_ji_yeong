@@ -39,7 +39,11 @@ function ContVid({ catName }) {
       
       if (catName == eleTxt) {
         console.log("dsdsadasdasdafjakl");
-        ele.classList.add("on");
+        if(ele.classList.contains("on")){
+          return;
+        }else{
+          ele.classList.add("on");
+        }
       }////if
 
     }); ////////////////////cMenu foreach
