@@ -1,6 +1,6 @@
 import React, { useLayoutEffect } from "react";
 
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // CSS불러오기
 import "../../css/main.scss";
@@ -29,6 +29,8 @@ function Main(props) {
     };
   }, []);
 
+  let nav=useNavigate();
+
   // 코드 리턴구역 //////////////
   return (
     <>
@@ -54,7 +56,10 @@ function Main(props) {
                   <button
                     className="more-btn"
                     onClick={() => {
-                      window.location.href = `${process.env.PUBLIC_URL+v.link}`;
+                      
+                      nav(v.link);
+                      console.log("나오나??");
+                      // window.location.href = `${process.env.PUBLIC_URL+v.link}`;
                     }}
                   >
                     <span>자세히 보기</span>
