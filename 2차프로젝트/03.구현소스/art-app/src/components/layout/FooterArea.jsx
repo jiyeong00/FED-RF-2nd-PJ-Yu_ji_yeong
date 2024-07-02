@@ -1,6 +1,6 @@
-import React from "react";
+import React, { memo } from "react";
 
-function FooterArea(props) {
+export const FooterArea=memo((props)=>{
   return (
     <footer id="footer-area">
       <footer className="footer-area">
@@ -73,6 +73,5 @@ function FooterArea(props) {
       </footer>
     </footer>
   );
-}
+})
 
-export default FooterArea;

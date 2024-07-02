@@ -1,7 +1,7 @@
 import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
-import TopArea from "./TopArea";
+import {TopArea} from "./TopArea";
 import MainArea from "./MainArea";
-import FooterArea from "./FooterArea";
+import {FooterArea} from "./FooterArea";
 import { aCon } from "../modules/aCon";
 
 import mFn from "../func/my_function";

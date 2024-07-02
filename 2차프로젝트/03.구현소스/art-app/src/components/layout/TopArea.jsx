@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, { memo, useContext, useEffect, useRef, useState } from "react";
 
 import gnbData from "../data/main_gnb_data";
 import { Link } from "react-router-dom";
@@ -8,7 +8,7 @@ import mFn from "../func/my_function";
 import { aCon } from "../modules/aCon";
 
 
-function TopArea(props) {
+export const TopArea=memo((props)=>{
   const myCon = useContext(aCon);
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -146,6 +146,5 @@ function TopArea(props) {
       </header>
     </header>
   );
-}
+})
 
-export default TopArea;
