@@ -13,6 +13,9 @@ import PosterColors from "./components/pages/PosterColors";
 import Gouache from "./components/pages/Gouache";
 import SubPage from "./components/pages/SubPage";
 
+import Member from "./components/pages/Member";
+import Login from "./components/pages/Login";
+
 export default function MainComponent() {
   return (
     // 라우터 루트로 라우터 구성시작
@@ -33,6 +36,8 @@ export default function MainComponent() {
           <Route path="Gouache" element={<Gouache />} />
           <Route path="Poster Colors" element={<PosterColors />} />
           <Route path="subPage" element={<SubPage />} />
+          <Route path="member" element={<Member />} />
+          <Route path="login" element={<Login />} />
           {/* <Route path="comics" element={<Comics />} /> */}
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}

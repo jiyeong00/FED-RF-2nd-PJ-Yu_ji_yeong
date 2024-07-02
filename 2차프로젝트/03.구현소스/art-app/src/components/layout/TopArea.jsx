@@ -7,6 +7,7 @@ import Logo from "../modules/Logo";
 import mFn from "../func/my_function";
 import { aCon } from "../modules/aCon";
 
+
 function TopArea(props) {
   const myCon = useContext(aCon);
 

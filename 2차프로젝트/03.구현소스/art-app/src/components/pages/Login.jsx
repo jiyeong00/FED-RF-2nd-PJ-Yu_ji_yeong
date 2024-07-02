@@ -5,8 +5,8 @@ import React, { useContext, useEffect, useState } from "react";
 import "../../css/member.scss";
 
 // 로컬 스토리지 셋팅 함수 호출!
-import { initData } from "../func/mem_fn";
-import { aCon } from "./aCon";
+import {initData} from "../func/mem_fn";
+import { aCon } from "../modules/aCon";
 
 function Login(props) {
   // 컨텍스트 사용

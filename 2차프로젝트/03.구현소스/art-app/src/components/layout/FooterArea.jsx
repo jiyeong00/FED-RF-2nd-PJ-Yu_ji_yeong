@@ -56,7 +56,7 @@ function FooterArea(props) {
         </div>
         {/* <!-- 하단 4줄 --> */}
         <div className="bottom4 foot">
-          <img src="./img/logo_w.png" alt="하단 로고" />
+          <img src={process.env.PUBLIC_URL+"/img/logo_w.png"} alt="하단 로고" />
           <span>
             ⓒ Copyright 2024 ShinHan Art Materials Inc. All Rights Reserved.
           </span>
