@@ -199,7 +199,7 @@ function Login(props) {
 
   // 코드 리턴구역 ////////////////////////
   return (
-    <div className="outbx">
+    <div className="outbx loginOutbx">
       <section className="membx" style={{ minHeight: "300px" }}>
         <h2>LOG IN</h2>
         <form method="post" action="process.php">
@@ -258,8 +258,8 @@ function Login(props) {
               }
             </li>
             <li style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>
-                Submit
+              <button className="sbtn more-btn login-sbtn" onClick={onSubmit}>
+               <span>Submit</span> 
               </button>
             </li>
           </ul>

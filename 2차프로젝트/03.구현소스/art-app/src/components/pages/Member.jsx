@@ -481,8 +481,8 @@ function Member() {
               }
             </li>
             <li style={{ overflow: "hidden" }}>
-              <button className="sbtn" onClick={onSubmit}>
-                Submit
+              <button className="sbtn more-btn" onClick={onSubmit}>
+               <span>Submit</span>
               </button>
             </li>
             <li>

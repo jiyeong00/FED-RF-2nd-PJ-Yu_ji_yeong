@@ -11,6 +11,7 @@ import OilColors from "./components/pages/OilColors";
 import KoreanColors from "./components/pages/KoreanColors";
 import PosterColors from "./components/pages/PosterColors";
 import Gouache from "./components/pages/Gouache";
+import Board from "./components/pages/Board";
 import SubPage from "./components/pages/SubPage";
 
 import Member from "./components/pages/Member";
@@ -35,6 +36,7 @@ export default function MainComponent() {
           <Route path="Korean Colors" element={<KoreanColors my="aa" />} />
           <Route path="Gouache" element={<Gouache />} />
           <Route path="Poster Colors" element={<PosterColors />} />
+          <Route path="board" element={<Board />} />
           <Route path="subPage" element={<SubPage />} />
           <Route path="member" element={<Member />} />
           <Route path="login" element={<Login />} />

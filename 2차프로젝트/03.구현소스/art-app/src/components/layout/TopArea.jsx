@@ -5,11 +5,11 @@ import { Link } from "react-router-dom";
 import Logo from "../modules/Logo";
 
 import mFn from "../func/my_function";
-import { aCon } from "../modules/aCon";
+// import { aCon } from "../modules/aCon";
 
 
-export const TopArea=memo((props)=>{
-  const myCon = useContext(aCon);
+export const TopArea=memo(({loginMsg,loginSts,logoutFn,goPage})=>{
+  // const myCon = useContext(aCon);
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -89,7 +89,7 @@ export const TopArea=memo((props)=>{
                   {/* 회원가입, 로그인 버튼 */}
                   {
                     // 로그인 상태가 null일때 나옴
-                    myCon.loginSts === null && (
+                    loginSts === null && (
                       <>
                         <li>
                           <Link to="/member">JOIN US</Link>
@@ -102,14 +102,14 @@ export const TopArea=memo((props)=>{
                   }
                   {
                     // 로그인 상태가 null이 아니면
-                    myCon.loginSts !== null && (
+                    loginSts !== null && (
                       <>
                         <li>
                           <a
                             href="#"
                             onClick={(e) => {
                               e.preventDefault();
-                              myCon.logoutFn();
+                              logoutFn();
                             }}
                           >
                             LOGOUT

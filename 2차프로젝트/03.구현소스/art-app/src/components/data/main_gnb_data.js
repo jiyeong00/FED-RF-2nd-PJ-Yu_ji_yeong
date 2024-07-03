@@ -6,6 +6,7 @@ export default {
     "Korean Colors",
     "Gouache",
     "Poster Colors",
+    "Board",
   ],
   회원가입:[
     "로그인",
