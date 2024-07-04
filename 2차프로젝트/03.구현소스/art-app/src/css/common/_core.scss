@@ -132,13 +132,21 @@ body,
     font-size: min(3.8rem, 5.5vw);
   }
   .core-span {
-    font-size: min(1.5rem, 2vw);
+    font-size: min(1.5rem, 3vw);
   }
   .core-h3 {
     font-size: min(2.5rem, 4vw);
   }
   .core-p {
-    font-size: min(1.5rem, 1.5vw);
+    font-size: min(1.5rem, 3.5vw);
   }
 } /////////////////////1200px////////////
+
+@media screen and (max-width:500px) {
+  .main2-tit,.main3-tit,.main4-tit{
+    width: 90%;
+    margin: 0 auto;
+  }
+  
+}
 

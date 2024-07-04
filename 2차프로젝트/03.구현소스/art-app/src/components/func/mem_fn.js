@@ -11,7 +11,6 @@
 // [ 로컬쓰 클리어 ] /////////
 const clearData = () => {
     localStorage.clear();
-    console.log("로컬쓰 클리어!");
   }; /////////// clearData //////////////
   
   // [ 로컬쓰 초기체크셋팅! ] ////////////
