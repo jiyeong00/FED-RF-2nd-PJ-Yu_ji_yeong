@@ -1,0 +1,751 @@
+@charset "utf-8";
+/*  팀 PJ : 서브페이지 CSS - earth.css */
+
+@import url(./common.css);
+@import url(./core.css);
+@import url(./reset.css);
+
+/* a요소 위치 이동시 부드러운 스크롤 애니 설정*/
+html{
+    scroll-behavior: smooth;
+}
+
+
+/* 각 페이지 페이지 크기 설정 #pg2는 가로로 스크롤 때문에 100vh를 안줌*/
+#pg1, #pg2, #pg3, #pg4, #pg5{
+    /* height대신 min-height를 줘야댐!!!!!
+    그래야 #pg2 에서 화면이 걸림!!!!!!!!!!!!!!!! */
+    min-height: 100vh;
+    /* height: 100vh; */
+    
+    position: relative;
+}
+
+/* 핸드폰모드시 가로스크롤 안나오게 */
+/* body > * {
+    overflow-x: hidden;
+    cursor: default;
+  } */
+
+  /* 이거 있어야 pg2 일때 브라우저에서 가로스크롤 안나옴 */
+  body{
+    overflow-x: hidden;
+  }
+
+/* *****************************임시    *********************************** */
+/* 임시 */
+
+/* 임시 아웃라인 */
+body * {
+    /* outline: 2px dashed red; */
+
+}
+.main-tit {
+    /* 임시 메인타이틀 폰트 색 */
+    
+    color:#fff;
+
+}
+.temp-tit{
+    top: 10rem;
+    color: red;
+    font-size: 40px;
+}
+
+
+
+/* ************************** earth 공통 ************************************ */
+/* 오버플로우 히든 클래스 */
+.ofhidden{
+    overflow: hidden;  
+}
+
+/* 비디오 싸는 박스 */
+.vidbox{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+
+
+.e-moveleft{
+    opacity: 0;
+    margin-left: 50px;
+}
+.e-moveleft.on{
+    opacity: 1;
+    transition: 1s ease-in-out;
+    margin-left:0;
+}
+
+
+
+/****************************************************** pg1 *******************************************************************/
+.pg1{
+    position: relative;
+}
+.top-tbox{
+    padding-left: 15vw;
+}
+.pg1 .main-tit{
+    white-space: nowrap;
+    padding-top: 50vh;
+}
+
+#pg1 video{
+   
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  
+    
+    
+}
+.pg1 .main-tit{
+    opacity: 0;
+    animation: pg1txtani0 2s ease-out 0.5s forwards;
+
+}
+@keyframes pg1txtani0 {
+    0%{
+        opacity: 0;
+        /* transform: translateX(-7vw); */
+    }
+    100%{
+        opacity: 1;
+        /* transform: translateX(0); */
+    }
+    
+}
+.pg1 .main-txt{
+    width: min(70vw, 530px);
+    opacity: 0;
+    animation: pg1txtani 1s ease-in-out .5s forwards;
+
+}
+@keyframes pg1txtani {
+    0%{ 
+        opacity: 0;
+        transform: translateX(-7vw);
+    }
+    100%{
+        opacity: 1;
+        transform: translateX(0);
+    }
+    
+}
+
+/****************************************************** pg2 *******************************************************************/
+
+.pg2{
+    color: #fff;
+    /* background-color: #fff27d; */
+    position: relative;
+    /* width: 100%;
+    height: 100%; */
+        
+}
+
+#pg2 >.vidbox{
+  position: fixed;
+  z-index: -999;
+  object-fit: cover;
+  /* width: 100%; */
+    
+    
+}
+
+
+#pg2 video{
+   
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    
+      
+      
+  }
+
+.pg2{
+    padding: 10px;
+}
+.pg2 li{
+    padding-left: 2vw;
+    padding-right: 2vw;
+    max-width: 80vw;
+}
+.pg2 li>div>p{
+    padding: 10vw;
+    white-space: nowrap;
+    text-align: center;
+
+    color: #fff;
+    font-size: 5vw;
+    font-weight: bold;
+    animation: pg2txt ease-in 1s infinite;
+}
+
+    @keyframes pg2txt {
+        from{
+            opacity: 1;
+            text-shadow: 0 0 15px #f8ffd0;
+        }
+        to{
+            opacity: 0;
+            text-shadow: 0 0 25px #f8ffd0;
+         }
+    }
+.pg2 li>div>p{
+    display: block;
+}
+.pg2 .fliker{
+    display: none;
+}
+
+
+
+/************************* 스크롤시 가로로 슬라이드되게 하는효과 *************************/
+
+.epg {
+    height: 100vh;
+    /* outline: 1px solid blue; */
+}
+/* 타겟박스 */
+.etpg {
+    /* height: calc(100vh + 3500px); */
+    /* 타겟 박스는 보이는 화면 맨윗줄부터
+     시작해서 아래로 마지막 박스 끝라인까지
+    총 이동거리는 3000px이다!!! */
+    /* background-color: lightblue; */
+    /* outline: 2px dashed blue; */
+}
+/* 가로이동박스 */
+.eslidePg {
+    
+    position: relative;
+     /* nav에 안겹치게 만들기 */
+    top: 8vh;
+    left: 0;
+    /* height: 100vh; */
+
+    /* background-color: orange; */
+    transition: left .4s ease-out;
+}
+/* 실제로 가로이동할 ul박스 */
+.eslidePg ul {
+    position: relative;
+    left: 0;
+    display: flex;
+    width: calc(100vw + 5000px);
+    /* 가로크기는 타겟박스가 이동하는크기인
+    3000px에 맞도록 100vw에 더하여 잡아준다!
+    이유는 JS의 getBoundingClientRect().top
+    값의 수치와 정확히 일치 시키기 위함! */
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    transition: 0.4s ease-out;
+}
+.eslidePg ul li {
+    flex: 1;
+    /* margin-bottom: 200px;
+    margin-top: 0; */
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding-top: min(10vw, 50px);
+    
+    /* justify-content: center; */
+    align-items: center;
+}
+
+.eslidePg ul li img {
+    /* 상하만 흐려지게 만들기 (가장자리 전체는 몰?루)*/
+    mask-image: linear-gradient(to top, transparent, black 20%, black 80%, transparent);
+    padding: 0 20px 0 20px;
+    border-radius:30px; 
+    width: 100%;
+    justify-content: center;
+    max-height: 40vh;
+}
+
+
+.eslidePg ul li div {
+    width: 1000px;
+}
+
+/****************************************************** pg3 *******************************************************************/
+
+.pg3{
+    padding-top: 4vh;
+    /* background-color: #b0ff8c; */
+    /* height: 100vh; */
+    width: 100%;
+    color: #fff;
+    
+}
+
+.earth3d{  
+    position: relative;
+    padding-top: 10vh;
+    width: 45%;
+    margin: 0 auto;
+    z-index: 1;
+
+}
+.earth3d p{
+    white-space: nowrap;
+    padding-top: 30px;
+    font-size: 8rem;
+    font-weight: bold;
+    text-align: center;
+    display: none;
+}
+.earth3d iframe {
+    width: 100%;
+    height: 100%;
+    /* left: 0; */
+    border-radius: 50%;
+    aspect-ratio: 1;
+    
+    /* border: 2px dashed red; */
+    
+  }
+
+
+/******************************************* 3DEarth Model:텍스트 설정 *******************************************/
+  .move_text_box .text{
+    display: flex;
+    padding-top: 8vh;
+    position: absolute;
+    /* align-items: center; */
+    z-index: -1;
+    
+    
+    
+    /* 안만져 지게 하는설정 */
+    user-select: none;
+    -webkit-user-drag: none;
+    
+  }
+  .move_text_box .text p{
+    display: flex;
+    position: relative;
+    left: 0;
+    width: 250vw;
+    font-size: min(40vw, 55rem);
+    font-weight: bold;
+    color: #efefef38;
+    white-space: nowrap;
+    text-align: center;
+    animation: text-ani 25s linear infinite;
+    font-family: "Noto Serif KR", serif;
+    
+}
+
+@keyframes text-ani {
+    to{
+        left: -50%;
+    }
+}
+
+
+
+
+/****************************************************** pg4 *******************************************************************/
+
+
+
+.pg4{
+    position: relative;
+    top: 8rem;
+    color: #fff;
+}
+
+.cont-box{
+    /* padding-top: 8vh; */
+    display: flex;
+}
+.desc-txt{
+    
+    
+    font-family: 'Pretendard-Regular';
+    color: #ffffffd3;
+    font-size: max(1vw, 10px);
+    text-align: justify;
+    font-weight: normal;
+    line-height: 25px;
+}
+
+
+.pg4-txtbox{
+    padding-top: 10vh;
+    min-width: 5vw;
+}
+
+.pg4-txtbox a{
+    font-family: 'Pretendard-Regular';
+    color: #ffffff7d;
+    font-size: max(1vw, 14px);
+    text-align: justify;
+    font-weight: normal;
+    line-height: 25px;
+}
+.pg4-txtbox a:hover{
+    color: red;
+    font-weight: bold;
+
+}
+
+.pg4-imgbox{
+    width: 150vw;
+    /* min-width: 40vw; */
+    margin-right: -20px;
+    margin-top: -20px;
+    
+}
+.pg4-imgbox img{
+    width: 100%;
+    vertical-align: middle;
+}
+
+
+
+
+
+
+
+/*  ********************************/ 
+.e-moveup{
+    opacity: 0;
+    margin-top:8vw;
+    transition: 1s ease-in-out;
+}
+.e-moveup.on{
+    opacity: 1;
+    margin-top: 0;
+    
+}
+
+
+
+
+
+/**************************************************** 미디어쿼리 ****************************************************/
+/* 1920이상일때 padding-top 없애기 */
+
+/***************************** 
+pg2미디어쿼리시 설정 
+
+.eslidePg ul li:first-child, .eslidePg ul li:last-child {
+    display: none;
+}
+
+.e-moveleft {
+    opacity: 1;
+    margin-left: 0;
+}
+
+.pg2.ofhidden {
+    width: 100vw;
+    overflow: auto;
+}
+*****************************/
+
+
+
+/* **************************
+pg4
+지구 미디어쿼리 줄때
+이미지에 100vw 줘서하기
+***************************/
+
+
+/* 1620 *****************************************/
+@media screen and (max-width: 1620px) {
+    .move_text_box .text p{
+        width: 290vw;     
+    }
+    .pg2 li>div>p{
+        display: none;
+    }
+    .pg2 .fliker{
+        display: block;
+        padding: 3vw;
+        white-space: nowrap;
+        text-align: center;
+        color: #fff;
+        font-size: 4.5rem;
+        font-weight: bold;
+        animation: pg2txt ease-in 1s infinite;
+    }
+    
+        @keyframes pg2txt {
+            from{
+                opacity: 1;
+                text-shadow: 0 0 15px #f8ffd0;
+            }
+            to{
+                opacity: 0;
+                text-shadow: 0 0 25px #f8ffd0;
+             }
+        }
+
+
+
+
+/* pg2미디어쿼리 중요~! */
+.eslidePg ul li:first-child, .eslidePg ul li:last-child {
+    display: none;
+    
+}
+
+.eslidePg ul li{
+    flex: 0;
+}
+
+.pg2 ul li div{
+    width: 500px;
+}
+.e-moveleft {
+    opacity: 1;
+    margin-left: 0;
+}
+
+.pg2.ofhidden {
+    width: 100vw;
+    overflow: hidden;
+}
+ /* 실제로 가로이동할 ul박스 */
+ .eslidePg ul {
+    width: calc(100vw + 3840px);
+}
+}
+
+/* 1425 *****************************************/
+  @media screen and (max-width: 1425px) {
+    .move_text_box .text p{
+        width: 310vw;     
+    }
+    .pg4-imgbox{
+
+        width: 50vh;
+        margin: 0 auto;
+    }
+    .pg4-txtbox {
+        min-width: 5vw;
+        padding: 3vh 5vw 0 5vw;
+    }
+    .cont-box {
+        padding-top: 0;
+        flex-direction: column;
+    }
+
+    
+
+}
+
+/* 1024(아이패드크기)************************* */
+
+@media screen and (max-width: 1024px) {
+    /* pg4 지구이미지 */
+    .pg4-imgbox{
+            width: max(40vh, 38vw);
+    }
+    
+    .earth3d{
+        padding-top: 20rem;
+        width: 65%;
+    }
+    .earth3d p{
+        display: block;
+        font-size: 8vw;
+    }
+    
+    .move_text_box .text p{
+        display: none;
+    }
+    .pg2 li>div>p{
+        font-size:10vw;
+        text-align: left;
+    }
+    .move_text_box .text{
+        padding-top: 72rem;
+        
+    }
+    
+    .pg4{
+        
+    }
+
+    /* pg4 텍스트 */
+    .cont-txt{
+        font-size: max(4vw,2rem);
+        line-height: 38px;
+        min-width: 80vw;
+    }
+    .pg4-txtbox a {
+        font-size: max(3vw, 14px);
+    }
+
+
+
+
+
+    /* 실제로 가로이동할 ul박스 */
+ .eslidePg ul {
+    width: calc(100vw + 5200px);
+}
+.eslidePg ul li {
+    flex: 1;
+} 
+
+}
+
+/* 아이패드미니 768*1024 */
+@media screen and (max-width: 768px) and (max-height:1024px){
+
+    .eslidePg ul li {
+        padding-top: 1vw;
+    }
+    /* 실제로 가로이동할 ul박스 */
+    .eslidePg ul {
+        width: calc(100vw + 4080px);
+    }
+}
+/* 700 */
+@media screen and (max-width: 700px) {
+    .pg1 .top-tbox{
+        padding-left: 10vw;
+        padding-top: 30vw;
+    }
+    .pg1 .main-tit{
+        font-size: 15vw;
+    }
+    
+
+    .cont-tit{
+        white-space: nowrap;
+        font-size: 3.5rem;
+    }
+    
+    .pg2 .cont-txt,.eslidePg ul li img{
+        width:85vw;
+
+    }
+
+    .eslidePg ul li{
+        /* justify-content: flex-end; */
+    }
+    .earth3d{
+        padding-top: max(18rem, 21vw);
+    }
+
+
+    /* pg4 텍스트 */
+   .cont-txt {
+        font-size: max(3vw,2rem);
+        line-height: 22px;
+    }
+    .pg4-txtbox a {
+        font-size: max(3vw, 14px);
+    }
+    /* pg4 텍스트 박스 */
+    .pg4-txtbox {
+        min-width: 5vw;
+        padding: 1.5vw 5vw 0 5vw;
+    }
+    /* pg4 이미지 */
+    .pg4-imgbox {
+        width: max(40vh, 38vw);
+    }
+    .eslidePg ul li {
+        padding: min(10vw, 50px);
+}
+
+
+
+/* 실제로 가로이동할 ul박스 */
+.eslidePg ul {
+    width: calc(100vw + 3360px);
+}
+
+
+}
+
+
+/* 450 */
+@media screen and (max-width: 450px) {
+    .eslidePg ul {
+        padding-top: 1vh;
+    }
+ 
+
+    .cont-txt {
+        font-size: max(4.5vw,1.5rem);
+        line-height: 20px;
+    }
+    
+    .pg4-txtbox {
+        min-width: 5vw;
+        padding: 1.5vh 5vw 0 5vw;
+    }
+
+    .earth3d {
+        padding-top: max(21.5rem, 21vw);
+    }
+    
+
+
+     /* 실제로 가로이동할 ul박스 */
+     .eslidePg ul {
+        width: calc(100vw + 2760px);
+    }
+}
+
+
+
+/* 375 */
+@media screen and (max-width: 375px){
+     .pg4-imgbox{
+        bottom: 0;
+        width: 100%;
+        
+        position: absolute;
+        z-index: -11;
+        
+    }
+    .pg4-imgbox img{
+        opacity: .3;
+    }
+
+    .pg4-txtbox {
+        min-width: 5vw;
+        /* padding: 8vh 5vw 0 5vw; */
+    }
+
+
+/* 실제로 가로이동할 ul박스 */
+.eslidePg ul {
+    width: calc(100vw + 2520px);
+}
+
+    
+}
+
+
+/* 344 갤럭시 z플립5*/
+@media screen and (max-width: 344px) {
+    .eslidePg ul {
+        width: calc(100vw + 2280px);
+    }
+}
+
+
+
+/* pg2 미디어 쿼리 수정하기ㅣ */
