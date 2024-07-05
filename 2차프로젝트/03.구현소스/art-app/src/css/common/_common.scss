@@ -22,15 +22,11 @@
   background-color: white;
 }
 
-/* 상단 내부박스 */
-#header-area .inbox {
+.header-area {
   width: 95%;
   height: 100%;
   /* outline: 1px solid red; */
   margin: 0 auto;
-}
-
-.header-area {
   /* 플렉스로 가로 정렬 */
   display: flex;
   justify-content: space-between;
@@ -144,12 +140,16 @@ h1.logo {
 }
 
 @media screen and (max-width: 1000px) {
+  #header-area{
+    height: 100%;
+    // background-color: #222;
+    background-color: white;
+  }
   /// 모바일 메뉴 버튼
   .nav-img {
     cursor: pointer;
-    text-align: right;
   }
-  .memberMenu{
+  #gnb ul {
     display: none;
   }
 }/////////////////////////////1000px///////////////////////

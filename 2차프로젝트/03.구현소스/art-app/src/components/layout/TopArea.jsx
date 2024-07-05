@@ -5,10 +5,11 @@ import { Link } from "react-router-dom";
 import Logo from "../modules/Logo";
 
 import mFn from "../func/my_function";
-// import { aCon } from "../modules/aCon";
+import { openMenu } from "../func/top_area";
 
+import $ from "jquery";
 
-export const TopArea=memo(({loginMsg,loginSts,logoutFn,goPage})=>{
+export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // const myCon = useContext(aCon);
 
   const [width, setWidth] = useState(window.innerWidth);
@@ -18,6 +19,12 @@ export const TopArea=memo(({loginMsg,loginSts,logoutFn,goPage})=>{
   };
 
   useEffect(() => {
+    // .topMenu-M 클릭시 openMenu함수 호출
+    $(".nav-img").on("click", () => {
+      openMenu();
+    });
+
+    ///////////////////////////////////////////////////////////////////////////
     const topArea = mFn.qs("#header-area");
     if (!topArea) return;
 
@@ -34,7 +41,6 @@ export const TopArea=memo(({loginMsg,loginSts,logoutFn,goPage})=>{
         topArea.style.backgroundColor = "rgba(0, 0, 0, 0)";
         topArea.style.transition = ".3s ease-out";
       }
-      // window.removeEventListener("scroll", handleScroll);
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -65,28 +71,23 @@ export const TopArea=memo(({loginMsg,loginSts,logoutFn,goPage})=>{
 
         {/* <!-- 메뉴 --> */}
 
-        <nav id="gnb">
-          <ul>
-            {/* 메뉴 리스트 */}
-            <li>
-              <ol>
-                {gnbData["메뉴"].map((v, i) => (
-                  <li key={i}>
-                    <Link to={"/" + v}>{v}</Link>
-                  </li>
-                ))}
-              </ol>
-            </li>
-            {/* 회원가입 리스트 */}
-            {width > 1000 && (
+        {width > 1000 && (
+          <nav id="gnb">
+            <ul>
+              {/* 메뉴 리스트 */}
               <li>
                 <ol>
-                  {/* {gnbData["회원가입"].map((v, i) => (
+                  {gnbData["메뉴"].map((v, i) => (
                     <li key={i}>
-                      <a href="#">{v}</a>
+                      <Link to={"/" + v}>{v}</Link>
                     </li>
-                  ))} */}
-                  {/* 회원가입, 로그인 버튼 */}
+                  ))}
+                </ol>
+              </li>
+              {/* 회원가입 리스트 */}
+              <li>
+                {/* 회원가입, 로그인 버튼 */}
+                <ol>
                   {
                     // 로그인 상태가 null일때 나옴
                     loginSts === null && (
@@ -120,31 +121,74 @@ export const TopArea=memo(({loginMsg,loginSts,logoutFn,goPage})=>{
                   }
                 </ol>
               </li>
-            )}
-            {width <= 1000 && (
-              <div className="topMenu-M">
-                {/* 모바일 햄버거버튼 */}
-                <div className="nav-img">
-                  <img
-                    src={process.env.PUBLIC_URL + "/img/menu_b.png"}
-                    alt="메뉴버튼 이미지"
-                  />
+            </ul>
+          </nav>
+        )}
+
+        {width <= 1000 && (
+          <>
+            <nav id="gnb">
+              <ul>
+                <div className="topMenu-M">
+                  {/* 메뉴 리스트 */}
+                  <li>
+                    <ol>
+                      {gnbData["메뉴"].map((v, i) => (
+                        <li key={i}>
+                          <Link to={"/" + v}>{v}</Link>
+                        </li>
+                      ))}
+                    </ol>
+                  </li>
+                  <li>
+                    {/* 회원가입, 로그인 버튼 */}
+                    <ol>
+                      {
+                        // 로그인 상태가 null일때 나옴
+                        loginSts === null && (
+                          <>
+                            <li>
+                              <Link to="/member">JOIN US</Link>
+                            </li>
+                            <li>
+                              <Link to="/login">LOGIN</Link>
+                            </li>
+                          </>
+                        )
+                      }
+                      {
+                        // 로그인 상태가 null이 아니면
+                        loginSts !== null && (
+                          <>
+                            <li>
+                              <a
+                                href="#"
+                                onClick={(e) => {
+                                  e.preventDefault();
+                                  logoutFn();
+                                }}
+                              >
+                                LOGOUT
+                              </a>
+                            </li>
+                          </>
+                        )
+                      }
+                    </ol>
+                  </li>
                 </div>
-                <li className="memberMenu">
-                  <ol>
-                    {gnbData["회원가입"].map((v, i) => (
-                      <li key={i}>
-                        <a href="#">{v}</a>
-                      </li>
-                    ))}
-                  </ol>
-                </li>
-              </div>
-            )}
-          </ul>
-        </nav>
+              </ul>
+            </nav>
+            {/* 모바일 햄버거버튼 */}
+            <div className="nav-img">
+              <img
+                src={process.env.PUBLIC_URL + "/img/menu_b.png"}
+                alt="메뉴버튼 이미지"
+              />
+            </div>
+          </>
+        )}
       </header>
     </header>
   );
-})
-
+});
