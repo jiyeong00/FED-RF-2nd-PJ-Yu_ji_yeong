@@ -18,7 +18,7 @@ function ContVid({ catName }) {
 
   // 메뉴 on넣기!!!!!!!!!
   useEffect(() => {
-    const cMenu = document.querySelectorAll("#gnb ul li a");
+    const cMenu = document.querySelectorAll(".gnb ul li a");
     const logo = document.querySelector(".header-area .logo");
     cMenu.forEach((ele) => {
       let eleTxt = ele.text.replace(/(\s*)/g, "");

@@ -28,7 +28,7 @@ function Layout(props) {
     });
 
     // 매뉴 클릭하면 맨 위 화면으로
-    const gnb = mFn.qsa("#gnb ol li");
+    const gnb = mFn.qsa(".gnb ol li");
     gnb.forEach((ele) => {
       ele.onclick = () => {
         window.scrollTo(0, 0);

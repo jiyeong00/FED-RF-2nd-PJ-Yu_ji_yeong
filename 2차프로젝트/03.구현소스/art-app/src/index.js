@@ -16,6 +16,7 @@ import SubPage from "./components/pages/SubPage";
 
 import Member from "./components/pages/Member";
 import Login from "./components/pages/Login";
+import TopMenu_M from "./components/modules/TopMenu_M";
 
 export default function MainComponent() {
   return (
@@ -40,6 +41,7 @@ export default function MainComponent() {
           <Route path="subPage" element={<SubPage />} />
           <Route path="member" element={<Member />} />
           <Route path="login" element={<Login />} />
+          <Route path="topMenu_M" element={<TopMenu_M />} />
           {/* <Route path="comics" element={<Comics />} /> */}
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}

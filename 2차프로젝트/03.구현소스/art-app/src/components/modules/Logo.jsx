@@ -7,6 +7,6 @@ export default function Logo() {
   // logoStyle : 상단, 하단 로고 구분 코드
 
   return (
-      <img src={process.env.PUBLIC_URL+"/img/logo_b.png"} alt="신한화구 로고이미지" />
+      <img src={process.env.PUBLIC_URL+"/img/logo_w.png"} alt="신한화구 로고이미지" />
   );
 } ///////////Logo.////////////////

@@ -8,6 +8,7 @@ import mFn from "../func/my_function";
 import { openMenu } from "../func/top_area";
 
 import $ from "jquery";
+import TopMenu_M from "../modules/TopMenu_M";
 
 export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // const myCon = useContext(aCon);
@@ -18,6 +19,15 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     setWidth(window.innerWidth);
   };
 
+  // width 값 실시간으로 가져오기
+  useEffect(() => {
+    window.addEventListener("resize", handleResize);
+    return () => {
+      // cleanup
+      window.removeEventListener("resize", handleResize);
+    };
+  }, []);
+
   useEffect(() => {
     // .topMenu-M 클릭시 openMenu함수 호출
     $(".nav-img").on("click", () => {
@@ -25,7 +35,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     });
 
     ///////////////////////////////////////////////////////////////////////////
-    const topArea = mFn.qs("#header-area");
+    const topArea = mFn.qs(".header-area");
     if (!topArea) return;
 
     const handleScroll = () => {
@@ -34,7 +44,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
       let scrollLocation = document.documentElement.scrollTop;
 
       if (CRITERIA < scrollLocation) {
-        topArea.style.backgroundColor = "white";
+        topArea.style.backgroundColor = "black";
         topArea.style.transition = ".3s ease-out";
       } else if (CRITERIA > scrollLocation) {
         // console.log("나오나?");
@@ -50,86 +60,23 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     };
   }, []);
 
-  // width 값 실시간으로 가져오기
-  useEffect(() => {
-    window.addEventListener("resize", handleResize);
-    return () => {
-      // cleanup
-      window.removeEventListener("resize", handleResize);
-    };
-  }, []);
-
   return (
-    <header id="header-area">
-      <header className="header-area inbox">
-        {/* <!-- 로고 --> */}
-        <h1 className="logo">
-          <Link to="/">
-            <Logo />
-          </Link>
-        </h1>
+    <>
+      <header id="header-area">
+        <header className="header-area">
+          <div className="inbox">
+            {/* <!-- 로고 --> */}
+            <h1 className="logo">
+              <Link to="/">
+                <Logo />
+              </Link>
+            </h1>
 
-        {/* <!-- 메뉴 --> */}
+            {/* <!-- 메뉴 --> */}
 
-        {width > 1000 && (
-          <nav id="gnb">
-            <ul>
-              {/* 메뉴 리스트 */}
-              <li>
-                <ol>
-                  {gnbData["메뉴"].map((v, i) => (
-                    <li key={i}>
-                      <Link to={"/" + v}>{v}</Link>
-                    </li>
-                  ))}
-                </ol>
-              </li>
-              {/* 회원가입 리스트 */}
-              <li>
-                {/* 회원가입, 로그인 버튼 */}
-                <ol>
-                  {
-                    // 로그인 상태가 null일때 나옴
-                    loginSts === null && (
-                      <>
-                        <li>
-                          <Link to="/member">JOIN US</Link>
-                        </li>
-                        <li>
-                          <Link to="/login">LOGIN</Link>
-                        </li>
-                      </>
-                    )
-                  }
-                  {
-                    // 로그인 상태가 null이 아니면
-                    loginSts !== null && (
-                      <>
-                        <li>
-                          <a
-                            href="#"
-                            onClick={(e) => {
-                              e.preventDefault();
-                              logoutFn();
-                            }}
-                          >
-                            LOGOUT
-                          </a>
-                        </li>
-                      </>
-                    )
-                  }
-                </ol>
-              </li>
-            </ul>
-          </nav>
-        )}
-
-        {width <= 1000 && (
-          <>
-            <nav id="gnb">
-              <ul>
-                <div className="topMenu-M">
+            {width > 1000 && (
+              <nav className="gnb">
+                <ul>
                   {/* 메뉴 리스트 */}
                   <li>
                     <ol>
@@ -140,6 +87,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                       ))}
                     </ol>
                   </li>
+                  {/* 회원가입 리스트 */}
                   <li>
                     {/* 회원가입, 로그인 버튼 */}
                     <ol>
@@ -176,19 +124,25 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                       }
                     </ol>
                   </li>
+                </ul>
+              </nav>
+            )}
+
+            {width <= 1000 && (
+              <>
+                {/* 모바일 햄버거버튼 */}
+                <div className="nav-img">
+                  <img
+                    src={process.env.PUBLIC_URL + "/img/menu_b.png"}
+                    alt="메뉴버튼 이미지"
+                  />
                 </div>
-              </ul>
-            </nav>
-            {/* 모바일 햄버거버튼 */}
-            <div className="nav-img">
-              <img
-                src={process.env.PUBLIC_URL + "/img/menu_b.png"}
-                alt="메뉴버튼 이미지"
-              />
-            </div>
-          </>
-        )}
+              </>
+            )}
+          </div>
+        </header>
+        <TopMenu_M logoutFn={logoutFn} loginSts={loginSts} />
       </header>
-    </header>
+    </>
   );
 });
