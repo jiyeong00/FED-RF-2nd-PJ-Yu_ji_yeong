@@ -19,7 +19,7 @@
   margin: 0 auto;
 
   display: flex;
-  gap: 30px;
+  // gap: 30px;
   justify-content: space-between;
 }
 .main-wrap > section {
@@ -88,11 +88,10 @@
 /* 메인글자 구역 */
 .text-area-wrap {
   z-index: 2;
+
   position: relative;
-  top: 50%;
-  width: 116rem;
-  aspect-ratio: 2/1;
-  transform: translateY(-50%);
+  top: 22%;
+  height: 100%;
   overflow: hidden;
 }
 .text-area-wrap h2 {
@@ -101,12 +100,12 @@
   font-weight: 500;
 }
 .text-area-wrap h3 {
-  font-size: min(4rem, 6vw);
-  letter-spacing: -4px;
+  font-size: min(3.5rem, 5vw);
+  letter-spacing: -3px;
   font-weight: 300;
 }
 .text-area-wrap li {
-  margin: 50px 0;
+    height: 100%;
 }
 
 /* 자세히보기 버튼 */
@@ -231,7 +230,7 @@
   cursor: pointer;
 
   overflow: hidden;
-  span{
+  span {
     opacity: 1;
   }
 
@@ -334,7 +333,7 @@
   margin-left: 1.7rem;
 
   color: white;
-  font-size: min(18px,2.2vw);
+  font-size: min(18px, 2.2vw);
 }
 
 /****************************** 모바일 ****************************/
@@ -376,16 +375,12 @@
     bottom: auto;
     font-size: min(3rem, 6.7vw);
     z-index: 2;
-
   }
 
   /* 왼쪽 */
   /* 메인글자 구역 */
   .text-area-wrap {
-    top: 50%;
-    left: 50%;
-    bottom: 8%;
-    transform: translate(-50%, -50%);
+    top: 11%;
   }
 
   // 두번쨰페이지
@@ -431,7 +426,7 @@
   }
 } ////////////////////////500px////////////////////
 @media screen and (max-width: 400px) {
-  .main-area{
+  .main-area {
     width: 100%;
   }
   .text-area-wrap h3 {
@@ -439,16 +434,16 @@
     letter-spacing: -2px;
     word-wrap: break-word;
   }
-  .main2-cont{
+  .main2-cont {
     width: 75%;
   }
   .main-area .core-h2 {
     font-size: 2.7rem;
-}
+  }
   .main-area .core-span {
     display: block;
     font-size: 1.2rem;
     width: 90vw;
     margin: 0 auto;
-}
+  }
 } ////////////////////////500px////////////////////
