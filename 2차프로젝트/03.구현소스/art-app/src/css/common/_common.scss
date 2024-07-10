@@ -145,53 +145,52 @@ h1.logo {
   display: flex;
 }
 
-@media screen and (max-width: 1000px) {
-  .topMenu-M-gnb{
-    position: absolute;
-    top: 0;
-    left: 100%;
+.topMenu-M-gnb{
+  position: absolute;
+  top: 0;
+  left: 100%;
+  transition: left .3s ease-out;
+  &.on{
+    left: 0;
     transition: left .3s ease-out;
+  }
+}
+/// 모바일 메뉴 버튼
+.nav-img {
+  cursor: pointer;
+  display: block;
+  margin-right: 1rem;
+  .fa-xmark{
+    color: #888;
+    display: none;
     &.on{
-      left: 0;
-      transition: left .3s ease-out;
+      display: block;
+      font-size: 2rem;
     }
   }
-  /// 모바일 메뉴 버튼
-  .nav-img {
-    cursor: pointer;
-    display: block;
-    margin-right: 1rem;
-    .fa-xmark{
-      color: #888;
-      display: none;
-      &.on{
-        display: block;
-        font-size: 2rem;
-      }
-    }
-    img.on{
-      display: none;
-    }
+  img.on{
+    display: none;
   }
-  .topMenu-M {
-    height: 100dvh;
-    text-align: center;
-    background-color: black;
+}
+.topMenu-M {
+  height: 100dvh;
+  text-align: center;
+  background-color: black;
 
-    ul {
+  ul {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 0;
+    .sub-topMenu-M1 ol {
       display: flex;
       flex-direction: column;
-      align-items: center;
-
-      position: relative;
-      top: 50%;
-      transform: translateY(-50%);
-      margin-left: 0;
-      .sub-topMenu-M1 ol {
-        display: flex;
-        flex-direction: column;
-        margin-bottom: 20px;
-      }
+      margin-bottom: 20px;
     }
   }
-} /////////////////////////////1000px///////////////////////
+}
+

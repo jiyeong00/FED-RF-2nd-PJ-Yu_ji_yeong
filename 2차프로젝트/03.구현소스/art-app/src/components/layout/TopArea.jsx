@@ -1,4 +1,11 @@
-import React, { memo, useContext, useEffect, useRef, useState } from "react";
+import React, {
+  memo,
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 
 // 폰트어썸
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
@@ -9,14 +16,33 @@ import { Link } from "react-router-dom";
 import Logo from "../modules/Logo";
 
 import mFn from "../func/my_function";
-import { openMenu,closeMenu } from "../func/top_area";
+import { openMenu, closeMenu } from "../func/top_area";
 
 import $ from "jquery";
 import TopMenu_M from "../modules/TopMenu_M";
 
-
 export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // const myCon = useContext(aCon);
+
+  //모바일 - 메뉴버튼 클릭
+  useLayoutEffect(() => {
+    // .topMenu-M 클릭시 openMenu함수 호출
+    $(".nav-img").on("click", () => {
+      openMenu();
+    });
+
+    $(".logo").on("click", () => {
+      closeMenu();
+    });
+
+    // 모바일에서 메뉴 클릭시 on빼서 메인으로 가기
+    const clickLi = mFn.qsa(".topMenu-link li");
+    clickLi.forEach((ele) => {
+      ele.onclick = () => {
+        closeMenu();
+      };
+    });
+  });
 
   const [width, setWidth] = useState(window.innerWidth);
 
@@ -34,25 +60,6 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   }, []);
 
   useEffect(() => {
-    // .topMenu-M 클릭시 openMenu함수 호출
-    $(".nav-img").on("click", () => {
-      openMenu();
-    });
-
-    $(".logo").on("click", () => {
-      closeMenu();
-    });
-
-
-    // 모바일에서 메뉴 클릭시 on빼서 메인으로 가기
-    const clickLi = mFn.qsa(".topMenu-link li");
-    clickLi.forEach((ele) => {
-      ele.onclick = () => {
-        closeMenu();
-      };
-    });
-
-    ///////////////////////////////////////////////////////////////////////////
     const topArea = mFn.qs(".header-area");
     if (!topArea) return;
 
@@ -78,6 +85,15 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     };
   }, []);
 
+  function boardFn(v){
+    console.log("확인용",v);
+    if(v=="Board"){
+      if(loginSts !== null){
+        return;
+      }
+    }
+  };
+
   return (
     <>
       <header id="header-area">
@@ -100,6 +116,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                     <ol>
                       {gnbData["메뉴"].map((v, i) => (
                         <li key={i}>
+                          {boardFn(v)}
                           <Link to={"/" + v}>{v}</Link>
                         </li>
                       ))}
@@ -123,7 +140,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                         )
                       }
                       {
-                        // 로그인 상태가 null이 아니면
+                        // 로그인 상태면
                         loginSts !== null && (
                           <>
                             <li>
