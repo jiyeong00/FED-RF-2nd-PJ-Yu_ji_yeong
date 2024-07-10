@@ -1,14 +1,19 @@
 import React, { memo, useContext, useEffect, useRef, useState } from "react";
 
+// 폰트어썸
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faSearch, faXmark } from "@fortawesome/free-solid-svg-icons";
+
 import gnbData from "../data/main_gnb_data";
 import { Link } from "react-router-dom";
 import Logo from "../modules/Logo";
 
 import mFn from "../func/my_function";
-import { openMenu } from "../func/top_area";
+import { openMenu,closeMenu } from "../func/top_area";
 
 import $ from "jquery";
 import TopMenu_M from "../modules/TopMenu_M";
+
 
 export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // const myCon = useContext(aCon);
@@ -32,6 +37,19 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     // .topMenu-M 클릭시 openMenu함수 호출
     $(".nav-img").on("click", () => {
       openMenu();
+    });
+
+    $(".logo").on("click", () => {
+      closeMenu();
+    });
+
+
+    // 모바일에서 메뉴 클릭시 on빼서 메인으로 가기
+    const clickLi = mFn.qsa(".topMenu-link li");
+    clickLi.forEach((ele) => {
+      ele.onclick = () => {
+        closeMenu();
+      };
     });
 
     ///////////////////////////////////////////////////////////////////////////
@@ -133,9 +151,10 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                 {/* 모바일 햄버거버튼 */}
                 <div className="nav-img">
                   <img
-                    src={process.env.PUBLIC_URL + "/img/menu_b.png"}
+                    src={process.env.PUBLIC_URL + "/img/menu_w.png"}
                     alt="메뉴버튼 이미지"
                   />
+                  <FontAwesomeIcon icon={faXmark} className="fa-xmark" />
                 </div>
               </>
             )}

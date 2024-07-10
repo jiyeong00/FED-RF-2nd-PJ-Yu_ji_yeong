@@ -1,9 +1,21 @@
 // 탑아리아 메뉴 관련 JS
 
 import mFn from "./my_function";
+import $ from "jquery";
 
 function openMenu(){
-    console.log("메뉴!");
+    // 클릭시 이미지 변경
+    $(".fa-xmark").toggleClass("on");
+    $(".nav-img img").toggleClass("on");
+    
+    // 클릭시 검은바탕
+    $(".topMenu-M-gnb").toggleClass("on");
+};
+function closeMenu(){
+    $(".fa-xmark").removeClass("on");
+    $(".nav-img img").removeClass("on");
+
+    $(".topMenu-M-gnb").removeClass("on");
 };
 
-export {openMenu};
+export {openMenu,closeMenu};

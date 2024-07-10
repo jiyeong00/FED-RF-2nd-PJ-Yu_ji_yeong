@@ -39,7 +39,7 @@ function Main(props) {
         <div className="main-wrap">
           <section className="text-area">
             {/* <!-- 왼쪽구역 이미지+설명 --> */}
-            <div className="text-area-wrap">
+            <ul className="text-area-wrap">
               {Object.values(bgData).map((v, i) => (
                 <li className={"s" + v.idx} key={i}>
                   <img
@@ -66,7 +66,7 @@ function Main(props) {
                   </button>
                 </li>
               ))}
-            </div>
+            </ul>
           </section>
           <section className="main-card-area">
             {/* <!-- 이미지 순서(불릿) --> */}

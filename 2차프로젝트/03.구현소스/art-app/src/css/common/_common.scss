@@ -17,7 +17,7 @@
   width: 100%;
   transition: 0.3s;
   border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  display: none;
+  // display: none;
 }
 #header-area.on {
   background-color: white;
@@ -25,15 +25,16 @@
 
 .header-area {
   width: 100%;
+  position: relative;
+  z-index: 1;
 
-  & .inbox {
+  .inbox {
     /* 플렉스로 가로 정렬 */
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 95%;
     height: 70px;
-    /* outline: 1px solid red; */
     margin: 0 auto;
   }
 }
@@ -145,19 +146,52 @@ h1.logo {
 }
 
 @media screen and (max-width: 1000px) {
+  .topMenu-M-gnb{
+    position: absolute;
+    top: 0;
+    left: 100%;
+    transition: left .3s ease-out;
+    &.on{
+      left: 0;
+      transition: left .3s ease-out;
+    }
+  }
   /// 모바일 메뉴 버튼
   .nav-img {
     cursor: pointer;
-  }
-  #gnb ul {
-    // display: none;
+    display: block;
+    margin-right: 1rem;
+    .fa-xmark{
+      color: #888;
+      display: none;
+      &.on{
+        display: block;
+        font-size: 2rem;
+      }
+    }
+    img.on{
+      display: none;
+    }
   }
   .topMenu-M {
     height: 100dvh;
-    z-index: 9999;
-    color: black;
-    #gnb ol {
+    text-align: center;
+    background-color: black;
+
+    ul {
+      display: flex;
       flex-direction: column;
+      align-items: center;
+
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+      margin-left: 0;
+      .sub-topMenu-M1 ol {
+        display: flex;
+        flex-direction: column;
+        margin-bottom: 20px;
+      }
     }
   }
 } /////////////////////////////1000px///////////////////////
