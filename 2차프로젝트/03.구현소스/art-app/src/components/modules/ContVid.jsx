@@ -20,6 +20,7 @@ function ContVid({ catName }) {
   useEffect(() => {
     const cMenu = document.querySelectorAll(".gnb ul li a");
     const logo = document.querySelector(".header-area .logo");
+    const headerBackColor = document.querySelector("#header-area");
     cMenu.forEach((ele) => {
       let eleTxt = ele.text.replace(/(\s*)/g, "");
       // console.log("eleTxt", eleTxt);
@@ -43,6 +44,8 @@ function ContVid({ catName }) {
       }////if
 
     }); ////////////////////cMenu foreach
+
+    headerBackColor.style.backgroundColor="rgba(0, 0, 0, 0)";
 
   }, []); ///////////////////메뉴 on넣기 useEffect
 

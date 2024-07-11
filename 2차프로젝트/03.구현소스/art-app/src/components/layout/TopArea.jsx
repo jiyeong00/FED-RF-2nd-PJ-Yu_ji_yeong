@@ -85,15 +85,6 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
     };
   }, []);
 
-  function boardFn(v){
-    console.log("확인용",v);
-    if(v=="Board"){
-      if(loginSts !== null){
-        return;
-      }
-    }
-  };
-
   return (
     <>
       <header id="header-area">
@@ -116,8 +107,13 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                     <ol>
                       {gnbData["메뉴"].map((v, i) => (
                         <li key={i}>
-                          {boardFn(v)}
-                          <Link to={"/" + v}>{v}</Link>
+                          {v === "Board" && loginSts === null ? (
+                            ""
+                          ) : (
+                            <>
+                              <Link to={"/" + v}>{v}</Link>
+                            </>
+                          )}
                         </li>
                       ))}
                     </ol>
@@ -127,7 +123,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                     {/* 회원가입, 로그인 버튼 */}
                     <ol>
                       {
-                        // 로그인 상태가 null일때 나옴
+                        // 로그인 상태가 아닐때
                         loginSts === null && (
                           <>
                             <li>
