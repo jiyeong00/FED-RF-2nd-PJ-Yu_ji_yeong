@@ -14,7 +14,6 @@ function ContVid({ catName }) {
   // 슬라이드 기능 생성자함수 인스턴스 생성하기
   // 선택 데이터
   const selData = cont_data[catName];
-  
 
   // 메뉴 on넣기!!!!!!!!!
   useEffect(() => {
@@ -24,7 +23,7 @@ function ContVid({ catName }) {
     cMenu.forEach((ele) => {
       let eleTxt = ele.text.replace(/(\s*)/g, "");
       // console.log("eleTxt", eleTxt);
-      
+
       // 클릭하면 다른 ele on 지우기
       ele.onclick = () => {
         cMenu.forEach((item) => {
@@ -36,17 +35,15 @@ function ContVid({ catName }) {
         cMenu.forEach((item) => {
           item.classList.remove("on");
         });
-      };/////////////////////logo.onclick
-      
-      if (catName == eleTxt) {
-        console.log("dsdsadasdasdafjakl");
-        ele.classList.add("on");
-      }////if
+      }; /////////////////////logo.onclick
 
+      if (catName == eleTxt) {
+        // console.log("dsdsadasdasdafjakl");
+        ele.classList.add("on");
+      } ////if
     }); ////////////////////cMenu foreach
 
-    headerBackColor.style.backgroundColor="rgba(0, 0, 0, 0)";
-
+    headerBackColor.style.backgroundColor = "rgba(0, 0, 0, 0)";
   }, []); ///////////////////메뉴 on넣기 useEffect
 
   // 코드 리턴구역 /////////

@@ -7,6 +7,7 @@ function openMenu(){
     // 클릭시 이미지 변경
     $(".fa-xmark").toggleClass("on");
     $(".nav-img img").toggleClass("on");
+    console.log("열렸따!");
     
     // 클릭시 검은바탕
     $(".topMenu-M-gnb").toggleClass("on");

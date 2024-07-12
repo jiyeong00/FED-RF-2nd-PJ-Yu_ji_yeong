@@ -22,19 +22,12 @@ function Main(props) {
     const headerBackColor = document.querySelector("#header-area");
     headerBackColor.style.backgroundColor = "black";
   }, []);
-/////////////////////////////////////여기 고쳐야함 또 오류남
+
+  
   useLayoutEffect(() => {
     console.log("레이아웃이펙트");
     mainFn();
 
-    // const headerMenu = document.querySelectorAll("#header-area ol li a");
-
-    // headerMenu.forEach((v, i) => {
-    //   v.onClick = () => {
-    //     clearInterval(autoI);
-    //     console.log("메인 소명!!");
-    //   };
-    // });
     return(()=>{
       console.log("메인소멸한다~!");
       // 인터발지우기

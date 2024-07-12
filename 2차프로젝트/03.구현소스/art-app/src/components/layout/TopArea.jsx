@@ -25,9 +25,10 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   // const myCon = useContext(aCon);
 
   //모바일 - 메뉴버튼 클릭
-  useLayoutEffect(() => {
+  useEffect(() => {
     // .topMenu-M 클릭시 openMenu함수 호출
     $(".nav-img").on("click", () => {
+      console.log("메뉴 눌렷다!!");
       openMenu();
     });
 
@@ -42,7 +43,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
         closeMenu();
       };
     });
-  });
+  },[]);
 
   const [width, setWidth] = useState(window.innerWidth);
 
