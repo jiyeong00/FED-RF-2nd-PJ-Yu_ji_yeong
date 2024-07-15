@@ -17,6 +17,7 @@ import SubPage from "./components/pages/SubPage";
 import Member from "./components/pages/Member";
 import Login from "./components/pages/Login";
 import TopMenu_M from "./components/modules/TopMenu_M";
+import ItemList from "./components/pages/ItemList";
 
 export default function MainComponent() {
   return (
@@ -42,6 +43,7 @@ export default function MainComponent() {
           <Route path="member" element={<Member />} />
           <Route path="login" element={<Login />} />
           <Route path="topMenu_M" element={<TopMenu_M />} />
+          <Route path="itemList" element={<ItemList />} />
           {/* <Route path="comics" element={<Comics />} /> */}
         </Route>
         {/* Layout 루트 Route로 하위 Route를 감싼다! */}
@@ -64,7 +66,12 @@ const ScrollTop = () => {
     // 스크롤 최상단 이동
     window.scrollTo(0, 0);
     // 변경된 라우터 경로값 확인
-    // console.log("라우터경로:", pathname);
+    console.log("라우터경로:", pathname);
+
+    const headerBackColor = document.querySelector("#header-area");
+    if(pathname=="/Board" || pathname=="/member" || pathname=="/login"){
+      headerBackColor.style.backgroundColor = "black";
+    }
   }, [pathname]);
   // 의존성을 라우터 경로 변수로 설정한다!
 

@@ -8,9 +8,10 @@ import "../../css/sub_color.scss";
 import sub_color from "../data/sub/sub_color";
 
 import { aCon } from "../modules/aCon";
+import ItemList from "../pages/ItemList";
 
 function SubColor({ catName, subCatName }) {
-  const myCon = useContext(aCon );
+  const myCon = useContext(aCon);
   // 할당배열랜덤수
   const cNum = myCon.rdmNum.current[catName][subCatName];
 
@@ -75,6 +76,7 @@ function SubColor({ catName, subCatName }) {
           </ul>
         </div>
       )}
+      <ItemList />
       <div className="topBtn-area">
         <button className="top" onClick={scrollToTop} type="button">
           <span>Top</span>
