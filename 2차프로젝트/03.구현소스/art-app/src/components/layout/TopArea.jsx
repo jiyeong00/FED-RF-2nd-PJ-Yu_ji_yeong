@@ -27,14 +27,14 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
   //모바일 - 메뉴버튼 클릭
   useEffect(() => {
     // .topMenu-M 클릭시 openMenu함수 호출
-    $(".nav-img").on("click", () => {
-      console.log("메뉴 눌렷다!!");
-      openMenu();
-    });
+    // $(".nav-img").on("click", () => {
+    //   console.log("메뉴 눌렷다!!");
+    //   openMenu();
+    // });
 
-    $(".logo").on("click", () => {
-      closeMenu();
-    });
+    // $(".logo").on("click", () => {
+    //   closeMenu();
+    // });
 
     // 모바일에서 메뉴 클릭시 on빼서 메인으로 가기
     const clickLi = mFn.qsa(".topMenu-link li");
@@ -92,7 +92,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
         <header className="header-area">
           <div className="inbox">
             {/* <!-- 로고 --> */}
-            <h1 className="logo">
+            <h1 className="logo" onClick={closeMenu}>
               <Link to="/">
                 <Logo />
               </Link>
@@ -163,7 +163,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
             {width <= 1000 && (
               <>
                 {/* 모바일 햄버거버튼 */}
-                <div className="nav-img">
+                <div className="nav-img" onClick={openMenu}>
                   <img
                     src={process.env.PUBLIC_URL + "/img/menu_w.png"}
                     alt="메뉴버튼 이미지"
