@@ -19,6 +19,8 @@ function ItemList() {
   // 상품토탈정보
   const [tot, setTot] = useState(itemListData[0]); 
 
+  console.log("이게 뭘까",tot,setTot,itemListData[0]);
+
 
 
   // 화면랜더링구역 ////////

@@ -16,6 +16,7 @@ function ItemDetail({ tot, setTot, dt }) {
   let ginfo = tot.ginfo;
   // gIdx - 상품고유번호
   let gIdx = tot.idx;
+  console.log( tot.cat);
 
   // console.log(cat, ginfo, gIdx);
 
