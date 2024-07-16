@@ -108,7 +108,7 @@ function SubSets({ catName, subCatName }) {
 
                       let temp = locals.some((v2) => {
                         console.log(v2.gCapacity);
-                        if (v2.gCapacity == v.capacity) return true;
+                        if (v2.gCapacity == v.capacity && v2.gCatName==catName && v2.gSubCatName==selSubCatName) return true;
                       });
                       if (temp) {
                         alert("이미 등록하신 상품입니다~!");
@@ -136,11 +136,11 @@ function SubSets({ catName, subCatName }) {
                       localStorage.setItem("wish-data", JSON.stringify(locals));
 
                       // 카트 상태값 변경
-                      myCon.setLocalsCart(localStorage.getItem("cart-data"));
+                      myCon.setLocalsCart(localStorage.getItem("wish-data"));
                       // 카트리스트 생성 상태값 변경
                       myCon.setCartSts(true);
 
-                      console.log(myCon.setLocalsCart(localStorage.getItem("cart-data")));
+                      // console.log(myCon.setLocalsCart(localStorage.getItem("cart-data")));
                     }}
                   >
                     <div className="sub3-slide">
