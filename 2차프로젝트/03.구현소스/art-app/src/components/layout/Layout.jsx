@@ -6,6 +6,7 @@ import { aCon } from "../modules/aCon";
 
 import mFn from "../func/my_function";
 import { useNavigate } from "react-router-dom";
+import CartList from "../modules/CartList";
 
 function Layout(props) {
   const rdmNum = useRef({
@@ -140,6 +141,7 @@ function Layout(props) {
       <MainArea />
       {/* 3.하단영역 */}
       <FooterArea />
+<CartList />
     </aCon.Provider>
   );
 }

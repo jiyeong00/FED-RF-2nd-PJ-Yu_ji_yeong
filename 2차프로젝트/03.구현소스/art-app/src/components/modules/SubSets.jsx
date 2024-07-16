@@ -39,7 +39,7 @@ function SubSets({ catName, subCatName }) {
   useEffect(() => {
     const slideItem = mFn.qsa(".sub3-slide img");
     const slideLeng = slideItem.length;
-    console.log("요 안나오네?", slideItem.length);
+    // console.log("요 안나오네?", slideItem.length);
     if (slideLeng <= 4) {
       $(".swiper-button-prev").fadeOut();
       $(".swiper-button-next").fadeOut();
@@ -51,13 +51,14 @@ function SubSets({ catName, subCatName }) {
 
   // [ 로컬스에 데이터 넣기 ]//////////////////////////
   // 1. 로컬스 없으면 만들기!
-  if (!localStorage.getItem("wish-data")) {
-    localStorage.setItem("wish-data", "[]");
-  } //// if /////
+  // if (!localStorage.getItem("wish-data")) {
+  //   localStorage.setItem("wish-data", "[]");
+  // } //// if /////
 
-  // 2. 로컬스 읽어와서 파싱하기
-  let locals = localStorage.getItem("wish-data");
-  locals = JSON.parse(locals);
+  // // 2. 로컬스 읽어와서 파싱하기
+  // let locals = localStorage.getItem("wish-data");
+  // locals = JSON.parse(locals);
+  // console.log(locals);
 
   return (
     selSubCatName != "kit" && (
@@ -107,46 +108,41 @@ function SubSets({ catName, subCatName }) {
                     key={i}
                     onClick={() => {
                       // 상품정보 업데이트
-                      setTot(v);
-                      // 상품정보 박스 보이기
-                      // $(".bgbx").show();
+                      console.log(v.capacity);
+                      console.log(v.idx);
 
-                      // 상품정보값만 모아서 다른 배열만들기
-                      let newLocals = locals.map((v) => v.capacity);
-                      console.log("idx새배열", newLocals);
+                      let locals;
+                      if (localStorage.getItem("wish-data"))
+                        locals = JSON.parse(localStorage.getItem("wish-data"));
+                      else locals = [];
 
-                      // 인클루드 비교
-                      let retSts = newLocals.includes(gCapacity);
+                      console.log("지금locals:", locals,v.capacity);
 
-                      if (retSts) {
-                        // 메시지 보이기
-                        alert("이미 위시리스트에 넣은 상품입니다.");
-                        //함수나가기
+                      let temp = locals.some(v2=>{
+                        console.log(v2.gCapacity);
+                        if(v2.gCapacity == v.capacity) return true
+                      });
+                      if(temp){ 
+                        alert("이미 등록하신 상품입니다~!");  
                         return;
-                      } ////////if
+                      }
 
-                      // 4. 로컬스에 객체 데이터 추가하기
                       locals.push({
                         // cat: cat,
-                        idx: gIdx,
-                        gCapacity: gCapacity,
+                        idx: v.idx,
+                        gCapacity: v.capacity
                         // cnt: $("#sum").val(),
                         /************************** 
                         [데이터 구조정의]
-                         1. idx : 상품번호
-                         2. gCapacity : 상품정보
-                         3. cnt : 상품개수
-                       ***************************/
-                      });
-                      // 로컬스에 문자화하여 입력하기
-                      localStorage.setItem("wish-data", JSON.stringify(locals));
+                        1. idx : 상품번호
+                        2. gCapacity : 상품정보
+                        3. cnt : 상품개수
+                      ***************************/
+                    });
 
-                      // 카트 상태값 변경
-                      myCon.setLocalsCart(localStorage.getItem("wish-data"));
-                      // 카트리스트 생성 상태값 변경
-                      myCon.setCartSts(true);
 
-                      console.log(v);
+                    localStorage.setItem("wish-data",JSON.stringify(locals));
+                    
                     }}
                   >
                     <div className="sub3-slide">
