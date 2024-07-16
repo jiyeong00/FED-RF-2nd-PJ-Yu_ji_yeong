@@ -16,23 +16,11 @@ import { aCon } from "./aCon";
 function SubSets({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_sets[catName])[subCatName];
   const selData = sub_sets[catName][selSubCatName];
-  const sNum = 0;
   // 용량 슬라이드 4개이하면 버튼 안보이게 할려고 만든 변수
 
   // 잔역변수 사용
   const myCon = useContext(aCon);
 
-  // 상태변수///////////////////////////////////////////////////
-  const [tot, setTot] = useState(selData);
-  // console.log(tot.capacity);
-
-  // 상품정보 개별 셋업
-  // cat - 카테고리
-  // let cat = tot.cat;
-  // capacity - 상품이름
-  let gCapacity = tot.capacity;
-  // gIdx - 상품고유번호
-  let gIdx = tot.idx;
 
   // 컴포넌트 전역변수
   const myRef = useRef(null);
@@ -116,33 +104,43 @@ function SubSets({ catName, subCatName }) {
                         locals = JSON.parse(localStorage.getItem("wish-data"));
                       else locals = [];
 
-                      console.log("지금locals:", locals,v.capacity);
+                      console.log("지금locals:", locals, v.capacity);
 
-                      let temp = locals.some(v2=>{
+                      let temp = locals.some((v2) => {
                         console.log(v2.gCapacity);
-                        if(v2.gCapacity == v.capacity) return true
+                        if (v2.gCapacity == v.capacity) return true;
                       });
-                      if(temp){ 
-                        alert("이미 등록하신 상품입니다~!");  
+                      if (temp) {
+                        alert("이미 등록하신 상품입니다~!");
                         return;
                       }
 
                       locals.push({
                         // cat: cat,
                         idx: v.idx,
-                        gCapacity: v.capacity
+                        gCapacity: v.capacity,
+                        gCatName:catName,
+                        gSubCatName: selSubCatName,
                         // cnt: $("#sum").val(),
                         /************************** 
                         [데이터 구조정의]
                         1. idx : 상품번호
                         2. gCapacity : 상품정보
+                        3. gCatName: 대분류
+                        4. gSubCatName: 소분류
                         3. cnt : 상품개수
                       ***************************/
-                    });
+                      });
 
+                      // 로컬스에 문자화하여 입력하기
+                      localStorage.setItem("wish-data", JSON.stringify(locals));
 
-                    localStorage.setItem("wish-data",JSON.stringify(locals));
-                    
+                      // 카트 상태값 변경
+                      myCon.setLocalsCart(localStorage.getItem("cart-data"));
+                      // 카트리스트 생성 상태값 변경
+                      myCon.setCartSts(true);
+
+                      console.log(myCon.setLocalsCart(localStorage.getItem("cart-data")));
                     }}
                   >
                     <div className="sub3-slide">

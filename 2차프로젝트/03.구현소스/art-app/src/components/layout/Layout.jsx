@@ -94,7 +94,7 @@ function Layout(props) {
 
   // 로컬스 카트 데이터 상태변수
   const [localsCart, setLocalsCart] = useState(
-    localStorage.getItem("cart-data")
+    localStorage.getItem("wish-data")
   );
 
   // 로컬스 카트 데이터 존재여부에 따라 상태값 변경
@@ -110,7 +110,6 @@ function Layout(props) {
   // const [pgName, setPgName] = useState("main");
   // 2. 카트리스트 사용여부 : true 일때 사용
   const [cartSts, setCartSts] = useState(cartTemp);
-  console.log(loginMsg);
 
   //// 코드 리턴구역 //////////////
   return (
@@ -141,7 +140,8 @@ function Layout(props) {
       <MainArea />
       {/* 3.하단영역 */}
       <FooterArea />
-<CartList />
+      {/* 카트리스트 : 카트상태값 true 출력 */}
+      {cartSts && <CartList />}
     </aCon.Provider>
   );
 }

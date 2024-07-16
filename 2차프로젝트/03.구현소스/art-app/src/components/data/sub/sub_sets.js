@@ -152,27 +152,27 @@ export default {
         capacity: "신한 전문가 포스터 컬러 100ml Jar 소프트블랙 & 화이트",
       },
       {
-        idx: "3",
+        idx: "4",
         capacity: "신한 전문가 포스터 컬러 100ml Jar 소프트블랙 & 화이트",
       },
       {
-        idx: "4",
+        idx: "5",
         capacity: "신한 전문가 포스터 컬러 250ml Bottle 혼색용 화이트",
       },
       {
-        idx: "5",
+        idx: "6",
         capacity: "신한 전문가 포스터 컬러 40ml Jar 12색 세트",
       },
       {
-        idx: "6",
+        idx: "7",
         capacity: "신한 전문가 포스터 컬러 40ml Jar 24색 세트 A",
       },
       {
-        idx: "7",
+        idx: "8",
         capacity: "신한 전문가 포스터 컬러 40ml Jar 30색 세트 A",
       },
       {
-        idx: "8",
+        idx: "9",
         capacity: "신한 전문가 포스터 컬러 40ml Jar 30색 세트 B",
       },
       ],

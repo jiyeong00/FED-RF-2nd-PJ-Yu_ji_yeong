@@ -76,7 +76,7 @@ function SubColor({ catName, subCatName }) {
           </ul>
         </div>
       )}
-      <ItemList/>
+      
       <div className="topBtn-area">
         <button className="top" onClick={scrollToTop} type="button">
           <span>Top</span>

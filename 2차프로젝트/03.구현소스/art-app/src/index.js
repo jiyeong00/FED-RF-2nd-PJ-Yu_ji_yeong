@@ -20,6 +20,7 @@ import TopMenu_M from "./components/modules/TopMenu_M";
 import ItemList from "./components/pages/ItemList";
 
 export default function MainComponent() {
+
   return (
     // 라우터 루트로 라우터 구성시작
     <BrowserRouter basename={process.env.PUBLIC_URL}>
@@ -69,7 +70,7 @@ const ScrollTop = () => {
     console.log("라우터경로:", pathname);
 
     const headerBackColor = document.querySelector("#header-area");
-    if(pathname=="/Board" || pathname=="/member" || pathname=="/login"){
+    if (pathname == "/Board" || pathname == "/member" || pathname == "/login") {
       headerBackColor.style.backgroundColor = "black";
     }
   }, [pathname]);
