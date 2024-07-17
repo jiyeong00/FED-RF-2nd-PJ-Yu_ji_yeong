@@ -1,6 +1,12 @@
 // 서브페이지 - 용량 (세번째페이지)
 
-import React, { useContext, useEffect, useRef, useState } from "react";
+import React, {
+  useContext,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import $ from "jquery";
 
 //데이터 불러오기
@@ -13,14 +19,13 @@ import "../../css/sub_sets.scss";
 import mFn from "../func/my_function";
 import { aCon } from "./aCon";
 
-function SubSets({ catName, subCatName }) {
+function SubSets({ catName, subCatName, logoutFn, loginSts }) {
   let selSubCatName = Object.keys(sub_sets[catName])[subCatName];
   const selData = sub_sets[catName][selSubCatName];
   // 용량 슬라이드 4개이하면 버튼 안보이게 할려고 만든 변수
 
   // 잔역변수 사용
   const myCon = useContext(aCon);
-
 
   // 컴포넌트 전역변수
   const myRef = useRef(null);
@@ -37,16 +42,24 @@ function SubSets({ catName, subCatName }) {
     }
   });
 
-  // [ 로컬스에 데이터 넣기 ]//////////////////////////
-  // 1. 로컬스 없으면 만들기!
-  // if (!localStorage.getItem("wish-data")) {
-  //   localStorage.setItem("wish-data", "[]");
-  // } //// if /////
-
-  // // 2. 로컬스 읽어와서 파싱하기
-  // let locals = localStorage.getItem("wish-data");
-  // locals = JSON.parse(locals);
-  // console.log(locals);
+  //////////////////////////////////////////////////////////////////////////////
+  /////로그인상태를 알려고 Board가 있을 경우 찾는중 여기 고쳐야함
+  useLayoutEffect(() => {
+    let found =false;
+    $(".gnb li a").each(function () {
+      var text = $(this).text(); // 각 <a> 태그의 텍스트를 가져옵니다.
+      if (text == "Board") {
+        // 로그인
+        found = true;
+        return;
+      } else {
+        return true;
+      }
+      console.log(found); // 텍스트를 콘솔에 출력합니다.
+    });
+    loginSts=found;
+    console.log(" rhkdus",loginSts);
+  }, []);
 
   return (
     selSubCatName != "kit" && (
@@ -91,76 +104,113 @@ function SubSets({ catName, subCatName }) {
                 loop={true}
                 className="mySwiper2"
               >
-                {selData.map((v, i) => (
-                  <SwiperSlide
-                    key={i}
-                    onClick={() => {
-                      // 상품정보 업데이트
-                      console.log(v.capacity);
-                      console.log(v.idx);
+                {/* // 로그아웃상태 */}
+                {loginSts === null &&
+                  selData.map((v, i) => (
+                    <SwiperSlide key={i} style={{ pointerEvents: "none" }}>
+                      <div className="sub3-slide">
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            "/img/sub/sets/" +
+                            catName +
+                            "_" +
+                            selSubCatName +
+                            "_sets_" +
+                            (i + 1) +
+                            ".png"
+                          }
+                          alt={v.capacity}
+                        />
+                      </div>
+                      <p>{v.capacity}</p>
+                    </SwiperSlide>
+                  ))}
 
-                      let locals;
-                      if (localStorage.getItem("wish-data"))
-                        locals = JSON.parse(localStorage.getItem("wish-data"));
-                      else locals = [];
+                {/* //////////////여기까지 로그아웃상태 일때 */}
 
-                      console.log("지금locals:", locals, v.capacity);
+                {/* // 로그인 상태 일때 */}
+                {loginSts !== null &&
+                  selData.map((v, i) => (
+                    <SwiperSlide
+                      style={{ cursor: "pointer" }}
+                      key={i}
+                      onClick={() => {
+                        // 상품정보 업데이트
+                        console.log(v.capacity);
+                        console.log(v.idx);
 
-                      let temp = locals.some((v2) => {
-                        console.log(v2.gCapacity);
-                        if (v2.gCapacity == v.capacity && v2.gCatName==catName && v2.gSubCatName==selSubCatName) return true;
-                      });
-                      if (temp) {
-                        alert("이미 등록하신 상품입니다~!");
-                        return;
-                      }
+                        let locals;
+                        if (localStorage.getItem("wish-data"))
+                          locals = JSON.parse(
+                            localStorage.getItem("wish-data")
+                          );
+                        else locals = [];
 
-                      locals.push({
-                        // cat: cat,
-                        idx: v.idx,
-                        gCapacity: v.capacity,
-                        gCatName:catName,
-                        gSubCatName: selSubCatName,
-                        // cnt: $("#sum").val(),
-                        /************************** 
-                        [데이터 구조정의]
-                        1. idx : 상품번호
-                        2. gCapacity : 상품정보
-                        3. gCatName: 대분류
-                        4. gSubCatName: 소분류
-                        3. cnt : 상품개수
-                      ***************************/
-                      });
+                        console.log("지금locals:", locals, v.capacity);
 
-                      // 로컬스에 문자화하여 입력하기
-                      localStorage.setItem("wish-data", JSON.stringify(locals));
-
-                      // 카트 상태값 변경
-                      myCon.setLocalsCart(localStorage.getItem("wish-data"));
-                      // 카트리스트 생성 상태값 변경
-                      myCon.setCartSts(true);
-
-                      // console.log(myCon.setLocalsCart(localStorage.getItem("cart-data")));
-                    }}
-                  >
-                    <div className="sub3-slide">
-                      <img
-                        src={
-                          process.env.PUBLIC_URL +
-                          "/img/sub/sets/" +
-                          catName +
-                          "_" +
-                          selSubCatName +
-                          "_sets_" +
-                          (i + 1) +
-                          ".png"
+                        let temp = locals.some((v2) => {
+                          // console.log(v2.gCapacity);
+                          if (
+                            v2.gCapacity == v.capacity &&
+                            v2.gCatName == catName &&
+                            v2.gSubCatName == selSubCatName
+                          )
+                            return true;
+                        });
+                        if (temp) {
+                          alert("이미 등록하신 상품입니다~!");
+                          return;
                         }
-                        alt={v.capacity}
-                      />
-                    </div>
-                    <p>{v.capacity}</p>
-                  </SwiperSlide>
-                ))}
+
+                        locals.push({
+                          // cat: cat,
+                          idx: v.idx,
+                          gCapacity: v.capacity,
+                          gCatName: catName,
+                          gSubCatName: selSubCatName,
+                          // cnt: $("#sum").val(),
+                          /************************** 
+                          [데이터 구조정의]
+                          1. idx : 상품번호
+                          2. gCapacity : 상품정보
+                          3. gCatName: 대분류
+                          4. gSubCatName: 소분류
+                          3. cnt : 상품개수
+                        ***************************/
+                        });
+
+                        // 로컬스에 문자화하여 입력하기
+                        localStorage.setItem(
+                          "wish-data",
+                          JSON.stringify(locals)
+                        );
+
+                        // 카트 상태값 변경
+                        myCon.setLocalsCart(localStorage.getItem("wish-data"));
+                        // 카트리스트 생성 상태값 변경
+                        myCon.setCartSts(true);
+                      }}
+                    >
+                      <div className="sub3-slide">
+                        <img
+                          src={
+                            process.env.PUBLIC_URL +
+                            "/img/sub/sets/" +
+                            catName +
+                            "_" +
+                            selSubCatName +
+                            "_sets_" +
+                            (i + 1) +
+                            ".png"
+                          }
+                          alt={v.capacity}
+                        />
+                      </div>
+                      <p>{v.capacity}</p>
+                    </SwiperSlide>
+                  ))}
+                {/* //////////////여기까지 로그인일때 */}
               </Swiper>
               <div
                 className="swiper-button-next"

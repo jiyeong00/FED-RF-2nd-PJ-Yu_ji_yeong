@@ -11,7 +11,7 @@ import { Link } from "react-router-dom";
 
 import mFn from "../func/my_function";
 
-function ContDesc({ catName, subCatName }) {
+function ContDesc({ catName, subCatName}) {
   const selData = cont_data[catName];
   const selData2 = cont_data[catName].option;
 

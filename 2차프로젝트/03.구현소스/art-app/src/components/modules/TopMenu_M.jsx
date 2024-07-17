@@ -23,7 +23,7 @@ function TopMenu_M({ logoutFn, loginSts }) {
           <li>
             <ol className="topMenu-link">
               {
-                // 로그인 상태가 null일때 나옴
+                // 로그인 상태가 아닐때
                 loginSts === null && (
                   <>
                     <li>
@@ -36,7 +36,7 @@ function TopMenu_M({ logoutFn, loginSts }) {
                 )
               }
               {
-                // 로그인 상태가 null이 아니면
+                // 로그인 상태 일때
                 loginSts !== null && (
                   <>
                     <li>

@@ -5,7 +5,7 @@ import SubPoint from "../modules/SubPoint";
 import SubSets from "../modules/SubSets";
 import SubColor from "../modules/SubColor";
 
-function SubPage() {
+function SubPage({loginSts,logoutFn}) {
   // 라우터호출 시 전달한 값을 받는다.
   const loc = useLocation();
   const mcat = loc.state.mcat;
@@ -19,7 +19,7 @@ function SubPage() {
 
       <SubPoint catName={mcat} subCatName={scat} />
 
-      <SubSets catName={mcat} subCatName={scat} />
+      <SubSets catName={mcat} subCatName={scat} loginSts={loginSts} logoutFn={logoutFn} />
 
       <SubColor catName={mcat} subCatName={scat} />
     </>

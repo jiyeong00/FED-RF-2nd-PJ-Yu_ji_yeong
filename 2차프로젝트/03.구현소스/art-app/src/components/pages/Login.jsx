@@ -11,7 +11,7 @@ import { aCon } from "../modules/aCon";
 function Login(props) {
   // 컨텍스트 사용
   const myCon = useContext(aCon);
-  console.log(myCon.loginSts);
+  // console.log(myCon.loginSts);
 
   // [ 상태관리변수 ] /////////////
   // [1] 입력요소 상태변수

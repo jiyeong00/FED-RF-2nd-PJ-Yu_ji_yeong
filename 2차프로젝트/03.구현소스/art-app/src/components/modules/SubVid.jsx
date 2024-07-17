@@ -10,7 +10,7 @@ import "../../css/sub_vid.scss";
 function SubVid({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_data[catName])[subCatName];
   const selData = sub_data[catName][selSubCatName];
-  console.log("dd", selSubCatName, selData, catName);
+  // console.log("dd", selSubCatName, selData, catName);
 
   const [width, setWidth] = useState(window.innerWidth);
 

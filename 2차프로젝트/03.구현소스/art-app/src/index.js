@@ -67,7 +67,7 @@ const ScrollTop = () => {
     // 스크롤 최상단 이동
     window.scrollTo(0, 0);
     // 변경된 라우터 경로값 확인
-    console.log("라우터경로:", pathname);
+    // console.log("라우터경로:", pathname);
 
     const headerBackColor = document.querySelector("#header-area");
     if (pathname == "/Board" || pathname == "/member" || pathname == "/login") {

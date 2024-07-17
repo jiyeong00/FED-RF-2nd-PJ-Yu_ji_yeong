@@ -1,9 +1,6 @@
 import React, {
   memo,
-  useContext,
   useEffect,
-  useLayoutEffect,
-  useRef,
   useState,
 } from "react";
 
@@ -26,16 +23,6 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
 
   //모바일 - 메뉴버튼 클릭
   useEffect(() => {
-    // .topMenu-M 클릭시 openMenu함수 호출
-    // $(".nav-img").on("click", () => {
-    //   console.log("메뉴 눌렷다!!");
-    //   openMenu();
-    // });
-
-    // $(".logo").on("click", () => {
-    //   closeMenu();
-    // });
-
     // 모바일에서 메뉴 클릭시 on빼서 메인으로 가기
     const clickLi = mFn.qsa(".topMenu-link li");
     clickLi.forEach((ele) => {
@@ -108,6 +95,7 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
                     <ol>
                       {gnbData["메뉴"].map((v, i) => (
                         <li key={i}>
+                          {/* 보드는 로그인일때만 나옴 */}
                           {v === "Board" && loginSts === null ? (
                             ""
                           ) : (
