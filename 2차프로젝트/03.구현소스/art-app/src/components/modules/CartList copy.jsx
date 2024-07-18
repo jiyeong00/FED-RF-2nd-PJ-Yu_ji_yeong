@@ -1,18 +1,12 @@
 import React, { useContext, useEffect, useState } from "react";
-import { Swiper, SwiperSlide } from "swiper/react";
 
 // 제이쿼리
 import $ from "jquery";
 
 // css
 import "../../css/cart_list.scss";
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
 
 import { aCon } from "./aCon";
-
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
 
 // 데이터
 import sub_sets from "../data/sub/sub_sets";
@@ -28,9 +22,6 @@ function CartList() {
 
   // 컨텍스트 사용
   const myCon = useContext(aCon);
-
-  // 전역 로그인 상태 변수 확인(변수할당!)
-  const sts = myCon.loginSts;
 
   // 로컬스 데이터 가져오기
   const selData = JSON.parse(myCon.localsCart);
@@ -72,17 +63,12 @@ function CartList() {
     setGroups(groupsArray);
   };
 
-  // 선택된 대분류를 업데이트.
   const handleCatClick = (category) => {
+    // 선택된 대분류를 업데이트.
     // 소분류 추가
     setSelCategory(category);
   };
 
-  if(sts){
-    setTimeout(() => {
-      $("#mywish").addClass('open');
-    }, 500);
-  }
 
   return (
     <>
@@ -100,7 +86,6 @@ function CartList() {
               },
               400
             );
-            $("#mywish").addClass("on");
           }}
         >
           <FontAwesomeIcon icon={faXmark} className="fa-xmark" />
@@ -109,7 +94,8 @@ function CartList() {
 
         {/*  제목 */}
         <h1> 위시 리스트</h1>
-        <div className="wish-sub-tit">
+        {/* 내용 */}
+        <div className="wish-list-txt">
           <div>
             {groups.map((group, index) => (
               <div key={index}>
@@ -123,89 +109,60 @@ function CartList() {
                     {group.gCatName}
                   </strong>
                 </div>
-
-                <Swiper
-                  // slidesPerView={1}
-                  spaceBetween={30}
-                  breakpoints={{
-                    1019: {
-                      slidesPerView: 4,
-                    },
-                    800: {
-                      slidesPerView: 3,
-                    },
-                    500: {
-                      slidesPerView: 2,
-                    },
-                    200: {
-                      slidesPerView: 1,
-                    },
-                  }}
-                  speed={1000}
-                  /* 사용할 모듈을 여기에 적용시킨다 */
-                  modules={[Navigation]}
-                  // 스와이퍼 사이즈별 슬라이드수 변경!
-                  className="mySwiper3"
-                >
-                  <div className="wish-sub-txt-wrap swiper-wrapper">
-                    {/* 선택된 대분류의 소분류들만 출력함. // 스와이퍼*/}
-                    {selectedCategory === group.gCatName &&
-                      group.gCapacities.map((capacity, idx) => (
-                        <React.Fragment key={idx}>
-                          {idx > 0 && (
-                            <SwiperSlide className="wish-sub-txt swiper-slide">
-                              <img
-                                src={
-                                  process.env.PUBLIC_URL +
-                                  "/img/sub/sets/" +
-                                  group.gCatName +
-                                  "_" +
-                                  capacity[2] +
-                                  "_sets_" +
-                                  capacity[1] +
-                                  ".png"
-                                }
-                                alt={capacity}
-                              />
-                              <p>{capacity[0]}</p>
-                              <button className="more-btn"><span>삭제</span></button>
-                            </SwiperSlide>
-                          )}
-                        </React.Fragment>
-                      ))}
+                <div className="wish-sub-txt-wrap no_scroll">
+                  {/* 선택된 대분류의 소분류들만 출력함. */}
+                  
+                  {/* /////////////////////////////////////////////////////// */}
+                  {selectedCategory === group.gCatName &&
+                    group.gCapacities.map((capacity, idx) => (
+                      <React.Fragment key={idx}>
+                        {idx > 0 && (
+                          <div className="wish-sub-txt">
+                            <img
+                              src={
+                                process.env.PUBLIC_URL +
+                                "/img/sub/sets/" +
+                                group.gCatName +
+                                "_" +
+                                capacity[2] +
+                                "_sets_" +
+                                capacity[1] +
+                                ".png"
+                              }
+                              alt={capacity}
+                            />
+                            {capacity[0]}
+                          </div>
+                        )}
+                      </React.Fragment>
+                    ))}
                     {/* /////////////////////////////////////////////////////// */}
-                  </div>
-                </Swiper>
+
+                </div>
               </div>
             ))}
           </div>
         </div>
       </section>
       {/* 열기버튼이미지 박스 */}
-      {sts && (
-        <div
-          id="mywish"
-          className="mywishLogin"
-          onClick={() => {
-            // 왼쪽으로 이동하여 나타남!
-            $("#wishlist").animate(
-              {
-                right: "0",
-              },
-              400
-            );
-        
-              $("#mywish").removeClass("on");
-           
-
-            setForce(!force);
-          }}
-        >
-          {/* 열기이미지 */}
-          <FontAwesomeIcon icon={faHeart} className="fa-heart" />
-
-        </div>
-      )}
+      <div
+        id="mywish"
+        onClick={() => {
+          // 왼쪽으로 이동하여 나타남!
+          $("#wishlist").animate(
+            {
+              right: "0",
+            },
+            400
+          );
+          setForce(!force);
+        }}
+      >
+        {/* 열기이미지 */}
+        <FontAwesomeIcon icon={faHeart} className="fa-heart" />
+        {/* 카트상품개수 출력박스 */}
+        {/* <div className="cntBx">{dataCnt}</div> */}
+      </div>
     </>
   );
 }

@@ -60,7 +60,6 @@ export const TopArea = memo(({ loginMsg, loginSts, logoutFn, goPage }) => {
         topArea.style.backgroundColor = "black";
         topArea.style.transition = ".3s ease-out";
       } else if (CRITERIA > scrollLocation) {
-        // console.log("나오나?");
         topArea.style.backgroundColor = "rgba(0, 0, 0, 0)";
         topArea.style.transition = ".3s ease-out";
       }

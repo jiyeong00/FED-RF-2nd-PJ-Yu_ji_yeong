@@ -29,7 +29,6 @@ function Main(props) {
     mainFn();
 
     return(()=>{
-      console.log("메인소멸한다~!");
       // 인터발지우기
       clearInterval(autoI);
     });
@@ -64,8 +63,6 @@ function Main(props) {
                     className="more-btn"
                     onClick={() => {
                       nav(v.link);
-                      console.log("나오나??");
-                      // window.location.href = `${process.env.PUBLIC_URL+v.link}`;
                     }}
                   >
                     <span>자세히 보기</span>

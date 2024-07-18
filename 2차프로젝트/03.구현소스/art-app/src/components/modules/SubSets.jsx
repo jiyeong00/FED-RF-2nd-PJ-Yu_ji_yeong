@@ -19,13 +19,16 @@ import "../../css/sub_sets.scss";
 import mFn from "../func/my_function";
 import { aCon } from "./aCon";
 
-function SubSets({ catName, subCatName, logoutFn, loginSts }) {
+function SubSets({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_sets[catName])[subCatName];
   const selData = sub_sets[catName][selSubCatName];
   // 용량 슬라이드 4개이하면 버튼 안보이게 할려고 만든 변수
 
   // 잔역변수 사용
   const myCon = useContext(aCon);
+
+  // 전역 로그인 상태 변수 확인(변수할당!)
+  const sts = myCon.loginSts;
 
   // 컴포넌트 전역변수
   const myRef = useRef(null);
@@ -43,23 +46,10 @@ function SubSets({ catName, subCatName, logoutFn, loginSts }) {
   });
 
   //////////////////////////////////////////////////////////////////////////////
-  /////로그인상태를 알려고 Board가 있을 경우 찾는중 여기 고쳐야함
-  useLayoutEffect(() => {
-    let found =false;
-    $(".gnb li a").each(function () {
-      var text = $(this).text(); // 각 <a> 태그의 텍스트를 가져옵니다.
-      if (text == "Board") {
-        // 로그인
-        found = true;
-        return;
-      } else {
-        return true;
-      }
-      console.log(found); // 텍스트를 콘솔에 출력합니다.
-    });
-    loginSts=found;
-    console.log(" rhkdus",loginSts);
-  }, []);
+  /////로그인상태 확인
+  if (sts) {
+    console.log("로그인");
+  } else console.log("로그아웃");
 
   return (
     selSubCatName != "kit" && (
@@ -105,9 +95,9 @@ function SubSets({ catName, subCatName, logoutFn, loginSts }) {
                 className="mySwiper2"
               >
                 {/* // 로그아웃상태 */}
-                {loginSts === null &&
+                {!sts &&
                   selData.map((v, i) => (
-                    <SwiperSlide key={i} style={{ pointerEvents: "none" }}>
+                    <SwiperSlide key={i}>
                       <div className="sub3-slide">
                         <img
                           src={
@@ -130,15 +120,21 @@ function SubSets({ catName, subCatName, logoutFn, loginSts }) {
                 {/* //////////////여기까지 로그아웃상태 일때 */}
 
                 {/* // 로그인 상태 일때 */}
-                {loginSts !== null &&
+                {sts &&
                   selData.map((v, i) => (
                     <SwiperSlide
                       style={{ cursor: "pointer" }}
                       key={i}
                       onClick={() => {
+                        // 오른쪽으로 이동하여 사라짐
+                        $("#wishlist").animate(
+                          {
+                            right: "-60vw",
+                          },
+                          400
+                        );
+
                         // 상품정보 업데이트
-                        console.log(v.capacity);
-                        console.log(v.idx);
 
                         let locals;
                         if (localStorage.getItem("wish-data"))
@@ -147,7 +143,12 @@ function SubSets({ catName, subCatName, logoutFn, loginSts }) {
                           );
                         else locals = [];
 
-                        console.log("지금locals:", locals, v.capacity);
+                        console.log(
+                          "지금locals:",
+                          locals,
+                          v.capacity,
+                          selSubCatName
+                        );
 
                         let temp = locals.some((v2) => {
                           // console.log(v2.gCapacity);

@@ -59,6 +59,35 @@ export default function Board() {
   // 페이지당 개수
   const unitSize = 8;
 
+    // 메뉴 on넣기!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+    useEffect(() => {
+      const cMenu = document.querySelectorAll(".gnb ul li a");
+      const logo = document.querySelector(".header-area .logo");
+      cMenu.forEach((ele) => {
+  
+        // 클릭하면 다른 ele on 지우기
+        ele.onclick = () => {
+          cMenu.forEach((item) => {
+            item.classList.remove("on");
+          });
+        }; ////////////cMenu.ele.onclick
+        // 로고 누르면 on지우기
+        logo.onclick = () => {
+          cMenu.forEach((item) => {
+            item.classList.remove("on");
+          });
+        }; /////////////////////logo.onclick
+
+        if (ele.text=="Board") {
+          // console.log("dsdsadasdasdafjakl");
+          ele.classList.add("on");
+        } ////if
+      }); ////////////////////cMenu foreach
+
+    }, []); 
+    ///////////////////메뉴 on넣기 useEffect/////////////////////////
+
+
   /********************************************** 
         함수명: bindList
         기능 : 페이지별 리스트를 생성하여 바인딩함

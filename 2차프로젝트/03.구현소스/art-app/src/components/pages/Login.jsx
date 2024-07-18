@@ -104,7 +104,7 @@ function Login(props) {
     // 1. 기본서브밋 막기
     e.preventDefault();
 
-    console.log("최종검사:", totalValid());
+    // console.log("최종검사:", totalValid());
 
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
@@ -120,13 +120,11 @@ function Login(props) {
 
       // 3. 로컬스 객체변환
       memData = JSON.parse(memData);
-      console.log(memData);
 
       // 4. 아이디 존재 여부 검사하기
       let result = memData.find((v) => {
         if (v.uid === userId) return true;
       }); /////// find ///////
-      console.log("결과:", result);
 
       // 4-1. 결과값이 없으면 메시지 보이기
       if (!result) {
@@ -166,7 +164,7 @@ function Login(props) {
           // 1초후 메인 페이지로 이동
           setTimeout(() => {
             myCon.goPage("/");
-          }, 1000);
+          }, 500);
         } //// if /////
         // 로그인 실패시 메시지 출력!
         else {

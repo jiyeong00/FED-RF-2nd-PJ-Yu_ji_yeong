@@ -14,7 +14,14 @@ function TopMenu_M({ logoutFn, loginSts }) {
             <ol className="topMenu-link">
               {gnbData["메뉴"].map((v, i) => (
                 <li key={i}>
-                  <Link to={"/" + v}>{v}</Link>
+                  {/* 보드는 로그인일때만 나옴 */}
+                  {v === "Board" && loginSts === null ? (
+                    ""
+                  ) : (
+                    <>
+                      <Link to={"/" + v}>{v}</Link>
+                    </>
+                  )}
                 </li>
               ))}
             </ol>

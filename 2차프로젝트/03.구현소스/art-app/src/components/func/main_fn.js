@@ -59,7 +59,6 @@ function mainFn() {
 
   // 블릿의 li까지 수집! indic 변수
   indic = mFn.qsa(".indic li");
-  console.log("ddddd");
 
   // 2. 버튼을 모두 이벤트 설정하기
   for (let x of indic) {

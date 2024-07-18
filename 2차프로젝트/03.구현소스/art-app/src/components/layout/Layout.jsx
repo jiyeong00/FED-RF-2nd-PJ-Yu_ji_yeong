@@ -87,7 +87,7 @@ function Layout(props) {
     }
   }, []);
 
-  ///////////////////////////////쇼핑카트!!
+  ///////////////////////////////위시리스트!!///////////////////////
 
   // 로컬스 카트 존재여부변수
   let cartTemp = false;
@@ -102,7 +102,7 @@ function Layout(props) {
     // 데이터가 있으면 cartTemp값 true로 변경
     // 데이터 개수가 0이 아니어야함!
     let cartCnt = JSON.parse(localsCart).length;
-    console.log("카트 데이터수:", cartCnt);
+    // console.log("카트 데이터수:", cartCnt);
     if (cartCnt > 0) cartTemp = true;
   } //////////// 카트존재여부 if ////////
 
@@ -137,7 +137,7 @@ function Layout(props) {
         goPage={goPage}
       />
       {/* 2.메인영역 */}
-      <MainArea />
+      <MainArea/>
       {/* 3.하단영역 */}
       <FooterArea />
       {/* 카트리스트 : 카트상태값 true 출력 */}

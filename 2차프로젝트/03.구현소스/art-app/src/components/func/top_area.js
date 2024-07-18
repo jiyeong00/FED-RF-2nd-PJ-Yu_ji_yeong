@@ -1,4 +1,4 @@
-// 탑아리아 메뉴 관련 JS
+// 모바일 탑아리아 메뉴 관련 JS
 
 import mFn from "./my_function";
 import $ from "jquery";

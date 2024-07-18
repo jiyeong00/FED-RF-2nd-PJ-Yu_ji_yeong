@@ -8,7 +8,6 @@ import "../../css/sub_color.scss";
 import sub_color from "../data/sub/sub_color";
 
 import { aCon } from "../modules/aCon";
-import ItemList from "../pages/ItemList";
 
 function SubColor({ catName, subCatName }) {
   const myCon = useContext(aCon);
@@ -35,7 +34,7 @@ function SubColor({ catName, subCatName }) {
       }
     };
 
-    console.log(window.scrollY);
+    // console.log(window.scrollY);
     window.addEventListener("scroll", handleShowButton);
     return () => {
       window.removeEventListener("scroll", handleShowButton);

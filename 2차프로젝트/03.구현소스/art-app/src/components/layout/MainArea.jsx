@@ -1,11 +1,11 @@
 import React from 'react';
 import { Outlet } from 'react-router-dom';
 
-function MainArea(props) {
+function MainArea() {
     //// 코드 리턴구역 //////////////
     return(
         <main>
-            <Outlet />
+            <Outlet/>
         </main>
     );
 }
