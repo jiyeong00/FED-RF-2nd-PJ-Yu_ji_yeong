@@ -19,10 +19,16 @@ import "../../css/sub_sets.scss";
 import mFn from "../func/my_function";
 import { aCon } from "./aCon";
 
+// 폰트어썸
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faHeart } from "@fortawesome/free-solid-svg-icons";
+
 function SubSets({ catName, subCatName }) {
   let selSubCatName = Object.keys(sub_sets[catName])[subCatName];
-  const selData = sub_sets[catName][selSubCatName];
   // 용량 슬라이드 4개이하면 버튼 안보이게 할려고 만든 변수
+  const selData = sub_sets[catName][selSubCatName];
+  // 강제리랜더링을 위한 상태변수
+  const [force, setForce] = useState(false);
 
   // 잔역변수 사용
   const myCon = useContext(aCon);
@@ -45,11 +51,55 @@ function SubSets({ catName, subCatName }) {
     }
   });
 
+  useEffect(() => {
+    const wishCancle = mFn.qsa(".wish-cancle");
+    const chgHeart = mFn.qsa(".add-wish");
+    wishCancle.forEach((ele,idx) => {
+      chgHeart.forEach((v, i) => {
+        console.log(idx,i)
+        // if (
+        //   ele.idx - 1 == i
+        // ) {
+        //   v.classList.add("on");
+        // }
+      });
+    });
+  });
+  /////////////////////////////////////////////////////////////////////////////
+  //위시리스트 하트 붉게만들기
+  useEffect(() => {
+    /////////////하트 붉게
+    clickHeart();
+  }, [force]);
+
+  function clickHeart() {
+    let locals;
+    if (localStorage.getItem("wish-data"))
+      locals = JSON.parse(localStorage.getItem("wish-data"));
+    else locals = [];
+
+    const chgHeart = mFn.qsa(".add-wish");
+
+    locals.forEach((ele) => {
+      chgHeart.forEach((v, i) => {
+        if (
+          ele.idx - 1 == i &&
+          ele.gCatName == catName &&
+          ele.gSubCatName == selSubCatName
+        ) {
+          v.classList.add("on");
+        }
+      });
+    });
+  }
+
+  // $(".wish-xmark").mFn
+
   //////////////////////////////////////////////////////////////////////////////
   /////로그인상태 확인
-  if (sts) {
-    console.log("로그인");
-  } else console.log("로그아웃");
+  // if (sts) {
+  //   console.log("로그인");
+  // } else console.log("로그아웃");
 
   return (
     selSubCatName != "kit" && (
@@ -143,21 +193,20 @@ function SubSets({ catName, subCatName }) {
                           );
                         else locals = [];
 
-                        console.log(
-                          "지금locals:",
-                          locals,
-                          v.capacity,
-                          selSubCatName
-                        );
+                        ///////////////////////////////////////////!!!!!!!!!!!!!!!!!!!!!!!!!
 
+                        //로컬스에 같은데이터가 있으면 true
                         let temp = locals.some((v2) => {
-                          // console.log(v2.gCapacity);
                           if (
                             v2.gCapacity == v.capacity &&
                             v2.gCatName == catName &&
                             v2.gSubCatName == selSubCatName
-                          )
+                          ) {
                             return true;
+                          } else {
+                            ///////////하트 붉게
+                            clickHeart();
+                          }
                         });
                         if (temp) {
                           alert("이미 등록하신 상품입니다~!");
@@ -187,10 +236,12 @@ function SubSets({ catName, subCatName }) {
                           JSON.stringify(locals)
                         );
 
+                        setForce(!force);
+
                         // 카트 상태값 변경
-                        myCon.setLocalsCart(localStorage.getItem("wish-data"));
+                        myCon.setLocalsWish(localStorage.getItem("wish-data"));
                         // 카트리스트 생성 상태값 변경
-                        myCon.setCartSts(true);
+                        myCon.setWishSts(true);
                       }}
                     >
                       <div className="sub3-slide">
@@ -209,6 +260,9 @@ function SubSets({ catName, subCatName }) {
                         />
                       </div>
                       <p>{v.capacity}</p>
+                      <div className={`add-wish add-${i + 1}`}>
+                        <FontAwesomeIcon icon={faHeart} className="fa-heart" />
+                      </div>
                     </SwiperSlide>
                   ))}
                 {/* //////////////여기까지 로그인일때 */}

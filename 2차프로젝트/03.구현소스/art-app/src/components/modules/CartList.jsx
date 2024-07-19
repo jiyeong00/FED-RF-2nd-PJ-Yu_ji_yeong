@@ -12,10 +12,8 @@ import "swiper/css/pagination";
 
 import { aCon } from "./aCon";
 
-import { Pagination, Autoplay, Navigation } from "swiper/modules";
+import { Navigation } from "swiper/modules";
 
-// 데이터
-import sub_sets from "../data/sub/sub_sets";
 // 폰트어썸
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
@@ -33,7 +31,7 @@ function CartList() {
   const sts = myCon.loginSts;
 
   // 로컬스 데이터 가져오기
-  const selData = JSON.parse(myCon.localsCart);
+  const selData = JSON.parse(myCon.localsWish);
   useEffect(() => {
     // 데이터 그룹화해서 초기화
     initializeGroups();
@@ -49,11 +47,19 @@ function CartList() {
           gIdx: i.idx,
           gSubCatName: i.gSubCatName,
         };
-        acc[i.gCatName].gCapacities.push([i.gCapacity, i.idx, i.gSubCatName]);
+        acc[i.gCatName].gCapacities.push([
+          i.gCapacity,
+          i.idx,
+          i.gSubCatName,
+        ]);
         // acc[i.gCatName].gCapacities.push([i.gCapacity,i.idx,i.gSubCatName]);
       } else {
         // 같으면 이미 있는 그룹에 추가
-        acc[i.gCatName].gCapacities.push([i.gCapacity, i.idx, i.gSubCatName]);
+        acc[i.gCatName].gCapacities.push([
+          i.gCapacity,
+          i.idx,
+          i.gSubCatName,
+        ]);
       }
 
       return acc;
@@ -64,7 +70,7 @@ function CartList() {
     localStorage.setItem("wish-data", res);
 
     // 4. 카트리스트 전역상태변수 변경
-    myCon.setLocalsCart(res);
+    myCon.setLocalsWish(res);
 
     // 객체를 배열로 변환합니다.
     const groupsArray = Object.values(groupedData);
@@ -78,9 +84,9 @@ function CartList() {
     setSelCategory(category);
   };
 
-  if(sts){
+  if (sts) {
     setTimeout(() => {
-      $("#mywish").addClass('open');
+      $("#mywish").addClass("open");
     }, 500);
   }
 
@@ -104,12 +110,11 @@ function CartList() {
           }}
         >
           <FontAwesomeIcon icon={faXmark} className="fa-xmark" />
-          <span>닫기버튼</span>
         </a>
 
         {/*  제목 */}
         <h1> 위시 리스트</h1>
-        <div className="wish-sub-tit">
+        <div className="wish-txt">
           <div>
             {groups.map((group, index) => (
               <div key={index}>
@@ -119,14 +124,14 @@ function CartList() {
                       handleCatClick(group.gCatName);
                     }}
                   >
-                    {/* {console.log("순번?", group)} */}
+                    {/* {console.log("순번?", idx.idx)} */}
                     {group.gCatName}
                   </strong>
                 </div>
 
                 <Swiper
                   // slidesPerView={1}
-                  spaceBetween={30}
+                  spaceBetween={20}
                   breakpoints={{
                     1019: {
                       slidesPerView: 4,
@@ -165,10 +170,56 @@ function CartList() {
                                   capacity[1] +
                                   ".png"
                                 }
-                                alt={capacity}
+                                alt={capacity[0]}
                               />
+                              <p>{capacity[2]}</p>
                               <p>{capacity[0]}</p>
-                              <button className="more-btn"><span>삭제</span></button>
+                              <div
+                                className="wish-cancle"
+                                onClick={() => {
+                                  // confirm()의 "확인"클릭시 true
+                                  if (window.confirm("삭제하시겠습니까?")) {
+                                    // console.log("삭제 예정!!",(group.gCapacities).length-1);
+
+                                    // selectedCategory === group.gCatName
+                                    selData.map((v, i) => {
+
+                                      /////////소분류랑 대분류가 같을경우 해당 로컬스데이터 삭제
+                                      if (
+                                        v.gCapacity == capacity[0] &&
+                                        v.gSubCatName == capacity[2]
+                                      ) {
+                                        // 1.데이터 지우기 :
+                                        selData.splice(i, 1);
+
+                                        // 2. 데이터 문자화하기 : 변경된 원본을 문자화
+                                        let res = JSON.stringify(selData);
+
+                                        // 3.로컬스 "cart-data"반영하기
+                                        localStorage.setItem("wish-data", res);
+
+                                        // 4. 카트리스트 전역상태변수 변경
+                                        myCon.setLocalsWish(res);
+
+                                      
+                                        
+                                        // 5. 강제리랜더링
+                                        setForce(!force);
+
+                                        // 6. 데이터개수가 0이면 위시리스트 상태변수 변경
+                                        // 위시리스트 출력을 없앤다!
+                                        if (selData.length == 0)
+                                          myCon.setWishSts(false);
+                                      }
+                                    });
+                                  } //// if /////
+                                }}
+                              >
+                                <FontAwesomeIcon
+                                  icon={faXmark}
+                                  className="wish-xmark"
+                                />
+                              </div>
                             </SwiperSlide>
                           )}
                         </React.Fragment>
@@ -194,16 +245,14 @@ function CartList() {
               },
               400
             );
-        
-              $("#mywish").removeClass("on");
-           
+
+            $("#mywish").removeClass("on");
 
             setForce(!force);
           }}
         >
           {/* 열기이미지 */}
           <FontAwesomeIcon icon={faHeart} className="fa-heart" />
-
         </div>
       )}
     </>

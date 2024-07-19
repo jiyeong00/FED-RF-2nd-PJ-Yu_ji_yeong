@@ -33,9 +33,7 @@
   font-size: 3rem;
 
   transition: transform 0.3s;
-}
-#wishlist .cbtn span {
-  display: none;
+  color: white;
 }
 
 #wishlist table {
@@ -95,8 +93,13 @@
 
 //////////////////////////////////////////////////////////////
 // 위시리스트 제목
+.wish-txt{
+  padding: 15px;
+}
+.mySwiper3 {
+  margin-top: 10px;
+}
 .wish-sub-tit {
-  padding: 10px;
   strong {
     font-size: 2rem;
     cursor: pointer;
@@ -112,6 +115,7 @@
 
   //이미지와 텍스트 flex
   .wish-sub-txt {
+    position: relative;
     display: flex;
     flex-direction: column;
   }
@@ -125,8 +129,17 @@
   font-size: 1.2rem;
   margin-top: 6px;
 }
-.wish-sub-txt button{
-  width: 100%;
+.wish-sub-txt .wish-cancle{
+  position: absolute;
+  top: 0;
+  right: 3px;
+
   height: 20px;
+  .wish-xmark{
+    cursor: pointer;
+    // outline: red 2px solid;
+    font-size: 2rem;
+    color: black;
+  }
 }
 

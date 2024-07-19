@@ -90,26 +90,26 @@ function Layout(props) {
   ///////////////////////////////위시리스트!!///////////////////////
 
   // 로컬스 카트 존재여부변수
-  let cartTemp = false;
+  let wishTemp = false;
 
   // 로컬스 카트 데이터 상태변수
-  const [localsCart, setLocalsCart] = useState(
+  const [localsWish, setLocalsWish] = useState(
     localStorage.getItem("wish-data")
   );
 
   // 로컬스 카트 데이터 존재여부에 따라 상태값 변경
-  if (localsCart) {
-    // 데이터가 있으면 cartTemp값 true로 변경
+  if (localsWish) {
+    // 데이터가 있으면 wishTemp값 true로 변경
     // 데이터 개수가 0이 아니어야함!
-    let cartCnt = JSON.parse(localsCart).length;
+    let cartCnt = JSON.parse(localsWish).length;
     // console.log("카트 데이터수:", cartCnt);
-    if (cartCnt > 0) cartTemp = true;
+    if (cartCnt > 0) wishTemp = true;
   } //////////// 카트존재여부 if ////////
 
   // 1. 페이지변경 상태변수
   // const [pgName, setPgName] = useState("main");
   // 2. 카트리스트 사용여부 : true 일때 사용
-  const [cartSts, setCartSts] = useState(cartTemp);
+  const [wishSts, setWishSts] = useState(wishTemp);
 
   //// 코드 리턴구역 //////////////
   return (
@@ -124,9 +124,9 @@ function Layout(props) {
         goPage,
         makeMsg,
         logoutFn,
-        setCartSts,
-        setLocalsCart,
-        localsCart,
+        setWishSts,
+        setLocalsWish,
+        localsWish,
       }}
     >
       {/* 1.상단영역 */}
@@ -141,7 +141,7 @@ function Layout(props) {
       {/* 3.하단영역 */}
       <FooterArea />
       {/* 카트리스트 : 카트상태값 true 출력 */}
-      {cartSts && <CartList />}
+      {wishSts && <CartList />}
     </aCon.Provider>
   );
 }

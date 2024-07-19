@@ -53,5 +53,16 @@
     transition: 0.3s ease-in-out;
   }
 }
+// 위시리스트 넣은 표시 하트!!
+.add-wish{
+  position: absolute;
+  top: 0;
+  right: 0;
+  margin: 5px;
+  font-size: 2rem;
+  &.on{
+    color: red;
+  }
+}
 
 /////////////////////////모바일은 sub_vid.scss에다가!!!!///////////////////
