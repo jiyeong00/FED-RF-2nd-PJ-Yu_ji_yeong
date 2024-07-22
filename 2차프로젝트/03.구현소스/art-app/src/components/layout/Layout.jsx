@@ -123,6 +123,8 @@ function Layout(props) {
 
   // 강제 리랜더링 상태변수
   const [force, setForce] = useState(true);
+  // 위시리스트 삭제 상태변수
+  const [delWish, setDelWish] = useState(true);
 
   //// 코드 리턴구역 //////////////
   return (
@@ -142,6 +144,8 @@ function Layout(props) {
         localsWish,
         force,
         setForce,
+        setDelWish,
+        delWish,
       }}
     >
       {/* 1.상단영역 */}

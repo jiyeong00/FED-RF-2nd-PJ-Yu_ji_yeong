@@ -69,14 +69,19 @@
   border-radius: 10px 0 0 10px;
   padding: 10px;
   z-index: 9999999;
-  width: 50px;
+  width: 60px;
+  height: 50px;
 
   opacity: 0;
 
-  transition: opacity .3s ease-out;
+  transition: opacity .3s ease-out, left .3s ease-out;
   cursor: pointer;
   .fa-heart {
-    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    font-size: 25px;
     color: #fff;
   }
   &.on{
@@ -85,6 +90,10 @@
   }
   &.open{
     opacity: 1;
+  }
+  &:hover{
+    left: calc(100% - 75px);
+    transition: left .3s ease-out;
   }
 }
 
@@ -97,7 +106,7 @@
   padding: 15px;
 }
 .mySwiper3 {
-  margin-top: 10px;
+  margin: 13px 0px;
 }
 .wish-sub-tit {
   strong {

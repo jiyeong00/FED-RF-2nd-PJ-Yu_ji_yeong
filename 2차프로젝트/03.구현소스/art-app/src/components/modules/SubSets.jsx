@@ -54,9 +54,9 @@ function SubSets({ catName, subCatName }) {
   useEffect(() => {
     const wishCancle = mFn.qsa(".wish-cancle");
     const chgHeart = mFn.qsa(".add-wish");
-    wishCancle.forEach((ele,idx) => {
+    wishCancle.forEach((ele, idx) => {
       chgHeart.forEach((v, i) => {
-        console.log(idx,i)
+        console.log(idx, i);
         // if (
         //   ele.idx - 1 == i
         // ) {
@@ -66,12 +66,17 @@ function SubSets({ catName, subCatName }) {
     });
   });
   /////////////////////////////////////////////////////////////////////////////
+
+  useEffect(() => {
+//////////////////////////////////////////////////////
+  }, [myCon.delWish]);
+
   //위시리스트 하트 붉게만들기
   useEffect(() => {
     console.log("다시읽어!!!");
     /////////////하트 붉게
     clickHeart();
-  }, [force,myCon.force]);
+  }, [force, myCon.force]);
 
   function clickHeart() {
     let locals;
@@ -89,9 +94,6 @@ function SubSets({ catName, subCatName }) {
           ele.gSubCatName == selSubCatName
         ) {
           v.classList.add("on");
-        }
-        else{
-          v.classList.remove("on");
         }
       });
     });
@@ -145,7 +147,7 @@ function SubSets({ catName, subCatName }) {
                 }}
                 //   하단불릿
                 speed={1000}
-                loop={true}
+                // loop={true}
                 className="mySwiper2"
               >
                 {/* // 로그아웃상태 */}
@@ -266,6 +268,7 @@ function SubSets({ catName, subCatName }) {
                       <p>{v.capacity}</p>
                       <div className={`add-wish add-${i + 1}`}>
                         <FontAwesomeIcon icon={faHeart} className="fa-heart" />
+                        <p style={{ display: "none" }}>{v.capacity}</p>
                       </div>
                     </SwiperSlide>
                   ))}
@@ -285,4 +288,30 @@ function SubSets({ catName, subCatName }) {
   );
 }
 
-export default SubSets;
+// function delHeart() {
+//   let locals;
+//   if (localStorage.getItem("wish-data"))
+//     locals = JSON.parse(localStorage.getItem("wish-data"));
+//   else locals = [];
+
+//   const wishEle = mFn.qsa(".add-wish");
+
+//   locals.forEach((ele) => {
+//     wishEle.forEach((v, i) => {
+//       const capEle = v.querySelector("p");
+//       const capEleText = capEle.textContent;
+
+//       if (
+//         ele.gCatName == catName &&
+//         ele.gSubCatName == selSubCatName &&
+//         ele.gCapacity == capEleText
+//       ) {
+//         v.classList.add("on");
+//       } else {
+//         v.classList.remove("on");
+//       }
+//     });
+//   });
+// }
+
+export default { SubSets };

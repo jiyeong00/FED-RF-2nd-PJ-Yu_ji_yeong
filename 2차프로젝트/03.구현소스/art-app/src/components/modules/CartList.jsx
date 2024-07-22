@@ -3,6 +3,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 
 // 제이쿼리
 import $ from "jquery";
+import mFn from "../func/my_function";
 
 // css
 import "../../css/cart_list.scss";
@@ -21,7 +22,7 @@ import { faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
 function CartList() {
   // 강제리랜더링을 위한 상태변수
   const [force, setForce] = useState(false);
-  const [selectedCategory, setSelCategory] = useState("");
+  const [selectedCategory, setSelectedCategory] = useState("");
   const [groups, setGroups] = useState([]);
 
   // 컨텍스트 사용
@@ -81,7 +82,7 @@ function CartList() {
   // 선택된 대분류를 업데이트.
   const handleCatClick = (category) => {
     // 소분류 추가
-    setSelCategory(category);
+    setSelectedCategory(category);
   };
 
   if (sts) {
@@ -119,7 +120,6 @@ function CartList() {
             {groups.map((group, index) => (
               <div key={Math.random()}>
                 <div className="wish-sub-tit">
-                  {group.gCatName}
                   <strong
                     onClick={() => {
                       handleCatClick(group.gCatName);
@@ -151,7 +151,7 @@ function CartList() {
                   /* 사용할 모듈을 여기에 적용시킨다 */
                   modules={[Navigation]}
                   // 스와이퍼 사이즈별 슬라이드수 변경!
-                  className={"mySwiper3"+index}
+                  className={"mySwiper3"}
                 >
                   <div className="wish-sub-txt-wrap swiper-wrapper" key={index}>
                     {/* 선택된 대분류의 소분류들만 출력함. // 스와이퍼*/}
@@ -183,6 +183,7 @@ function CartList() {
                               <div
                                 className="wish-cancle"
                                 onClick={() => {
+                                  // console.log("ssssss",chgHeart);
                                   // confirm()의 "확인"클릭시 true
                                   if (window.confirm("삭제하시겠습니까?")) {
                                     // console.log("삭제 예정!!",(group.gCapacities).length-1);
@@ -195,13 +196,14 @@ function CartList() {
                                         v.gCapacity == capacity[0] &&
                                         v.gSubCatName == capacity[2]
                                       ) {
+                                        console.log((selData[i]).gCatName);
                                         // 1.데이터 지우기 :
                                         selData.splice(i, 1);
 
                                         // 2. 데이터 문자화하기 : 변경된 원본을 문자화
                                         let res = JSON.stringify(selData);
 
-                                        // 3.로컬스 "cart-data"반영하기
+                                        // 3.로컬스 "wish-data"반영하기
                                         localStorage.setItem("wish-data", res);
 
                                         // 4. 카트리스트 전역상태변수 변경
@@ -213,6 +215,9 @@ function CartList() {
                                         setForce(!force);
                                         // 전역위치
                                         myCon.setForce(!myCon.force);
+
+                                        myCon.setDelWish(!myCon.delWish);
+                                        
                                         
 
                                         // 6. 데이터개수가 0이면 위시리스트 상태변수 변경
