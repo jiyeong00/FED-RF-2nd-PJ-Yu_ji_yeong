@@ -74,7 +74,6 @@
   & > * {
     margin-left: 2rem;
   }
-
 }
 .desc-list li::before {
   content: " · ";
@@ -123,7 +122,7 @@
 } //////////////////////////950px//////////////
 @media screen and (max-width: 900px) {
   .cont2-txt {
-    .core-p{
+    .core-p {
       font-size: 1.5rem;
     }
   }
@@ -131,63 +130,10 @@
     grid-template-columns: repeat(1, 1fr);
   }
 } //////////////////////////900px//////////////
-@media screen and (max-width: 650px) {
-  .cont2-txt {
-    width: 95%;
-    margin: 0 auto;
-  }
-  .cont2-li {
-    width: 95%;
-    margin: 0 auto;
-  }
-} //////////////////////////650px//////////////
+
 @media screen and (max-width: 600px) {
   .cont2 {
-    position: relative;
-    left: 50%;
-    transform: translateX(-50%);
+    min-width: auto;
   }
-  .cont2-txt {
-    width: 90%;
-    margin: 0 auto;
-    
-  }
-  .cont2-li {
-    width: 90%;
-    margin: 0 auto;
-  }
+
 } //////////////////////////600px//////////////
-@media screen and (max-width: 500px) {
-  .cont2-txt {
-    width: 66%;
-    margin: 0 auto;
-  }
-  .cont2-li {
-    width: 66%;
-    margin: 0 auto;
-  }
-} //////////////////////////500px//////////////
-@media screen and (max-width: 400px) {
-  .cont2-txt {
-    width: 50%;
-    margin: 0 auto;
-    h3 {
-      font-size: 1.6rem;
-    }
-    p{
-      font-size: 1.2rem;
-    }
-  }
-  .cont2-li {
-    width: 50%;
-    margin: 0 auto;
-  }
-  .desc-list {
-    h3 {
-      font-size: 1.6rem;
-    }
-    li {
-      font-size: 1.2rem;
-    }
-  }
-} //////////////////////////400px//////////////

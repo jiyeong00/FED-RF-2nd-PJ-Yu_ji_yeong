@@ -6,12 +6,14 @@ import $ from "jquery";
 import mFn from "./my_function.js";
 // 배경데이터
 import bgData from "../data/bg_data.js";
+import { useState } from "react";
 
-
-  // 인터발용 변수(지울목적)
-  let autoI;
+// 인터발용 변수(지울목적)
+let autoI;
 
 function mainFn() {
+  // 불릿클릭후 다른페이지 이동시 인터발 삭제를 위한 변수
+
   console.log("호출!!!");
   ////////////////////////////////////////////////////////////////////
 
@@ -34,7 +36,6 @@ function mainFn() {
   let prot = false;
 
   //////////// 초기셋팅하기 ////////
-
 
   // 오른쪽 슬라이드 넣기
   slide.innerHTML = Object.values(bgData)
@@ -65,9 +66,9 @@ function mainFn() {
     x.onclick = () => {
       // 읽어온 숫자 앞에 "0"빼고 숫자화
       let pNum = Number(x.innerText);
-      // console.log(pNum);
       nowNum = pNum;
       btnClick(pNum);
+
       clearAuto(autoI);
     };
   } /// for of ///
@@ -83,7 +84,7 @@ function mainFn() {
   // 자동슬라이드
   function showSlide(pNum) {
     // console.log("현재작동번호:", nowNum);
-    // console.log("클릭된번호:", pNum);  
+    // console.log("클릭된번호:", pNum);
 
     // 광클금지 설정하기 ///////////
     if (prot) return; // 돌아가!(함수나감!)
@@ -243,27 +244,6 @@ function mainFn() {
   // 스크롤 등장 기준설정 : 화면의 2/3
   const CRITERIA = (window.innerHeight / 3) * 2;
 
-  //정보넣기
-  // main2Cont.innerHTML = Object.values(bgData)
-  //   .map(
-  //     (v) =>
-  //       `
-  //   <div class="main2-cont-area">
-  //     <div class="box-wrap">
-  //       <div class="red-box"></div>
-  //       <div class="white-box"></div>
-  //     </div>
-  //     <Link to={v.link}>
-  //       <img src="${process.env.PUBLIC_URL}/img/main_small_card${v.idx}.png" alt="${v.tit}" />
-  //       <span>${v.tit}</span>
-  //       <div class="black-box"></div>  
-  //     </Link>
-  //   </div>
-      
-  //       `
-  //   )
-  //   .join("");
-    // <a href="${process.env.PUBLIC_URL+"/"+v.tit}">
   // 스크롤 등장액션 이벤트 설정
   mFn.addEvt(window, "scroll", showIt);
   const main2On = mFn.qsa(".box-wrap>*");
@@ -273,12 +253,6 @@ function mainFn() {
 
   // 스크롤 등장액션 함수
   function showIt() {
-    // let bcrVal = mFn.getBCR(main2H2);
-    // if(bcrVal < CRITERIA){
-    //   scWhite.style.left = "0%";
-    //   scWhite.style.width = "100%";
-    //   scWhite.style.transition = "1s ease-out";
-    // }
     // forEach메서드 처리방법
     main2On.forEach((ele) => addOn(ele));
   } /////////////////////showIt함수////////////////
@@ -311,5 +285,4 @@ function mainFn() {
   } ///////////// addOn 함수 //////////////
 } /////////// mainFn //////////////////////////
 
-
-export {autoI,mainFn}
+export { autoI, mainFn };

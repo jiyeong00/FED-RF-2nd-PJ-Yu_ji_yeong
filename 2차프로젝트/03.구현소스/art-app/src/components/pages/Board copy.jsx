@@ -1,6 +1,7 @@
 // 오피니언 페이지 컴포넌트 ///
 import { Fragment, useContext, useEffect, useRef, useState } from "react";
 
+
 // 사용자 기본정보 생성 함수
 import { initBoardData } from "../func/board_fn";
 
@@ -334,7 +335,7 @@ export default function Board() {
 
           // 해당항목을 만나면 끝남!
           return true;
-        } /// if ///  
+        } /// if ///
       }); /////// find 메서드 /////////
 
       // 4. 로컬스에 업데이트하기 //////
@@ -352,9 +353,7 @@ export default function Board() {
   //// 코드 리턴구역 //////////////
   return (
     <main className="board-cont">
-      <h1 className="tit" style={{ marginBottom: "3rem" }}>
-        OPINION
-      </h1>
+      <h1 className="tit">OPINION</h1>
       {
         // 1. 리스트 모드일 경우 리스트 출력하기
         mode == "L" && (
@@ -518,6 +517,45 @@ const ListMode = ({
   // 코드리턴구역 //////////////////////
   return (
     <>
+      <div className="selbx">
+        <select name="cta" id="cta" className="cta">
+          <option value="tit">Title</option>
+          <option value="cont">Contents</option>
+          <option value="unm">Writer</option>
+        </select>
+        <select name="sel" id="sel" className="sel">
+          <option value="0">Descending</option>
+          <option value="1">Ascending</option>
+        </select>
+        {/* <input id="stxt" type="text" maxLength="50" /> */}
+        {/* 입력창 */}
+        <input
+          type="text"
+          name="schinGnb"
+          id="schinGnb"
+          placeholder="Filter by Keyword"
+          onKeyUp={enterKey}
+        />
+        {/* 검색! */}
+        <button
+          className="sbtn schbtnGnb"
+          onClick={(e) => {
+            // 검색어 읽기
+            // let stxt = e.currentTarget.nextElementSibling.value;
+            let stxt = e.currentTarget.nextElementSibling;
+            console.log(stxt);
+            // if (stxt.trim() != "") {
+            //   // 검색하기
+            //   goSearch(stxt);
+            // } else {
+            //   // 검색어 비었을때 메시지
+            //   alert("Please enter a search term!");
+            // }
+          }}
+        >
+          Search
+        </button>
+      </div>
       <table className="dtbl" id="board">
         <thead>
           <tr>
@@ -671,10 +709,10 @@ const ReadMode = ({ selRecord, sts }) => {
               ></textarea>
             </td>
           </tr>
-          {/* <tr>
+          <tr>
             <td>Attachment</td>
             <td></td>
-          </tr> */}
+          </tr>
         </tbody>
       </table>
     </>
@@ -732,10 +770,10 @@ const WriteMode = ({ sts }) => {
               <textarea className="content" cols="60" rows="10"></textarea>
             </td>
           </tr>
-          {/* <tr>
+          <tr>
             <td>Attachment</td>
             <td></td>
-          </tr> */}
+          </tr>
         </tbody>
       </table>
     </>
@@ -792,10 +830,10 @@ const ModifyMode = ({ selRecord }) => {
               ></textarea>
             </td>
           </tr>
-          {/* <tr>
+          <tr>
             <td>Attachment</td>
             <td></td>
-          </tr> */}
+          </tr>
         </tbody>
       </table>
     </>
@@ -1011,3 +1049,5 @@ const PagingList = ({
   // 코드리턴
   return pgCode;
 }; ////////// pagingList 함수 //////////////
+
+

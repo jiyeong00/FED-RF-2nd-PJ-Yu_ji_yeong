@@ -19,7 +19,6 @@ import Login from "./components/pages/Login";
 import TopMenu_M from "./components/modules/TopMenu_M";
 
 export default function MainComponent() {
-
   return (
     // 라우터 루트로 라우터 구성시작
     <BrowserRouter basename={process.env.PUBLIC_URL}>

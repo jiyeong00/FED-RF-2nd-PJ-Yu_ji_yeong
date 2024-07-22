@@ -46,3 +46,12 @@
         grid-template-columns: repeat(3, 1fr);
       }
   } ////////////////////////800px/////////////////////
+  @media screen and (max-width: 600px) {
+    .sub4{
+        min-width: auto;
+    }
+    .sub4-title h2 {
+        font-size: 3.5rem;
+    }
+    }
+    ////////////////////////////////600px

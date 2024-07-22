@@ -1,4 +1,10 @@
-import React, { useEffect, useLayoutEffect, useRef, useState } from "react";
+import React, {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { TopArea } from "./TopArea";
 import MainArea from "./MainArea";
 import { FooterArea } from "./FooterArea";
@@ -50,8 +56,12 @@ function Layout(props) {
   const [loginMsg, setLoginMsg] = useState(null);
 
   // [ 공통 함수 ] ///
-  // 1. 라우팅 이동함수
-  const goPage = useNavigate();
+  // 1. 라우팅 이동함수 :  : 라우터 이동후크인 useNavigate는
+  // 다른 useCallback() 후크로 처리할 수 없다!
+  const goNav = useNavigate();
+  const goPage = useCallback((pm1, pm2) => {
+    goNav(pm1, pm2);
+  }, []);
   // 2. 로그인 환영메시지 생성함수
   const makeMsg = (name) => {
     // 유저아이콘
@@ -134,10 +144,10 @@ function Layout(props) {
         loginMsg={loginMsg}
         loginSts={loginSts}
         logoutFn={logoutFn}
-        goPage={goPage}
+        // goPage={goPage}
       />
       {/* 2.메인영역 */}
-      <MainArea/>
+      <MainArea goPage={goPage} />
       {/* 3.하단영역 */}
       <FooterArea />
       {/* 카트리스트 : 카트상태값 true 출력 */}

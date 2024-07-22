@@ -54,15 +54,22 @@
   }
 }
 // 위시리스트 넣은 표시 하트!!
-.add-wish{
+.add-wish {
   position: absolute;
   top: 0;
   right: 0;
   margin: 5px;
   font-size: 2rem;
-  &.on{
+  &.on {
     color: red;
   }
 }
 
-/////////////////////////모바일은 sub_vid.scss에다가!!!!///////////////////
+/////////////////////////모바일은!!!!///////////////////
+///
+@media screen and (max-width: 600px) {
+  .sub3-slide-wrap {
+    min-width: auto;
+  }
+}
+////////////////////////////////600px

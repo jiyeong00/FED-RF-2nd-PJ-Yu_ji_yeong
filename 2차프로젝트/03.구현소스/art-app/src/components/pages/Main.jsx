@@ -13,6 +13,7 @@ import MainMajor from "../modules/MainMajor";
 import bgData from "../data/bg_data";
 
 function Main(props) {
+
   // 새로고침 시 맨 위로
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
@@ -23,17 +24,19 @@ function Main(props) {
     headerBackColor.style.backgroundColor = "black";
   }, []);
 
-  
+  ////////////////////////////////////인터발 삭제
   useLayoutEffect(() => {
     console.log("레이아웃이펙트");
     mainFn();
 
-    return(()=>{
+    return () => {
+      console.log("인터발 삭제!");
+
       // 인터발지우기
       clearInterval(autoI);
-    });
-
-  },[]);
+      // clearTimeout(autoT);
+    };
+  }, []);
 
   let nav = useNavigate();
 

@@ -132,10 +132,10 @@ function SubSets({ catName, subCatName }) {
                   800: {
                     slidesPerView: 3,
                   },
-                  500: {
+                  600: {
                     slidesPerView: 2,
                   },
-                  200: {
+                  550: {
                     slidesPerView: 1,
                   },
                 }}

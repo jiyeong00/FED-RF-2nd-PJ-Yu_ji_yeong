@@ -6,6 +6,7 @@ import cont_data from "../data/cont_data";
 // CSS
 import "../../css/cont_vid.scss";
 import { useEffect, useLayoutEffect } from "react";
+import { mainFn } from "../func/main_fn";
 
 // function ContVid({ catName }) {
 function ContVid({ catName }) {
