@@ -6,7 +6,7 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../css/main.scss";
 
 // 메인 JS 불러오기
-import { mainFn, autoI } from "../func/main_fn";
+import { mainFn, autoI, autoT } from "../func/main_fn";
 import MainSwiper from "../modules/MainSwiper";
 import MainMajor from "../modules/MainMajor";
 
@@ -34,7 +34,7 @@ function Main(props) {
 
       // 인터발지우기
       clearInterval(autoI);
-      // clearTimeout(autoT);
+      clearTimeout(autoT);
     };
   }, []);
 

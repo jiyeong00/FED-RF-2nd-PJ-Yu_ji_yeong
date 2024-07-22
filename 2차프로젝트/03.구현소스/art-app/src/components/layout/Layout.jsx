@@ -121,6 +121,9 @@ function Layout(props) {
   // 2. 카트리스트 사용여부 : true 일때 사용
   const [wishSts, setWishSts] = useState(wishTemp);
 
+  // 강제 리랜더링 상태변수
+  const [force, setForce] = useState(true);
+
   //// 코드 리턴구역 //////////////
   return (
     // <aCon.Provider value={{rdmNum,mCatSet}}>
@@ -137,6 +140,8 @@ function Layout(props) {
         setWishSts,
         setLocalsWish,
         localsWish,
+        force,
+        setForce,
       }}
     >
       {/* 1.상단영역 */}

@@ -9,7 +9,7 @@ import bgData from "../data/bg_data.js";
 import { useState } from "react";
 
 // 인터발용 변수(지울목적)
-let autoI;
+let autoI, autoT;
 
 function mainFn() {
   // 불릿클릭후 다른페이지 이동시 인터발 삭제를 위한 변수
@@ -30,8 +30,8 @@ function mainFn() {
   // console.log(abtn,slide);
   // 인터발용 변수(지울목적)
   // let autoI;
-  // 타임아웃용 변수 (지울목적)
-  let autoT;
+  // 타임아웃용 변수 (지울목적), 전역화
+  // let autoT;XXXXX
   // 광클 금지변수
   let prot = false;
 
@@ -285,4 +285,4 @@ function mainFn() {
   } ///////////// addOn 함수 //////////////
 } /////////// mainFn //////////////////////////
 
-export { autoI, mainFn };
+export { autoI, autoT, mainFn };

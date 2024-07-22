@@ -68,9 +68,10 @@ function SubSets({ catName, subCatName }) {
   /////////////////////////////////////////////////////////////////////////////
   //위시리스트 하트 붉게만들기
   useEffect(() => {
+    console.log("다시읽어!!!");
     /////////////하트 붉게
     clickHeart();
-  }, [force]);
+  }, [force,myCon.force]);
 
   function clickHeart() {
     let locals;
@@ -88,6 +89,9 @@ function SubSets({ catName, subCatName }) {
           ele.gSubCatName == selSubCatName
         ) {
           v.classList.add("on");
+        }
+        else{
+          v.classList.remove("on");
         }
       });
     });

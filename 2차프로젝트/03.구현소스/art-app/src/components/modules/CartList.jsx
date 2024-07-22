@@ -117,8 +117,9 @@ function CartList() {
         <div className="wish-txt">
           <div>
             {groups.map((group, index) => (
-              <div key={index}>
+              <div key={Math.random()}>
                 <div className="wish-sub-tit">
+                  {group.gCatName}
                   <strong
                     onClick={() => {
                       handleCatClick(group.gCatName);
@@ -150,15 +151,18 @@ function CartList() {
                   /* 사용할 모듈을 여기에 적용시킨다 */
                   modules={[Navigation]}
                   // 스와이퍼 사이즈별 슬라이드수 변경!
-                  className="mySwiper3"
+                  className={"mySwiper3"+index}
                 >
-                  <div className="wish-sub-txt-wrap swiper-wrapper">
+                  <div className="wish-sub-txt-wrap swiper-wrapper" key={index}>
                     {/* 선택된 대분류의 소분류들만 출력함. // 스와이퍼*/}
                     {selectedCategory === group.gCatName &&
                       group.gCapacities.map((capacity, idx) => (
                         <React.Fragment key={idx}>
                           {idx > 0 && (
-                            <SwiperSlide className="wish-sub-txt swiper-slide">
+                            /* 스와이퍼 슬라이드 자체에 구분키를 반드시 넣어야 함!
+                            안넣으면 key=`.0` 이라는 에러가남!!!
+                            당연히 map 도는 최상위에도 구분키 key값을 넣어야함! */
+                            <SwiperSlide className="wish-sub-txt swiper-slide" key={idx}>
                               <img
                                 src={
                                   process.env.PUBLIC_URL +
@@ -205,7 +209,11 @@ function CartList() {
 
                                                                        
                                         // 5. 강제리랜더링
+                                        // 현재위치
                                         setForce(!force);
+                                        // 전역위치
+                                        myCon.setForce(!myCon.force);
+                                        
 
                                         // 6. 데이터개수가 0이면 위시리스트 상태변수 변경
                                         // 위시리스트 출력을 없앤다!
