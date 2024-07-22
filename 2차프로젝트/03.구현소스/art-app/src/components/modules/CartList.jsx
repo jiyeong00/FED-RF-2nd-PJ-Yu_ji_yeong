@@ -174,6 +174,8 @@ function CartList() {
                               />
                               <p>{capacity[2]}</p>
                               <p>{capacity[0]}</p>
+
+                              {/* 소분류 삭제버튼!!!!! */}
                               <div
                                 className="wish-cancle"
                                 onClick={() => {
@@ -201,8 +203,7 @@ function CartList() {
                                         // 4. 카트리스트 전역상태변수 변경
                                         myCon.setLocalsWish(res);
 
-                                      
-                                        
+                                                                       
                                         // 5. 강제리랜더링
                                         setForce(!force);
 
