@@ -54,6 +54,13 @@ function Layout(props) {
 
   // 2. 로그인 환영 메시지 상태변수
   const [loginMsg, setLoginMsg] = useState(null);
+  
+  // 강제 리랜더링 상태변수
+  const [force, setForce] = useState(true);
+  // 위시리스트 삭제 상태변수
+  const [delWish, setDelWish] = useState(true);
+
+  
 
   // [ 공통 함수 ] ///
   // 1. 라우팅 이동함수 :  : 라우터 이동후크인 useNavigate는
@@ -121,10 +128,6 @@ function Layout(props) {
   // 2. 카트리스트 사용여부 : true 일때 사용
   const [wishSts, setWishSts] = useState(wishTemp);
 
-  // 강제 리랜더링 상태변수
-  const [force, setForce] = useState(true);
-  // 위시리스트 삭제 상태변수
-  const [delWish, setDelWish] = useState(true);
 
   //// 코드 리턴구역 //////////////
   return (

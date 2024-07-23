@@ -11,6 +11,7 @@
   z-index: 99999999;
 
   background-color: black;
+
   color: #f3f3f3;
   h1 {
     display: block;
@@ -19,7 +20,6 @@
     font-size: 30px;
     padding: 20px 0px;
   }
-
 }
 
 /* 닫기버튼 */
@@ -74,7 +74,7 @@
 
   opacity: 0;
 
-  transition: opacity .3s ease-out, left .3s ease-out;
+  transition: opacity 0.3s ease-out, left 0.3s ease-out;
   cursor: pointer;
   .fa-heart {
     position: absolute;
@@ -84,25 +84,22 @@
     font-size: 25px;
     color: #fff;
   }
-  &.on{
+  &.on {
     opacity: 1;
-    transition: opacity .3s ease-out;
+    transition: opacity 0.3s ease-out;
   }
-  &.open{
+  &.open {
     opacity: 1;
   }
-  &:hover{
+  &:hover {
     left: calc(100% - 75px);
-    transition: left .3s ease-out;
+    transition: left 0.3s ease-out;
   }
 }
 
-
-
-
 //////////////////////////////////////////////////////////////
 // 위시리스트 제목
-.wish-txt{
+.wish-txt {
   padding: 15px;
 }
 .mySwiper3 {
@@ -138,17 +135,16 @@
   font-size: 1.2rem;
   margin-top: 6px;
 }
-.wish-sub-txt .wish-cancle{
+.wish-sub-txt .wish-cancle {
   position: absolute;
   top: 0;
   right: 3px;
 
   height: 20px;
-  .wish-xmark{
+  .wish-xmark {
     cursor: pointer;
     // outline: red 2px solid;
     font-size: 2rem;
     color: black;
   }
 }
-

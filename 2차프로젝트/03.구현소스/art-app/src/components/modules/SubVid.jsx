@@ -1,5 +1,5 @@
 // 서브페이지 - 첫번째
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
 // 데이터 불러오기
 import sub_data from "../data/sub/sub_data";
@@ -21,11 +21,22 @@ function SubVid({ catName, subCatName }) {
   // width 값 실시간으로 가져오기
   useEffect(() => {
     window.addEventListener("resize", handleResize);
+
     return () => {
       // cleanup
       window.removeEventListener("resize", handleResize);
     };
   }, []);
+
+  /////////////////////////////////////////////////////////////////////////////////////
+
+  // const sub3 = document.querySelector(".sub3");
+
+  // const bcrVal = sub3.getBoundingClientRect();
+  // const sub3Click = () => {
+  //   console.log(bcrVal.top);
+  //   // window.scrollTo({ top: bcrVal.top, behavior: "smooth" });
+  // };
 
   return (
     // <SubPoint/>
@@ -36,7 +47,9 @@ function SubVid({ catName, subCatName }) {
           className="sub1-wrap"
           style={{
             background:
-            "url("+process.env.PUBLIC_URL+"/img/sub/" +
+              "url(" +
+              process.env.PUBLIC_URL +
+              "/img/sub/" +
               catName +
               "_" +
               (subCatName + 1) +
@@ -49,7 +62,9 @@ function SubVid({ catName, subCatName }) {
           className="sub1-wrap"
           style={{
             background:
-              "url("+process.env.PUBLIC_URL+"/img/sub/M_" +
+              "url(" +
+              process.env.PUBLIC_URL +
+              "/img/sub/M_" +
               catName +
               "_" +
               (subCatName + 1) +
@@ -99,8 +114,12 @@ function SubVid({ catName, subCatName }) {
                 : {}
             }
             onClick={() => {
-              console.log("dsdsdsdsd");
-              // <SubSets catName={catName} subCatName={selSubCatName}/>
+              const sub3 = document.querySelector(".sub3");
+
+              if (!sub3) return;
+
+              const bcrVal = sub3.getBoundingClientRect();
+              window.scrollTo({ top: bcrVal.top, behavior: "smooth" });
             }}
           >
             <span

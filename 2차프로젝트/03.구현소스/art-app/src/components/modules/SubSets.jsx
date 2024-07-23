@@ -3,7 +3,6 @@
 import React, {
   useContext,
   useEffect,
-  useLayoutEffect,
   useRef,
   useState,
 } from "react";
@@ -51,32 +50,25 @@ function SubSets({ catName, subCatName }) {
     }
   });
 
-  useEffect(() => {
-    const wishCancle = mFn.qsa(".wish-cancle");
-    const chgHeart = mFn.qsa(".add-wish");
-    wishCancle.forEach((ele, idx) => {
-      chgHeart.forEach((v, i) => {
-        console.log(idx, i);
-        // if (
-        //   ele.idx - 1 == i
-        // ) {
-        //   v.classList.add("on");
-        // }
-      });
-    });
-  });
   /////////////////////////////////////////////////////////////////////////////
 
-  useEffect(() => {
-//////////////////////////////////////////////////////
-  }, [myCon.delWish]);
+  // console.log("잠만 둘다 확이줄",myCon.delWish,myCon.force);
+  if(myCon.delWish==false){
+    // console.log("펄스맞음!",myCon.delWish);
+    const chgHeart = mFn.qsa(".add-wish");
+    chgHeart.forEach((v) => {
+      v.classList.remove("on");
+    });
+  }
 
-  //위시리스트 하트 붉게만들기
+
+    //위시리스트 하트 붉게만들기
+  // 새로시작 혹은 클릭시
   useEffect(() => {
-    console.log("다시읽어!!!");
-    /////////////하트 붉게
+    /////////////하트 붉게  
     clickHeart();
   }, [force, myCon.force]);
+
 
   function clickHeart() {
     let locals;
@@ -99,7 +91,6 @@ function SubSets({ catName, subCatName }) {
     });
   }
 
-  // $(".wish-xmark").mFn
 
   //////////////////////////////////////////////////////////////////////////////
   /////로그인상태 확인
@@ -288,30 +279,4 @@ function SubSets({ catName, subCatName }) {
   );
 }
 
-// function delHeart() {
-//   let locals;
-//   if (localStorage.getItem("wish-data"))
-//     locals = JSON.parse(localStorage.getItem("wish-data"));
-//   else locals = [];
-
-//   const wishEle = mFn.qsa(".add-wish");
-
-//   locals.forEach((ele) => {
-//     wishEle.forEach((v, i) => {
-//       const capEle = v.querySelector("p");
-//       const capEleText = capEle.textContent;
-
-//       if (
-//         ele.gCatName == catName &&
-//         ele.gSubCatName == selSubCatName &&
-//         ele.gCapacity == capEleText
-//       ) {
-//         v.classList.add("on");
-//       } else {
-//         v.classList.remove("on");
-//       }
-//     });
-//   });
-// }
-
-export default { SubSets };
+export default SubSets;

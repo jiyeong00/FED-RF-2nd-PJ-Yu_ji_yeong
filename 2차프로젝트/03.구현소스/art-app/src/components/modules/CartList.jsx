@@ -17,7 +17,7 @@ import { Navigation } from "swiper/modules";
 
 // 폰트어썸
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faHeart, faXmark } from "@fortawesome/free-solid-svg-icons";
+import { faHeart, faL, faXmark } from "@fortawesome/free-solid-svg-icons";
 
 function CartList() {
   // 강제리랜더링을 위한 상태변수
@@ -196,7 +196,7 @@ function CartList() {
                                         v.gCapacity == capacity[0] &&
                                         v.gSubCatName == capacity[2]
                                       ) {
-                                        console.log((selData[i]).gCatName);
+                                        // console.log((selData[i]).gCatName);
                                         // 1.데이터 지우기 :
                                         selData.splice(i, 1);
 
@@ -215,8 +215,9 @@ function CartList() {
                                         setForce(!force);
                                         // 전역위치
                                         myCon.setForce(!myCon.force);
+                                        // myCon.setForce(false);
 
-                                        myCon.setDelWish(!myCon.delWish);
+                                        myCon.setDelWish(false);
                                         
                                         
 

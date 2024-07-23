@@ -1,10 +1,9 @@
-import React, { useContext } from "react";
+import React from "react";
 import { useLocation } from "react-router-dom";
 import SubVid from "../modules/SubVid";
 import SubPoint from "../modules/SubPoint";
 import SubSets from "../modules/SubSets";
 import SubColor from "../modules/SubColor";
-import { aCon } from "../modules/aCon";
 
 function SubPage({loginSts,logoutFn}) {
   // 라우터호출 시 전달한 값을 받는다.
@@ -12,7 +11,7 @@ function SubPage({loginSts,logoutFn}) {
   const mcat = loc.state.mcat;
   const scat = loc.state.scat;
   // console.log("요기:",mcat,scat);
-const myCon = useContext(aCon);
+
 
   return (
     <>
