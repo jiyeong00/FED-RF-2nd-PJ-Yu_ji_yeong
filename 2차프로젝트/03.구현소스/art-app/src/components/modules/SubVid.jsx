@@ -114,11 +114,11 @@ function SubVid({ catName, subCatName }) {
                 : {}
             }
             onClick={() => {
-              const sub3 = document.querySelector(".sub3");
+              const sub4 = document.querySelector(".sub4");
 
-              if (!sub3) return;
+              if (!sub4) return;
 
-              const bcrVal = sub3.getBoundingClientRect();
+              const bcrVal = sub4.getBoundingClientRect();
               window.scrollTo({ top: bcrVal.top, behavior: "smooth" });
             }}
           >

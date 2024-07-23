@@ -29,14 +29,14 @@ function Login(props) {
 
   // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
-    "This is a required entry", //필수입력
-    "ID does not exist", //아이디가 존재하지 않습니다
+    "아이디를 입력해주세요.", //필수입력
+    "존재하지 않는 ID입니다.", //아이디가 존재하지 않습니다
   ];
   // [ 비밀번호관련 메시지 프리셋 ] ////
   const msgPwd = [
     // 비밀번호
-    "This is a required entry", //필수입력
-    "Password doesn't match", //비밀번호가 일치하지 않습니다
+    "비밀번호를 입력해주세요", //필수입력
+    "비밀번호가 일치하지 않습니다.", //비밀번호가 일치하지 않습니다
   ];
 
   // [3] 에러메시지 상태변수 : 초기값 msgId[0]

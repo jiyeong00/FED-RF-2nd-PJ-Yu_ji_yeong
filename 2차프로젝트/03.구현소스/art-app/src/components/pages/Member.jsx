@@ -55,9 +55,9 @@ function Member() {
   // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
     // 1. 최소 5글자 이상 입력할것
-    "User ID must contain a minimum of 5 characters",
+    " ID는 최소 5글자 이상으로 입력해주세요",
     // 2. 이미 사용중인 아이디임
-    "This ID is already in use!",
+    "이미 사용중인 아이디입니다.",
     // 3. 훌륭한 아이디!
     "That's a great ID!",
   ];
@@ -65,13 +65,13 @@ function Member() {
   // [ 기타 메시지 프리셋 ]
   const msgEtc = {
     // 비밀번호
-    pwd: "5 to 15 digits in the form of special characters, characters, and numbers",
+    pwd: "특수문자, 문자, 숫자 형태로 5~15자리 입력해주세요",
     // 비밀번호확인
-    confPwd: "Password verification does not match",
+    confPwd: "비밀번호 확인이 일치하지 않습니다.",
     // 필수입력
-    req: "This is a required entry",
+    req: "필수항목입니다. 입력해주세요.",
     // 이메일
-    email: "Please enter a valid email format",
+    email: "올바른 이메일 형식으로 입력해주세요.",
   }; ///// msgEtc ///////
 
   // [3] 에러메시지 상태변수 : 초기값 msgId[0]

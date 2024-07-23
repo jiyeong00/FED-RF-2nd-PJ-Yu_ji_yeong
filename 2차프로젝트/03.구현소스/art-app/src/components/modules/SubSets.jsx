@@ -54,16 +54,12 @@ function SubSets({ catName, subCatName }) {
 
   // console.log("잠만 둘다 확이줄",myCon.delWish,myCon.force);
   if(myCon.delWish==false){
-    // console.log("펄스맞음!",myCon.delWish);
     const chgHeart = mFn.qsa(".add-wish");
     chgHeart.forEach((v) => {
       v.classList.remove("on");
     });
   }
-
-
-    //위시리스트 하트 붉게만들기
-  // 새로시작 혹은 클릭시
+    //위시리스트 하트 붉게만들기// 새로시작 혹은 클릭시
   useEffect(() => {
     /////////////하트 붉게  
     clickHeart();
