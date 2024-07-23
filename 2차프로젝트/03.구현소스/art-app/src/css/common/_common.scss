@@ -193,3 +193,10 @@ h1.logo {
   }
 }
 
+@media screen and (max-width: 950px) {
+  .bottom2 {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+}

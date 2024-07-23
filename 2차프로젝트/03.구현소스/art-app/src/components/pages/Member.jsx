@@ -332,11 +332,11 @@ function Member() {
           <ul>
             <li>
               {/* 1. 아이디 */}
-              <label>ID : </label>
+              <label>아이디 : </label>
               <input
                 type="text"
                 maxLength="20"
-                placeholder="Please enter your ID"
+                placeholder="아이디"
                 // defaultValue="ㅎㅎㅎ"
                 value={userId}
                 onChange={changeUserId}
@@ -377,11 +377,11 @@ function Member() {
               }
             </li>
             <li>
-              <label>Password : </label>
+              <label>비밀번호 : </label>
               <input
                 type="password"
                 maxLength="20"
-                placeholder="Please enter your Password"
+                placeholder="비밀번호"
                 value={pwd}
                 onChange={changePwd}
               />
@@ -403,11 +403,11 @@ function Member() {
               }
             </li>
             <li>
-              <label>Confirm Password : </label>
+              <label>비밀번호 확인 : </label>
               <input
                 type="password"
                 maxLength="20"
-                placeholder="Please enter your Confirm Password"
+                placeholder="비밀번호 확인"
                 value={chkPwd}
                 onChange={changeChkPwd}
               />
@@ -429,11 +429,11 @@ function Member() {
               }
             </li>
             <li>
-              <label>User Name : </label>
+              <label>이름 : </label>
               <input
                 type="text"
                 maxLength="20"
-                placeholder="Please enter your Name"
+                placeholder="이름"
                 value={userName}
                 onChange={changeUserName}
               />
@@ -455,11 +455,11 @@ function Member() {
               }
             </li>
             <li>
-              <label>Email : </label>
+              <label>이메일 : </label>
               <input
                 type="text"
                 maxLength="50"
-                placeholder="Please enter your Email"
+                placeholder="이메일"
                 value={email}
                 onChange={changeEmail}
               />
@@ -486,8 +486,8 @@ function Member() {
               </button>
             </li>
             <li>
-              Are you already a Member?
-              <Link to="/login">Log In</Link>
+              이미 회원이신가요?
+              <Link to="/login">로그인</Link>
             </li>
           </ul>
         </form>

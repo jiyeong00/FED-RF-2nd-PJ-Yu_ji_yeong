@@ -190,7 +190,7 @@ export default function Board() {
   // 삭제 처리함수 //////////////
   const deleteFn = () => {
     // 삭제여부확인
-    if (window.confirm("Are you sure you want to delete?")) {
+    if (window.confirm("게시글을 삭제하시겠습니까?")) {
       // 1. 해당항목 idx담기
       let currIdx = selRecord.current.idx;
       // 2. some()로 순회하여 해당항목 삭제하기
@@ -233,7 +233,7 @@ export default function Board() {
     // 1. 공통 유효성검사
     // 제목,내용 모두 비었으면 리턴!
     if (title == "" || cont == "") {
-      alert("Insert title or content!");
+      alert("제목 또는 내용을 채워주세요");
       return; // 서브밋없이 함수나가기!
     } ////// if ////
 
@@ -334,7 +334,7 @@ export default function Board() {
 
           // 해당항목을 만나면 끝남!
           return true;
-        } /// if ///  
+        } /// if ///
       }); /////// find 메서드 /////////
 
       // 4. 로컬스에 업데이트하기 //////
@@ -448,7 +448,7 @@ export default function Board() {
                     <button className="top" onClick={clickButton}>
                       <span>Submit</span>
                     </button>
-                    <button className="top" onClick={clickButton}>
+                    <button className="top del-top" onClick={clickButton}>
                       <span>Delete</span>
                     </button>
                     <button className="top list-btn" onClick={clickButton}>
@@ -520,12 +520,12 @@ const ListMode = ({
     <>
       <table className="dtbl" id="board">
         <thead>
-          <tr>
-            <th>Number</th>
-            <th>Title</th>
-            <th>Writer</th>
-            <th>Date</th>
-            <th>Hits</th>
+          <tr className="board-title">
+            <th>번호</th>
+            <th>제목</th>
+            <th>이름</th>
+            <th>작성일</th>
+            <th>조회수</th>
           </tr>
         </thead>
         <tbody>{bindList()}</tbody>
@@ -636,9 +636,14 @@ const ReadMode = ({ selRecord, sts }) => {
         <caption>OPINION : Read</caption>
         <tbody>
           <tr>
-            <td>Name</td>
+            <td>이름</td>
             <td>
               <input
+                style={{
+                  border: "none",
+                  pointerEvents: "none",
+                  lineHeight: "40px",
+                }}
                 type="text"
                 className="name"
                 size="20"
@@ -648,9 +653,14 @@ const ReadMode = ({ selRecord, sts }) => {
             </td>
           </tr>
           <tr>
-            <td>Title</td>
+            <td>제목</td>
             <td>
               <input
+                style={{
+                  border: "none",
+                  pointerEvents: "none",
+                  lineHeight: "40px",
+                }}
                 type="text"
                 className="subject"
                 size="60"
@@ -660,9 +670,10 @@ const ReadMode = ({ selRecord, sts }) => {
             </td>
           </tr>
           <tr>
-            <td>Content</td>
+            <td>내용</td>
             <td>
               <textarea
+                style={{ border: "none", pointerEvents: "none" }}
                 className="content"
                 cols="60"
                 rows="10"
@@ -695,9 +706,10 @@ const WriteMode = ({ sts }) => {
         <caption>OPINION : Write</caption>
         <tbody>
           <tr>
-            <td>Name</td>
+            <td>이름</td>
             <td>
               <input
+                style={{ border: "none", pointerEvents: "none" }}
                 type="text"
                 className="name"
                 size="20"
@@ -708,9 +720,10 @@ const WriteMode = ({ sts }) => {
             </td>
           </tr>
           <tr>
-            <td>Email</td>
+            <td>이메일</td>
             <td>
               <input
+                style={{ border: "none", pointerEvents: "none" }}
                 type="text"
                 className="email"
                 size="40"
@@ -721,13 +734,13 @@ const WriteMode = ({ sts }) => {
             </td>
           </tr>
           <tr>
-            <td>Title</td>
+            <td>제목</td>
             <td>
               <input type="text" className="subject" size="60" />
             </td>
           </tr>
           <tr>
-            <td>Content</td>
+            <td>내용</td>
             <td>
               <textarea className="content" cols="60" rows="10"></textarea>
             </td>
@@ -759,9 +772,14 @@ const ModifyMode = ({ selRecord }) => {
         <caption>OPINION : Modify</caption>
         <tbody>
           <tr>
-            <td>Name</td>
+            <td>이름</td>
             <td>
               <input
+                style={{
+                  border: "none",
+                  pointerEvents: "none",
+                  lineHeight: "40px",
+                }}
                 type="text"
                 className="name"
                 size="20"
@@ -771,9 +789,12 @@ const ModifyMode = ({ selRecord }) => {
             </td>
           </tr>
           <tr>
-            <td>Title</td>
+            <td>제목</td>
             <td>
               <input
+                style={{
+                  lineHeight: "40px",
+                }}
                 type="text"
                 className="subject"
                 size="60"
@@ -782,7 +803,7 @@ const ModifyMode = ({ selRecord }) => {
             </td>
           </tr>
           <tr>
-            <td>Content</td>
+            <td>내용</td>
             <td>
               <textarea
                 className="content"

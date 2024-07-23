@@ -26,7 +26,7 @@ const clearData = () => {
                 "uid":"admin",
                 "pwd":"1111",
                 "unm":"Administrator",
-                "eml":"admin@dc.com"
+                "eml":"admin@naver.com"
             },
             {
                 "idx": "2",
@@ -34,6 +34,13 @@ const clearData = () => {
                 "pwd":"1111",
                 "unm":"Tom",
                 "eml":"tom@gmail.com"
+            },
+            {
+                "idx": "3",
+                "uid":"qwe123",
+                "pwd":"qwe123!",
+                "unm":"Jelly",
+                "eml":"jelly@doc.com"
             }
         ]
     `
