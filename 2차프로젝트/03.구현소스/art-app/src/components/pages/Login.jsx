@@ -257,7 +257,7 @@ function Login(props) {
             </li>
             <li style={{ overflow: "hidden" }}>
               <button className="sbtn more-btn login-sbtn" onClick={onSubmit}>
-               <span>Submit</span> 
+               <span>로그인</span> 
               </button>
             </li>
           </ul>

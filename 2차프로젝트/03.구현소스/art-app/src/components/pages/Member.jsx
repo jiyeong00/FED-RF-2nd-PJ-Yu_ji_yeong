@@ -482,7 +482,7 @@ function Member() {
             </li>
             <li style={{ overflow: "hidden" }}>
               <button className="sbtn more-btn" onClick={onSubmit}>
-               <span>Submit</span>
+               <span>회원가입</span>
               </button>
             </li>
             <li>
