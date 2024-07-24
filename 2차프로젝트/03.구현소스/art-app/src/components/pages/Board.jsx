@@ -1010,7 +1010,7 @@ const PagingList = ({
   const goPaging = (dir, opt) => {
     // dir - 이동방향(오른쪽:+1, 왼쪽:-1)
     // opt - 일반이동(true), 끝이동(false)
-    console.log("방향:", dir, "/옵션:", opt);
+    // console.log("방향:", dir, "/옵션:", opt);
 
     // 새페이징의 페이징 번호
     let newPgPgNum;
