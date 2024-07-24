@@ -14,7 +14,7 @@ let autoI, autoT;
 function mainFn() {
   // 불릿클릭후 다른페이지 이동시 인터발 삭제를 위한 변수
 
-  console.log("호출!!!");
+  // console.log("호출!!!");
   ////////////////////////////////////////////////////////////////////
 
   //////////////////변수/////////////////////////
@@ -217,7 +217,7 @@ function mainFn() {
   // [자동넘김호출]
   function autoSlide() {
     autoI = setInterval(() => {
-      console.log("인터발");
+      // console.log("인터발");
       showSlide();
     }, 8000);
   } ////////autoslide함수///////////////

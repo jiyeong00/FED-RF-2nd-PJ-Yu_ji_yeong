@@ -26,11 +26,11 @@ function Main(props) {
 
   ////////////////////////////////////인터발 삭제
   useLayoutEffect(() => {
-    console.log("레이아웃이펙트");
+    // console.log("레이아웃이펙트");
     mainFn();
 
     return () => {
-      console.log("인터발 삭제!");
+      // console.log("인터발 삭제!");
 
       // 인터발지우기
       clearInterval(autoI);

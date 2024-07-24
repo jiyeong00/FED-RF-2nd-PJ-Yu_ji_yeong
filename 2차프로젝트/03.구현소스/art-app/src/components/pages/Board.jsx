@@ -601,6 +601,9 @@ const ReadMode = ({ selRecord, sts }) => {
       // true로 변경한다!
       isRec = true;
     } //// if ///
+    else{
+      isRec = false;
+    }
   } /// if ///
 
   // (4) 배열에 값 추가하기 : 기존값에 없으면 넣기!
