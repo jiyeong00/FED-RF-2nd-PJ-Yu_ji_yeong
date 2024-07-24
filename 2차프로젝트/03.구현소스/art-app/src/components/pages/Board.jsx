@@ -679,7 +679,7 @@ const ReadMode = ({ selRecord, sts }) => {
                 style={{ border: "none", pointerEvents: "none" }}
                 className="content"
                 cols="60"
-                rows="10"
+                rows="20"
                 readOnly
                 value={data.cont}
               ></textarea>
@@ -745,7 +745,7 @@ const WriteMode = ({ sts }) => {
           <tr>
             <td>내용</td>
             <td>
-              <textarea className="content" cols="60" rows="10"></textarea>
+              <textarea className="content" cols="60" rows="20"></textarea>
             </td>
           </tr>
           {/* <tr>
@@ -811,7 +811,7 @@ const ModifyMode = ({ selRecord }) => {
               <textarea
                 className="content"
                 cols="60"
-                rows="10"
+                rows="20"
                 defaultValue={data.cont}
               ></textarea>
             </td>

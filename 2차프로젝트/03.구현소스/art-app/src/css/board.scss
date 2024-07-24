@@ -32,7 +32,7 @@
   font-size: 14px;
   border-collapse: collapse;
   max-width: 90%;
-  width: 950px;
+  width: 1000px;
   margin: 0 auto;
 }
 
@@ -60,7 +60,7 @@
 .dtbl td,
 .dtbl th {
   /*여러개를 설정할때 컴마(,) 사용*/
-  padding: 10px;
+  padding: 10px 0;
   /*위아래, 양쪽*/
   /*
       padding은 안쪽 공간-> 기존박스가 커짐
@@ -239,6 +239,7 @@
     }
   }
   .del-top{
+    margin-right: 30px;
     &::before {
       content: "";
       width: 0;
