@@ -50,7 +50,7 @@ function Member() {
   // 5. 이메일변수
   const [emailError, setEmailError] = useState(false);
 
-  console.log(">>>>", userIdError);
+  // console.log(">>>>", userIdError);
 
   // [ 아이디관련 메시지 프리셋 ] ////
   const msgId = [
@@ -94,7 +94,7 @@ function Member() {
     // 3. 에러상태 분기하기
     // 3-1. 에러 아닐때 (유효성검사만 통과한 경우)
     if (valid.test(val)) {
-      console.log("통과했지만...!");
+      // console.log("통과했지만...!");
       // 아이디 검사를 위해 기본 데이터 생성호출!
       initData();
       // 로컬스토리지에 "mem-data"가 없으면 초기셋팅함!
@@ -102,11 +102,11 @@ function Member() {
       // 이제 중복 아이디 검사를 실행한다!!!
       // 1. 로컬스 변수할당
       let memData = localStorage.getItem("mem-data");
-      console.log(memData);
+      // console.log(memData);
 
       // 2. 로컬스 객체변환 (왜? 문자형이니까!)
       memData = JSON.parse(memData);
-      console.log(memData);
+      // console.log(memData);
       // -> 배열데이터로 변환!
       // 주의: JSON 파싱할때 원본형식이 제이슨 파일형식으로
       // 엄격하게 작성되어야 에러가 없음(마지막콤마 불허용 등)
@@ -115,7 +115,7 @@ function Member() {
       // 기존 배열값으로 있는지 검사함!
       // 있으면 true, 없으면 false
       let isT = memData.some((v) => v.uid === val);
-      console.log("중복id있어?", isT);
+      // console.log("중복id있어?", isT);
 
       // 4. true 일 경우 중복데이터 메시지 표시
       if (isT) {
@@ -147,7 +147,7 @@ function Member() {
     } /// if /////////////////////////
     // 3-2. 에러일때 : 유효성 검사 에러
     else {
-      console.log("에러~!");
+      // console.log("에러~!");
       // 에러 메시지 업데이트
       setIdMsg(msgId[0]);
       // 아이디 에러상태 업데이트(true)
@@ -257,11 +257,11 @@ function Member() {
     // 1. 기본서브밋 막기
     e.preventDefault();
 
-    console.log("최종검사:", totalValid());
+    // console.log("최종검사:", totalValid());
 
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
-      console.log("모두통과! 저장!");
+      // console.log("모두통과! 저장!");
 
       // [회원정보를 로컬스토리지에 저장하기]
 
@@ -277,7 +277,7 @@ function Member() {
       // 최대수를 위한 배열값 뽑기 (idx항목)
       let temp = memData.map((v) => v.idx);
       // 다음 번호는 항상 최대수+1이다!
-      console.log("다음번호:", Math.max(...temp) + 1);
+      // console.log("다음번호:", Math.max(...temp) + 1);
 
       // 4. 새로운 데이터 구성하기
       let newData = {

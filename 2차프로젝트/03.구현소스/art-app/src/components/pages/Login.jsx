@@ -108,7 +108,7 @@ function Login(props) {
 
     // 2. 유효성검사 전체 통과시
     if (totalValid()) {
-      console.log("모두통과! 데이터조회!");
+      // console.log("모두통과! 데이터조회!");
 
       // [회원정보를 로컬스토리지에 저장하기]
 
