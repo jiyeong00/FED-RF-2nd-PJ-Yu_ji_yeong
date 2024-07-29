@@ -69,7 +69,8 @@ function SubColor({ catName, subCatName }) {
           return true;
         }
       }); ////filter
-      console.log("필터 데이터",orgData.length,selData.length);
+      // console.log("필터 데이터",orgData.length,selData.length);
+      console.log("필터 데이터",orgTxt,selData.length);
     }
     // 검색어가 없는 경우 전체 넣기
     else {
