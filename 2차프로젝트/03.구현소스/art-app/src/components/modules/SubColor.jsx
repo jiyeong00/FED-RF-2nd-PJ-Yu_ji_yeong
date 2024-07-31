@@ -52,14 +52,40 @@ function SubColor({ catName, subCatName }) {
 
   ////////////////////////////////////////////////////////////////////
 
-  const thisData = selData.map((v, i) => (
-    <Fragment key={i}>
-      {i <= cNum && (
+  // 원본/.///////////
+  // const thisData = selData.map((v, i) => (
+  //   <Fragment key={i}>
+  //     {i <= cNum && (
+  //       <li>
+  //         <div
+  //           className="color-box"
+  //           style={
+  //             v.code == "#FFFFFF"
+  //               ? {
+  //                   backgroundColor: v.code,
+  //                   border: "1px solid #efefef",
+  //                 }
+  //               : { backgroundColor: v.code }
+  //           }
+  //         ></div>
+  //         <p>{v.num}</p>
+  //         <p>{v.name}</p>
+  //       </li>
+  //     )}
+  //     </Fragment>
+  // ));
+
+  const thisData = [];
+  selData.some((v, i) => {
+    if (i > cNum) return true; // 조건이 true이면 some을 중지하고 반복을 멈춘다.
+
+    thisData.push(
+      <Fragment key={i}>
         <li>
           <div
             className="color-box"
             style={
-              v.code == "#FFFFFF"
+              v.code === "#FFFFFF"
                 ? {
                     backgroundColor: v.code,
                     border: "1px solid #efefef",
@@ -70,14 +96,10 @@ function SubColor({ catName, subCatName }) {
           <p>{v.num}</p>
           <p>{v.name}</p>
         </li>
-      )}
-      {
-        i>cNum && ''
-      }
       </Fragment>
-  ));
-
-  
+    );
+    return false; // 조건이 false이면 계속 반복.
+  });
 
   // 필터 검색어
   let orgData;
@@ -94,12 +116,12 @@ function SubColor({ catName, subCatName }) {
 
         // 필터검색조건 맞는 데이터 수집하기
         if (orgTxt.indexOf(txt) != -1) {
-          console.log(orgTxt.indexOf(txt));
+          // console.log(orgTxt.indexOf(txt));
           return true;
         }
         // console.log("필터 데이터",thisData2);
       }); ////filter
-      console.log("필터 데이터",orgData);
+      console.log("필터 데이터", orgData);
     }
     // 검색어가 없는 경우 전체 넣기
     else {
@@ -125,9 +147,9 @@ function SubColor({ catName, subCatName }) {
                 let txt = $(e.target).prev().val();
                 setKeyword(txt);
 
-                // console.log(thisData2);
-
-                // searchList();
+                
+                searchList();
+                console.log(thisData.length,orgData.length);
               }}
             >
               검색
