@@ -112,14 +112,18 @@ function SubColor({ catName, subCatName }) {
   let orgData;
   // 검색할려고 만든 변수
   const searchList = () => {
+
+    // 필터 먹여!
+    const filterData = searchData.filter(item => item.idx <= cNum);
+
     if (keyword != "") {
-      orgData = searchData.filter((v) => {
+      orgData = filterData.filter((v) => {
         // console.log(v,v.name);
         // 소문자 처리하기
         // (1) 검색원본데이터
-        let orgTxt = v.name;
+        let orgTxt = v.name.toLowerCase();
         // (2) 검색어 데이터
-        let txt = keyword;
+        let txt = keyword.toLowerCase();
 
         // 필터검색조건 맞는 데이터 수집하기
         if (orgTxt.indexOf(txt) != -1) {
