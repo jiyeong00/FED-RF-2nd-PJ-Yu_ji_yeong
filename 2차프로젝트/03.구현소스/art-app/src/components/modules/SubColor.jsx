@@ -75,6 +75,13 @@ function SubColor({ catName, subCatName }) {
   //     </Fragment>
   // ));
 
+  // 로컬스토리지 만들고
+  localStorage.setItem("search-data", JSON.stringify(selData));
+
+  // 데이터 가져와서 변수할당
+  const searchData = JSON.parse(localStorage.getItem("search-data"));
+  console.log(searchData.length);
+
   const thisData = [];
   selData.some((v, i) => {
     if (i > cNum) return true; // 조건이 true이면 some을 중지하고 반복을 멈춘다.
@@ -106,7 +113,7 @@ function SubColor({ catName, subCatName }) {
   // 검색할려고 만든 변수
   const searchList = () => {
     if (keyword != "") {
-      orgData = selData.filter((v) => {
+      orgData = searchData.filter((v) => {
         // console.log(v,v.name);
         // 소문자 처리하기
         // (1) 검색원본데이터
@@ -125,10 +132,14 @@ function SubColor({ catName, subCatName }) {
     }
     // 검색어가 없는 경우 전체 넣기
     else {
-      // orgData = thisData2;
+      orgData = thisData;
     }
   };
 
+
+
+
+  
   return (
     <section>
       {(catName != "KoreanColors" || subCatName != "2") && (
@@ -147,9 +158,8 @@ function SubColor({ catName, subCatName }) {
                 let txt = $(e.target).prev().val();
                 setKeyword(txt);
 
-                
                 searchList();
-                console.log(thisData.length,orgData.length);
+                console.log(thisData.length, orgData.length);
               }}
             >
               검색
