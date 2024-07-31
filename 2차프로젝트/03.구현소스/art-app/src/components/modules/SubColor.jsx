@@ -52,65 +52,39 @@ function SubColor({ catName, subCatName }) {
 
   ////////////////////////////////////////////////////////////////////
 
-  // const thisData = selData.map((v, i) => (
-  //   <Fragment key={i}>
-  //     {i <= cNum && (
-  //       <li>
-  //         <div
-  //           className="color-box"
-  //           style={
-  //             v.code == "#FFFFFF"
-  //               ? {
-  //                   backgroundColor: v.code,
-  //                   border: "1px solid #efefef",
-  //                 }
-  //               : { backgroundColor: v.code }
-  //           }
-  //         ></div>
-  //         <p>{v.num}</p>
-  //         <p>{v.name}</p>
-  //       </li>
-  //     )}
-  //     {
-  //       i>cNum && ''
-  //     }
-  //     </Fragment>
-  // ));
+  const thisData = selData.map((v, i) => (
+    <Fragment key={i}>
+      {i <= cNum && (
+        <li>
+          <div
+            className="color-box"
+            style={
+              v.code == "#FFFFFF"
+                ? {
+                    backgroundColor: v.code,
+                    border: "1px solid #efefef",
+                  }
+                : { backgroundColor: v.code }
+            }
+          ></div>
+          <p>{v.num}</p>
+          <p>{v.name}</p>
+        </li>
+      )}
+      {
+        i>cNum && ''
+      }
+      </Fragment>
+  ));
 
-  const thisData = [];
-  let thisData2=[];
-  // 배열의 요소를 순회하면서 필요한 조건에 따라 처리
-  for (let i = 0; i < selData.length; i++) {
-    if (i > cNum) {
-      break; // cNum을 초과하면 반복 종료
-    }
-    thisData2[i]=selData[i];
-    thisData.push(
-      <li key={i}>
-        <div
-          className="color-box"
-          style={
-            thisData2.code === "#FFFFFF"
-              ? {
-                  backgroundColor: thisData2.code,
-                  border: "1px solid #efefef",
-                }
-              : { backgroundColor: thisData2.code }
-          }
-        ></div>
-        <p>{thisData2.num}</p>
-        <p>{thisData2.name}</p>
-      </li>
-    );
-    // console.log(thisData2);
-  }
+  
 
   // 필터 검색어
   let orgData;
   // 검색할려고 만든 변수
   const searchList = () => {
     if (keyword != "") {
-      orgData = thisData2.filter((v) => {
+      orgData = selData.filter((v) => {
         // console.log(v,v.name);
         // 소문자 처리하기
         // (1) 검색원본데이터
@@ -129,7 +103,7 @@ function SubColor({ catName, subCatName }) {
     }
     // 검색어가 없는 경우 전체 넣기
     else {
-      orgData = thisData2;
+      // orgData = thisData2;
     }
   };
 
@@ -151,9 +125,9 @@ function SubColor({ catName, subCatName }) {
                 let txt = $(e.target).prev().val();
                 setKeyword(txt);
 
-                console.log(thisData2);
+                // console.log(thisData2);
 
-                searchList();
+                // searchList();
               }}
             >
               검색
