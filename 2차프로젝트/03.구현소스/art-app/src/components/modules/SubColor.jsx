@@ -80,7 +80,6 @@ function SubColor({ catName, subCatName }) {
 
   // 데이터 가져와서 변수할당
   const searchData = JSON.parse(localStorage.getItem("search-data"));
-  console.log(searchData.length);
 
   const thisData = [];
   selData.some((v, i) => {
@@ -112,38 +111,58 @@ function SubColor({ catName, subCatName }) {
   let orgData;
   // 검색할려고 만든 변수
   const searchList = () => {
-
     // 필터 먹여!
-    const filterData = searchData.filter(item => item.idx <= cNum);
+    const filterData = searchData.filter((item) => item.idx <= cNum);
 
-    if (keyword != "") {
-      orgData = filterData.filter((v) => {
-        // console.log(v,v.name);
-        // 소문자 처리하기
-        // (1) 검색원본데이터
-        let orgTxt = v.name.toLowerCase();
-        // (2) 검색어 데이터
-        let txt = keyword.toLowerCase();
+    //   if (keyword!= "") {
+    //     orgData = filterData.filter((v) => {
+    //       // console.log(v,v.name);
+    //       // 소문자 처리하기
+    //       // (1) 검색원본데이터
+    //       let orgTxt = v.name.toLowerCase();
+    //       // (2) 검색어 데이터
+    //       let txt = keyword.toLowerCase();
 
-        // 필터검색조건 맞는 데이터 수집하기
-        if (orgTxt.indexOf(txt) != -1) {
-          // console.log(orgTxt.indexOf(txt));
-          return true;
-        }
-        // console.log("필터 데이터",thisData2);
-      }); ////filter
-      console.log("필터 데이터", orgData);
-    }
-    // 검색어가 없는 경우 전체 넣기
-    else {
-      orgData = thisData;
+    //       console.log("키워드",keyword,orgTxt,txt);
+
+    //       // 필터검색조건 맞는 데이터 수집하기
+    //       if (orgTxt.indexOf(txt) != -1) {
+    //         // console.log(orgTxt.indexOf(txt));
+    //         return true;
+    //       }
+    //       // console.log("필터 데이터",thisData2);
+    //     }); ////filter
+    //     console.log("필터 데이터", orgData);
+    //   }
+    //   // 검색어가 없는 경우 전체 넣기
+    //   else {
+    //     orgData = thisData;
+    //     console.log("검색어 없음");
+    //   }
+    // };
+
+    if (keyword.trim() !== "") {
+      // keyword를 소문자로 변환
+      const lowerKeyword = keyword.toLowerCase();
+
+      // filterData를 keyword로 필터링
+      orgData = filterData.filter((item) => {
+        // item.name을 소문자로 변환
+        const lowerName = item.name.toLowerCase();
+        // keyword가 name에 포함되어 있는지 확인
+        return lowerName.includes(lowerKeyword);
+      });
+
+      console.log("필터된 데이터", orgData);
+
+      thisData = orgData;
+    } else {
+      // keyword가 없으면 전체 데이터
+      orgData = filterData;
+      console.log("검색어 없음, 전체 데이터", orgData);
     }
   };
 
-
-
-
-  
   return (
     <section>
       {(catName != "KoreanColors" || subCatName != "2") && (
@@ -171,28 +190,7 @@ function SubColor({ catName, subCatName }) {
           </div>
           <ul className="cUlist">
             <>
-              {/* {keyword != "" &&
-                orgData.map((v, i) => {
-                  <Fragment key={i}>
-                    {i <= cNum && (
-                      <li>
-                        <div
-                          className="color-box"
-                          style={
-                            v.code == "#FFFFFF"
-                              ? {
-                                  backgroundColor: v.code,
-                                  border: "1px solid #efefef",
-                                }
-                              : { backgroundColor: v.code }
-                          }
-                        ></div>
-                        <p>{v.num}</p>
-                        <p>{v.name}</p>
-                      </li>
-                    )}
-                  </Fragment>;
-                })} */}
+              {keyword != "" && thisData}
               {keyword == "" && thisData}
             </>
           </ul>
