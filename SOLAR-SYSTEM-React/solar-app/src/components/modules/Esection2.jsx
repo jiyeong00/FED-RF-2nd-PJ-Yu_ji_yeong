@@ -29,7 +29,7 @@ export default function Esection2() {
         className="esec2wrap"
       >
         <SwiperSlide>
-           <img src="/images/earth/earth_back.webp" alt="" />
+           <img src={process.env.PUBLIC_URL +"/images/earth/earth_back.webp"} alt="" />
           <p className="cont-tit" >Namesake</p>
           <p className="cont-txt">
             The name Earth is at least 1,000 years old. All of the planets,
@@ -40,7 +40,7 @@ export default function Esection2() {
          
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/earth/Potential_for_Life.jpg" alt="" />
+          <img src={process.env.PUBLIC_URL +"/images/earth/Potential_for_Life.jpg"} alt="" />
           <p className="cont-tit">Potential for Life</p>
           <p className="cont-txt">
             Earth has a very hospitable temperature and mix of chemicals that
@@ -55,7 +55,7 @@ export default function Esection2() {
           
         </SwiperSlide>
         <SwiperSlide>
-           <img src="/images/earth/Size_and_Distance.jpg" alt="" />
+           <img src={process.env.PUBLIC_URL +"/images/earth/Size_and_Distance.jpg"} alt="" />
           <p className="cont-tit">Size and Distance</p>
           <p className="cont-txt">
             With an equatorial diameter of 7926 miles (12,760 kilometers), Earth
@@ -71,7 +71,7 @@ export default function Esection2() {
          
         </SwiperSlide>
         <SwiperSlide>
-           <img src="/images/earth/Orbit_and_Rotation.jpg" alt="" />
+           <img src={process.env.PUBLIC_URL +"/images/earth/Orbit_and_Rotation.jpg"} alt="" />
           <p className="cont-tit">Orbit and Rotation</p>
           <p className="cont-txt">
             As Earth orbits the Sun, it completes one rotation every 23.9 hours.
@@ -85,7 +85,7 @@ export default function Esection2() {
          
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/earth/earth_fomation.jpg" alt="" />
+          <img src={process.env.PUBLIC_URL +"/images/earth/earth_fomation.jpg"} alt="" />
           <p className="cont-tit">Formation</p>
           <p className="cont-txt">
             When the solar system settled into its current layout about 4.5
@@ -97,7 +97,7 @@ export default function Esection2() {
           
         </SwiperSlide>
         <SwiperSlide>
-           <img src="/images/earth/Structure.webp" alt="" />
+           <img src={process.env.PUBLIC_URL +"/images/earth/Structure.webp"} alt="" />
           <p className="cont-tit">Structure</p>
           <p className="cont-txt">
             Earth is composed of four main layers, starting with an inner core
@@ -112,7 +112,7 @@ export default function Esection2() {
          
         </SwiperSlide>
         <SwiperSlide>
-          <img src="/images/earth/surface.jpg" alt="" />
+          <img src={process.env.PUBLIC_URL +"/images/earth/surface.jpg"} alt="" />
           <p className="cont-tit">Surface</p>
           <p className="cont-txt">
             Like Mars and Venus, Earth has volcanoes, mountains, and valleys.

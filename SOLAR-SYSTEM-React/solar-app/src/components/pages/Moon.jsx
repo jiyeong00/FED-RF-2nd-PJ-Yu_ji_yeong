@@ -38,7 +38,7 @@ function Moon(props) {
       <main className="main-area">
         <section id="moon1">
           <div className="moon-video">
-            <video src="/images/moon/moon.mp4" muted autoPlay loop></video>
+            <video src={process.env.PUBLIC_URL+"/images/moon/moon.mp4"} muted autoPlay loop></video>
           </div>
           <h1 className="main-tit">THE MOON</h1>
           <p className="main-txt">
@@ -55,7 +55,7 @@ function Moon(props) {
         </section>
         <section className="moon2">
           <div className="moon-pic">
-            <img className="e-moveup" src="/images/moon/moon.png" alt="moon" />
+            <img className="e-moveup" src={process.env.PUBLIC_URL+"/images/moon/moon.png"} alt="moon" />
           </div>
           <div className="moon-txt">
             <p className="cont-txt">
@@ -69,7 +69,7 @@ function Moon(props) {
             <h1 className="facts-tit">INTERESTING FACTS</h1>
           </span>
           <div className="facts-img1">
-            <img className="e-moveup" src="/images/moon/m2.jpg" alt="달착륙" />
+            <img className="e-moveup" src={process.env.PUBLIC_URL+"/images/moon/m2.jpg"} alt="달착륙" />
           </div>
           <div className="facts-txt-box">
             <h2 className="facts-txt">

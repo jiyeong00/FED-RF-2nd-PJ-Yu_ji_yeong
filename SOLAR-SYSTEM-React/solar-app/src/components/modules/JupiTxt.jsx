@@ -23,7 +23,7 @@ function JupiTxt({ catName }) {
             <div className="desc2-3D">
               <iframe
                 className="imodel"
-                src={process.env.PUBLIC_URL+"https://solarsystem.nasa.gov/gltf_embed/2355"}
+                src={"https://solarsystem.nasa.gov/gltf_embed/2355"}
                 frameBorder="0"
                 loading="eager"
               ></iframe>

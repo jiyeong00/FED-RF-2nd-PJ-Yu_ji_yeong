@@ -1,4 +1,4 @@
-// nenia GNB메뉴 데이터
+// GNB메뉴 데이터
 
 export const menu = [
   {

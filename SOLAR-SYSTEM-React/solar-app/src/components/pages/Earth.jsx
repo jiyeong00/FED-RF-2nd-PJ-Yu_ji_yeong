@@ -16,7 +16,7 @@ function Earth() {
         <div className="earth-section">
              <div className="vidbox">
             <video
-            src="/images/earth/intro.mp4"
+            src={process.env.PUBLIC_URL +"/images/earth/intro.mp4"}
             autoPlay
             muted
             loop

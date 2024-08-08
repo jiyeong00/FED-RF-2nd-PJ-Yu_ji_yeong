@@ -64,7 +64,7 @@ function Esection4(props) {
                     </div>
                     <div className="pg4-imgbox e-moveup">
                         <img
-                            src="/images/earth/pg4_kindly.webp"
+                            src={process.env.PUBLIC_URL +"/images/earth/pg4_kindly.webp"}
                             alt="Kid-Friendly Earth"
                         />
                     </div>

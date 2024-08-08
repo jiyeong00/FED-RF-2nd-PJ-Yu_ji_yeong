@@ -5,7 +5,7 @@ function Esection1(props) {
         <div id="pg1" className="e_page">
             <div className="vidbox">
                 <video
-                    src="/images/earth/mainearth.mp4"
+                    src={process.env.PUBLIC_URL +"/images/earth/mainearth.mp4"}
                     autoPlay
                     muted
                     playsInline

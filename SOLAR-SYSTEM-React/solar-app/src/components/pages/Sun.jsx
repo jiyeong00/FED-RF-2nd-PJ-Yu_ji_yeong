@@ -46,7 +46,7 @@ useEffect(() => {
             {/* 섹션1(태양 메인) */}
             <section className="sun01">
                 {/* 동영상 삽입 */}
-                <video src="./images/sun/sun.mp4" loop autoPlay muted playsInline></video>
+                <video src={process.env.PUBLIC_URL +"/images/sun/sun.mp4"} loop autoPlay muted playsInline></video>
                 <div className="sun01-text">
                     <h2 className="main-tit">SUN</h2>
                     <p className="main-txt">The Sun is the star at the heart of our solar system.<br />Its gravity holds the solar system together,<br />keeping everything from the biggest planets to the smallest bits of debris in its orbit. The Sun's gravity holds the solar system together, keeping everything</p>
@@ -61,8 +61,8 @@ useEffect(() => {
                             <li className="con scroll-el hide-el on">
                                 {/* 이미지 영역 */}
                                 <div className="img-fade img-fade1">
-                                    <img src="./images/sun/PIA01341~large.jpg" alt="" className="fade1" />
-                                    <img src="./images/sun/sun.jpg" alt="" className="fade2" />
+                                    <img src={process.env.PUBLIC_URL +"/images/sun/PIA01341~large.jpg"} alt="" className="fade1" />
+                                    <img src={process.env.PUBLIC_URL +"/images/sun/sun.jpg"} alt="" className="fade2" />
                                 </div>
                                 {/* 글자영역 */}
                                 <div className="text">
@@ -85,8 +85,8 @@ useEffect(() => {
                                             ></path>
                                         </clipPath>
                                     </svg>
-                                    <img src="./images/sun/sun_table01.jpg" alt="" className="fade1" />
-                                    <img src="./images/sun/sun_table04.jpg" alt="" className="fade2" />
+                                    <img src={process.env.PUBLIC_URL +"/images/sun/sun_table01.jpg"} alt="" className="fade1" />
+                                    <img src={process.env.PUBLIC_URL +"/images/sun/sun_table04.jpg"} alt="" className="fade2" />
                                 </div>
                                 {/* 글자영역 */}
                                 <div className="text">
@@ -108,8 +108,8 @@ useEffect(() => {
                                             ></path>
                                         </clipPath>
                                     </svg>
-                                    <img src="./images/sun/sun_table01.jpg" alt="" className="fade1" />
-                                    <img src="./images/sun/sun_table04.jpg" alt="" className="fade2" />
+                                    <img src={process.env.PUBLIC_URL +"/images/sun/sun_table01.jpg"} alt="" className="fade1" />
+                                    <img src={process.env.PUBLIC_URL +"/images/sun/sun_table04.jpg"} alt="" className="fade2" />
                                 </div>
                             </li>
                         </ul>
@@ -130,7 +130,7 @@ useEffect(() => {
                     <h2 className="sub-tit">Sun 3d Model</h2>
                     <figure>
                         <div>
-                            <iframe src="https://eyes.nasa.gov/apps/solar-system/#/sun?embed=true" title="" className="smd-iframe-iframe margin-left-auto margin-right-auto border-0" allowFullScreen data-gtm-yt-inspected-13="true">Unable to render the provided source</iframe>
+                            <iframe src={"https://eyes.nasa.gov/apps/solar-system/#/sun?embed=true"} title="" className="smd-iframe-iframe margin-left-auto margin-right-auto border-0" allowFullScreen data-gtm-yt-inspected-13="true">Unable to render the provided source</iframe>
                         </div>
                         <div className="padding-y-1"></div>
                     </figure>
@@ -142,16 +142,16 @@ useEffect(() => {
                 <div className="inbox">
                     <h2 className="sub-tit">Gallery</h2>
                     <ul className="box scroll-el hide-el">
-                        <li><a href="images/sun/gallery/1.jpg"><img src="images/sun/gallery/1.jpg" alt="" /></a></li>
-                        <li><a href="images/sun/gallery/2.jpg"><img src="images/sun/gallery/2.jpg" alt="" /></a></li>
-                        <li><a href="images/sun/gallery/3.jpg"><img src="images/sun/gallery/3.jpg" alt="" /></a></li>
-                        <li><a href="images/sun/gallery/4.jpg"><img src="images/sun/gallery/4.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/1.jpg"><img src="images/sun/gallery/1.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/2.jpg"><img src="images/sun/gallery/2.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/3.jpg"><img src="images/sun/gallery/3.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/4.jpg"><img src="images/sun/gallery/4.jpg" alt="" /></a></li>
                     </ul>
                     <ul className="box scroll-el hide-el">
-                        <li><a href="images/sun/gallery/5.jpg"><img src="images/sun/gallery/5.jpg" alt="" /></a></li>
-                        <li><a href="images/sun/gallery/6.jpg"><img src="images/sun/gallery/6.jpg" alt="" /></a></li>
-                        <li><a href="images/sun/gallery/7.jpg"><img src="images/sun/gallery/7.jpg" alt="" /></a></li>
-                        <li><a href="images/sun/gallery/8.jpg"><img src="images/sun/gallery/8.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/5.jpg"><img src="images/sun/gallery/5.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/6.jpg"><img src="images/sun/gallery/6.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/7.jpg"><img src="images/sun/gallery/7.jpg" alt="" /></a></li>
+                        <process.env.PUBLIC_URL +li><a href="images/sun/gallery/8.jpg"><img src="images/sun/gallery/8.jpg" alt="" /></a></li>
                     </ul>
                 </div>
             </section> */}
