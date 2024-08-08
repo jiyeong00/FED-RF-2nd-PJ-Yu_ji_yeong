@@ -159,7 +159,7 @@ main.main-area {
 
 /****************************** 최대 사이즈 1650px 이하 시작 ******************************/
 @media screen and (max-width: 1650px) {
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       scale: 0.9;
     }
@@ -175,7 +175,7 @@ main.main-area {
 
 /****************************** 최대 사이즈 1570px 이하 시작 ******************************/
 @media screen and (max-width: 1570px) {
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       scale: 0.8;
     }
@@ -205,7 +205,7 @@ main.main-area {
 
 /****************************** 최대 사이즈 1450px 이하 시작 ******************************/
 @media screen and (max-width: 1450px) {
-  .moon4{
+  .moon-area-n{
     .cont-tit {
        translate: 35vw 15vh;
      }
@@ -230,7 +230,7 @@ main.main-area {
   .facts-txt-box {
     translate: 68vw 30vh;
   }
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       scale: 0.7;
     }
@@ -252,7 +252,7 @@ main.main-area {
   .facts-txt {
     font-size: 1.3rem;
   }
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       translate: 30vw 15vh;
     }
@@ -285,7 +285,7 @@ main.main-area {
   .facts-txt {
     font-size: 1.2rem;
   }
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       translate: 10vw 15vh;
     }
@@ -314,7 +314,7 @@ main.main-area {
   .facts-txt {
     font-size: 1.2rem;
   }
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       translate: 10vw 15vh;
     }
@@ -397,7 +397,7 @@ main.main-area {
   .facts-tit {
     font-size: min(9rem, 9vw);
   }
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       translate: 9vw 15vh;
     }
@@ -442,7 +442,7 @@ main.main-area {
     scale: 0.8;
     width: 100%;
   }
-  .moon4{
+  .moon-area-n{
     .cont-tit {
       translate: 4vw 4vh;
     }

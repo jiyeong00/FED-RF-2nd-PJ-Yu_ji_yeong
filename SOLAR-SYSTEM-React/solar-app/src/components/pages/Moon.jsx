@@ -35,7 +35,7 @@ function Moon(props) {
     <>
 
       {/* 2. 메인영역 */}
-      <main className="main-area">
+      <main className="main-area moon-area-n">
         <section id="moon1">
           <div className="moon-video">
             <video src={process.env.PUBLIC_URL+"/images/moon/moon.mp4"} muted autoPlay loop></video>
