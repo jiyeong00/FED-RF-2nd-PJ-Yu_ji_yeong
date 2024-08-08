@@ -1,0 +1,466 @@
+@charset "utf-8";
+/* 팀 PJ : 서브페이지 SCSS - moon.scss */
+
+// @import './common.css';
+// @import './core.css';
+// @import './reset.css';
+
+html > body > * {
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/************* 상단영역 *************/
+/* common.css */
+
+/************* 메인영역 *************/
+main.main-area {
+  width: 100%;
+  min-height: 100vh;
+
+  video {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    object-fit: cover;
+    padding: 0;
+    margin: 0;
+  }
+
+  .main-tit {
+    position: absolute;
+    top: 450px;
+    left: 100px;
+    color: #fff;
+    /* font-size: 15rem; */
+    /* font-family: 'Ykar'; */
+    /* text-shadow: 1px 1px 2px #2d2239d7; */
+  }
+
+  .main-txt {
+    position: absolute;
+    top: 600px;
+    left: 100px;
+    /* color: #fff;
+    font-size: 1.5rem;
+    font-family: 'Pretendard-Regular'; */
+    width: auto;
+    display: inline-block;
+  }
+}
+
+.moon2 {
+  position: relative;
+  max-width: 1400px;
+  min-width: 50vw;
+  margin: 50px 24vw;
+
+  .moon-pic {
+    position: absolute;
+    top: 500px;
+    left: 500px;
+    z-index: 999;
+    mix-blend-mode: plus-lighter;
+    backdrop-filter: contrast(0.1);
+  }
+
+  .moon-txt {
+    position: relative;
+
+    .cont-txt {
+      z-index: 999;
+      color: black;
+      /* 줄간격 */
+      line-height: 1.7;
+      /* 자간 */
+      letter-spacing: 1px;
+      /* 단어간격 */
+      word-spacing: 2px;
+
+      .first-txt {
+        font-weight: bold;
+        font-size: 5rem;
+      }
+    }
+  }
+}
+
+.moon3 {
+  height: 50vh;
+  background: url(../../../../images/moon/m1.jpg) no-repeat fixed center/cover;
+}
+
+.moon4 {
+  height: 100vh;
+
+  .cont-tit {
+    position: absolute;
+    background-color: rgb(91, 130, 201); /* rgb(151, 141, 208); */
+    padding: 10px;
+    translate: 40vw 15vh;
+    z-index: 99;
+
+    .facts-tit {
+      font-size: 10rem;
+      color: #fff;
+    }
+  }
+
+  .facts-img1 > img {
+    position: absolute;
+    height: 85%;
+    translate: 50px;
+    translate: 10vw 10vh;
+  }
+
+  .facts-txt-box {
+    position: absolute;
+    width: 500px;
+    translate: 55vw 35vh;
+
+    .facts-txt {
+      line-height: 1.7;
+      letter-spacing: 1px;
+      word-spacing: 1px;
+    }
+  }
+}
+
+.e-moveup {
+  opacity: 0;
+  margin-top: 5vw;
+  transition: 1s ease-in-out;
+
+  &.on {
+    opacity: 1;
+    margin-top: 0;
+  }
+}
+
+/************* 하단영역 *************/
+/* common.css */
+.footer-area {
+  overflow: hidden;
+}
+
+/************* 미디어쿼리 *************/
+
+/****************************** 최대 사이즈 1820px 이하 시작 ******************************/
+@media screen and (max-width: 1820px) {
+  .facts-txt-box {
+    translate: 60vw 35vh;
+  }
+}
+
+/****************************** 최대 사이즈 1700px 이하 시작 ******************************/
+@media screen and (max-width: 1700px) {
+  .moon-pic {
+    top: 400px;
+    left: 500px;
+  }
+}
+
+/****************************** 최대 사이즈 1650px 이하 시작 ******************************/
+@media screen and (max-width: 1650px) {
+  .cont-tit {
+    scale: 0.9;
+  }
+}
+
+/****************************** 최대 사이즈 1625px 이하 시작 ******************************/
+@media screen and (max-width: 1625px) {
+  .facts-txt-box {
+    translate: 62vw 35vh;
+  }
+}
+
+/****************************** 최대 사이즈 1570px 이하 시작 ******************************/
+@media screen and (max-width: 1570px) {
+  .cont-tit {
+    scale: 0.8;
+  }
+}
+
+/****************************** 최대 사이즈 1550px 이하 시작 ******************************/
+@media screen and (max-width: 1550px) {
+  .facts-txt-box {
+    translate: 64vw 35vh;
+  }
+}
+
+/****************************** 최대 사이즈 1520px 이하 시작 ******************************/
+/* Empty */
+
+/****************************** 최대 사이즈 1500px 이하 시작 ******************************/
+@media screen and (max-width: 1500px) {
+  .facts-txt-box {
+    translate: 67vw 30vh;
+    width: 28vw;
+  }
+}
+
+/****************************** 최대 사이즈 1480px 이하 시작 ******************************/
+/* Empty */
+
+/****************************** 최대 사이즈 1450px 이하 시작 ******************************/
+@media screen and (max-width: 1450px) {
+ .cont-tit {
+    translate: 35vw 15vh;
+  }
+}
+
+/****************************** 최대 사이즈 1410px 이하 시작 ******************************/
+@media screen and (max-width: 1410px) {
+  .facts-txt-box {
+    translate: 68vw 30vh;
+  }
+}
+
+/****************************** 최대 사이즈 1390px 이하 시작 ******************************/
+@media screen and (max-width: 1390px) {
+  .facts-img1 > img {
+    position: absolute;
+    height: 75%;
+    /* translate: 50px; */
+    translate: 10vw 10vh;
+  }
+  .facts-txt-box {
+    translate: 68vw 30vh;
+  }
+  .cont-tit {
+    scale: 0.7;
+  }
+}
+
+/****************************** 최대 사이즈 1330px 이하 시작 ******************************/
+@media screen and (max-width: 1330px) {
+  .moon-pic {
+    left: 400px;
+  }
+}
+
+/****************************** 최대 사이즈 1300px 이하 시작 ******************************/
+@media screen and (max-width: 1300px) {
+  .facts-txt-box {
+    translate: 68vw 30vh;
+  }
+  .facts-txt {
+    font-size: 1.3rem;
+  }
+  .cont-tit {
+    translate: 30vw 15vh;
+  }
+}
+
+/****************************** 최대 사이즈 1240px 이하 시작 ******************************/
+@media screen and (max-width: 1240px) {
+  .main-txt {
+    font-size: 1.5rem;
+  }
+}
+
+/****************************** 최대 사이즈 1222px 이하 시작 ******************************/
+@media screen and (max-width: 1222px) {
+  .moon-pic {
+    left: 300px;
+    scale: 0.8;
+  }
+}
+
+/****************************** 최대 사이즈 1210px 이하 시작 ******************************/
+@media screen and (max-width: 1210px) {
+  .facts-txt-box {
+    /* left: 100px; */
+    translate: 60vw 30vh;
+    background-color: #ffffffba;
+    padding: 10px;
+  }
+  .facts-txt {
+    font-size: 1.2rem;
+  }
+  .cont-tit {
+    translate: 10vw 15vh;
+  }
+  .main-area .main-tit {
+    font-size: 11rem;
+    top: 490px;
+  }
+}
+
+/****************************** 최대 사이즈 1024px 이하 시작 ******************************/
+@media screen and (max-width: 1024px) {
+  .moon-pic {
+    left: 200px;
+  }
+}
+
+/****************************** 최대 사이즈 982px 이하 시작 ******************************/
+@media screen and (max-width: 982px) {
+  .facts-txt-box {
+    /* left: 100px; */
+    translate: 50vw 30vh;
+    background-color: #ffffffba;
+    padding: 10px;
+  }
+  .facts-txt {
+    font-size: 1.2rem;
+  }
+  .cont-tit {
+    translate: 10vw 15vh;
+  }
+  .facts-tit {
+    font-size: min(9rem, 10vw);
+  }
+  .main-area .main-tit {
+    font-size: 11rem;
+    top: 490px;
+  }
+}
+
+/****************************** 최대 사이즈 910px 이하 끝 ******************************/
+@media screen and (max-width: 910px) {
+  .facts-txt-box {
+    translate: 18vw 48vh;
+    width: min(60vw);
+  }
+}
+
+/****************************** 최대 사이즈 892px 이하 끝 ******************************/
+@media screen and (max-width: 892px) {
+  .moon-pic {
+    left: 100px;
+    scale: 0.5;
+  }
+}
+
+/****************************** 최대 사이즈 820px 이하 끝 ******************************/
+@media screen and (max-width: 820px) {
+  .facts-img1 > img {
+    scale: 0.5;
+  }
+}
+
+/****************************** 최대 사이즈 802px 이하 시작 ******************************/
+@media screen and (max-width: 802px) {
+  .main-area .main-tit {
+    font-size: 9rem;
+  }
+  .main-txt {
+    font-size: 1.3rem;
+  }
+  .facts-img1 > img {
+    height: 70%;
+    translate: 8vw 10vh;
+  }
+}
+
+/****************************** 최대 사이즈 737px 이하 시작 ******************************/
+@media screen and (max-width: 737px) {
+  .main-area .main-tit {
+    font-size: 7rem;
+    top: 530px;
+  }
+  .main-txt {
+    font-size: 1rem;
+  }
+  .facts-img1 > img {
+    height: 70%;
+    translate: 5vw 10vh;
+  }
+}
+
+/****************************** 최대 사이즈 714px 이하 시작 ******************************/
+@media screen and (max-width: 714px) {
+  .facts-img1 > img {
+    height: 50%;
+    translate: 17vw 10vh;
+  }
+  .facts-txt-box {
+    translate: 24vw 41vh;
+    width: min(50vw);
+  }
+}
+
+/****************************** 최대 사이즈 659px 이하 시작 ******************************/
+@media screen and (max-width: 659px) {
+  .facts-tit {
+    font-size: min(9rem, 9vw);
+  }
+  .cont-tit {
+    translate: 9vw 15vh;
+  }
+  .moon-pic {
+    left: 0;
+  }
+}
+
+/****************************** 최대 사이즈 590px 이하 시작 ******************************/
+@media screen and (max-width: 590px) {
+  .facts-img1 > img {
+    translate: 10vw 10vh;
+  }
+}
+
+/****************************** 최대 사이즈 582px 이하 시작 ******************************/
+@media screen and (max-width: 582px) {
+  .main-area .main-tit {
+    font-size: 7rem;
+    top: 530px;
+    left: 10px;
+  }
+  .main-txt {
+    font-size: 1rem;
+    left: 10px;
+  }
+  .facts-txt-box {
+    translate: 16vw 41vh;
+    width: min(65vw);
+  }
+  .moon-pic {
+    left: -100px;
+    scale: 0.4;
+  }
+}
+
+/****************************** 최대 사이즈 544px 이하 시작 ******************************/
+@media screen and (max-width: 544px) {
+  .facts-img1 > img {
+    translate: 5vw 10vh;
+    scale: 0.8;
+    width: 100%;
+  }
+  .cont-tit {
+    translate: 4vw 4vh;
+  }
+  .facts-txt-box {
+    translate: 16vw 41vh;
+    width: min(61vw);
+  }
+}
+
+/****************************** 최대 사이즈 430px 이하 시작 ******************************/
+@media screen and (max-width: 430px) {
+  .main-area .main-tit {
+    font-size: 6rem;
+  }
+  .facts-img1 > img {
+    translate: -3vw 10vh;
+  }
+  .facts-txt {
+    font-size: 1rem;
+  }
+  .moon2 {
+    margin: 50px 16vw;
+  }
+}
+
+/****************************** 최대 사이즈 390px 이하 시작 ******************************/
+@media screen and (max-width: 390px) {
+  .main-area .main-tit {
+    font-size: 5rem;
+  }
+  .main-txt {
+    font-size: 0.8rem;
+    left: 10px;
+  }
+}

@@ -1,0 +1,429 @@
+
+/************* 메인영역 *************/
+
+/* 스크롤 등장(아래에서 위)*/
+.scroll-el {
+  transform: translateY(20%);
+  opacity: 0;
+  transition: 0.75s ease;
+}
+
+.scroll-el.on {
+  transform: translateY(0);
+  opacity: 1;
+}
+/* 스크롤 등장(왼쪽에서 오른쪽)*/
+.scroll-el2 {
+  transform: translateX(-20%);
+  opacity: 0;
+  transition: 0.75s ease;
+}
+
+.scroll-el2.on {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+/* 가로스크롤 방지 */
+body > * {
+  overflow-x: hidden;
+  cursor: default;
+}
+
+/************************ 섹션1 ************************/
+
+.sun01 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-size: cover;
+  background-position: center;
+}
+
+/* 배경비디오 */
+.sun01 video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+  left: 0;
+  top: 0;
+}
+
+/* 글자영역 */
+.sun01-text {
+  color: #fff;
+  position: absolute;
+  bottom: 25vh;
+  left: 10%;
+}
+.sun01-text h2 {
+  opacity: 0;
+  animation: fadein 1.4s ease-in-out 1.3s forwards;
+}
+.sun01-text p {
+  width: min(70vw, 500px);
+  text-shadow: 1px 1px 2px #333;
+  opacity: 0;
+  animation: fadein 1.4s ease-in-out 2s forwards;
+}
+/* 글자 나타나는 효과 */
+@keyframes fadein {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: none;
+  }
+}
+/* 페이지 들어왔을때 효과 */
+.sun01::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  z-index: 9999;
+  background-color: #000;
+  animation: introAni 2s ease-in-out forwards;
+}
+
+@keyframes introAni {
+  0% {
+    opacity: 0.7;
+  }
+  90% {
+    opacity: 0;
+    height: 100vh;
+  }
+  100% {
+    opacity: 0;
+    height: 0;
+  }
+}
+
+/************************ 섹션2 ************************/
+.sun02 {
+  padding: 150px 0;
+}
+
+#about-area {
+  height: auto;
+  background-color: #fff;
+}
+
+#about-area .inbox {
+  width: 90%;
+}
+
+.text {
+  width: 50%;
+}
+
+.about-box li:first-child {
+  margin-bottom: 100px;
+}
+
+.about-area h2 {
+  font-size: 4.6rem;
+  line-height: 6.3rem;
+  text-align: center;
+  margin-top: 100px;
+  margin-bottom: 80px;
+}
+
+.about-area .con {
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+/* 이미지 두개가 번갈아가며 서서히 나타나는 효과 */
+.about-area .con .img-fade1 {
+  position: relative;
+  width: 37.5rem;
+  height: 41.7rem;
+  border-radius: 200px;
+  margin-right: 40px;
+  overflow: hidden;
+}
+
+.about-area .con .img-fade1 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.about-area .con .fade1 {
+  /* 부모는 .img-fade */
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: fade-ani 3.5s 1.5s ease-in-out infinite alternate;
+}
+.about-area .con .fade2 {
+  /* 부모는 .img-fade */
+  position: absolute;
+  left: 0;
+  top: 0;
+  animation: fade-ani2 3.5s 1.5s ease-in-out infinite alternate;
+}
+
+/* 클리핑 마스크로 두번째 영역 사진 넣기 */
+.about-area .con .img-fade2 {
+  position: relative;
+  width: 37.5rem;
+  height: 41.7rem;
+  clip-path: url(#my-clip-path);
+}
+.about-area .con .img-fade2 img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* 클리핑 마스크로 세번째 영역 사진 넣기 */
+.about-area .con .img-fade3 {
+  position: relative;
+  width: 389px;
+  height: 404px;
+  clip-path: url(#my-clip-path2);
+}
+.about-area .con .img-fade3 img {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes fade-ani {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes fade-ani2 {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+/* 글자영역 */
+
+.about-area .con .text h3 {
+  margin-bottom: 30px;
+  text-align: left;
+}
+
+.about-area .con .text h3 span {
+  color: #ffed00;
+  text-shadow: 1px 0 #000, -1px 0 #000, 0 1px #000, 0 -1px #000;
+}
+
+.about-area .con .text p {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+}
+
+.pc-hidden {
+  display: none;
+}
+
+/************************* 섹션3 *************************/
+/* 이미지영역 */
+.sun03 {
+  height: 50vh;
+//   background: url("/images/sun/rotate/1.jpg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+/* 글자영역 */
+.sun03 .txt-box {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+}
+
+
+.sun03 .cont-tit{
+  font-size:4rem;
+  color: #fff;
+  text-align: center;
+}
+/************************ 섹션4************************/
+.sun04 {
+  background-color: #ebebeb;
+  padding: 100px 0;
+}
+
+.sun04 .inbox {
+  width: 90%;
+}
+
+.sun04 h2 {
+  margin-bottom: 40px;
+}
+
+/* 동영상 */
+.sun04 figure {
+  text-align: center;
+}
+.sun04 iframe {
+  width: 60rem;
+  height: 40rem;
+  border: none;
+}
+
+
+/************************ 섹션5 ************************/
+.sun05 {
+//   background: url("/images/sun/fb.jpg") no-repeat top/cover;
+  width: 100%;
+  padding: 100px 0;
+}
+
+.sun05 .inbox {
+  width: 90%;
+}
+
+.sun05 h2 {
+  margin-bottom: 40px;
+  color: #fff;
+}
+
+.sun05 .box {
+  display: flex;
+  gap: 2rem;
+}
+
+.sun05 .box li {
+  width: calc(100% / 3);
+  /* height: 30rem; */
+  margin-bottom: 20px;
+  border: 1px solid #c8c8c8;
+}
+
+.sun05 .box li a img {
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: fill;
+}
+
+.lightbox-image {
+  width: 300px;
+}
+
+/* 스크롤바 없애기 */
+#jquery-lightbox::-webkit-scrollbar {
+  display: none;
+}
+
+/* 왼쪽/오른쪽 버튼 */
+#lightbox-nav-btnPrev {
+  height: 100% !important;
+}
+#lightbox-nav-btnNext {
+  height: 100% !important;
+}
+
+
+/************************ 섹션6 ************************/
+.sun06 {
+  background-color: #fff;
+  width: 100%;
+  padding: 100px 0;
+}
+
+.sun06 .inbox {
+  width: 90%;
+}
+.vision_li {
+  margin-top: 30px;
+}
+.vision_li li {
+  padding: 50px 0;
+  border-bottom: 1px solid #dcdbdb;
+}
+.vision_li li span {
+  font-size: 3rem;
+}
+.vision_li li span em {
+  font-weight: 900;
+}
+.vision_li li p {
+  margin-top: 15px;
+  font-size: 2.2rem;
+}
+
+/************* 하단영역 *************/
+/* common.css */
+
+
+/************************ 미디어쿼리 ************************/
+
+/* 1024이하 */
+@media screen and (max-width: 1024px) {
+  .sun {
+    font-size: 5px;
+  }
+}
+
+/* 760이하 */
+@media screen and (max-width: 760px) {
+  #lightbox-container-image-box {
+    width: 100% !important;
+    height: 100% !important;
+  }
+  #lightbox-image {
+    width: 100%;
+    height: 100%;
+  }
+  #lightbox-container-image-data-box {
+    width: 100% !important;
+  }
+
+  .about-area .con {
+    flex-direction: column;
+  }
+  .about-area .con .img-fade1 {
+    margin-right: 0;
+  }
+  .about-area .con .text h3 {
+    text-align: center;
+    margin-top: 30px;
+  }
+  .text {
+    width: 100%;
+  }
+  .pc-hidden {
+    display: block;
+  }
+  .m-hidden {
+    display: none;
+  }
+  .sun03 .cont-tit {
+    font-size: 3.5rem;
+  }
+ 
+}
+
+/* 480이하 */
+@media screen and (max-width: 480px) {
+  .sun04 iframe{
+    width: 100%;
+  }
+}
+/* 360이하 */
+@media screen and (max-width: 360px) {
+}

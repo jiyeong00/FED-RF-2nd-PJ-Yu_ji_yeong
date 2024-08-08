@@ -1,0 +1,538 @@
+@charset "utf-8";
+/*  팀 PJ : 서브페이지 CSS - jupiter.css */
+
+@font-face {
+  font-family: "Freesentation-9Black";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/************* 공통구역 *************/
+
+// body > * {
+//   overflow-x: hidden;
+//   cursor: default;
+// }
+html {
+  font-size: 10px;
+}
+.sub-jupiter {
+  width: 100%;
+  min-height: 100vh;
+  .cont-txt{
+    min-width: auto;
+  }
+}
+.cont-txt {
+  color: black;
+  line-height: normal;
+}
+/************* 상단영역 *************/
+/* common.css */
+
+/************* 메인영역 *************/
+/* ---------------------첫페이지--------------------- */
+.jupiter1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  /* background-size: cover; */
+  background-position: right;
+  background-color: #000;
+}
+.jupiter1-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, rgb(0, 0, 0) 8%, #ffffff00 45%);
+  /* background-color: #fff; */
+}
+.jupiter1 video {
+  position: absolute;
+  right: 0;
+  /* width: 100%; */
+  height: 100vh;
+}
+.jupiter1-text {
+  position: absolute;
+  bottom: 25vh;
+  left: 10%;
+
+  width: 700px;
+
+  color: #fff;
+  animation: fadein 0.8s ease-in-out forwards;
+}
+.jupiter1-text h1 {
+  opacity: 0;
+  animation: moveOp 0.8s ease-in-out forwards;
+}
+.jupiter1-text p {
+  opacity: 1;
+  color: #00000000;
+  animation: moveColor 0.3s ease-in-out 0.7s forwards;
+}
+@keyframes fadein {
+  to {
+    left: 10%;
+    /* width: 700px; */
+  }
+}
+@keyframes moveOp {
+  to {
+    opacity: 1;
+  }
+}
+@keyframes moveColor {
+  to {
+    color: white;
+  }
+}
+
+/* ---------------------두번째 페이지--------------------- */
+.jupiter2 {
+  max-width: 1400px;
+  min-width: 600px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  min-height: 80vh;
+  .desc {
+    display: flex;
+    gap: 2rem;
+    margin-top: 20px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    img {
+      border-radius: 35px;
+    }
+    &.on {
+      opacity: 1;
+      transition: 0.3s ease-in-out;
+    }
+  }
+  .desc2-img img {
+    border-radius: 35px 35px 0 0;
+  }
+  .desc2 {
+    flex-direction: row-reverse;
+  }
+  .desc2-text {
+    margin-top: 5rem;
+  }
+  /* 2-1 첫번째 사진 */
+  .desc1-img {
+    width: 45vw;
+    height: auto;
+  }
+}
+
+/* ---------------------세번째 페이지--------------------- */
+.jupiter3 {
+  width: 100%;
+  min-height: 80vh;
+}
+.white-box {
+  position: absolute;
+  left: 0%;
+  z-index: 1;
+  width: 100%;
+  height: 100%;
+  /* outline: 2px solid red; */
+  background: linear-gradient(to right, transparent -100%, white 10%);
+  /* background-color: white; */
+  overflow: hidden;
+}
+.jupiter3-cont {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(2, 2fr);
+  grid-template-rows: 800px;
+  background: url(../../public/images/main/space.jpg);
+  /* background-color: #000; */
+  margin: 0 auto;
+}
+
+.jupiter3-text {
+  position: relative;
+  /* top: 100%; */
+  top: 50%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70%;
+  height: 0;
+  color: white;
+}
+.jupiter3-text h3 {
+  margin-bottom: 30px;
+}
+.jupiter3-cont .ifr {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+}
+
+/* ---------------------네번째 페이지--------------------- */
+.jupiter4 {
+  max-width: 1400px;
+  min-height: auto;
+  margin: 0 auto;
+  margin-top: 18rem;
+  .moon-cont {
+    display: flex;
+    justify-content: center;
+    gap: 1.6rem;
+  }
+  .moon {
+    position: relative;
+    cursor: pointer;
+    opacity: 1;
+    /* 설명 이미지 오버시 */
+    &:hover .M-text {
+      opacity: 1;
+      transition: 0.3s ease-out;
+    }
+    &:hover img {
+      transform: scale(1.1);
+      opacity: 0.6;
+      transition: 0.3s ease-out;
+    }
+    &:hover .moon-txt {
+      opacity: 0;
+      transition: 0.3s ease-out;
+    }
+  }
+  /* 4-2 달 이미지 */
+  .moon-img {
+    aspect-ratio: 1/2;
+    width: 17.6vw;
+    min-width: 150px;
+    background-color: #000;
+    overflow: hidden;
+  }
+  .moon-img img {
+    height: 100%;
+  }
+  /* moon 가상요소로 위성이름 작성 */
+  .moon-txt {
+    position: absolute;
+    bottom: 0px;
+    margin: 10px;
+
+    color: white;
+
+    z-index: 1;
+  }
+}
+/* 4-2 달 설명 */
+.M-text {
+  position: absolute;
+  top: 0;
+  color: white;
+  /* outline: 2px solid yellow; */
+  padding: 20px;
+  padding-top: 50px;
+  opacity: 0;
+}
+
+.M-text p {
+  height: 100%;
+  margin-top: 3rem;
+  color: white;
+
+  font-size: max(1vw, 14px);
+  text-align: justify;
+  font-weight: normal;
+}
+
+/* 더 많은 달 */
+.jupiter-more {
+  display: block;
+  text-align: right;
+  margin: 10px 0 50px;
+  font-size: 4rem;
+}
+.jupiter-more a:hover i {
+  color: yellow;
+}
+.jupiter-more a:hover span {
+  font-family: "Freesentation-9Black";
+}
+/* ---------------------다섯번째 페이지--------------------- */
+.jupiter5 {
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 18rem;
+  min-height: 80vh;
+}
+.jupit5-cont {
+  box-sizing: border-box;
+}
+.jupit5-head {
+  margin-bottom: 50px;
+}
+/* 전체 그리드박스 */
+.jupit5-gbox {
+  display: grid;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-top: 2.5rem;
+
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+}
+.jupit5-gbox h2 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+}
+/* 각 그리드 박스 */
+.jupit5-box {
+  padding: 30px;
+}
+.circle-num {
+  background-color: #232220;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  border: none;
+  margin: 0 auto;
+  line-height: 60px;
+  margin-bottom: 17px;
+  font-size: 22px;
+}
+.jupit5-text {
+  text-align: center;
+  font-size: max(0.9vw, 14px);
+  margin: 15px 0;
+}
+
+/************* 하단영역 *************/
+/* common.css */
+
+/************* 미디어쿼리 *************/
+@media screen and (max-width: 1380px) {
+  /* 두번째 페이지 */
+  .jupiter2 {
+    .desc {
+      flex-direction: column-reverse;
+      font-size: 2rem;
+      strong {
+        display: block;
+        text-align: center;
+      }
+      .desc-imgbx {
+        width: 100%;
+        img {
+          width: 100%;
+        }
+      }
+    }
+    .desc2 {
+      flex-direction: none;
+    }
+
+    .desc1-text,
+    .desc2-text {
+      width: 95%;
+      margin: 0 auto;
+    }
+  }
+  .desc1-img {
+    width: 100%;
+  }
+} ///////////////////////////////1380px
+
+@media screen and (max-width: 1310px) {
+  /* 네번째페이지 */
+  .moon-txt {
+    font-size: 3vw;
+  }
+  .M-text h4 {
+    font-size: 3.5rem;
+  }
+  .jupiter3-cont .ifr {
+    border-radius: 0;
+  }
+}
+@media screen and (max-width: 1024px) {
+  .jupiter3 .cont-txt {
+    font-size: max(2vw, 2rem);
+}
+}
+
+@media screen and (max-width: 950px) {
+  /* 네번째페이지 */
+  .M-text h4 {
+    font-size: 2rem;
+  }
+  .jupiter-more {
+    text-align: center;
+    margin-top: 14px;
+  }
+  .jupiter-more i {
+    display: none;
+  }
+}
+@media screen and (max-width: 930px) {
+  /* ---------------------두번째 페이지--------------------- */
+
+  .desc1-img {
+    width: auto;
+  }
+  .desc img {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 850px) {
+  /* ---------------------첫페이지--------------------- */
+  .jupiter1-text {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    width: 80%;
+  }
+  .jupiter1-text h1 {
+    font-size: 9.5rem;
+    text-align: center;
+    /* opacity: 0; */
+  }
+  .jupiter1-text p {
+    font-size: 1.7rem;
+  }
+
+  /* ---------------------세번째 페이지--------------------- */
+  .M-text h4 {
+    font-size: 3rem;
+  }
+
+  /* ---------------------네,다섯번째 페이지--------------------- */
+  .jupiter4 h2,
+  .jupiter5 h2 {
+    font-size: 6vw;
+  }
+  .jupiter4 h4 {
+    font-size: 2.5vw;
+  }
+  .jupiter4 p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  /* 첫페이지 */
+  .jupiter1-text {
+    width: 80%;
+  }
+  .jupiter1 video {
+    right: -118%;
+  }
+  .jupiter1-text h1 {
+    font-size: 7rem;
+    text-align: center;
+  }
+  .jupiter1-bg {
+    background: none;
+  }
+  /* 두번째 페이지 */
+  .desc2 .ifr {
+    height: 400px;
+  }
+  /* 두번째페이지 */
+  .jupiter2 {
+    .desc {
+      width: 100vw;
+    }
+  }
+  .desc1-text,
+  .desc2-text {
+    font-size: 1.5rem;
+  }
+  .desc1-text strong,
+  .desc2-text strong {
+    font-size: 3rem;
+  }
+  /* 서번째 페이지 */
+  .jupiter3-cont {
+    grid-template-columns: repeat(1, 1fr);
+    grid-template-rows: 100vw;
+  }
+  .jupiter3-text {
+    position: relative;
+    top: 30%;
+    transform: translateX(-50%);
+    width: 85%;
+  }
+  .jupiter3-cont .ifr {
+    height: 100vw;
+  }
+
+  /* 네번째 */
+  .jupiter4 {
+    margin-top: 5rem;
+  }
+
+  .moon-cont {
+    flex-wrap: wrap;
+  }
+
+  .jupiter4 h2 {
+    font-size: 8vw;
+    margin-bottom: -25px;
+  }
+  .jupiter-more {
+    font-size: 2.5rem;
+  }
+  .M-text {
+    opacity: 1;
+  }
+  .M-text h4 {
+    font-size: 2rem;
+  }
+  .moon img {
+    opacity: 0.6;
+  }
+  .moon-txt {
+    opacity: 0;
+  }
+
+  /* 다섯번째 */
+  .jupiter5 {
+    margin-top: 0;
+    min-height: auto;
+    margin-bottom: 45px;
+  }
+  .jupit5-gbox {
+    gap: 15px;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+  .jupit5-box {
+    display: flex;
+    align-items: center;
+    padding: 0;
+    border-bottom: 1px dashed #ccc;
+  }
+  .jupit5-box:last-child {
+    border: none;
+  }
+  .jupit5-box h3 {
+    font-weight: 900;
+  }
+  .circle-num {
+    display: none;
+  }
+  .jupit5-text {
+    width: 80vw;
+    font-size: 1.2rem;
+    margin: 0;
+  }
+  /* 하단영역 */
+  #footer-area {
+    margin-top: 2rem;
+  }
+}

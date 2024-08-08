@@ -1,0 +1,472 @@
+@charset "utf-8";
+/*  팀 PJ : 서브페이지 CSS - saturn.css */
+
+
+
+@font-face {
+  font-family: "Freesentation-9Black";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/2404@1.0/Freesentation-9Black.woff2")
+    format("woff2");
+  font-weight: 900;
+  font-style: normal;
+}
+
+/************* 공통구역 *************/
+body * {
+  /* outline: 2px dashed red; */
+}
+body > * {
+  overflow-x: hidden;
+  cursor: default;
+}
+.sub-saturn {
+  width: 100%;
+  min-height: 100vh;
+  .cont-txt {
+    color: black;
+    line-height: normal;
+  }
+}
+/************* 상단영역 *************/
+/* common.css */
+
+/************* 메인영역 *************/
+/* ---------------------첫페이지--------------------- */
+.saturn1 {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background-position: right;
+  background-color: #000;
+}
+.saturn1-bg {
+  position: absolute;
+  width: 100%;
+  height: 100vh;
+  background: linear-gradient(to right, rgb(0, 0, 0) 5%, #ffffff00 50%);
+  /* background-color: #fff; */
+}
+.saturn1 video {
+  position: absolute;
+  right: 0;
+  /* width: 100%; */
+  height: 100vh;
+}
+.saturn1-text {
+  position: absolute;
+  bottom: 25vh;
+  left: 25%;
+
+  width: 700px;
+
+  color: #fff;
+  animation: fadein .8s ease-in-out forwards;
+}
+.saturn1-text h1 {
+  opacity: 0;
+  animation: moveOp .8s ease-in-out forwards;
+}
+.saturn1-text p{
+  opacity: 1  ;
+  color: #00000000;
+  animation: moveColor .3s ease-in-out .7s forwards;
+}
+@keyframes fadein {
+  to {
+    left: 10%;
+    /* width: 700px; */
+  }
+}
+@keyframes moveOp {
+  to{opacity: 1;}
+}
+@keyframes moveColor {
+  to{  color: white;}
+}
+
+/* ---------------------두번째 페이지--------------------- */
+.saturn2 {
+  max-width: 1400px;
+  min-width: 600px;
+  margin: 0 auto;
+  margin-top: 8rem;
+  .desc {
+    display: flex;
+    gap: 2rem;
+    margin-top: 20px;
+    opacity: 0;
+    transition: 0.3s ease-in-out;
+    &.on {
+      opacity: 1;
+      transition: 0.3s ease-in-out;
+    }
+  }
+  .desc1 {
+    flex-direction: row-reverse;
+  }
+  /* 2-1 첫번째 사진 */
+  .desc1-img {
+    width: 45vw;
+    height: auto;
+    img{
+      border-radius: 35px;
+    }
+  }
+  .desc2 {
+    position: relative;
+    height: 50vh;
+    iframe {
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+  }
+  }
+  .desc2-text {
+    margin-top: 5rem;
+  }
+  .desc2-3D {
+    position: relative;
+    top: -70px;
+    aspect-ratio: 1;
+    /* width: 65vw; */
+  }
+
+}
+
+/* ---------------------세번째 페이지--------------------- */
+.saturn3 {
+  margin-top: 30px;
+}
+
+/* 세번째페이지 - 고리 설명 */
+.saturn3-desc {
+  position: relative;
+  max-width: 1400px;
+  /* text-align: center; */
+  margin: 0 auto;
+}
+.saturn3-desc h2 {
+  text-align: left;
+  margin-bottom: 20px;
+}
+.saturn3-desc strong {
+  position: relative;
+  top: -6px;
+  font-size: max(1.5vw, 14px);
+}
+
+/* 세번째페이지 - 링크이동 */
+
+.saturn3-link {
+  position: relative;
+  background-color: #000;
+
+  height: 0;
+  padding: 0px;
+  transition: 0.5s ease-out;
+}
+
+.saturn3-img {
+  position: absolute;
+  /* display: none; */
+  right: 20rem;
+}
+.saturn3-img img {
+  aspect-ratio: 800/600;
+  width: 900px;
+  height: 0vh;
+  opacity: 0;
+  transition: opacity 0.5s ease-out, height .5s ease-out;
+}
+.saturn3-text {
+  position: absolute;
+  left: 50px;
+  bottom: 50px;
+  opacity: 0;
+
+  color: white;
+  text-align: left;
+}
+.saturn3-text a {
+  display: block;
+  text-align: right;
+  color: white;
+}
+.saturn3-line {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 1vh;
+  width: 0%;
+  z-index: 1;
+  background-color: #000;
+  transition: 0.3s 0.5s ease-out;
+}
+.saturn3-line.on {
+  position: absolute;
+  height: 1vh;
+  width: 100%;
+  z-index: 1;
+  transition: 0.3s ease-out;
+}
+/* 세번째페이지 화면 가운데올때 */
+.saturn3-link.on {
+  height: 80vh;
+  width: 100%;
+  padding: 50px;
+  transition: 0.5s 0.3s ease-out;
+}
+
+.saturn3-link.on .saturn3-img img {
+  opacity: 1;
+  height: 80vh;
+  transition: opacity 0.5s 0.6s ease-out;
+}
+.saturn3-link.on .saturn3-text {
+  opacity: 1;
+  transition: 0.5s 0.8s ease-out;
+}
+.saturn3-text span {
+  font-size: 4rem;
+  cursor: pointer;
+}
+.saturn3-text span:hover, .saturn-more a:hover span {
+  font-family: "Freesentation-9Black";
+}
+
+.saturn3-text i {
+  color: yellow;
+}
+
+/* 보너스 스테이지 */
+.bonus {
+  margin-top: 5%;
+  height: 50vh;
+//   background: url(/images/saturn/inner_rings_around_saturn_fading.gif)
+//     no-repeat fixed center/cover;
+  /* background-image: url(../images/saturn/inner_rings_around_saturn_fading.gif);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    background-attachment: fixed; */
+}
+
+/* ---------------------네번째 페이지--------------------- */
+.saturn4 {
+  max-width: 1400px;
+  min-height: auto;
+  margin: 0 auto;
+  margin-top: 5%;
+}
+.saturn4 h2 {
+  margin-bottom: 50px;
+}
+
+/* 4번째페이지 - 리스트 */
+/* 그리드 */
+.saturn4-cont ul {
+  display: grid;
+  grid-row-gap: 15px;
+  gap: 15px;
+
+  margin: 0 auto;
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* 플렉스 */
+.saturn4-cont li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.saturn4-cont li img {
+  width: 7vw;
+  height: 7vw;
+  border-radius: 50%;
+}
+
+.saturn4-text {
+  font-size: 1.5rem;
+  font-family: "Pretendard-Regular";
+}
+
+/* 네번째페이지 - 더 많은 설명 버튼 */
+.saturn-more {
+  display: block;
+  text-align: right;
+  font-size: 3rem;
+  margin-bottom: 50px;
+}
+.saturn-more a:hover i {
+  color: yellow;
+}
+/************* 하단영역 *************/
+/* common.css */
+
+/************* 미디어쿼리 *************/
+
+@media screen and (max-width: 1200px) {
+  .saturn2{
+    /* 두번째페이지 */
+    .desc {
+      flex-direction: column-reverse;
+      font-size: 2rem;
+      strong {
+        display: block;
+        text-align: center;
+      }
+      img {
+        width: 100%;
+      }
+    }
+  
+    .desc2 {
+      height: 100%;
+      iframe {
+        width: 100%;
+        height: 600px;
+        border-radius: 0;
+      }
+    }
+    .desc1-text,
+    .desc2-text {
+      width: 95%;
+      margin: 0 auto;
+    }
+
+    .desc1-img {
+      width: auto;
+    } 
+    .desc2-3D {
+      top: 0;
+      width: 100%;
+    }
+  }
+  /* 서번째 페이지 */
+  .saturn3-desc {
+    width: 95%;
+    margin: 0 auto;
+    h2 {
+      margin-top: 5rem;
+    }
+    strong {
+      font-size: 3rem;
+    }
+  }
+}
+
+@media screen and (max-width: 960px) {
+  /* ---------------------네번째 페이지--------------------- */
+  .saturn4 h2 {
+    font-size: 6vw;
+    margin-top: 5rem;
+  }
+  .saturn4-cont li {
+    flex-direction: column;
+  }
+  .saturn4-text {
+    text-align: center;
+  }
+  .saturn4 p {
+    font-size: 12px;
+    line-height: 15px;
+  }
+  .saturn-more {
+    text-align: center;
+    margin-top: 2rem;
+  }
+  .saturn-more i {
+    display: none;
+  }
+}
+@media screen and (max-width: 850px) {
+  /* ---------------------첫페이지--------------------- */
+  .saturn1-text {
+    top: 50%;
+    bottom: auto;
+    left: 50%;
+    /* transform: translate(-50%, -50%); */
+    width: 80%;
+  }
+  .saturn1-text h1 {
+    font-size: 9.5rem;
+    text-align: center;
+    /* opacity: 0; */
+  }
+  .saturn1-text p {
+    /* font-size: 30px; */
+    font-size: 1.5rem;
+  }
+
+  /* 세번째페이지 */
+  .saturn3-img {
+    right: 10rem;
+}
+}
+@media screen and (max-width: 700px) {
+  /* 첫페이지 */
+  .saturn1-text {
+    width: 80%;
+  }
+  .saturn1-bg {
+    background:none;
+  }
+  .saturn1 video {
+    right: -110%;
+  }
+  .saturn1-text h1 {
+    font-size: 6.5rem;
+    text-align: center;
+  }
+  .saturn1-text p {
+    font-size: 1.2rem;
+  }
+  /* 두번째 페이지 */
+  .saturn2{
+    .desc {
+      width: 100vw;
+    }
+    .desc1-text,
+    .desc2-text {
+      font-size: 1.5rem;
+      strong {
+        font-size: 3rem;
+      }
+    }
+    .desc2 iframe {
+      height: 400px;
+    }
+
+  }
+
+  /* 서번째 페이지 */
+  .saturn3-desc h2 {
+    font-size: 4rem;
+  }
+  .saturn3-text {
+    left: 10px;
+    font-size: 4rem;
+    width: 80%;
+  }
+  .saturn3-text span {
+    font-size: 2.5rem;
+  }
+  .saturn3-text a {
+    text-align: left;
+  }
+  .saturn3-text i {
+    display: block;
+    font-size: 4rem;
+  }
+  .saturn3-desc strong {
+    font-size: 2.5rem;
+  }
+
+  /* 네번째 */
+  .saturn4-cont ul {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .saturn4 h2 {
+    margin-bottom: 30px;
+  }
+}

@@ -1,0 +1,198 @@
+@charset "utf-8";
+/* 팀 PJ : 메인페이지 CSS - main.css */
+
+/*********************** 메인영역 ***********************/
+
+body > * {
+  overflow-x: hidden;
+  cursor: default;
+}
+
+
+/* 섹션1-태양계 소개 */
+#main-area{
+  width: 100%;
+  /* height: 500px; */
+  background: green;
+}
+
+
+#main-area .inbox{
+  max-width:100%;
+  position: relative;
+
+}
+
+.section {
+  display: flex;
+  flex-direction: column;
+  background-color: #fff;
+}
+
+
+
+/***************************배너영역**************/
+#ban-area{
+  position: relative;
+  /* 부모자격 - .cat-box */
+  margin-bottom:140px;
+  
+}
+.cont-box{
+  height:50vh;
+}
+
+/* 슬라이드 박스 */
+.slide-box{
+  position: relative;
+  /* 부모자격 - 이벤트 커버박스 */
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+/* 이벤트 커버박스 */
+.evt-cover{
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  display: flex;
+}
+/* 양분박스 aside */
+.evt-cover aside{
+  /* 등분할 */
+  flex: 1;
+  /* 손가락모양 */
+  cursor: pointer;
+}
+/* 버튼요소 */
+.ban-area .abtn{
+  position: fixed;
+  top: 0;
+  left: 0;
+  font-size: 24px;
+  font-weight: bold;
+  color: #fff;
+  text-shadow: 0 0 5px #000;
+  z-index: 99;
+  display: none;/* 처음에 숨기기 */
+  /* 따라다니는 버튼요소 오버시 무시하기 */
+  pointer-events: none;
+  /* 트랜지션 */
+  transition: .3s ease-out;
+  /* 트랜스폼 */
+  transform: translate(-50%, -100%);
+}
+/* 슬라이더 */
+.slider{
+    position: relative;
+    /* 슬라이드 위치이동 초기값 */
+    left: 0;
+    display: flex;
+    /* 하위 li를 옆으로 흐르게함 */
+    width: 100%;
+    height: 100%;
+}
+.slider li{
+    flex-basis: 100%;
+    flex-shrink: 0;
+    /* 부모크기만큼 옆으로 나가게 하려면
+    flex-shrink 기본값 1을 0으로 변경한다!
+    1의 의미는 자동으로 부모크기에 맞추어 줄어듬
+    0의 의미는 설정된 크기만큼 늘어남! */
+
+    /* 공통배경설정 */
+    background-repeat: no-repeat;
+    background-position: center top;
+    background-size: cover;
+}
+/* 슬라이드 01 */
+.snum-01 {
+    background: url(../../public/images/main/8.jpg) no-repeat top/cover;
+}
+.snum-02 {
+    background: url(../../public/images/main/rings_diagram_nolables-1.jpg) no-repeat top/cover;
+   
+}
+.snum-03 {
+    background: url(../../public/images/main/space_exploration_banner.png) no-repeat 50%;
+}
+/* 블릿박스 */
+.indic-box{
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  transform: translate(-50%, 0);
+  width: 450px;
+  height: 5px;
+  z-index: 1;
+}
+.indic{
+  display: flex;
+  gap: 0 15px;
+  justify-content: center;
+}
+.indic li{
+  width: 15rem;
+  height: 5px;
+  background-color: #ffffff66;
+}
+/* 가상요소바 */
+.indic li::before{
+  content: '';
+  display: block;
+  width: 0;
+  height: 5px;
+  background-color: #fff;
+}
+/* li.on일 경우 가상요소 width변경 */
+.indic li.on::before{
+  width: 100%;
+  transition: width 3s linear;
+}
+
+.slide-box .tbx{
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  color: #fff;
+  font-family: 'Kanit', sans-serif;
+  text-align: center;
+  z-index: 2;
+}
+
+.tbx h2{
+  font-size: 4.2rem;
+  line-height: 1.2;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+  
+}
+.tbx p{
+  font-size: 2.2rem;
+  font-weight: 200;
+  line-height: 1.5;
+  margin-bottom: 30px;
+  text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+.tbx .btn{
+  width: 120px;
+  margin:0 auto;
+  text-align: center;
+}
+.tbx .btn a{
+  display: block;
+  width: 100%;
+  height: 100%;
+  padding: 8px 5px;
+  box-sizing: border-box;
+  font-size: 1.6rem;
+  font-weight: 400;
+  color: #fff;
+  border: 1px solid #fff;
+
+}
+
+
