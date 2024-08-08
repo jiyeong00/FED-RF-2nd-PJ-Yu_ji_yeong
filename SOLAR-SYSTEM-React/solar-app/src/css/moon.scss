@@ -159,8 +159,10 @@ main.main-area {
 
 /****************************** 최대 사이즈 1650px 이하 시작 ******************************/
 @media screen and (max-width: 1650px) {
-  .cont-tit {
-    scale: 0.9;
+  .moon4{
+    .cont-tit {
+      scale: 0.9;
+    }
   }
 }
 
@@ -173,8 +175,10 @@ main.main-area {
 
 /****************************** 최대 사이즈 1570px 이하 시작 ******************************/
 @media screen and (max-width: 1570px) {
-  .cont-tit {
-    scale: 0.8;
+  .moon4{
+    .cont-tit {
+      scale: 0.8;
+    }
   }
 }
 
@@ -201,8 +205,10 @@ main.main-area {
 
 /****************************** 최대 사이즈 1450px 이하 시작 ******************************/
 @media screen and (max-width: 1450px) {
- .cont-tit {
-    translate: 35vw 15vh;
+  .moon4{
+    .cont-tit {
+       translate: 35vw 15vh;
+     }
   }
 }
 
@@ -224,8 +230,10 @@ main.main-area {
   .facts-txt-box {
     translate: 68vw 30vh;
   }
-  .cont-tit {
-    scale: 0.7;
+  .moon4{
+    .cont-tit {
+      scale: 0.7;
+    }
   }
 }
 
@@ -244,8 +252,10 @@ main.main-area {
   .facts-txt {
     font-size: 1.3rem;
   }
-  .cont-tit {
-    translate: 30vw 15vh;
+  .moon4{
+    .cont-tit {
+      translate: 30vw 15vh;
+    }
   }
 }
 
@@ -275,8 +285,10 @@ main.main-area {
   .facts-txt {
     font-size: 1.2rem;
   }
-  .cont-tit {
-    translate: 10vw 15vh;
+  .moon4{
+    .cont-tit {
+      translate: 10vw 15vh;
+    }
   }
   .main-area .main-tit {
     font-size: 11rem;
@@ -302,8 +314,10 @@ main.main-area {
   .facts-txt {
     font-size: 1.2rem;
   }
-  .cont-tit {
-    translate: 10vw 15vh;
+  .moon4{
+    .cont-tit {
+      translate: 10vw 15vh;
+    }
   }
   .facts-tit {
     font-size: min(9rem, 10vw);
@@ -383,8 +397,10 @@ main.main-area {
   .facts-tit {
     font-size: min(9rem, 9vw);
   }
-  .cont-tit {
-    translate: 9vw 15vh;
+  .moon4{
+    .cont-tit {
+      translate: 9vw 15vh;
+    }
   }
   .moon-pic {
     left: 0;
@@ -426,8 +442,10 @@ main.main-area {
     scale: 0.8;
     width: 100%;
   }
-  .cont-tit {
-    translate: 4vw 4vh;
+  .moon4{
+    .cont-tit {
+      translate: 4vw 4vh;
+    }
   }
   .facts-txt-box {
     translate: 16vw 41vh;
