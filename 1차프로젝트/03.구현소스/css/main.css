@@ -9,6 +9,9 @@
 @import url(./grid_12_flex.css);
 
 /********************************** 공통 **********************************/
+body{
+  background-color: black;
+}
 body>*{
   overflow:  hidden;
 }
