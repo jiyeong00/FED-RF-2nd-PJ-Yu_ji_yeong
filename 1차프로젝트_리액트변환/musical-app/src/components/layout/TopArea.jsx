@@ -15,7 +15,7 @@ function TopArea(props) {
   return (
     <header id="header-area">
       <header className="header-area">
-        <a href="#">jiYeong's portfolio</a>
+        <a href="#">portfolio</a>
           <nav className="gnb">
             <ul>
 
