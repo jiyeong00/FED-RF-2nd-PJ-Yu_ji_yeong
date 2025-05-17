@@ -1,70 +1,53 @@
-# Getting Started with Create React App
+# 🌌 NASA 행성 웹페이지 클론 프로젝트 - 개발 회고
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+> [프로젝트 바로가기](https://jiyeong00.github.io/FED-RF-2nd-PJ-Yu_ji_yeong/SOLAR-SYSTEM-React/solar-app/build)
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 🧩 프로젝트 개요
 
-### `npm start`
+NASA 웹사이트의 행성 관련 콘텐츠를 클론한 웹페이지입니다.  
+**팀 프로젝트**로 GitHub의 `branch` 기능을 활용하여 협업에 집중하였으며,  
+초기에는 정적 웹사이트로, 이후에는 `React.js`로 리팩터링하여 컴포넌트 기반의 구조로 발전시켰습니다.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+---
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## 🧑‍💻 담당한 역할
 
-### `npm test`
+- **초기 버전 (HTML/CSS/JS)**  
+  - `토성`과 `목성` 페이지 디자인 및 레이아웃 구성
+  - 행성별 정보와 이미지, 간단한 인터랙션 구현
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- **React.js 리팩터링 버전**
+  - `토성` 페이지를 React 컴포넌트로 분리 및 재구성
+  - **로그인 페이지** 개발: 입력값 처리, 유효성 검사 기본 구조 구현
+  - 반복되는 행성 정보를 **props 기반 컴포넌트화**하여 코드 간소화에 기여
 
-### `npm run build`
+---
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## ⚙️ 사용 기술
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| 기술        | 설명                                  |
+|-------------|---------------------------------------|
+| `HTML/CSS`  | 초기 정적 웹페이지 구성               |
+| `JavaScript`| 간단한 기능 로직 및 이벤트 처리       |
+| `React.js`  | 상태 관리, 컴포넌트 분할 및 재사용     |
+| `GitHub`    | 브랜치 협업, Pull Request 기반 개발    |
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+---
 
-### `npm run eject`
+## 💡 배운 점 및 느낀 점
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- 팀원과의 역할 분담과 **Git 브랜치 협업**을 통해 실제 협업 개발 흐름을 경험함
+- 정적인 페이지를 리액트로 바꾸면서 **컴포넌트화, props 전달, 재사용성**의 중요성을 체감
+- 로그인 기능을 직접 구현하며 사용자 입력 처리, 간단한 상태 관리 로직을 경험
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+---
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+## 🔚 팀 프로젝트 회고 요약
 
-## Learn More
+> 협업 프로젝트를 통해 단순한 코드 작성보다 **역할 분담, 커뮤니케이션, 브랜치 전략**이 얼마나 중요한지 배울 수 있었습니다.  
+> 내가 맡은 행성 페이지와 로그인 컴포넌트를 구현하며 React의 실용성과 구조화된 개발 방법에 더욱 익숙해졌습니다.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+---
