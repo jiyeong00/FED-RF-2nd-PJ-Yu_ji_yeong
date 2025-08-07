@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:gravity="center"
+    android:background="#ffffff">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="비밀번호 변경"
+        android:textSize="30dp"/>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사물함 구역 : "
+            android:textSize="24sp" />
+        <TextView
+            android:id="@+id/locker_sel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="구역을 선택하세요."
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/loc_numtv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="사물함 번호 : "
+            android:textSize="24sp"/>
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/loc_num_sel"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="번호를 선택하세요."
+            android:textSize="24sp"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="left"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="20dp">
+        <TextView
+            android:visibility="invisible"
+            android:id="@+id/tv2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="비밀번호 입력 : "
+            android:textSize="20dp"/>
+        <EditText
+            android:visibility="invisible"
+            android:id="@+id/edit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="임시 비밀번호를 입력하세요."
+            android:textSize="20dp"
+            android:singleLine="true"
+            android:inputType="number"
+            android:lines="1"/>
+    </LinearLayout>
+
+    <Button
+        android:visibility="invisible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorAccent"
+        android:text="변경"
+        android:id="@+id/ok"/>
+
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:text="메인으로"
+        android:id="@+id/back"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="132dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:layout_margin="10dp"
+            android:src="@drawable/bwlogo" />
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:src="@drawable/locklogo" />
+    </LinearLayout>
+
+</LinearLayout>

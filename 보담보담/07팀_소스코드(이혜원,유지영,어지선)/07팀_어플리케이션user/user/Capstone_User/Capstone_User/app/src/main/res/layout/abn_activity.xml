@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff">
+    <TextView
+        android:id="@+id/test"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="강제 열림 확인"
+        android:gravity="center"
+        android:textSize="24dp"
+        android:layout_marginBottom="20dp"
+        android:layout_marginTop="20dp"/>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="match_parent"
+        android:layout_height="296dp"
+        android:divider="#1c3d62"
+        android:dividerHeight="1dp"></ListView>
+
+    <Button
+        android:id="@+id/abn_back"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:background="@color/colorPrimary"
+        android:text="메인으로" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center">
+        <ImageView
+            android:layout_width="132dp"
+            android:layout_height="30dp"
+            android:layout_gravity="left"
+            android:layout_margin="10dp"
+            android:src="@drawable/bwlogo" />
+
+        <ImageView
+            android:layout_width="152dp"
+            android:layout_height="30dp"
+            android:layout_gravity="right"
+            android:layout_margin="10dp"
+            android:src="@drawable/locklogo" />
+    </LinearLayout>
+
+
+</LinearLayout>

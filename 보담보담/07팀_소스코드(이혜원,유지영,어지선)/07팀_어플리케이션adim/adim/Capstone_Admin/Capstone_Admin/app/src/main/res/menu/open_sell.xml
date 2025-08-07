@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/itemLockerArea"
+        android:title="정심관 2층"/>
+    <item
+        android:id="@+id/itemLockerArea2"
+        android:title="정심관 1층"/>
+    <item
+        android:id="@+id/itemLockerArea3"
+        android:title="필운관 1층"/>
+
+</menu>
