@@ -1,4 +1,4 @@
-# 🌌 NASA 행성 웹페이지 클론 프로젝트 - 개발 회고
+# 🌌 NASA 행성 웹페이지 클론 프로젝트
 
 > [프로젝트 페이지](https://jiyeong00.github.io/FED-RF-2nd-PJ-Yu_ji_yeong/SOLAR-SYSTEM-React/solar-app/build)
 
