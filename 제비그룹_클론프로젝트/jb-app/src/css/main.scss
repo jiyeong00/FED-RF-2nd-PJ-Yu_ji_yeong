@@ -1,0 +1,312 @@
+// 공통
+.main-area {
+  height: 100%;
+  h2 {
+    opacity: 0;
+  }
+  img {
+    vertical-align: middle;
+    font-size: 1em;
+  }
+}
+.wrap {
+  height: 100%;
+  max-width: 140rem;
+  width: 100%;
+  margin: 0 auto;
+  position: relative;
+}
+/* ---------------------첫번째 페이지--------------------- */
+.main1 {
+  background: no-repeat url(../../public/img/main_re2.png) center/cover;
+}
+
+.main1 .text-area {
+  .txt_box {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    transform: translateY(-50%);
+    em {
+      font-style: normal;
+      color: #ffd100;
+    }
+    .s_tit {
+      display: inline-block;
+      margin-bottom: 4rem;
+      font-size: 2.5rem;
+      font-weight: 400;
+      color: #fff;
+      position: relative;
+    }
+    .s_tit::before {
+      content: "";
+      width: 10rem;
+      height: 1px;
+      background: #fff;
+      position: absolute;
+      right: -13rem;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+    .m_tit {
+      margin-bottom: 3rem;
+      font-size: 7rem;
+      font-weight: 700;
+      line-height: 120%;
+      color: #fff;
+      position: relative;
+      word-break: keep-all;
+    }
+    .s_tit_ex {
+      font-size: 2.4rem;
+      font-weight: 300;
+      line-height: 150%;
+      color: rgba(255, 255, 255, 0.9);
+      word-break: keep-all;
+    }
+    .txt_btn_area {
+      max-width: 50rem;
+      width: 100%;
+      margin-top: 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 2%;
+    }
+    // 글씨에 있는 이미지
+    .tit_img {
+      width: 13rem;
+      position: absolute;
+      right: 6rem;
+      top: -8rem;
+      //  opacity: 0;
+      transition: opacity 0.3s;
+      img {
+        width: 100%;
+      }
+    }
+    // 구글, 애플 버튼
+    .txt_btn_area {
+      max-width: 50rem;
+      width: 100%;
+      margin-top: 5rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 2rem 2%;
+      li {
+        width: 49%;
+        height: 6rem;
+        border-radius: 6rem;
+        background: #000;
+        a {
+          width: 100%;
+          height: 100%;
+          font-size: 2rem;
+          font-weight: 500;
+          color: #fff;
+          display: flex;
+          flex-wrap: wrap;
+          align-items: center;
+          justify-content: center;
+          img {
+            margin-right: 0.5rem;
+          }
+        }
+      }
+    }
+  }
+}
+.main1 .m-img-area {
+  max-width: 54rem;
+  max-height: 54rem;
+  width: 100%;
+  height: 100%;
+  border-radius: 100%;
+  background: #284ce0;
+  box-shadow: 2rem 2rem 3rem rgba(40, 76, 224, 0.4);
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  // opacity: 0;
+  transition: all 0.5s;
+
+  // 움직여야함
+  .main_img01 {
+    width: 93%;
+    top: 52%;
+    left: -10%;
+    transform: translateY(-50%);
+    // opacity: 0;
+    transition: all 1s;
+  }
+  .main_img03 {
+    width: 116.3%;
+    top: 53%;
+    left: -9%;
+    transform: translateY(-50%);
+    animation: mainimg 1.5s linear infinite;
+    // opacity: 0;
+    transition: all 1s;
+  }
+}
+.main1 .scroll {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #fff;
+  position: absolute;
+  bottom: 3rem;
+  left: 0;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .arr {
+    width: 2.8rem;
+    height: 2.8rem;
+    margin-left: 2rem;
+    border-radius: 2.8rem;
+    background: #fff;
+    position: relative;
+    img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      animation: scroll 2s linear infinite;
+    }
+  }
+}
+
+/* ---------------------두번째 페이지--------------------- */
+.main2 .main2-wrap {
+  padding: 15rem 0;
+}
+.main2 .main2_cont_box {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  .img_box {
+    width: 50%;
+    text-align: center;
+    // transform: scale(.8, .8);
+    // opacity: 0;
+    transform: scale(1, 1);
+    opacity: 1;
+    transition: transform 1s, opacity 1s;
+    .img {
+      width: 79.3%;
+    }
+  }
+  .txt_box {
+    width: 50%;
+    // transform: translateY(2rem);
+    // opacity: 0;
+    // transition: transform 1s, opacity 1s;
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.3s;
+    .tit {
+      margin-bottom: 2rem;
+      font-size: 3.5rem;
+      font-weight: 500;
+      color: #222;
+      word-break: keep-all;
+    }
+    .txt {
+      font-size: 1.7rem;
+      font-weight: 300;
+      line-height: 150%;
+      color: #888;
+      word-break: keep-all;
+    }
+    .step {
+      display: inline-block;
+      width: 9rem;
+      height: 3rem;
+      margin-bottom: 2rem;
+      border-radius: 3rem;
+      background: #f5f6fe;
+      font-size: 1.4rem;
+      text-align: center;
+      line-height: 3rem;
+      color: #3259f5;
+    }
+  }
+}
+
+/* ---------------------세번째 페이지--------------------- */
+#inc02 {
+  max-width: 170rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 10rem 0;
+  border-radius: 1rem;
+  background: #3259f5;
+  position: relative;
+  .txt_box {
+    max-width: 140rem;
+    width: 100%;
+    margin: 0 auto;
+    // transform: translateY(2rem);
+    // opacity: 0;
+    transition: transform 1s, opacity 1s;
+    transform: translateY(0);
+    opacity: 1;
+    .tit {
+      margin-bottom: 2rem;
+      font-size: 4.8rem;
+      font-weight: 700;
+      color: #fff;
+    }
+    .txt {
+      margin-bottom: 3rem;
+      font-size: 1.6rem;
+      font-weight: 300;
+      line-height: 150%;
+      color: rgba(255, 255, 255, 0.6);
+      word-break: keep-all;
+    }
+    .btn_area {
+      max-width: 44rem;
+      width: 100%;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      li {
+        width: 49%;
+        height: 5rem;
+        border-radius: 0.5rem;
+        overflow: hidden;
+        a {
+          display: block;
+          width: 100%;
+          height: 100%;
+          background: rgba(255, 255, 255, 0.1);
+          font-size: 1.6rem;
+          font-weight: 500;
+          line-height: 5rem;
+          text-align: center;
+          color: #fff;
+          transition: all 0.3s;
+        }
+      }
+    }
+  }
+  .img_box {
+    max-width: 70rem;
+    width: 100%;
+    height: 45rem;
+    position: absolute;
+    right: 14rem;
+    bottom: 0;
+    img {
+      width: 99.5%;
+      position: absolute;
+      // bottom: -2rem;
+      // opacity: 0;
+      transition: bottom 1s, opacity 1s;
+      bottom: 0;
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,116 @@
+//메인 네번째 페이지 메이저 브랜드 css
+
+.main4 {
+  width: 90%;
+  margin: 3.5rem auto;
+}
+
+/* 제목 */
+.main4-tit {
+  text-align: center;
+}
+//   리스트 박스
+.main-txt-wrap {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+  margin-top: 20px;
+  .main4-img {
+    width: 100%;
+    overflow: hidden;
+    img {
+      width: 100%;
+      scale: 1;
+      transition: 0.3s ease-out;
+    }
+  }
+  h3 {
+    font-weight: 400;
+    color: black;
+
+    margin-top: 2rem;
+    padding-left: 10px;
+
+    transition: 0.3s ease-out;
+  }
+  p {
+    color: #666;
+    padding: 10px;
+  }
+}
+
+// 흰박스,빨간박스 내려오게 할려고 따로 뺌
+.main4-cont-area {
+  position: relative;
+  cursor: pointer;
+  overflow: hidden;
+
+  // 오버시 이벤트
+  &:hover {
+    img {
+      scale: 1.1;
+      transition: 0.3s ease-out;
+    }
+    h3 {
+      color: #e30613;
+      transition: 0.3s ease-out;
+    }
+  }
+
+  // 빨간박스 내려오고 이미지 등장
+  .box-wrap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .red-box {
+      position: absolute;
+      top: 0;
+
+      height: 0%;
+      width: 100%;
+
+      background-color: #e30613;
+      z-index: 2;
+
+      &.on {
+        animation: srbox 1.2s ease-in-out;
+      }
+    }
+    .white-box {
+      position: absolute;
+      top: 0;
+
+      height: 100%;
+      width: 100%;
+
+      background-color: white;
+
+      z-index: 2;
+      &.on {
+        top: 100%;
+        height: 0%;
+        transition: 0.9s ease-in-out;
+      }
+    } ///////////흰박스
+  }
+}
+
+/****************************** 모바일 ****************************/
+@media screen and (max-width: 700px) {
+  .main-txt-wrap {
+    grid-template-columns: repeat(2, 1fr);
+  }
+} ////////////////////////700px/////////////////////
+@media screen and (max-width: 500px) {
+  .main-txt-wrap {
+    grid-template-columns: repeat(1, 1fr);
+  }
+} ////////////////////////500px/////////////////////
+@media screen and (max-width: 500px) {
+  .main4-txt .core-h3 {
+    font-size: 1.7rem;
+  }
+  .main4-txt .core-p {
+    font-size: 1.4rem;
+  }
+} /////////////////////500px////////////

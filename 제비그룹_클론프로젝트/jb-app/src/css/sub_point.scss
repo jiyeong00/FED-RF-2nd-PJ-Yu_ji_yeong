@@ -1,0 +1,164 @@
+// 서브페이지 두번째 - 특징
+
+.sub2 {
+  position: relative;
+  top: 10rem;
+  opacity: 0;
+
+  max-width: 1200px;
+  min-width: 600px;
+  margin: 0px auto;
+  padding-top: 12rem;
+
+  h3 {
+    line-height: 1.66;
+    letter-spacing: -0.85px;
+    font-size: 2.2rem;
+  }
+}
+
+.kit-main-img {
+  width: 100%;
+  img {
+    max-width: 100%;
+  }
+}
+.kit-main-txt {
+  padding: 40px 0px;
+}
+.plist:first-child {
+  border-bottom: 1px solid rgba(178, 178, 178, 0.3);
+}
+.plist .pdiv {
+  display: flex;
+  gap: 45px;
+
+  margin: 40px 0;
+}
+.plist .sub2-txt {
+  position: relative;
+  width: 90%;
+  flex: 1;
+}
+.plist .sub2-txt-wrap {
+  position: relative;
+  top: 50%;
+  transform: translateY(-50%);
+}
+.plist .sub2-img-box {
+  width: 100%;
+  aspect-ratio: 640/320;
+  flex: 1;
+}
+.plist img {
+  width: 100%;
+  height: 100%;
+}
+
+.bonus {
+  height: 30vh;
+  // background: url(../../public/img/sub/bonus.jpg) no-repeat fixed center/cover;
+  margin: 40px 0;
+}
+
+// 민화 키트 구성품
+
+.prd-kit-area {
+  height: 100%;
+}
+
+// kit 그리드박스
+.prd-kit-gbox {
+  display: grid;
+  margin-top: 2.5rem;
+
+  text-align: center;
+  grid-template-columns: repeat(3, 1fr);
+
+  .prd-kit-box {
+    margin: 4.36%;
+  }
+
+  .prd-kit-img {
+    width: 100%;
+    img {
+      width: 100%;
+    }
+  }
+  .prd-kit-text {
+    h3 {
+      font-size: 1.8rem;
+    }
+  }
+}
+
+// 탑버튼
+.topBtn-area {
+  text-align: center;
+  padding: 120px;
+
+  .top {
+    position: relative;
+    width: 130px;
+
+    background-color: #ffffff00;
+    color: #000;
+    font-size: 1.7rem;
+
+    padding: 5px;
+
+    cursor: pointer;
+    span {
+      color: #000;
+      transition: 0.3s;
+    }
+    &::before {
+      content: "";
+      width: 0;
+      height: 100%;
+      background-color: #000000;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transition: 0.3s;
+    }
+    &:hover::before {
+      background-color: #000000;
+      color: white;
+      width: 100%;
+    }
+    &:hover span {
+      position: relative;
+      color: white;
+    }
+  }
+}
+
+/////////////////////////모바일!!!!///////////////////
+@media screen and (max-width: 900px) {
+  .sub2-txt-wrap {
+    p {
+      font-size: 1.4rem;
+    }
+  }
+} ////////////////////////900px/////////////////////
+@media screen and (max-width: 800px) {
+  .plist {
+    .pdiv {
+      align-items: center;
+      flex-direction: column;
+    }
+    .sub2-txt {
+      width: 100%;
+      .sub2-txt-wrap {
+        top: auto;
+        transform: none;
+      }
+    }
+  }
+} ////////////////////////800px/////////////////////
+@media screen and (max-width: 600px) {
+  .sub2 {
+    min-width: auto;
+  }
+} ////////////////////////800px/////////////////////

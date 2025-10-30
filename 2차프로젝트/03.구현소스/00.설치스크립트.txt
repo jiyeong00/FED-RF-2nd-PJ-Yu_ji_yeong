@@ -12,7 +12,11 @@
     (3) npm i jquery-ui-dist
     (4) npm i jquery-ui-touch-punch
     (5) npm i swiper
-
+    npm i @fortawesome/fontawesome-svg-core
+    npm i @fortawesome/free-solid-svg-icons @fortawesome/free-regular-svg-icons @fortawesome/free-brands-svg-icons
+    npm i @fortawesome/react-fontawesome
+    npm i sass
+    
 3. 설치확인
 - 파일명: package.json
 - 항목명: "dependencies"
