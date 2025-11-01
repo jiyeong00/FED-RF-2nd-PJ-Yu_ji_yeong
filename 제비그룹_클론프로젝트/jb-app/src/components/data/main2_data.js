@@ -1,6 +1,6 @@
-//  배경화면 데이터 ////
+//  메인2 데이터 ////
 
-const bgData=[
+const main2Data=[
 {
     idx: "01",
     tit: "명확한 공익성으로 ESG 요건 부합",
@@ -23,4 +23,4 @@ const bgData=[
 },
 ];
 
-export default bgData
+export default main2Data;

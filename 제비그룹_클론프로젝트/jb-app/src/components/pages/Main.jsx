@@ -6,24 +6,27 @@ import { Link, useNavigate } from "react-router-dom";
 import "../../css/main.scss";
 
 // 메인 JS 불러오기
-import MainMajor from "../modules/MainMajor";
+// import MainMajor from "../modules/MainMajor";
 
-import bgData from "../data/bg_data";
+// 데이터
+import main2Data from "../data/main2_data";
+import main4Data from "../data/main4_data";
 
 function Main(props) {
-  // 새로고침 시 맨 위로
+  // 새로고침 시 맨 위로 이거 안된느중
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
 
-  useEffect(() => {
-    const headerBackColor = document.querySelector("#header-area");
-    headerBackColor.style.backgroundColor = "black";
-  }, []);
+  // useEffect(() => {
+  //   const headerBackColor = document.querySelector("#header-area");
+  //   headerBackColor.style.backgroundColor = "black";
+  // }, []);
 
   ////////////////////////////////////인터발 삭제
   useLayoutEffect(() => {}, []);
 
+  // 네비게이션
   let nav = useNavigate();
 
   // 코드 리턴구역 //////////////
@@ -98,8 +101,8 @@ function Main(props) {
         <article id="inc01">
           <div className="main2-wrap wrap">
             {/* 리스트 */}
-            {Object.values(bgData).map((v, i) => (
-              <div className="main2_cont_box" key={i}>
+            {Object.values(main2Data).map((v, i) => (
+              <div className="main2_cont_box cont_box" key={i}>
                 <div className="img_box">
                   <img src={"/img/img" + v.idx + ".png"} alt={v.tit} />
                 </div>
@@ -137,7 +140,74 @@ function Main(props) {
             </ul>
           </div>
           <div className="img_box">
-            <img src="/img/main3_img01.png" alt="세번째 메인이미지" />
+            <img
+              className="inc_img01"
+              src="/img/main3_img01.png"
+              alt="세번째 메인이미지"
+            />
+            <img
+              className="inc_img02"
+              src="/img/main3_img02.png"
+              alt="세번째 메인이미지"
+            />
+            <img
+              className="inc_img03"
+              src="/img/main3_img03.png"
+              alt="세번째 메인이미지"
+            />
+            <img
+              className="inc_img04"
+              src="/img/main3_img04.png"
+              alt="세번째 메인이미지"
+            />
+          </div>
+        </article>
+      </section>
+
+      {/* <!-- 2-4. 메인 네번쨰 화면 --> */}
+      <section className="main4 main-area part">
+        <article id="inc03">
+          <div className="main4-wrap wrap">
+            {/* 리스트 */}
+            {Object.values(main4Data).map((v, i) => (
+              <div id={"top_link" + v.idx} className="cont_box">
+                <div className="img_box">
+                  <img
+                    src={"/img/main4_img" + v.idx + ".png"}
+                    alt="메인4 이미지"
+                  />
+                </div>
+                <div className="txt_box">
+                  <p className="s_tit">{v.stit}</p>
+                  <h3 className="tit">{v.tit}</h3>
+                  <p className="txt">{v.exp}</p>
+                  <a href={v.link} className="link_btn" target="_blank">
+                    <span className="link_txt">{v.btn}</span>
+                    <span className="arr">
+                      <img src="/img/main4_arr.png" alt="바로가기" title />
+                    </span>
+                  </a>
+                </div>
+              </div>
+            ))}
+          </div>
+        </article>
+      </section>
+
+      {/* <!-- 2-5. 메인 다섯번쨰 화면 --> */}
+      <section className="main5 main-area part">
+        <article id="inc05">
+          <div className="tit_box">
+            <h3 className="tit">
+              <span className="tit_txt">
+                Our 
+                <em>News Room</em>
+              </span>
+            </h3>
+            <p className="txt">제비그룹의 언론보도 소식을 만나보세요</p>
+          </div>
+          <div className="news_list">
+            스와이퍼 슬 예정
           </div>
         </article>
       </section>

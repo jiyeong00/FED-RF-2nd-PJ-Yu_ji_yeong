@@ -62,11 +62,11 @@ function Layout(props) {
       }}
     >
       {/* 1.상단영역 */}
-      <TopArea />
+      {/* <TopArea /> */}
       {/* 2.메인영역 */}
       <MainArea goPage={goPage} />
       {/* 3.하단영역 */}
-      {/* <FooterArea /> */}
+      <FooterArea />
     </aCon.Provider>
   );
 }

@@ -8,6 +8,53 @@
     vertical-align: middle;
     font-size: 1em;
   }
+  .txt_box {
+    width: 50%;
+    // transform: translateY(2rem);
+    // opacity: 0;
+    // transition: transform 1s, opacity 1s;
+    transform: translateY(0);
+    opacity: 1;
+    transition-delay: 0.3s;
+  }
+  .tit {
+    margin-bottom: 2rem;
+    font-size: 3.5rem;
+    font-weight: 500;
+    color: #222;
+    word-break: keep-all;
+  }
+  .txt {
+    font-size: 1.7rem;
+    font-weight: 300;
+    line-height: 150%;
+    color: #888;
+    word-break: keep-all;
+    margin-bottom: 3rem;
+  }
+  .img_box {
+    width: 50%;
+    text-align: center;
+    // transform: scale(.8, .8);
+    // opacity: 0;
+    transform: scale(1, 1);
+    opacity: 1;
+    transition: transform 1s, opacity 1s;
+    .img {
+      width: 79.3%;
+    }
+  }
+  .cont_box {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+  }
+  .s_tit {
+    margin-bottom: 2rem;
+    font-size: 2rem;
+    font-weight: 500;
+    color: #3259f5;
+  }
 }
 .wrap {
   height: 100%;
@@ -15,6 +62,21 @@
   width: 100%;
   margin: 0 auto;
   position: relative;
+}
+.arr {
+  width: 2.8rem;
+  height: 2.8rem;
+  margin-left: 2rem;
+  border-radius: 2.8rem;
+  background: #fff;
+  position: relative;
+  img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    animation: scroll 2s linear infinite;
+  }
 }
 /* ---------------------첫번째 페이지--------------------- */
 .main1 {
@@ -160,21 +222,6 @@
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  .arr {
-    width: 2.8rem;
-    height: 2.8rem;
-    margin-left: 2rem;
-    border-radius: 2.8rem;
-    background: #fff;
-    position: relative;
-    img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      animation: scroll 2s linear infinite;
-    }
-  }
 }
 
 /* ---------------------두번째 페이지--------------------- */
@@ -182,43 +229,7 @@
   padding: 15rem 0;
 }
 .main2 .main2_cont_box {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  .img_box {
-    width: 50%;
-    text-align: center;
-    // transform: scale(.8, .8);
-    // opacity: 0;
-    transform: scale(1, 1);
-    opacity: 1;
-    transition: transform 1s, opacity 1s;
-    .img {
-      width: 79.3%;
-    }
-  }
   .txt_box {
-    width: 50%;
-    // transform: translateY(2rem);
-    // opacity: 0;
-    // transition: transform 1s, opacity 1s;
-    transform: translateY(0);
-    opacity: 1;
-    transition-delay: 0.3s;
-    .tit {
-      margin-bottom: 2rem;
-      font-size: 3.5rem;
-      font-weight: 500;
-      color: #222;
-      word-break: keep-all;
-    }
-    .txt {
-      font-size: 1.7rem;
-      font-weight: 300;
-      line-height: 150%;
-      color: #888;
-      word-break: keep-all;
-    }
     .step {
       display: inline-block;
       width: 9rem;
@@ -239,7 +250,7 @@
   max-width: 170rem;
   width: 100%;
   margin: 0 auto;
-  padding: 10rem 0;
+  padding: 10rem 2rem;
   border-radius: 1rem;
   background: #3259f5;
   position: relative;
@@ -299,14 +310,82 @@
     position: absolute;
     right: 14rem;
     bottom: 0;
-    img {
+    .inc_img01 {
       width: 99.5%;
       position: absolute;
       // bottom: -2rem;
       // opacity: 0;
+      transform: translate(-50%);
       transition: bottom 1s, opacity 1s;
       bottom: 0;
       opacity: 1;
+    }
+    .inc_img02 {
+      width: 73%;
+      position: absolute;
+      top: 23%;
+      left: 55%;
+      transform: translate(-50%, -50%);
+      // opacity: 0;
+      // transition: opacity 1s;
+      opacity: 1;
+      transition-delay: 0.3s;
+    }
+    .inc_img03 {
+      width: 12.5%;
+      position: absolute;
+      top: 4%;
+      left: 4%;
+      transform: translate(-50%, -50%);
+      animation: inc02img 1.5s linear infinite;
+      // opacity: 0;
+      // transition: opacity 1s;
+      opacity: 1;
+      transition-delay: 0.6s;
+    }
+    .inc_img04 {
+      width: 14%;
+      position: absolute;
+      top: 48%;
+      left: 119%;
+      transform: translate(-50%, -50%);
+      animation: inc02img 1.5s linear infinite;
+      animation-delay: 0.3s;
+      // opacity: 0;
+      // transition: opacity 1s;
+      opacity: 1;
+      transition-delay: 0.6s;
+    }
+  }
+}
+
+/* ---------------------네번째 페이지--------------------- */
+
+#inc03 {
+        padding: 15rem 2rem;
+  .link_btn {
+    display: inline-block;
+    width: 25.8rem;
+    height: 5.7rem;
+    padding-right: 5.7rem;
+    border-radius: 5.7rem;
+    background: #eaeefe;
+    font-size: 1.7rem;
+    font-weight: 500;
+    text-align: center;
+    line-height: 5.7rem;
+    color: #3259f5;
+    position: relative;
+    transition: all 0.3s;
+    .arr {
+      width: 5.7rem;
+      height: 5.7rem;
+      border-radius: 5.7rem;
+      background: #3259f5;
+      position: absolute;
+      top: 0;
+      right: 0;
+      transition: all 0.3s;
     }
   }
 }

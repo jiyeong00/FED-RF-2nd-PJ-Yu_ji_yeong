@@ -8,7 +8,7 @@ import main_major from "../data/main_major.js";
 import mFn from "../func/my_function.js";
 
 // css
-import "../../css/main_major.scss";
+// import "../../css/main_major.scss";
 
 function MainMajor() {
   const selData = main_major;
