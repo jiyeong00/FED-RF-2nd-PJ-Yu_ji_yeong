@@ -1,127 +1,139 @@
-//메인 세번째 페이지 슬라이드 css
+// 메인 마지막 슬라이드
 
-/* 제목 */
-.main3-tit {
-  text-align: center;
-  margin-bottom: 2rem;
-}
+.main-area {
+  #inc05 {
+    padding: 12rem 5rem;
+    background: #f1f3fe;
+    .tit_box {
+      margin-bottom: 4rem;
+      text-align: center;
+      transition: transform 1s, opacity 1s;
+      transform: translateY(2rem);
+      // transform: translateY(0);
+      opacity: 0;
+      .tit {
+        display: inline-block;
+        margin-bottom: 3rem;
+        font-size: 4rem;
+        font-weight: 500;
+        color: #222;
+        position: relative;
+        &::before {
+          content: "";
+          width: 110%;
+          height: 1.6rem;
+          border-radius: 1.6rem;
+          background: #dde2fb;
+          position: absolute;
+          bottom: -0.3rem;
+          left: 50%;
+          transform: translateX(-50%);
+          z-index: 1;
+        }
+        em {
+          font-style: normal;
+          color: #284ce0;
+        }
+        .tit_txt {
+          position: relative;
+          z-index: 2;
+        }
+      }
+      .txt {
+        font-size: 1.7rem;
+        font-weight: 300;
+        color: #666;
+      }
+    }
 
-.main3-slide-wrap {
-  position: relative;
-  opacity: 1;
+    .mySwiper {
+      position: relative;
+      width: 100%;
+      height: 100%;
+      z-index: 1;
+      display: flex;
+      transition-property: transform;
+      box-sizing: content-box;
+    }
 
-  .box-wrap {
-    // display: flex;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-  }
-  .red-box2 {
-    position: relative;
-    width: 0%;
-    height: 100%;
-    background-color: #e30613;
-    z-index: 2;
-    &.on {
-      animation: srbox2 1.2s ease-in-out;
+    .news_list {
+      transform: translateY(2rem);
+      opacity: 0;
+      transition: transform 1s, opacity 1s;
+      li {
+        height: 34rem;
+        border-radius: 2rem;
+        background: #fff;
+        position: relative;
+        margin-right: 30px;
+        width: 259.4px;
+        .aInDiv {
+          display: block;
+          padding: 4rem 3rem;
+          z-index: 3;
+        }
+        .cont_box {
+          padding: 0 3rem 4rem;
+          position: absolute;
+          left: 0;
+          bottom: 0;
+          .tit {
+            margin-bottom: 1.5rem;
+            font-weight: 500;
+            font-size: 1.7rem;
+            line-height: 2.8rem;
+            color: #333;
+            text-overflow: ellipsis;
+            word-break: break-word !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          .txt {
+            font-size: 1.6rem;
+            line-height: 2.8rem;
+            color: #888 !important;
+            text-overflow: ellipsis;
+            word-break: break-word !important;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+          }
+          .date {
+            margin-top: 2rem;
+            font-weight: 400;
+            color: #999;
+            width: 100%;
+            text-align: right;
+            font-family: "Play", sans-serif;
+          }
+        }
+        .more_btn {
+          width: 5rem;
+          height: 5rem;
+          border-radius: 5rem;
+          font-weight: 700;
+          font-size: 1.5rem;
+          color: #999;
+          text-align: center;
+          line-height: 5rem;
+          background: #f7f7f7;
+          position: absolute;
+          top: 4rem;
+          right: 3rem;
+          transition: all 0.3s;
+        }
+        &:hover {
+          cursor: pointer;
+          .more_btn {
+            background: #284ce0;
+            color: #fff;
+            transform: scale(1.05);
+          }
+        }
+      }
     }
   }
-  .white-box2 {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: white;
-    z-index: 2;
-    &.on {
-      left: 100%;
-      width: 0%;
-      transition: 1.2s ease-in-out;
-      // animation: srbox2 1.2s ease-in-out;
-    }
-  }
 }
-@keyframes srbox2 {
-  0% {
-    left: 0;
-    width: 0%;
-  }
-  50% {
-    left: 0%;
-    width: 100%;
-  }
-  100% {
-    left: 100%;
-    width: 0%;
-  }
-}
-// 슬라이드
-.main3-slide {
-  position: relative;
-}
-.main3-slide > img {
-  width: 100%;
-}
-.slide-txt {
-  position: absolute;
-  left: 6vw;
-  top: 50%;
-  transform: translateY(-50%);
-
-  width: 40%;
-  margin-left: auto;
-}
-.slide-txt h3 {
-  font-size: 4rem;
-  margin-bottom: 20px;
-}
-.slide-txt p {
-  font-size: 1.8rem;
-  font-weight: 200;
-}
-.main3-slide:nth-child(n + 5) .slide-txt {
-  color: black;
-}
-// 슬라이드 넘김버튼
-.swiper-button-prev,
-.swiper-button-next {
-  color: #e30613;
-}
-// 슬라이드 불릿
-.swiper-pagination-bullet-active {
-  background-color: #e30613;
-}
-
-/****************************** 모바일 ****************************/
-///
-@media screen and (max-width: 1200px) {
-  // 세번째페이지
-  .main3 {
-    margin: 4rem 0;
-    height: auto;
-  }
-  .slide-txt {
-    h3{
-      font-size: min(3.5rem, 2.5vw);
-    }
-    p{
-      font-size: min(1.5rem, 2vw);
-    }
-  }
-
-} ////////////////////////1200px/////////////////////
-@media screen and (max-width: 800px) {
-  .slide-txt {
-    left: 6vw;
-    top: auto;
-    bottom: 0%;
-    width: 90%;
-    h3{
-      font-size: min(3.5rem, 4.5vw);
-    }
-    p{
-      font-size: min(1.5rem, 3vw);
-    }
-}
-}////////////////////////800px/////////////////////

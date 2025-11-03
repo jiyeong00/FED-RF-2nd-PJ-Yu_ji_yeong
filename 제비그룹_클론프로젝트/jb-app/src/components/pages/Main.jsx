@@ -4,9 +4,10 @@ import { Link, useNavigate } from "react-router-dom";
 
 // CSS불러오기
 import "../../css/main.scss";
+import "../../css/main_swiper.scss";
 
-// 메인 JS 불러오기
-// import MainMajor from "../modules/MainMajor";
+// 메인 JS 불러오기(스와이퍼)
+import MainSwiper from "../modules/MainSwiper";
 
 // 데이터
 import main2Data from "../data/main2_data";
@@ -17,11 +18,6 @@ function Main(props) {
   useLayoutEffect(() => {
     window.scrollTo(0, 0);
   });
-
-  // useEffect(() => {
-  //   const headerBackColor = document.querySelector("#header-area");
-  //   headerBackColor.style.backgroundColor = "black";
-  // }, []);
 
   ////////////////////////////////////인터발 삭제
   useLayoutEffect(() => {}, []);
@@ -102,7 +98,12 @@ function Main(props) {
           <div className="main2-wrap wrap">
             {/* 리스트 */}
             {Object.values(main2Data).map((v, i) => (
-              <div className="main2_cont_box cont_box" key={i}>
+              <div
+                className={`main2_cont_box cont_box ${
+                  i % 2 !== 0 ? "reverse" : ""
+                }`}
+                key={i}
+              >
                 <div className="img_box">
                   <img src={"/img/img" + v.idx + ".png"} alt={v.tit} />
                 </div>
@@ -170,7 +171,10 @@ function Main(props) {
           <div className="main4-wrap wrap">
             {/* 리스트 */}
             {Object.values(main4Data).map((v, i) => (
-              <div id={"top_link" + v.idx} className="cont_box">
+              <div
+                id={"top_link" + v.idx}
+                className={`cont_box ${i % 2 !== 0 ? "reverse" : ""}`}
+              >
                 <div className="img_box">
                   <img
                     src={"/img/main4_img" + v.idx + ".png"}
@@ -193,24 +197,8 @@ function Main(props) {
           </div>
         </article>
       </section>
-
       {/* <!-- 2-5. 메인 다섯번쨰 화면 --> */}
-      <section className="main5 main-area part">
-        <article id="inc05">
-          <div className="tit_box">
-            <h3 className="tit">
-              <span className="tit_txt">
-                Our 
-                <em>News Room</em>
-              </span>
-            </h3>
-            <p className="txt">제비그룹의 언론보도 소식을 만나보세요</p>
-          </div>
-          <div className="news_list">
-            스와이퍼 슬 예정
-          </div>
-        </article>
-      </section>
+      <MainSwiper />
     </>
   );
 }

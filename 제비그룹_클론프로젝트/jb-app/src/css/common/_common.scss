@@ -8,7 +8,6 @@
 
 /************* 상단영역 *************/
 #header-area {
-  height: 70px;
   position: fixed;
   top: 0;
   left: 0;
@@ -24,23 +23,21 @@
 
 .header-area {
   width: 100%;
+  height: 10rem;
   position: relative;
   z-index: 1;
 
   .inbox {
     /* 플렉스로 가로 정렬 */
     display: flex;
+    height: 100%;
     justify-content: space-between;
     align-items: center;
     width: 95%;
-    height: 70px;
     margin: 0 auto;
   }
 }
 /* 로고 */
-h1.logo {
-  width: 194px;
-}
 .logo a {
   display: inline-block;
   width: 100%;
@@ -56,30 +53,28 @@ h1.logo {
 }
 .gnb ul {
   display: flex;
-  justify-content: space-between;
-
+  justify-content: flex-end;
+  align-items: center;
   margin-left: 25px;
+  & > li {
+    margin: 0px 3rem;
+  }
+  & > li:first-child > ol {
+    gap: 2rem;
+  }
 }
 .gnb ol {
   display: flex;
-  gap: 2rem;
+  gap: 1rem;
+  img {
+    width: 3.7rem;
+  }
 }
 
 .gnb ul li a {
   color: rgb(255 255 255 / 60%);
   font-size: 2vh;
   font-family: "Kanit", sans-serif;
-  &.on {
-    color: #e30613;
-    font-weight: 700;
-  }
-}
-
-/* 메뉴 마우스 오버시 글자 네온효과 */
-.gnb ul li a:hover {
-  /* display: block; */
-  font-weight: 700;
-  color: #e30613;
 }
 
 /************* 하단영역 *************/
@@ -144,14 +139,14 @@ h1.logo {
   display: flex;
 }
 
-.topMenu-M-gnb{
+.topMenu-M-gnb {
   position: absolute;
   top: 0;
   left: 100%;
-  transition: left .3s ease-out;
-  &.on{
+  transition: left 0.3s ease-out;
+  &.on {
     left: 0;
-    transition: left .3s ease-out;
+    transition: left 0.3s ease-out;
   }
 }
 /// 모바일 메뉴 버튼
@@ -159,15 +154,15 @@ h1.logo {
   cursor: pointer;
   display: block;
   margin-right: 1rem;
-  .fa-xmark{
+  .fa-xmark {
     color: #888;
     display: none;
-    &.on{
+    &.on {
       display: block;
       font-size: 2rem;
     }
   }
-  img.on{
+  img.on {
     display: none;
   }
 }
